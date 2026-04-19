@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUJI RICE | ã«ãã®ãããã</title>
+<meta name="description" content="ä¸çéºç£ã»å¯å£«å±±ã®ãµãã¨ã§è²ã¦ãç¹å¥æ ½å¹ç±³ãã«ãã®ããããããå¯å£«ã®ä¼æµæ°´ã¨å¯æå·®ãçããå¯ä¸ç¡äºã®å³ãããç£å°ç´éã§ãå±ããã¾ãã">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Shippori+Mincho:wght@400;500;600;700&family=IM+Fell+English:ital@1&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#1a1208;
+  --earth:#4a3520;
+  --soil:#7a5c3a;
+  --rice:#e8d5a8;
+  --gold:#c8a84a;
+  --gold-light:#d4b85a;
+  --green:#4a6035;
+  --sage:#8a9e6a;
+  --sky:#a8c0c8;
+  --fuji:#6a8898;
+  --cream:#f8f4ec;
+  --white:#fdfaf5;
+  --off:#f2ede4;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Zen Kaku Gothic New',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ===== LOADING ===== */
+.loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--white);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity .6s ease,visibility .6s;
+}
+.loader.hide{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-text{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.3rem;color:var(--earth);
+  letter-spacing:.3em;
+  animation:pulse 1.5s ease infinite;
+}
+.loader-bar{
+  width:120px;height:2px;background:var(--off);margin-top:1.2rem;
+  border-radius:2px;overflow:hidden;
+}
+.loader-bar-inner{
+  width:0;height:100%;background:var(--gold);
+  animation:loadBar 1.8s ease forwards;
+}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes loadBar{to{width:100%}}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:72px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 3rem;
+  transition:all .5s cubic-bezier(.4,0,.2,1);
+}
+nav.scrolled{
+  background:rgba(253,250,245,.97);
+  backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(74,53,32,.08);
+}
+.nav-logo{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.1rem;font-weight:600;
+  color:var(--white);
+  letter-spacing:.12em;
+  text-decoration:none;
+  transition:color .4s;
+  line-height:1.4;
+}
+nav.scrolled .nav-logo{color:var(--earth);}
+.nav-logo small{
+  display:block;font-size:.58rem;font-weight:400;
+  letter-spacing:.3em;
+  font-family:'IM Fell English',serif;font-style:italic;
+  color:rgba(255,255,255,.6);
+  transition:color .4s;
+}
+nav.scrolled .nav-logo small{color:var(--fuji);}
+.nav-menu{display:flex;align-items:center;gap:2.2rem;list-style:none;}
+.nav-menu a{
+  font-size:.72rem;letter-spacing:.18em;
+  color:rgba(255,255,255,.8);
+  text-decoration:none;font-weight:400;
+  transition:all .3s;
+  position:relative;
+}
+nav.scrolled .nav-menu a{color:var(--earth);}
+.nav-menu a::after{
+  content:'';position:absolute;bottom:-4px;left:0;
+  width:0;height:1px;background:var(--gold);
+  transition:width .3s;
+}
+.nav-menu a:hover::after{width:100%;}
+.nav-order{
+  background:var(--gold);color:var(--ink) !important;
+  padding:.55rem 1.6rem;font-weight:500 !important;
+  letter-spacing:.15em !important;
+  transition:all .3s !important;
+}
+.nav-order::after{display:none !important;}
+.nav-order:hover{background:var(--earth) !important;color:var(--white) !important;transform:translateY(-1px);}
+nav.scrolled .nav-order{background:var(--gold);color:var(--ink) !important;}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;flex-direction:column;gap:5px;
+  cursor:pointer;z-index:300;padding:5px;
+  background:none;border:none;
+}
+.hamburger span{
+  display:block;width:24px;height:1.5px;
+  background:var(--white);
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+  transform-origin:center;
+}
+nav.scrolled .hamburger span{background:var(--earth);}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;transform:translateX(-10px);}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-5px);}
+.hamburger.active span{background:var(--white) !important;}
+
+.mobile-menu{
+  position:fixed;inset:0;z-index:250;
+  background:rgba(26,18,8,.97);
+  backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:2rem;
+  opacity:0;visibility:hidden;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+}
+.mobile-menu.active{opacity:1;visibility:visible;}
+.mobile-menu a{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.3rem;color:var(--white);
+  text-decoration:none;letter-spacing:.2em;
+  opacity:0;transform:translateY(20px);
+  transition:all .4s;
+}
+.mobile-menu.active a{opacity:1;transform:translateY(0);}
+.mobile-menu.active a:nth-child(1){transition-delay:.1s}
+.mobile-menu.active a:nth-child(2){transition-delay:.15s}
+.mobile-menu.active a:nth-child(3){transition-delay:.2s}
+.mobile-menu.active a:nth-child(4){transition-delay:.25s}
+.mobile-menu.active a:nth-child(5){transition-delay:.3s}
+.mobile-menu.active a:nth-child(6){transition-delay:.35s}
+.mobile-menu a:hover{color:var(--gold);}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:100vh;overflow:hidden;}
+.slide{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:0;
+  transition:opacity 2s ease;
+  transform:scale(1.05);
+}
+.slide.active{opacity:1;transform:scale(1);transition:opacity 2s ease, transform 8s ease;}
+.slide::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    160deg,
+    rgba(20,12,5,.6) 0%,
+    rgba(20,12,5,.15) 45%,
+    rgba(20,12,5,.5) 100%
+  );
+}
+
+.hero-inner{
+  position:relative;z-index:10;
+  height:100%;
+  display:flex;align-items:center;
+  padding:0 5rem;
+}
+.hero-text{max-width:700px;}
+
+.hero-vertical{
+  position:absolute;right:5rem;top:50%;transform:translateY(-50%);
+  writing-mode:vertical-rl;
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(1.1rem,2.2vw,1.6rem);
+  font-weight:300;
+  letter-spacing:.5em;
+  color:rgba(255,255,255,.5);
+  line-height:2;
+  z-index:10;
+}
+
+.hero-en{
+  font-family:'IM Fell English',serif;
+  font-style:italic;
+  font-size:.82rem;
+  letter-spacing:.35em;
+  color:var(--gold);
+  margin-bottom:1.2rem;
+  opacity:0;animation:hFadeUp 1s .5s both;
+}
+.hero-h1{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(2.4rem,5vw,4.5rem);
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:.06em;
+  line-height:1.3;
+  margin-bottom:1.5rem;
+  opacity:0;animation:hFadeUp 1s .7s both;
+  text-shadow:0 4px 40px rgba(0,0,0,.3);
+}
+.hero-h1 em{
+  font-style:normal;
+  color:var(--rice);
+  display:block;
+  font-weight:200;
+  font-size:65%;
+  letter-spacing:.14em;
+  margin-bottom:.3em;
+}
+.hero-lead{
+  font-size:.88rem;font-weight:300;
+  color:rgba(255,255,255,.78);
+  letter-spacing:.1em;line-height:2.3;
+  margin-bottom:2.5rem;
+  opacity:0;animation:hFadeUp 1s .9s both;
+}
+.hero-btns{
+  display:flex;gap:1.2rem;align-items:center;
+  opacity:0;animation:hFadeUp 1s 1.1s both;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.7rem;
+  background:var(--white);color:var(--earth);
+  padding:1rem 2.2rem;font-size:.78rem;
+  letter-spacing:.18em;font-weight:500;
+  text-decoration:none;transition:all .3s;
+  border:1px solid transparent;
+}
+.btn-primary:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.15);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:rgba(255,255,255,.8);font-size:.76rem;
+  letter-spacing:.16em;text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.35);
+  padding-bottom:3px;transition:all .3s;
+}
+.btn-ghost:hover{color:var(--gold);border-color:var(--gold);}
+
+.slide-dots{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:.6rem;z-index:10;
+}
+.dot{
+  width:30px;height:2px;
+  background:rgba(255,255,255,.3);
+  cursor:pointer;transition:all .4s;
+}
+.dot.active{background:var(--gold);width:50px;}
+
+.scroll-cue{
+  position:absolute;bottom:2rem;right:5rem;z-index:10;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:rgba(255,255,255,.45);
+  font-size:.6rem;letter-spacing:.3em;
+  font-family:'IM Fell English',serif;font-style:italic;
+  animation:bounce 2.5s 2s infinite;
+}
+.scroll-cue-line{width:1px;height:45px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.4));}
+
+@keyframes hFadeUp{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:translateY(0);}}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+/* ===== SCROLL ANIMATION ===== */
+.reveal{
+  opacity:0;transform:translateY(35px);
+  transition:opacity .8s cubic-bezier(.4,0,.2,1), transform .8s cubic-bezier(.4,0,.2,1);
+}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ===== TICKER ===== */
+.ticker{
+  background:var(--ink);
+  padding:.8rem 0;overflow:hidden;
+  border-top:2px solid var(--gold);
+}
+.ticker-inner{
+  display:flex;gap:4rem;
+  animation:tickerScroll 30s linear infinite;
+  white-space:nowrap;
+}
+.ticker-item{
+  font-size:.7rem;letter-spacing:.25em;
+  color:rgba(255,255,255,.5);
+  font-family:'IM Fell English',serif;font-style:italic;
+}
+.ticker-sep{color:var(--gold);font-size:.6rem;}
+@keyframes tickerScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ===== SECTION COMMON ===== */
+.section-label{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:.75rem;letter-spacing:.35em;color:var(--gold);
+  margin-bottom:.7rem;
+}
+.section-h{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(1.8rem,3.2vw,2.8rem);
+  font-weight:600;letter-spacing:.06em;line-height:1.45;
+  color:var(--earth);
+}
+.section-rule{
+  width:36px;height:2px;background:var(--gold);
+  margin:1.2rem 0 1.8rem;
+}
+.section-body{
+  font-size:.88rem;line-height:2.3;font-weight:300;
+  color:#5a4830;
+}
+
+/* ===== CONCEPT ===== */
+.concept{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:90vh;
+}
+.concept-photo{
+  position:relative;overflow:hidden;
+}
+.concept-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+  transition:transform 10s ease;
+}
+.concept-photo:hover img{transform:scale(1.04);}
+.concept-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,transparent 60%,var(--white));
+}
+.concept-body{
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:6rem 5rem 6rem 4rem;
+  background:var(--white);
+}
+.concept-num{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:6rem;color:var(--off);
+  line-height:1;margin-bottom:-1rem;
+  letter-spacing:-.02em;
+}
+.concept-quote{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.4rem;font-weight:500;
+  color:var(--earth);letter-spacing:.1em;
+  line-height:1.9;margin-bottom:1.5rem;
+  border-left:3px solid var(--gold);
+  padding-left:1.2rem;
+}
+
+/* ===== STATS ===== */
+.stats{
+  background:var(--earth);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:3px solid var(--gold);
+}
+.stat-item{
+  padding:3.5rem 2rem;
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,.08);
+  transition:background .3s;
+}
+.stat-item:last-child{border-right:none;}
+.stat-item:hover{background:rgba(255,255,255,.04);}
+.stat-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:3rem;font-weight:700;
+  color:var(--rice);line-height:1;
+  margin-bottom:.3rem;
+}
+.stat-unit{font-size:1.1rem;margin-left:2px;}
+.stat-label{
+  font-size:.7rem;letter-spacing:.2em;
+  color:rgba(255,255,255,.5);font-weight:300;
+  margin-top:.4rem;
+}
+.stat-en{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:.62rem;color:var(--gold);
+  letter-spacing:.25em;margin-bottom:.5rem;
+  display:block;
+}
+
+/* ===== COMMITMENT ===== */
+.commit{padding:7rem 5rem;background:var(--cream);}
+.commit-header{
+  display:grid;grid-template-columns:1fr 2fr;
+  gap:4rem;align-items:start;
+  margin-bottom:4.5rem;
+}
+.commit-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:rgba(74,53,32,.06);
+}
+.commit-card{
+  background:var(--white);
+  position:relative;overflow:hidden;
+  transition:all .5s cubic-bezier(.4,0,.2,1);
+}
+.commit-card:hover{transform:translateY(-8px);box-shadow:0 25px 60px rgba(74,53,32,.12);}
+.commit-card-photo{
+  height:240px;overflow:hidden;
+  position:relative;
+}
+.commit-card-photo img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .7s ease;
+}
+.commit-card:hover .commit-card-photo img{transform:scale(1.08);}
+.commit-card-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(20,12,5,.5));
+}
+.commit-card-body{padding:2rem 2rem 2.5rem;}
+.commit-card-num{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:2.5rem;color:var(--off);
+  position:absolute;top:1rem;right:1.5rem;
+  line-height:1;z-index:1;
+}
+.commit-tag{
+  font-size:.62rem;letter-spacing:.25em;color:var(--sage);
+  margin-bottom:.5rem;
+}
+.commit-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.12rem;font-weight:600;
+  color:var(--earth);margin-bottom:.7rem;
+  letter-spacing:.05em;
+}
+.commit-text{
+  font-size:.82rem;line-height:2;font-weight:300;color:#7a6048;
+}
+.commit-bar{
+  position:absolute;bottom:0;left:0;
+  width:0;height:2px;background:var(--gold);
+  transition:width .5s cubic-bezier(.4,0,.2,1);
+}
+.commit-card:hover .commit-bar{width:100%;}
+
+/* ===== FARM PHOTO BANNER ===== */
+.farm-banner{
+  position:relative;
+  height:50vh;min-height:350px;
+  overflow:hidden;
+}
+.farm-banner img{
+  width:100%;height:100%;object-fit:cover;object-position:center 60%;
+}
+.farm-banner-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(26,18,8,.15), rgba(26,18,8,.5));
+  display:flex;align-items:flex-end;
+  padding:3rem 5rem;
+}
+.farm-banner-text{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.4rem;font-weight:500;
+  color:var(--white);letter-spacing:.12em;
+  text-shadow:0 2px 15px rgba(0,0,0,.3);
+}
+.farm-banner-text small{
+  display:block;
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:.7rem;font-weight:400;
+  letter-spacing:.3em;
+  color:var(--gold);margin-bottom:.4rem;
+}
+
+/* ===== PRODUCT ===== */
+.product{
+  padding:7rem 5rem;
+  background:var(--ink);
+  position:relative;overflow:hidden;
+}
+.product::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%, rgba(200,168,74,.06) 0%, transparent 60%);
+}
+.product-inner{position:relative;z-index:2;}
+.product-header{
+  display:flex;justify-content:space-between;
+  align-items:flex-end;margin-bottom:3.5rem;
+}
+.product-header .section-h{color:var(--white);}
+.product-header .section-label{color:var(--gold);}
+.product-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+}
+.product-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;
+}
+.product-card:hover{
+  background:rgba(255,255,255,.08);
+  border-color:var(--gold);
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+.product-card-img{
+  height:220px;overflow:hidden;
+  position:relative;
+}
+.product-card-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+  filter:brightness(.85) saturate(1.1);
+}
+.product-card:hover .product-card-img img{transform:scale(1.06);}
+.product-badge{
+  position:absolute;top:.8rem;left:.8rem;
+  background:var(--gold);color:var(--ink);
+  font-size:.56rem;letter-spacing:.2em;
+  padding:.3rem .8rem;font-weight:600;
+}
+.product-card-body{padding:1.8rem;}
+.product-variety{
+  font-size:.62rem;letter-spacing:.25em;color:var(--gold);
+  margin-bottom:.4rem;font-family:'IM Fell English',serif;font-style:italic;
+}
+.product-name{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.15rem;font-weight:600;color:var(--white);
+  margin-bottom:.5rem;letter-spacing:.05em;
+}
+.product-desc{
+  font-size:.78rem;line-height:2;font-weight:300;
+  color:rgba(255,255,255,.5);margin-bottom:1.4rem;
+}
+.product-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:1.2rem;
+}
+.product-price{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.15rem;color:var(--rice);font-weight:500;
+}
+.product-price small{
+  font-size:.7rem;font-weight:300;
+  font-family:'Zen Kaku Gothic New',sans-serif;
+  color:rgba(255,255,255,.35);margin-left:.3rem;
+}
+.btn-order{
+  font-size:.68rem;letter-spacing:.15em;
+  color:var(--gold);border:1px solid var(--gold);
+  padding:.5rem 1.1rem;text-decoration:none;
+  transition:all .3s;
+}
+.btn-order:hover{background:var(--gold);color:var(--ink);transform:translateY(-1px);}
+
+/* ===== VIDEO ===== */
+.video-section{
+  padding:7rem 5rem;
+  background:var(--ink);
+  position:relative;
+}
+.video-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 40%, rgba(200,168,74,.05) 0%, transparent 60%);
+}
+.video-inner{position:relative;z-index:2;}
+.video-header{
+  display:flex;justify-content:space-between;
+  align-items:flex-end;margin-bottom:3rem;
+}
+.video-header .section-h{color:var(--white);}
+.video-header .section-label{color:var(--gold);}
+.video-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;
+}
+.video-card-thumb{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:opacity .3s;cursor:pointer;
+}
+.video-card-thumb:hover{opacity:.85;}
+.video-play-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:60px;height:60px;background:rgba(200,168,74,.9);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;transition:all .3s;
+}
+.video-card-media:hover .video-play-btn{background:var(--gold);transform:translate(-50%,-50%) scale(1.1);}
+.video-play-btn svg{margin-left:3px;}
+.video-loading{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.35);font-size:.8rem;letter-spacing:.1em;
+}
+.video-channel-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:var(--gold);text-decoration:none;font-size:.75rem;
+  letter-spacing:.1em;border:1px solid rgba(200,168,74,.3);
+  padding:.5rem 1.2rem;transition:all .3s;
+}
+.video-channel-link:hover{background:rgba(200,168,74,.1);}
+.video-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+}
+.video-card:hover{
+  border-color:rgba(200,168,74,.3);
+  box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+.video-card-media{
+  position:relative;
+  width:100%;
+  padding-top:56.25%; /* 16:9 */
+  background:#0a0805;
+}
+.video-card-media iframe,
+.video-card-media video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:none;
+}
+.video-card-media video{
+  object-fit:cover;
+}
+.video-placeholder{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:rgba(26,18,8,.85);
+  color:rgba(255,255,255,.35);
+  font-size:.8rem;letter-spacing:.1em;
+  gap:.8rem;
+}
+.video-placeholder svg{opacity:.4;}
+.video-card-body{padding:1.5rem;}
+.video-card-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:1rem;font-weight:500;color:var(--white);
+  margin-bottom:.4rem;letter-spacing:.05em;
+}
+.video-card-desc{
+  font-size:.75rem;line-height:1.9;font-weight:300;
+  color:rgba(255,255,255,.45);
+}
+.video-note{
+  margin-top:2rem;
+  padding:1.5rem 2rem;
+  background:rgba(255,255,255,.03);
+  border:1px dashed rgba(255,255,255,.1);
+  color:rgba(255,255,255,.4);
+  font-size:.75rem;line-height:1.9;
+  letter-spacing:.05em;
+}
+.video-note strong{color:var(--gold);font-weight:500;}
+
+@media(max-width:768px){
+  .video-section{padding:4rem 1.2rem;}
+  .video-grid{grid-template-columns:1fr;}
+  .video-header{flex-direction:column;align-items:flex-start;gap:.8rem;}
+}
+
+/* ===== GALLERY ===== */
+.gallery{padding:7rem 0;background:var(--off);}
+.gallery-header{padding:0 5rem;margin-bottom:3rem;}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-template-rows:300px 220px;
+  gap:3px;
+}
+.g-item{overflow:hidden;cursor:pointer;position:relative;}
+.g-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease, filter .3s;
+  filter:saturate(.9);
+}
+.g-item:hover img{transform:scale(1.06);filter:saturate(1.15);}
+.g-item::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(0,0,0,0);transition:background .3s;
+}
+.g-item:hover::after{background:rgba(200,168,74,.08);}
+.g-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.g-item:nth-child(2){grid-column:span 2;}
+.g-item:nth-child(3){grid-column:span 2;}
+.g-item:nth-child(4){grid-column:span 1;}
+.g-item:nth-child(5){grid-column:span 1;}
+.g-item:nth-child(6){grid-column:span 2;}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(26,18,8,.95);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:all .3s;
+  cursor:pointer;
+}
+.lightbox.active{opacity:1;visibility:visible;}
+.lightbox img{
+  max-width:90vw;max-height:85vh;
+  object-fit:contain;
+  transform:scale(.9);transition:transform .4s cubic-bezier(.4,0,.2,1);
+}
+.lightbox.active img{transform:scale(1);}
+.lightbox-close{
+  position:absolute;top:2rem;right:2rem;
+  color:var(--white);font-size:1.5rem;cursor:pointer;
+  background:none;border:none;
+  opacity:.6;transition:opacity .3s;
+}
+.lightbox-close:hover{opacity:1;}
+
+/* ===== SEASON TIMELINE ===== */
+.season{
+  padding:7rem 5rem;
+  background:var(--white);
+}
+.season-header{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;margin-bottom:4rem;
+}
+.timeline{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;
+  position:relative;
+}
+.timeline::before{
+  content:'';position:absolute;
+  top:28px;left:0;right:0;height:1px;
+  background:var(--rice);z-index:0;
+}
+.timeline-item{
+  position:relative;z-index:1;
+  padding:0 1.5rem;
+}
+.timeline-dot{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:var(--white);
+  border:2px solid var(--rice);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.2rem;
+  font-size:1.3rem;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+}
+.timeline-item:hover .timeline-dot{
+  background:var(--gold);border-color:var(--gold);
+  transform:scale(1.1);
+}
+.timeline-season{
+  font-family:'Shippori Mincho',serif;
+  font-size:.78rem;letter-spacing:.2em;
+  color:var(--gold);text-align:center;margin-bottom:.3rem;
+}
+.timeline-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:1rem;font-weight:600;color:var(--earth);
+  text-align:center;margin-bottom:.6rem;
+}
+.timeline-text{
+  font-size:.78rem;line-height:1.9;font-weight:300;
+  color:#7a6048;text-align:center;
+}
+
+/* ===== NEWS ===== */
+.news{
+  padding:7rem 5rem;
+  background:var(--cream);
+}
+.news-header{
+  display:flex;justify-content:space-between;
+  align-items:flex-end;margin-bottom:3rem;
+}
+.news-list{display:flex;flex-direction:column;}
+.news-item{
+  display:grid;
+  grid-template-columns:160px 1fr auto;
+  align-items:center;
+  gap:2rem;padding:1.8rem 0;
+  border-bottom:1px solid rgba(74,53,32,.08);
+  text-decoration:none;color:inherit;
+  transition:all .3s;
+  position:relative;
+}
+.news-item::before{
+  content:'';position:absolute;left:-1.5rem;top:0;bottom:0;
+  width:3px;background:var(--gold);
+  transform:scaleY(0);transition:transform .3s;
+  transform-origin:top;
+}
+.news-item:hover::before{transform:scaleY(1);}
+.news-item:hover{padding-left:1rem;}
+.news-date{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:.8rem;color:var(--soil);letter-spacing:.1em;
+}
+.news-cat-badge{
+  display:inline-block;
+  font-size:.58rem;letter-spacing:.18em;
+  border:1px solid var(--sage);color:var(--sage);
+  padding:.2rem .7rem;margin-right:.8rem;
+  vertical-align:middle;
+}
+.news-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:.92rem;font-weight:500;color:var(--earth);
+  letter-spacing:.03em;
+}
+.news-arrow{
+  font-size:1rem;color:var(--rice);
+  transition:all .3s;
+}
+.news-item:hover .news-arrow{transform:translateX(5px);color:var(--gold);}
+
+/* ===== CONTACT ===== */
+.contact{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:80vh;
+}
+.contact-photo{
+  position:relative;overflow:hidden;
+}
+.contact-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:center 40%;
+  filter:brightness(.65);
+}
+.contact-photo-inner{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  justify-content:center;padding:5rem;
+  background:linear-gradient(135deg,rgba(20,12,5,.55),rgba(20,12,5,.15));
+}
+.contact-photo-inner .section-label{color:var(--gold);}
+.contact-photo-inner .section-h{color:var(--white);font-size:2.2rem;}
+.contact-photo-inner .section-body{color:rgba(255,255,255,.65);margin-top:1rem;max-width:380px;}
+.contact-info{margin-top:2rem;}
+.contact-info-item{
+  display:flex;align-items:center;gap:1rem;
+  margin-bottom:1rem;
+  color:rgba(255,255,255,.75);
+  font-size:.82rem;letter-spacing:.05em;font-weight:300;
+}
+.contact-form-wrap{
+  background:var(--white);
+  display:flex;align-items:center;
+  padding:5rem 4rem;
+}
+.contact-form{width:100%;}
+.form-group{margin-bottom:1.2rem;}
+.form-group label{
+  display:block;font-size:.68rem;letter-spacing:.2em;
+  color:var(--soil);margin-bottom:.5rem;font-weight:400;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  background:var(--off);
+  border:1px solid transparent;
+  border-bottom:1px solid rgba(74,53,32,.15);
+  padding:.85rem 1rem;
+  font-size:.85rem;font-family:'Zen Kaku Gothic New',sans-serif;
+  outline:none;transition:all .3s;color:var(--ink);
+  border-radius:0;-webkit-appearance:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--gold);background:var(--white);
+  box-shadow:0 2px 8px rgba(200,168,74,.1);
+}
+.form-group textarea{height:110px;resize:none;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.btn-submit{
+  width:100%;background:var(--earth);color:var(--white);
+  border:none;padding:1.1rem;
+  font-family:'Zen Kaku Gothic New',sans-serif;
+  font-size:.8rem;letter-spacing:.25em;font-weight:500;
+  cursor:pointer;transition:all .3s;margin-top:.5rem;
+}
+.btn-submit:hover{background:var(--gold);color:var(--ink);transform:translateY(-1px);}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--ink);
+  padding:5rem 5rem 2rem;
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;padding-bottom:3.5rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  margin-bottom:2rem;
+}
+.footer-brand-name{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.15rem;font-weight:600;
+  color:var(--white);letter-spacing:.1em;
+  margin-bottom:.3rem;
+}
+.footer-brand-en{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:.68rem;color:var(--gold);
+  letter-spacing:.25em;margin-bottom:1.5rem;
+}
+.footer-brand p{
+  font-size:.76rem;line-height:2;
+  color:rgba(255,255,255,.3);font-weight:300;
+}
+.footer-col h5{
+  font-size:.62rem;letter-spacing:.3em;
+  color:rgba(255,255,255,.35);
+  margin-bottom:1.2rem;font-weight:400;
+  padding-bottom:.6rem;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:.6rem;}
+.footer-col ul li a{
+  font-size:.78rem;color:rgba(255,255,255,.45);
+  text-decoration:none;transition:color .2s;font-weight:300;
+  letter-spacing:.05em;
+}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-copy{font-size:.66rem;color:rgba(255,255,255,.18);letter-spacing:.1em;}
+.footer-sns{display:flex;gap:.7rem;}
+.footer-sns a{
+  width:34px;height:34px;
+  border:1px solid rgba(255,255,255,.12);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.35);text-decoration:none;
+  font-size:.75rem;transition:all .3s;
+}
+.footer-sns a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+.view-all{
+  font-size:.73rem;letter-spacing:.2em;color:var(--green);
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:.5rem;
+  border-bottom:1px solid rgba(74,96,53,.25);padding-bottom:2px;
+  transition:all .3s;
+}
+.view-all:hover{color:var(--gold);border-color:var(--gold);}
+
+/* ===== BACK TO TOP ===== */
+.back-top{
+  position:fixed;bottom:2rem;right:2rem;z-index:100;
+  width:44px;height:44px;
+  background:var(--earth);color:var(--white);
+  border:none;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;
+  opacity:0;transform:translateY(20px);
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+.back-top.show{opacity:1;transform:translateY(0);}
+.back-top:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  nav{padding:0 2rem;}
+  .hero-inner{padding:0 2rem;}
+  .hero-vertical{right:2rem;}
+  .concept-body{padding:4rem 3rem;}
+  .commit{padding:5rem 2rem;}
+  .commit-header{grid-template-columns:1fr;gap:1.5rem;}
+  .product{padding:5rem 2rem;}
+  .product-cards{grid-template-columns:repeat(2,1fr);}
+  .gallery-header{padding:0 2rem;}
+  .season{padding:5rem 2rem;}
+  .news{padding:5rem 2rem;}
+  .contact-photo-inner{padding:3rem;}
+  .contact-form-wrap{padding:3rem 2.5rem;}
+  footer{padding:3rem 2rem 1.5rem;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .farm-banner-overlay{padding:2rem;}
+}
+
+@media(max-width:768px){
+  .hamburger{display:flex;}
+  .nav-menu{display:none;}
+  nav{padding:0 1.2rem;height:64px;}
+
+  .hero-vertical{display:none;}
+  .hero-inner{padding:0 1.5rem;}
+  .hero-h1{font-size:clamp(2rem,7vw,3rem);}
+  .hero-lead{font-size:.82rem;line-height:2;}
+  .hero-btns{flex-direction:column;align-items:flex-start;gap:.8rem;}
+  .scroll-cue{right:1.5rem;}
+
+  .concept{grid-template-columns:1fr;}
+  .concept-photo{height:55vw;min-height:250px;}
+  .concept-photo-overlay{background:linear-gradient(to bottom,transparent 50%,var(--white));}
+  .concept-body{padding:2.5rem 1.5rem;}
+  .concept-num{font-size:4rem;}
+  .concept-quote{font-size:1.15rem;}
+
+  .stats{grid-template-columns:1fr 1fr;}
+  .stat-item{padding:2.5rem 1.5rem;}
+  .stat-num{font-size:2.4rem;}
+
+  .commit{padding:4rem 1.2rem;}
+  .commit-grid{grid-template-columns:1fr;}
+  .commit-card-photo{height:200px;}
+
+  .farm-banner{height:40vh;min-height:250px;}
+  .farm-banner-overlay{padding:2rem 1.5rem;}
+  .farm-banner-text{font-size:1.1rem;}
+
+  .product{padding:4rem 1.2rem;}
+  .product-header{flex-direction:column;align-items:flex-start;gap:.8rem;}
+  .product-cards{grid-template-columns:1fr;}
+  .product-card-img{height:200px;}
+
+  .gallery{padding:4rem 0;}
+  .gallery-header{padding:0 1.5rem;}
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+  }
+  .g-item:nth-child(n){grid-column:span 1;grid-row:span 1;}
+  .g-item:nth-child(1){grid-column:span 2;}
+
+  .season{padding:4rem 1.2rem;}
+  .season-header{flex-direction:column;gap:1rem;}
+  .timeline{grid-template-columns:1fr 1fr;gap:2rem;}
+  .timeline::before{display:none;}
+
+  .news{padding:4rem 1.2rem;}
+  .news-header{flex-direction:column;align-items:flex-start;gap:.8rem;}
+  .news-item{grid-template-columns:1fr;gap:.4rem;padding:1.4rem 0;}
+  .news-arrow{display:none;}
+
+  .contact{grid-template-columns:1fr;}
+  .contact-photo{min-height:50vw;}
+  .contact-photo-inner{padding:2.5rem 1.5rem;}
+  .contact-form-wrap{padding:2.5rem 1.5rem;}
+  .form-row{grid-template-columns:1fr;}
+
+  footer{padding:2.5rem 1.2rem 1.2rem;}
+  .footer-top{grid-template-columns:1fr;gap:2rem;}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center;}
+}
+
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr;}
+  .timeline{grid-template-columns:1fr;gap:1.5rem;}
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto;}
+  .g-item:nth-child(n){grid-column:span 1;}
+  .hero-h1{font-size:1.8rem;}
+  .section-h{font-size:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div class="loader" id="loader">
+  <div class="loader-text">FUJI RICE</div>
+  <div class="loader-bar"><div class="loader-bar-inner"></div></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    FUJI RICE
+    <small>Fujisanroku Rice Farm</small>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#concept">è¾²å®¶ã«ã¤ãã¦</a></li>
+    <li><a href="#commit">ãã ãã</a></li>
+    <li><a href="#product">ãç±³</a></li>
+    <li><a href="#video">åç»</a></li>
+    <li><a href="#season">è¾²æ¥­æ¦</a></li>
+    <li><a href="#news">ãç¥ãã</a></li>
+    <li><a href="#contact" class="nav-order">ãè³¼å¥ã»ãååã</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="ã¡ãã¥ã¼">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#concept" onclick="closeMobile()">è¾²å®¶ã«ã¤ãã¦</a>
+  <a href="#commit" onclick="closeMobile()">ãã ãã</a>
+  <a href="#product" onclick="closeMobile()">ãç±³</a>
+  <a href="#video" onclick="closeMobile()">åç»</a>
+  <a href="#season" onclick="closeMobile()">è¾²æ¥­æ¦</a>
+  <a href="#news" onclick="closeMobile()">ãç¥ãã</a>
+  <a href="#contact" onclick="closeMobile()">ãè³¼å¥ã»ãååã</a>
+</div>
+
+<!-- HERO SLIDESHOW -->
+<section class="hero">
+  <!-- ã¹ã©ã¤ã1: å¯å£«å±± -->
+  <div class="slide active" style="background:url('hero1.jpg') center/cover no-repeat"></div>
+  <!-- ã¹ã©ã¤ã2 -->
+  <div class="slide" style="background:url('hero2.jpg') center/cover no-repeat"></div>
+  <!-- ã¹ã©ã¤ã3 -->
+  <div class="slide" style="background:url('hero3.jpg') center/cover no-repeat"></div>
+  <!-- ã¹ã©ã¤ã3: ç°åé¢¨æ¯ -->
+  <div class="slide" style="background:linear-gradient(135deg, #1a1208 0%, #4a6035 50%, #a8c0c8 100%)"></div>
+  <!-- ã¹ã©ã¤ã4: æ¥æ¬ã®é¢¨æ¯ -->
+  <div class="slide" style="background:linear-gradient(135deg, #1a1208 0%, #4a6035 50%, #a8c0c8 100%)"></div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-en">Fujisanroku Rice Farm Â· Shizuoka, Japan</p>
+      <h1 class="hero-h1">
+        <em>ã«ãã®ãããã</em>
+        å¯å£«ã®æµã¿ã<br>ããªãã®é£åã¸
+      </h1>
+      <p class="hero-lead">
+        ä¸çéºç£ã»å¯å£«å±±ã®ãµãã¨ãæ¨é«200mã®é«åã§è²ã¤ç¹å¥æ ½å¹ç±³ã<br>
+        æ¸æ¾ãªä¼æµæ°´ã¨æ¼å¤ã®å¯æå·®ãçããå¯ä¸ç¡äºã®å³ããããå±ããã¾ãã
+      </p>
+      <div class="hero-btns">
+        <a href="#product" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          ãç±³ãè³¼å¥ãã
+        </a>
+        <a href="#concept" class="btn-ghost">
+          è¾²å®¶ã®ãã ãããè¦ã â
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-vertical">å¯å£«å±±éºã®å¤§å°ãè²ãä¸ç²</div>
+
+  <div class="slide-dots">
+    <div class="dot active" onclick="goSlide(0)"></div>
+    <div class="dot" onclick="goSlide(1)"></div>
+    <div class="dot" onclick="goSlide(2)"></div>
+    <div class="dot" onclick="goSlide(3)"></div>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="scroll-cue-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">FUJI RICE</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">NIJINO KIRAMEKI</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">ç¹å¥æ ½å¹ç±³</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">SHIZUOKA Â· JAPAN</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">å¯å£«ã®ä¼æµæ°´</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">NATURAL FARMING</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">FUJI RICE</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">NIJINO KIRAMEKI</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">ç¹å¥æ ½å¹ç±³</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">SHIZUOKA Â· JAPAN</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">å¯å£«ã®ä¼æµæ°´</span>
+    <span class="ticker-sep">â¦</span>
+    <span class="ticker-item">NATURAL FARMING</span>
+    <span class="ticker-sep">â¦</span>
+  </div>
+</div>
+
+<!-- CONCEPT -->
+<section class="concept" id="concept">
+  <div class="concept-photo">
+    <img src="concept.jpg" alt="èç®±ã¨å¯å£«å±± - FUJI RICE" loading="lazy">
+    <div class="concept-photo-overlay"></div>
+  </div>
+  <div class="concept-body">
+    <div class="concept-num reveal">01</div>
+    <p class="section-label reveal">Our Story</p>
+    <div class="section-rule reveal"></div>
+    <blockquote class="concept-quote reveal">
+      å¯å£«å±±ãä»°ããªããã<br>ç±³ã¨åãåãç¶ãã¦ã
+    </blockquote>
+    <h2 class="section-h reveal">ä»£ãåãç¶ã<br>ç±³è¾²å®¶ã®èªã</h2>
+    <div class="section-rule reveal"></div>
+    <p class="section-body reveal">
+      å¯å£«å±±ã®éºãæ¨é«200mã®é«åã«åºããç§ãã¡ã®ç°ãã¼ãäºä»£ã«ãããããã®å°ã§ä¸¹å¿µã«ãç±³ãè²ã¦ã¦ãã¾ããã<br><br>
+      å¯å£«å±±ã®éªè§£ãæ°´ãé·ãå¹´æãããã¦å°ä¸­ã§æ¿¾éãããä¼æµæ°´ãæ¼å¤15âä»¥ä¸ã®å¯æå·®ãããã¦ç«å±±ç°ç±æ¥ã®è±ããªåå£ããã®åå°ã ããæã¤ä¸ã¤ã®æµã¿ããã«ãã®ããããã®å¯ä¸ç¡äºã®çã¿ã¨é£æãçã¿åºãã¾ãã<br><br>
+      è¾²è¬ã»åå­¦è¥æãæ£è¡è¾²æ¥­ã®ååä»¥ä¸ã«æããç¹å¥æ ½å¹ã§ãå¤§å°ã®åãä¿¡ãä¸å¯§ã«è²ã¦ããç±³ãããå®¶åº­ã¸ç´æ¥ãå±ããã¾ãã
+    </p>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stat-item reveal">
+    <span class="stat-en">Elevation</span>
+    <div class="stat-num">200<span class="stat-unit">m</span></div>
+    <div class="stat-label">æ ½å¹æ¨é«</div>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-en">Temperature Gap</span>
+    <div class="stat-num">15<span class="stat-unit">â+</span></div>
+    <div class="stat-label">æ¼å¤ã®å¯æå·®</div>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-en">Pesticide Reduction</span>
+    <div class="stat-num">50<span class="stat-unit">%â</span></div>
+    <div class="stat-label">è¾²è¬åæ¸ç</div>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-en">Since 1870</span>
+    <div class="stat-num">150<span class="stat-unit">å¹´è¶</span></div>
+    <div class="stat-label">äºä»£ç¶ãç±³ã¥ãã</div>
+  </div>
+</div>
+
+<!-- COMMITMENT -->
+<section class="commit" id="commit">
+  <div class="commit-header">
+    <div class="reveal">
+      <p class="section-label">Our Commitment</p>
+      <h2 class="section-h">ä¸ã¤ã®<br>ãã ãã</h2>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-body reveal">
+      å¯å£«å±±éºãªãã§ã¯ã®èªç¶ç°å¢ãæå¤§éã«æ´»ããããç±³æ¬æ¥ã®æ¨ã¿ãå¼ãåºãããã«ãå¦¥åã®ãªãè¾²æ¥­ã¸ã®å§¿å¢ããä¸ç²ä¸ç²ã«å®¿ã£ã¦ãã¾ãã
+    </p>
+  </div>
+  <div class="commit-grid">
+    <div class="commit-card reveal">
+      <div class="commit-card-photo">
+        <img src="commit1.jpg" alt="ãã©ã¯ã¿ã¼ã¨èããæ©" loading="lazy">
+        <div class="commit-card-photo-overlay"></div>
+      </div>
+      <span class="commit-card-num">01</span>
+      <div class="commit-card-body">
+        <p class="commit-tag">MINERAL WATER</p>
+        <h3 class="commit-title">å¯å£«ã®ä¼æµæ°´</h3>
+        <p class="commit-text">å¯å£«å±±ã®éªè§£ãæ°´ãæº¶å²©å±¤ãæ°åå¹´ããã¦æ¿¾éãããä¼æµæ°´ãè¾²æ¥­ç¨æ°´ã¨ãã¦ä½¿ç¨ãè±å¯ãªããã¸ã¦ã ãããã©ã«ããç±³ã®æ¨ã¿ã¨çã¿ãå¼ãåºãã¾ãã</p>
+      </div>
+      <div class="commit-bar"></div>
+    </div>
+    <div class="commit-card reveal">
+      <div class="commit-card-photo">
+        <img src="commit2.jpg" alt="ä¸å¯§ã«èãããå" loading="lazy">
+        <div class="commit-card-photo-overlay"></div>
+      </div>
+      <span class="commit-card-num">02</span>
+      <div class="commit-card-body">
+        <p class="commit-tag">TEMPERATURE VARIATION</p>
+        <h3 class="commit-title">å¯æå·®è¾²æ³</h3>
+        <p class="commit-text">æ¨é«200mã®é«åæ°åãçãæ¼å¤15âä»¥ä¸ã®æ¸©åº¦å·®ãæ¥ä¸­ã®ååæã§èããç³åãå¤ã®å·æ¶¼ãªæ°æ¸©ã§ãã£ããåç¸®ãããçã¿ã®æ¿ããç±³ã«ä»ä¸ããã¾ãã</p>
+      </div>
+      <div class="commit-bar"></div>
+    </div>
+    <div class="commit-card reveal">
+      <div class="commit-card-photo">
+        <img src="commit3.jpg" alt="Kubotaãã©ã¯ã¿ã¼ã¨å¯å£«å±±" loading="lazy">
+        <div class="commit-card-photo-overlay"></div>
+      </div>
+      <span class="commit-card-num">03</span>
+      <div class="commit-card-body">
+        <p class="commit-tag">SPECIAL CULTIVATION</p>
+        <h3 class="commit-title">æ¸è¾²è¬æ ½å¹</h3>
+        <p class="commit-text">è¾²è¬ã»åå­¦è¥æãã§ããéãæããæ ½å¹ãå®è·µãåå£ã®åãæ´»ãããå®å¿ãã¦é£ã¹ããããç±³ã¥ãããå¿ããã¦ãã¾ãã</p>
+      </div>
+      <div class="commit-bar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FARM PHOTO BANNERï¼å®éã®è¾²å ´åçï¼ -->
+<div class="farm-banner reveal">
+  <img src="banner.jpg" alt="å¤ç¼ãã®å¯å£«å±±ã¨ç°åé¢¨æ¯" loading="lazy">
+  <div class="farm-banner-overlay">
+    <div class="farm-banner-text">
+      <small>From Our Farm</small>
+      å¯å£«å±±ãæãç°ãã¼ã§ãé»éè²ã«å®ã£ãç¨²ãåç©«
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT -->
+<section class="product" id="product">
+  <div class="product-inner">
+    <div class="product-header">
+      <div class="reveal">
+        <p class="section-label">Our Rice</p>
+        <h2 class="section-h" style="color:var(--white);">ã«ãã®ãããã</h2>
+      </div>
+      <a href="#contact" class="view-all reveal" style="color:var(--gold);border-color:rgba(200,168,74,.3);">ãã¹ã¦è¦ã â</a>
+    </div>
+    <div class="product-cards">
+      <div class="product-card reveal">
+        <div class="product-card-img">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg, #2c1810 0%, #4a3520 100%)"></div>
+          <span class="product-badge">NEW CROP 2025</span>
+        </div>
+        <div class="product-card-body">
+          <p class="product-variety">NIJINO KIRAMEKI</p>
+          <h3 class="product-name">ã«ãã®ãããã ç½ç±³</h3>
+          <p class="product-desc">ãµãããã¨ããé£æã¨ä¸åãªçã¿ãéå²¡çãèªãæ°åç¨®ãä¸å¯§ã«ç²¾ç±³ãå·ãã¦ãç¾å³ããããå¼å½ããã«ããã«ãæé©ã§ãã</p>
+          <div class="product-footer">
+            <div class="product-price">Â¥3,500<small>/ 5kg</small></div>
+            <a href="#contact" class="btn-order">æ³¨æãã</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-card-img">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg, #2c1810 0%, #4a3520 100%)"></div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-variety">NIJINO KIRAMEKI Â· FRESHLY MILLED</p>
+          <h3 class="product-name">ã«ãã®ãããã ç²¾ç±³</h3>
+          <p class="product-desc">ãæ³¨æãããã ãã¦ããç²¾ç±³ãã¦ãå±ããæ½ããã¦ã®é¦ãã¨çã¿ã¯æ ¼å¥ã§ãããç±³ã®é®®åº¦ã«ãã ããæ¹ã¸ããããã®ä¸åã</p>
+          <div class="product-footer">
+            <div class="product-price">Â¥3,500<small>/ 5kg</small></div>
+            <a href="#contact" class="btn-order">æ³¨æãã</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-card-img">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg, #2c1810 0%, #4a3520 100%)"></div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-variety">NIJINO KIRAMEKI Â· BROWN RICE</p>
+          <h3 class="product-name">ã«ãã®ãããã çç±³</h3>
+          <p class="product-desc">èè½ã»ã¬ãããã®ã¾ã¾æ®ããæ é¤è±å¯ãªçç±³ããã¿ãã³ã»é£ç©ç¹ç¶­ãã£ã·ããå¥åº·å¿åã®æ¹ã«é¸ã°ãã¦ãã¾ãã</p>
+          <div class="product-footer">
+            <div class="product-price">Â¥3,200<small>/ 5kg</small></div>
+            <a href="#contact" class="btn-order">æ³¨æãã</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section" id="video">
+  <div class="video-inner">
+    <div class="video-header">
+      <div class="reveal">
+        <p class="section-label">Farm Movie</p>
+        <h2 class="section-h" style="color:var(--white);">è¾²å ´ã®æ å</h2>
+      </div>
+      <a href="https://www.youtube.com/channel/UCvvaEEAZoCEwlv11ubKSWxg" target="_blank" rel="noopener" class="video-channel-link reveal">
+        YouTubeãã£ã³ãã«ãè¦ã â
+      </a>
+    </div>
+    <div class="video-grid" id="yt-grid">
+      <div class="video-loading" style="position:relative;grid-column:1/-1;padding:4rem 0;">
+        åç»ãèª­ã¿è¾¼ã¿ä¸­...
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var CHANNEL_ID='UCvvaEEAZoCEwlv11ubKSWxg';
+  var MAX_VIDEOS=6;
+  var RSS='https://www.youtube.com/feeds/videos.xml?channel_id='+CHANNEL_ID;
+  var API='https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(RSS);
+  var grid=document.getElementById('yt-grid');
+  function playIcon(){return '<div class="video-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--white)" stroke="none"><polygon points="6 3 20 12 6 21"/></svg></div>';}
+  function makeCard(v){
+    var id=v.guid.split(':').pop();
+    var card=document.createElement('div');
+    card.className='video-card reveal';
+    card.innerHTML='<div class="video-card-media" data-id="'+id+'">'+'<img class="video-card-thumb" src="https://img.youtube.com/vi/'+id+'/hqdefault.jpg" alt="'+v.title+'" loading="lazy">'+playIcon()+'</div>'+'<div class="video-card-body">'+'<h3 class="video-card-title">'+v.title+'</h3>'+'<p class="video-card-desc">'+new Date(v.pubDate).toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'})+'</p>'+'</div>';
+    card.querySelector('.video-card-media').addEventListener('click',function(){this.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" allowfullscreen allow="autoplay;encrypted-media"></iframe>';});
+    return card;
+  }
+  fetch(API).then(function(r){return r.json();}).then(function(data){
+    if(!data.items||!data.items.length){grid.innerHTML='<div class="video-loading" style="position:relative;grid-column:1/-1;padding:4rem 0;">åç»ãã¾ã ããã¾ãã</div>';return;}
+    grid.innerHTML='';
+    data.items.slice(0,MAX_VIDEOS).forEach(function(v){grid.appendChild(makeCard(v));});
+    grid.querySelectorAll('.reveal').forEach(function(el){if(typeof revealObserver!=='undefined') revealObserver.observe(el); else el.classList.add('visible');});
+  }).catch(function(){
+    grid.innerHTML='<div class="video-card reveal"><div class="video-card-media"><div class="video-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>YouTubeã«æ¥ç¶ã§ãã¾ããã§ãã</div></div><div class="video-card-body"><h3 class="video-card-title">åç»ã®èª­ã¿è¾¼ã¿ã«å¤±æ</h3><p class="video-card-desc"><a href="https://www.youtube.com/channel/'+CHANNEL_ID+'" target="_blank" style="color:var(--gold);">YouTubeãã£ã³ãã«ã§ç´æ¥ãè¦§ãã ãã â</a></p></div></div>';
+  });
+})();
+</script>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <p class="section-label reveal">Farm Gallery</p>
+    <h2 class="section-h reveal">è¾²å ´ã®åå­£</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="hero1.jpg" alt="ãã©ã¯ã¿ã¼ã§èãå¯å£«å±±éºã®ç°ãã¼" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="concept.jpg" alt="èç®±ã¨å¯å£«å±±" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="banner.jpg" alt="é²ã«åã¾ããå¤ç¼ãã®å¯å£«å±±" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="hero2.jpg" alt="å¤ç¼ãã®ç°ãã¼ã¨å¯å£«å±±" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="gallery1.jpg" alt="æç¼ãã®èµ¤å¯å£«" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="hero3.jpg" alt="èµ¤ãæã¾ãå¯å£«å±±" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="commit1.jpg" alt="GAIAãã©ã¯ã¿ã¼ã®èããæ©" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="commit2.jpg" alt="ä¸å¯§ã«èãããç" loading="lazy">
+    </div>
+    <div class="g-item reveal" onclick="openLightbox(this)">
+      <img src="commit3.jpg" alt="Kubotaãã©ã¯ã¿ã¼ã¨å¯å£«å±±" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="éãã">â</button>
+  <img src="" alt="æ¡å¤§ç»å" id="lightboxImg">
+</div>
+
+<!-- SEASON TIMELINE -->
+<section class="season" id="season">
+  <div class="season-header">
+    <div class="reveal">
+      <p class="section-label">Annual Schedule</p>
+      <h2 class="section-h">ä¸å¹´ã®è¾²æ¥­æ¦</h2>
+    </div>
+    <p class="section-body reveal" style="max-width:400px;">
+      å¯å£«å±±éºã®åå­£ã«åãããä¸å¯§ã«ç±³ã¥ãããç¶ãã¦ãã¾ããç¨®ã¾ãããåç©«ã¾ã§ããã¹ã¦ã®å·¥ç¨ã«å¿ãè¾¼ãã¦ã
+    </p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot">ð±</div>
+      <p class="timeline-season">Spring Â· 3ã5æ</p>
+      <h4 class="timeline-title">è²èã»ç°æ¤ã</h4>
+      <p class="timeline-text">ç¨®ç±¾ã®é¸å¥ã»æµ¸ç¨®ããä¸å¯§ã«ããã¦ã¹ã§è²èãã5æä¸æ¬ã6æä¸æ¬ã«ç°æ¤ããè¡ãã¾ãã</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot">âï¸</div>
+      <p class="timeline-season">Summer Â· 6ã8æ</p>
+      <h4 class="timeline-title">çè²ç®¡ç</h4>
+      <p class="timeline-text">æ°´ç®¡çã»é¤èã»è¿½è¥ããã¾ãã«ãå¯å£«ã®ä¼æµæ°´ããã£ã·ãå¼ããç¨²ã®çé·ãæ¯æ¥è¦å®ãã¾ãã</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot">ð¾</div>
+      <p class="timeline-season">Autumn Â· 9ã10æ</p>
+      <h4 class="timeline-title">åç©«ã»ä¹¾ç¥</h4>
+      <p class="timeline-text">é»éè²ã«å®ã£ãç©ãé©æã«åãåããä½æ¸©ã§ãã£ããä¹¾ç¥ããæ¨ã¿ãæå¤§éã«éãè¾¼ãã¾ãã</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot">âï¸</div>
+      <p class="timeline-season">Winter Â· 11ã2æ</p>
+      <h4 class="timeline-title">åã¥ããã»æºå</h4>
+      <p class="timeline-text">ææ©å è¥ãé¤ãè¾¼ã¿ãåå£åæãè¡ããªããç¿å¹´ã«åããåã¥ãããè¯ãåãè¯ãç±³ãã¤ããã¾ãã</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="news-header">
+    <div class="reveal">
+      <p class="section-label">News & Blog</p>
+      <h2 class="section-h">ãç¥ãã</h2>
+    </div>
+    <a href="#" class="view-all reveal">ä¸è¦§ãè¦ã â</a>
+  </div>
+  <div class="news-list">
+    <a href="#gallery" class="news-item reveal">
+      <span class="news-date">2026 Â· 04 Â· 01</span>
+      <span>
+        <span class="news-cat-badge">ãç¥ãã</span>
+        <span class="news-title">ä»¤å8å¹´ç£æ°ç±³ã®åè¡äºç´ãéå§ãã¾ãã</span>
+      </span>
+      <span class="news-arrow">â</span>
+    </a>
+    <a href="#gallery" class="news-item reveal">
+      <span class="news-date">2026 Â· 03 Â· 15</span>
+      <span>
+        <span class="news-cat-badge">è¾²å ´ã ãã</span>
+        <span class="news-title">æ¥ã®ç°èµ·ãããå§ã¾ãã¾ãã â ä»å¹´ãä¸å¯§ã«åãèãã¦ãã¾ã</span>
+      </span>
+      <span class="news-arrow">â</span>
+    </a>
+    <a href="#gallery" class="news-item reveal">
+      <span class="news-date">2025 Â· 10 Â· 20</span>
+      <span>
+        <span class="news-cat-badge">è¾²å ´ã ãã</span>
+        <span class="news-title">ä»¤å7å¹´ç£ã«ãã®ããããã®åç©«ãå®äº â ä»å¹´ãè¯è³ªãªä»ä¸ããã§ã</span>
+      </span>
+      <span class="news-arrow">â</span>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-photo">
+    <div style="width:100%;height:100%;background:#7a5c3a"></div>
+    <div class="contact-photo-inner">
+      <p class="section-label">Contact & Order</p>
+      <h2 class="section-h">ãè³¼å¥ã»<br>ãååã</h2>
+      <div class="section-rule"></div>
+      <p class="section-body">
+        ãç±³ã®ãè³¼å¥ããè³ªåãè¾²å ´è¦å­¦ã®ãç³ãè¾¼ã¿ãªã©ããæ°è»½ã«ãé£çµ¡ãã ãããå®æè³¼å¥ã»è´ç­åã®ãç¸è«ãæ¿ãã¾ãã
+      </p>
+      <div class="contact-info">
+        <div class="contact-info-item">ð 090-6803-3699ï¼å¹³æ¥ 9:00ã17:00ï¼</div>
+        <div class="contact-info-item">ð§ iwataku926@gmail.com</div>
+        <div class="contact-info-item">ð éå²¡çå¯å£«å®®å¸éæ¨378</div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-wrap">
+    <form class="contact-form" onsubmit="return handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>ãåå *</label>
+          <input type="text" placeholder="å±±ç° å¤ªé" required>
+        </div>
+        <div class="form-group">
+          <label>ã¡ã¼ã«ã¢ãã¬ã¹ *</label>
+          <input type="email" placeholder="taro@example.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>ãé»è©±çªå·</label>
+        <input type="tel" placeholder="090-0000-0000">
+      </div>
+      <div class="form-group">
+        <label>ãåãåããç¨®å¥</label>
+        <select>
+          <option>ãç±³ã®ãè³¼å¥ï¼ç½ç±³ 5kgï¼</option>
+          <option>ãç±³ã®ãè³¼å¥ï¼ç²¾ç±³ 5kgï¼</option>
+          <option>ãç±³ã®ãè³¼å¥ï¼çç±³ 5kgï¼</option>
+          <option>å®æè³¼å¥ã®ãç¸è«</option>
+          <option>è´ç­åã»ã¾ã¨ãè²·ã</option>
+          <option>ä»¤å8å¹´ç£ åè¡äºç´</option>
+          <option>è¾²å ´è¦å­¦ã®ãç³ãè¾¼ã¿</option>
+          <option>ãã®ä»ã®ãåãåãã</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>ã¡ãã»ã¼ã¸</label>
+        <textarea placeholder="ãè³ªåã»ãè¦æããæ°è»½ã«ã©ãã"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">éä¿¡ãã</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-brand-name">FUJI RICE</div>
+      <div class="footer-brand-en">Fujisanroku Rice Farm</div>
+      <p>éå²¡çå¯å£«å®®å¸éæ¨378<br>ä¸çéºç£ã»å¯å£«å±±ã®ãµãã¨ã§è²ã¦ã<br>ã«ãã®ãããããç£å°ç´éã§ãå±ããã¾ãã</p>
+    </div>
+    <div class="footer-col">
+      <h5>NAVIGATE</h5>
+      <ul>
+        <li><a href="#concept">è¾²å®¶ã«ã¤ãã¦</a></li>
+        <li><a href="#commit">ãã ãã</a></li>
+        <li><a href="#product">ãç±³ä¸è¦§</a></li>
+        <li><a href="#season">è¾²æ¥­æ¦</a></li>
+        <li><a href="#news">ãç¥ãã</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>PRODUCTS</h5>
+      <ul>
+        <li><a href="#product">ã«ãã®ããããï¼ç½ç±³ï¼</a></li>
+        <li><a href="#product">ã«ãã®ããããï¼ç²¾ç±³ï¼</a></li>
+        <li><a href="#product">ã«ãã®ããããï¼çç±³ï¼</a></li>
+        <li><a href="#contact">å®æè³¼å¥ãã©ã³</a></li>
+        <li><a href="#contact">è´ç­ã»ãã</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>LEGAL</h5>
+      <ul>
+        <li><a href="#">ç¹å®ååå¼æ³è¡¨è¨</a></li>
+        <li><a href="#">ãã©ã¤ãã·ã¼ããªã·ã¼</a></li>
+        <li><a href="#">è¾²å ´è¦å­¦ã«ã¤ãã¦</a></li>
+        <li><a href="#contact">ãåãåãã</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2026 FUJI RICE All rights reserved.</p>
+    <div class="footer-sns">
+      <a href="#" title="Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="YouTube">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.6 4 12 4 12 4s-7.6 0-9.4.4A3 3 0 0 0 .5 6.5 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.1c1.8.4 9.4.4 9.4.4s7.6 0 9.4-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0})" aria-label="ãã¼ã¸ä¸é¨ã¸">â</button>
+
+<script>
+// Loading screen
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('hide'), 2000);
+});
+
+// NAV scroll
+const nav = document.getElementById('nav');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  backTop.classList.toggle('show', window.scrollY > 600);
+});
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+function closeMobile() {
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Slideshow
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+function goSlide(n) {
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current = n;
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+setInterval(() => goSlide((current + 1) % slides.length), 6000);
+
+// Scroll reveal (Intersection Observer)
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Lightbox
+function openLightbox(el) {
+  const src = el.querySelector('img').src;
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  alert('ãåãåãããããã¨ããããã¾ãã\nåå®¹ãç¢ºèªããæãè¿ããé£çµ¡ãããã¾ãã');
+  e.target.reset();
+  return false;
+}
+</script>
+</body>
+</html>
