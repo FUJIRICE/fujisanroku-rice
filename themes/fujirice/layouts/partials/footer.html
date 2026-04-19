@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">🌾 FUJI RICE</div>
+        <p class="footer-desc">富士山麓の豊かな自然と清らかな雪解け水で育てた、特別なお米。</p>
+        <div class="footer-social">
+          {{- with site.Params.instagramURL }}<a href="{{ . }}" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">IG</a>{{- end }}
+          {{- with site.Params.youtubeURL }}<a href="{{ . }}" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">YT</a>{{- end }}
+          {{- with site.Params.lineURL }}<a href="{{ . }}" class="social-link" target="_blank" rel="noopener" aria-label="LINE" style="background:#06C755;">LINE</a>{{- end }}
+        </div>
+        <div class="footer-purchase"><a href="{{ site.Params.purchaseURL }}" class="btn btn-primary" target="_blank" rel="noopener">🛒 Yahooショッピングで購入</a></div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-nav-title">ナビゲーション</p>
+        <ul class="footer-nav-list">
+          <li><a href="{{ "/" | relURL }}">ホーム</a></li>
+          <li><a href="{{ "/pages/about/" | relURL }}">FUJI RICEについて</a></li>
+          <li><a href="{{ "/posts/" | relURL }}">ブログ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-nav-title">お問い合わせ</p>
+        <ul class="footer-nav-list">
+          <li><a href="{{ site.Params.lineURL }}" target="_blank" rel="noopener">💬 LINEで相談する</a></li>
+          <li><a href="{{ site.Params.instagramURL }}" target="_blank" rel="noopener">📷 Instagram</a></li>
+          <li><a href="{{ site.Params.youtubeURL }}" target="_blank" rel="noopener">📺 YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {{ now.Year }} FUJI RICE. All Rights Reserved.</p>
+      <p>富士山麓の恵みをあなたの食卓へ 🌾</p>
+    </div>
+  </div>
+</footer>
