@@ -1,0 +1,52 @@
+name: 毎日の日記自動更新
+
+on:
+  schedule:
+    - cron: '0 22 * * *'
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  write-diary:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: 日付と挨拶を決定
+        id: dt
+        run: |
+          echo "date=$(TZ=Asia/Tokyo date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
+          echo "year=$(TZ=Asia/Tokyo date '+%Y')" >> $GITHUB_OUTPUT
+          echo "month=$(TZ=Asia/Tokyo date '+%m')" >> $GITHUB_OUTPUT
+          echo "day=$(TZ=Asia/Tokyo date '+%d')" >> $GITHUB_OUTPUT
+          HOUR=$(TZ=Asia/Tokyo date '+%H')
+          if [ "$HOUR" -lt 12 ]; then
+            echo "greeting=おはようございます" >> $GITHUB_OUTPUT
+            echo "time=朝" >> $GITHUB_OUTPUT
+          else
+            echo "greeting=こんばんは" >> $GITHUB_OUTPUT
+            echo "time=夜" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 日記フォルダ作成
+        run: mkdir -p diary/${{ steps.dt.outputs.year }}
+
+      - name: 日記を書く
+        run: |
+          FILE="diary/${{ steps.dt.outputs.year }}/${{ steps.dt.outputs.month }}.md"
+          DATE_JP="${{ steps.dt.outputs.year }}年${{ steps.dt.outputs.month }}月${{ steps.dt.outputs.day }}日"
+          GREETING="${{ steps.dt.outputs.greeting }}"
+          TIME="${{ steps.dt.outputs.time }}"
+          printf "\\n## ${DATE_JP} ${TIME}\\n\\n${GREETING}。富士山麓で今日も一日が始まりました。\\n" >> $FILE
+
+      - name: コミット & プッシュ
+        run: |
+          git config user.name "FUJI RICE Bot"
+          git config user.email "iwataku926@gmail.com"
+          git add diary/
+          git diff --staged --quiet || git commit -m "${{ steps.dt.outputs.date }} ${{ steps.dt.outputs.time }}の日記"
+          git push
