@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ site.LanguageCode | default \"ja\" }}">
+<html lang="{{ site.LanguageCode | default "ja" }}">
 <head>
   {{- partial "head.html" . }}
 </head>
 <body class="{{ if .IsHome }}page-home{{ end }}">
+
   {{- partial "header.html" . }}
+
   <main id="main-content">
     {{- block "main" . }}{{- end }}
   </main>
+
   {{- partial "footer.html" . }}
+
   <script src="/js/main.js" defer></script>
 </body>
 </html>
