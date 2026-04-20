@@ -1194,7 +1194,7 @@ footer {
   </div>
   <div class="video-wrap reveal">
     <iframe
-      src="https://www.youtube.com/embed/_HzcLq_Tt1w"
+      src="https://www.youtube.com/embed/D3edpfz2qqU"
       title="富士山麓タイムラプス | FUJI RICE 公式チャンネル"
       id="yt-latest-iframe"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1382,26 +1382,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 </script>
 
-<script>
-/* 最新YouTube動画を自動取得して埋め込む */
+</* 最新横動画を自動取得（Shorts除外） */
 (async function() {
-  const channelId = 'UCvvaEEAZoCEwlv11ubKSWxg';
+  const CHANNEL_ID = 'UCvvaEEAZoCEwlv11ubKSWxg';
+  // ★ 再生リストID: 岩田さんが横動画専用リストを作成後にここに貼る
+  const PLAYLIST_ID = ''; // 例: 'PLxxxxxxxxxxxxxxxx'
   const iframe = document.getElementById('yt-latest-iframe');
   if (!iframe) return;
   try {
-    const rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + channelId;
-    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl));
+    let videoId = '';
+    if (PLAYLIST_ID) {
+      // 再生リスト方式（推奨）
+      iframe.src = 'https://www.youtube.com/embed/videoseries?list=' + PLAYLIST_ID + '&rel=0&modestbranding=1';
+      return;
+    }
+    // フォールバック: RSSからShorts除外して最新横動画を取得
+    const rss = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
+    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rss));
     const text = await res.text();
     const xml = new DOMParser().parseFromString(text, 'text/xml');
-    const videoId = xml.querySelector('videoId')?.textContent
-                 || xml.querySelector('yt\\:videoId')?.textContent
-                 || (xml.querySelector('entry link') || {}).getAttribute?.('href')?.split('v=')[1];
-    if (videoId) {
-      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&autoplay=0';
+    const entries = Array.from(xml.querySelectorAll('entry'));
+    for (const entry of entries) {
+      const title = (entry.querySelector('title') || {}).textContent || '';
+      // Shortsを除外（タイトルに#Shortsまたは短時間の動画を除く）
+      if (title.toLowerCase().includes('short') || title.includes('#Short')) continue;
+      const vid = (entry.querySelector('videoId') || entry.querySelector('yt\\:videoId') || {}).textContent;
+      if (vid) { videoId = vid; break; }
     }
-  } catch(e) {
-    /* フォールバック: 直近の動画をそのまま表示 */
-  }
+    if (videoId) iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&modestbranding=1';
+  } catch(e) { /* フォールバック動画をそのまま表示 */ }
 })();
 </script>
 </body>
