@@ -1377,35 +1377,41 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (!target) return;
     e.preventDefault();
     const top = target.getBoundingClientRect().top + window.scrollY - 78;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-/* 農場の映像: 毎回最新の横動画1本のみ表示（Shorts自動除外） */
+    window.scrollTo({ top, behavior: 'smooth' })/* 農場の映像: 最新横動画1本のみ自動表示（Shorts除外・プロキシ多段フォールバック） */
 (async function() {
   const CH = 'UCvvaEEAZoCEwlv11ubKSWxg';
-  const PL = ''; // 横動画専用再生リストIDをここに入れると自動切替
+  const PL = ''; // 横動画専用再生リストIDをここへ
   const iframe = document.getElementById('yt-latest-iframe');
   if (!iframe) return;
   if (PL) {
     iframe.src = 'https://www.youtube.com/embed/videoseries?list=' + PL + '&rel=0&modestbranding=1';
     return;
   }
-  try {
-    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id=' + CH));
-    const text = await res.text();
-    // entryブロックを正規表現で分割
-    const entries = text.split('<entry>').slice(1);
-    for (const entry of entries) {
-      const titleMatch = entry.match(/<title>([^<]*)</title>/);
-      const idMatch = entry.match(/<yt:videoId>([^<]+)</yt:videoId>/);
-      if (!titleMatch || !idMatch) continue;
-      const title = titleMatch[1];
-      const videoId = idMatch[1];
-      // Shorts除外（タイトルに"short"を含む場合スキップ）
-      if (/short/i.test(title)) continue;
-      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&modestbranding=1';
-      break;
-    }
-  } catch(e) { /* フォールバック動画をそのまま維持 */ }
+  const rss = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CH;
+  const proxies = [
+    'https://corsproxy.io/?' + encodeURIComponent(rss),
+    'https://api.allorigins.win/raw?url=' + encodeURIComponent(rss),
+    'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(rss)
+  ];
+  for (const url of proxies) {
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 5000);
+      const res = await fetch(url, { signal: ctrl.signal });
+      clearTimeout(t);
+      if (!res.ok) continue;
+      const text = await res.text();
+      const entries = text.split('<entry>').slice(1);
+      for (const entry of entries) {
+        const titleM = entry.match(/<title>([^<]*)<\/title>/);
+        const idM    = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/);
+        if (!titleM || !idM) continue;
+        if (/short/i.test(titleM[1])) continue;
+        iframe.src = 'https://www.youtube.com/embed/' + idM[1] + '?rel=0&modestbranding=1';
+        return;
+      }
+    } catch(e) { continue; }
+  }
 })();
 </script>
 </body>
