@@ -344,3 +344,7 @@ img[loading="lazy"].loaded{opacity:1}
   .bl-article-body { padding:1.2rem; }
   .bl-banner-title { font-size:1.5rem; }
 }
+
+/* === BLOG BANNER NAVBAR FIX === */
+.bl-banner { padding-top: 5.5rem !important; }
+@media(max-width:640px){ .bl-banner { padding-top: 5rem !important; } }
