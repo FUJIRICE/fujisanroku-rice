@@ -44,7 +44,7 @@ body {
 
 ::selection { background: var(--gold); color: var(--dark); }
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: var(--gold); }
 
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -489,7 +489,7 @@ header.scrolled {
    ============================================================ */
 .features {
   background: var(--dark);
-  padding: 100px 4%;
+  padding: 80px 4%;
 }
 .features-head { text-align:center; margin-bottom:72px; }
 .features-head .sec-title { color:var(--white); }
@@ -749,7 +749,7 @@ header.scrolled {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto 40px;
   background: var(--dark);
 }
@@ -1380,37 +1380,45 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
-</script>
-
-</* 最新横動画を自動取得（Shorts除外） */
+</sc/* 農場の映像: 毎回最新の横動画1本のみ表示（Shorts自動除外） */
 (async function() {
   const CHANNEL_ID = 'UCvvaEEAZoCEwlv11ubKSWxg';
-  // ★ 再生リストID: 岩田さんが横動画専用リストを作成後にここに貼る
+  // ★ 再生リストID（横動画専用リストを作成後にここへ貼る）
   const PLAYLIST_ID = ''; // 例: 'PLxxxxxxxxxxxxxxxx'
   const iframe = document.getElementById('yt-latest-iframe');
   if (!iframe) return;
+
+  // 再生リスト方式（設定済みの場合）
+  if (PLAYLIST_ID) {
+    iframe.src = 'https://www.youtube.com/embed/videoseries?list='
+      + PLAYLIST_ID + '&index=0&rel=0&modestbranding=1';
+    return;
+  }
+
+  // フォールバック: RSS から Shorts を除外して最新1本だけ取得
   try {
-    let videoId = '';
-    if (PLAYLIST_ID) {
-      // 再生リスト方式（推奨）
-      iframe.src = 'https://www.youtube.com/embed/videoseries?list=' + PLAYLIST_ID + '&rel=0&modestbranding=1';
-      return;
-    }
-    // フォールバック: RSSからShorts除外して最新横動画を取得
-    const rss = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
-    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rss));
-    const text = await res.text();
-    const xml = new DOMParser().parseFromString(text, 'text/xml');
+    const rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
+    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl));
+    const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
     const entries = Array.from(xml.querySelectorAll('entry'));
+
     for (const entry of entries) {
-      const title = (entry.querySelector('title') || {}).textContent || '';
-      // Shortsを除外（タイトルに#Shortsまたは短時間の動画を除く）
-      if (title.toLowerCase().includes('short') || title.includes('#Short')) continue;
-      const vid = (entry.querySelector('videoId') || entry.querySelector('yt\\:videoId') || {}).textContent;
-      if (vid) { videoId = vid; break; }
+      const title = entry.querySelector('title')?.textContent || '';
+      // タイトルに Shorts・短時間を示すキーワードが含まれる動画をスキップ
+      const isShort = /short|#short|shorts/i.test(title);
+      if (isShort) continue;
+
+      // yt:videoId タグを取得
+      const vidEl = entry.getElementsByTagNameNS('http://www.youtube.com/xml/schemas/2015', 'videoId')[0]
+                 || entry.querySelector('videoId');
+      const videoId = vidEl?.textContent;
+      if (!videoId) continue;
+
+      // 最新横動画1本のみ埋め込み
+      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&modestbranding=1';
+      break; // 1本見つかったら終了
     }
-    if (videoId) iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&modestbranding=1';
-  } catch(e) { /* フォールバック動画をそのまま表示 */ }
+  } catch (e) { /* フォールバック動画（D3edpfz2qqU）をそのまま表示 */ }
 })();
 </script>
 </body>
