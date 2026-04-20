@@ -22,11 +22,8 @@
               {{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}
             {{- end }}
           {{- end }}
-          {{- with $postImg }}
-          <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
-          {{- else }}
-          <div class="post-card-image-placeholder">🌾</div>
-          {{- end }}
+          {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
+          <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="lazy">
           {{- with .Params.categories }}
           <span class="post-card-category">{{ index . 0 }}</span>
           {{- end }}
