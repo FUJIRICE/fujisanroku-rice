@@ -82,14 +82,18 @@
       <h2 class="rh-section-title">最新の投稿</h2>
     </div>
     <div class="rh-post-list">
+      {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
       {{- range (where .Site.RegularPages "Type" "posts") | first 6 }}
       <a href="{{ .Permalink }}" class="rh-post-item">
         <div class="rh-post-item-img">
-          {{- with .Params.image }}
-          <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
-          {{- else }}
-          <div class="rh-post-no-img">🌾</div>
+          {{- $postImg := .Params.image }}
+          {{- if not $postImg }}
+            {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
+            {{- if $matches }}
+              {{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}
+            {{- end }}
           {{- end }}
+          <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="lazy">
         </div>
         <div class="rh-post-item-body">
           <time class="rh-post-date">{{ .Date.Format "2006.01.02" }}</time>
