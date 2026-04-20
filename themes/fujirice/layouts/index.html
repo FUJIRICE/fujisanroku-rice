@@ -1,151 +1,132 @@
 {{- define "main" }}
 
-<!-- ============ Hero Section ============ -->
-<section class="hero">
-  <div class="hero-bg">
-    {{- with site.Params.heroImage }}
-    <img src="{{ . }}" alt="富士山と田んぼ" loading="eager">
-    {{- end }}
+<!-- ============ HERO ============ -->
+<section class="rh-hero">
+  <div class="rh-hero-bg">
+    <img src="https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg"
+         alt="富士山と田んぼ" loading="eager">
+    <div class="rh-hero-overlay"></div>
   </div>
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <span class="hero-badge">🌾 産地直送 · 富士山麓</span>
-    <h1 class="hero-title">{{ site.Params.heroTitle }}</h1>
-    <p class="hero-subtitle">{{ site.Params.heroSubtitle }}</p>
-
-    <div class="hero-actions">
-      <a href="{{ site.Params.purchaseURL }}" class="btn btn-primary" target="_blank" rel="noopener">
+  <div class="rh-hero-content">
+    <p class="rh-hero-eyebrow">富士山麓 · 産地直送 · 静岡県富士宮市</p>
+    <h1 class="rh-hero-heading">
+      富士山麓で育てる、<br>
+      <em>雪解け水のお米</em>
+    </h1>
+    <p class="rh-hero-sub">清らかな水と豊かな自然の恵みで育てた、<br>特別なお米をあなたの食卓へ</p>
+    <div class="rh-hero-btns">
+      <a href="{{ site.Params.purchaseURL }}" class="rh-btn rh-btn-gold" target="_blank" rel="noopener">
         🛒 今すぐ購入する
       </a>
-      <a href="{{ site.Params.lineURL }}" class="btn btn-line" target="_blank" rel="noopener">
-        💬 LINEで相談する
-      </a>
-      <a href="#posts-section" class="btn btn-outline">
-        ブログを読む
+      <a href="{{ site.Params.lineURL }}" class="rh-btn rh-btn-line-hero" target="_blank" rel="noopener">
+        💬 LINEで相談
       </a>
     </div>
   </div>
-
-  <div class="hero-scroll">SCROLL</div>
+  <div class="rh-scroll-hint">
+    <span>SCROLL</span>
+    <div class="rh-scroll-line"></div>
+  </div>
 </section>
 
-<!-- ============ Features Strip ============ -->
-<div class="features-strip">
-  <div class="container">
-    <div class="feature-item">
-      <span class="feature-icon">🏔️</span>
-      <div class="feature-text">
-        <strong>富士山麓産</strong>
-        <span>標高の高い清浄な環境</span>
-      </div>
-    </div>
-    <div class="feature-item">
-      <span class="feature-icon">💧</span>
-      <div class="feature-text">
-        <strong>雪解け水使用</strong>
-        <span>ミネラル豊富な天然水</span>
-      </div>
-    </div>
-    <div class="feature-item">
-      <span class="feature-icon">🌱</span>
-      <div class="feature-text">
-        <strong>こだわりの栽培</strong>
-        <span>安心・安全な農法</span>
-      </div>
-    </div>
-    <div class="feature-item">
-      <span class="feature-icon">📦</span>
-      <div class="feature-text">
-        <strong>産地直送</strong>
-        <span>新鮮なままお届け</span>
-      </div>
-    </div>
+<!-- ============ STORY ============ -->
+<section class="rh-story">
+  <div class="rh-story-text">
+    <span class="rh-story-label">OUR STORY</span>
+    <h2 class="rh-story-title">一粒の贅沢</h2>
+    <p class="rh-story-body">
+      富士山麓に湧く清らかな湧水が流れる、この地にしか<br>
+      「富士のお米」は育まれます。<br><br>
+      土づくりから収穫まで、すべての工程に向き合う。<br>
+      安全で安心な農法を守り続け、<br>
+      「一粒の贅沢」と呼ばれる所以です。<br><br>
+      その信念を、一粒の米に込めています。
+    </p>
+    <a href="{{ "/pages/about/" | relURL }}" class="rh-link-arrow">詳しく見る <span>→</span></a>
+  </div>
+  <div class="rh-story-photo">
+    <img src="https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg"
+         alt="富士山の田んぼ" loading="lazy">
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<div class="rh-features">
+  <div class="rh-feature">
+    <span class="rh-feature-icon">🏔️</span>
+    <strong>富士山麓産</strong>
+    <span>標高の高い清浄な環境</span>
+  </div>
+  <div class="rh-feature">
+    <span class="rh-feature-icon">💧</span>
+    <strong>雪解け水使用</strong>
+    <span>ミネラル豊富な天然水</span>
+  </div>
+  <div class="rh-feature">
+    <span class="rh-feature-icon">🌱</span>
+    <strong>こだわりの栽培</strong>
+    <span>安心・安全な農法</span>
+  </div>
+  <div class="rh-feature">
+    <span class="rh-feature-icon">📦</span>
+    <strong>産地直送</strong>
+    <span>新鮮なままお届け</span>
   </div>
 </div>
 
-<!-- ============ Latest Posts ============ -->
-<section class="posts-section" id="posts-section">
-  <div class="container">
-    <h2 class="section-title">最新の投稿</h2>
-    <p class="section-subtitle">田んぼの様子や農業の日常をお届けします</p>
-
-    <div class="posts-grid">
-      {{- $posts := (where .Site.RegularPages "Type" "posts") | first 6 }}
-      {{- range $posts }}
-      <article class="post-card">
-        <div class="post-card-image">
+<!-- ============ LATEST POSTS ============ -->
+<section class="rh-posts">
+  <div class="rh-posts-inner">
+    <div class="rh-section-head">
+      <span class="rh-section-label">LATEST POSTS</span>
+      <h2 class="rh-section-title">最新の投稿</h2>
+    </div>
+    <div class="rh-post-list">
+      {{- range (where .Site.RegularPages "Type" "posts") | first 6 }}
+      <a href="{{ .Permalink }}" class="rh-post-item">
+        <div class="rh-post-item-img">
           {{- with .Params.image }}
           <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
           {{- else }}
-          <div class="post-card-image-placeholder">🌾</div>
-          {{- end }}
-          {{- with .Params.categories }}
-          <span class="post-card-category">{{ index . 0 }}</span>
+          <div class="rh-post-no-img">🌾</div>
           {{- end }}
         </div>
-        <div class="post-card-body">
-          <div class="post-card-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
-          </div>
-          <h3 class="post-card-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h3>
-          <p class="post-card-excerpt">{{ .Summary }}</p>
-          <div class="post-card-footer">
-            <a href="{{ .Permalink }}" class="read-more">続きを読む</a>
-          </div>
+        <div class="rh-post-item-body">
+          <time class="rh-post-date">{{ .Date.Format "2006.01.02" }}</time>
+          <p class="rh-post-title-text">{{ .Title }}</p>
         </div>
-      </article>
+        <span class="rh-post-arr">›</span>
+      </a>
       {{- end }}
     </div>
-
-    {{- if gt (len (where .Site.RegularPages "Type" "posts")) 6 }}
-    <div class="text-center mt-6">
-      <a href="{{ "/posts/" | relURL }}" class="btn btn-primary">すべての投稿を見る</a>
-    </div>
-    {{- end }}
-  </div>
-</section>
-
-<!-- ============ About Section ============ -->
-<section style="background:var(--offwhite-dark);">
-  <div class="container-narrow" style="text-align:center;">
-    <h2 class="section-title">FUJI RICEについて</h2>
-    <p class="section-subtitle">富士山麓で受け継ぐ、米作りの心</p>
-    <p style="font-size:1.05rem;line-height:2;color:var(--ink-light);margin-bottom:2rem;">
-      富士山の麓、四季折々の自然の中で、私たちは一粒一粒のお米を大切に育てています。<br>
-      清らかな雪解け水と肥沃な大地が育む、FUJI RICEの味をぜひご体験ください。
-    </p>
-    <a href="{{ "/pages/about/" | relURL }}" class="btn btn-primary">詳しく見る</a>
-  </div>
-</section>
-
-<!-- ============ Purchase CTA ============ -->
-<section class="cta-section">
-  <div class="container">
-    <h2 class="section-title">FUJI RICEをお試しください</h2>
-    <p class="section-subtitle">Yahooショッピングにて販売中 · 送料無料対応</p>
-    <div class="cta-buttons">
-      <a href="{{ site.Params.purchaseURL }}" class="btn btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem;padding:1rem 2.5rem;">
-        🛒 Yahooショッピングで購入する
-      </a>
+    <div class="rh-posts-cta">
+      <a href="{{ "/posts/" | relURL }}" class="rh-btn-outline">すべての投稿を見る</a>
     </div>
   </div>
 </section>
 
-<!-- ============ LINE Section ============ -->
-<section class="line-section">
-  <div class="container">
-    <div class="line-card">
-      <div class="line-icon">💬</div>
-      <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:0.5rem;">LINE公式アカウント</h2>
-      <p style="color:var(--ink-muted);font-size:0.95rem;">お米の選び方、栽培の様子など気軽にご相談ください</p>
-      <p class="line-id">{{ site.Params.lineID }}</p>
-      <a href="{{ site.Params.lineURL }}" class="btn btn-line" target="_blank" rel="noopener">
-        LINEで友だち追加する
-      </a>
-    </div>
+<!-- ============ BUY CTA ============ -->
+<section class="rh-cta">
+  <div class="rh-cta-inner">
+    <span class="rh-cta-label">Yahooショッピング公式店</span>
+    <h2 class="rh-cta-title">FUJI RICEをお試しください</h2>
+    <p class="rh-cta-sub">送料無料対応 · 産地直送 · 安心の品質保証</p>
+    <a href="{{ site.Params.purchaseURL }}" class="rh-btn-gold-lg" target="_blank" rel="noopener">
+      🛒 Yahooショッピングで購入する
+    </a>
+  </div>
+</section>
+
+<!-- ============ LINE ============ -->
+<section class="rh-line">
+  <div class="rh-line-inner">
+    <div class="rh-line-icon">💬</div>
+    <h2 class="rh-line-title">LINE公式アカウント</h2>
+    <p class="rh-line-sub">お米の選び方、栽培の様子など気軽にご相談ください</p>
+    <p class="rh-line-id">{{ site.Params.lineID }}</p>
+    <a href="{{ site.Params.lineURL }}" class="rh-btn-line-lg" target="_blank" rel="noopener">
+      LINEで友だち追加する
+    </a>
   </div>
 </section>
 
