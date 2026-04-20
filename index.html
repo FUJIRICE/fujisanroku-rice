@@ -27,7 +27,7 @@
     --cream: #f9f5ed;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     font-family: 'Noto Serif JP', 'Shippori Mincho', serif;
@@ -352,6 +352,7 @@
     background: var(--black);
     color: var(--white);
     padding: 120px 40px;
+    overflow: hidden;
   }
 
   .concept-inner {
@@ -361,7 +362,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
+    min-width: 0;
   }
+  .concept-inner > * { min-width: 0; }
 
   .concept-text .section-title { color: var(--white); }
 
@@ -582,7 +585,7 @@
 
   .gallery-item:hover img { transform: scale(1.05); }
 
-  /* ===== CTA BANNER ===== */
+  /* ===== CTA �ANNER ===== */
   .cta-banner {
     position: relative;
     padding: 120px 40px;
@@ -593,7 +596,7 @@
   .cta-banner-bg {
     position: absolute;
     inset: 0;
-    x-index: 0;
+    z-index: 0;
   }
 
   .cta-banner-bg img {
@@ -838,7 +841,7 @@
     position: fixed;
     inset: 0;
     background: rgba(10,10,10,0.97);
-    y-index: 999;
+    z-index: 999;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -918,7 +921,7 @@
   <a href="#" class="logo">
     <span class="logo-main">FUJI RICE</span>
     <span class="logo-sub">富士山麓 特別栽培米</span>
-  8/a>
+  </a>
   <nav>
     <a href="#concept">ブランドコンセプト</a>
     <a href="#products">商品ラインナップ</a>
@@ -1011,7 +1014,7 @@
       <div class="feature-num">01</div>
       <div class="feature-icon">💧</div>
       <h3 class="feature-title">富士山麓の湧水</h3>
-      <p class="feature-desc">富士山の地下を何十年もかけて浄化された、ミネラル豊富な清らかな湧水だけで育てます。水が美味しければ、米も美味しい。</p>
+      <p class="feature-desc">富士山の地下を何十年も���けて浄化された、ミネラル豊富な清らかな湧水だけで育てます。水が美味しければ、米も美味しい。</p>
     </div>
     <div class="feature-card reveal">
       <div class="feature-num">02</div>
@@ -1050,7 +1053,7 @@
         <div class="product-overlay">
           <p class="product-label">Natural</p>
           <h3 class="product-name">にじのきらめき 玄米</h3>
-          <p class="product-desc">栄養価の高い胚芽・ぬかをそのままに。素材の力をまるごと届けます。</p>
+          <p class="product-desc">栄養価の官い胚芽・ぬかをそのままに。素材の力をまるごと届けます。</p>
         </div>
       </div>
       <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="product-card reveal" style="display:block; text-decoration:none;">
