@@ -1,116 +1,83 @@
 {{- define "main" }}
 
-<!-- ============ COMPACT HERO ============ -->
-<section class="rh-hero rh-hero--compact">
-  <div class="rh-hero-bg">
-    <img src="https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" alt="富士山と田んぼ" loading="eager">
-    <div class="rh-hero-overlay"></div>
+<!-- ===== BLOG TOP BANNER (slim) ===== -->
+<div class="bl-banner">
+  <div class="bl-banner-inner">
+    <p class="bl-banner-tag">富士山麓 農場だより</p>
+    <h1 class="bl-banner-title">田んぼからの最新情報</h1>
+    <p class="bl-banner-sub">富士山の雪解け水と大地が育むお米づくりの記録</p>
   </div>
-  <div class="rh-hero-content">
-    <p class="rh-hero-eyebrow">富士山麓 · 産地直送 · 静岡県富士宮市</p>
-    <h1 class="rh-hero-heading">富士山麓で育てる、<br><em>雪解け水のお米</em></h1>
-    <div class="rh-hero-btns">
-      <a href="{{ site.Params.purchaseURL }}" class="rh-btn rh-btn-gold" target="_blank" rel="noopener">🛒 今すぐ購入する</a>
-      <a href="{{ site.Params.lineURL }}" class="rh-btn rh-btn-line-hero" target="_blank" rel="noopener">💬 LINEで相談</a>
-    </div>
-  </div>
-</section>
+</div>
 
-<!-- ============ 最新記事（全文表示） ============ -->
-<section class="rh-latest">
-  <div class="rh-latest-inner">
-    <div class="rh-section-head">
-      <span class="rh-section-label">LATEST</span>
-      <h2 class="rh-section-title">最新の農場だより</h2>
-    </div>
-    {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
-    {{- range (where .Site.RegularPages "Type" "posts") | first 3 }}
-    <article class="rh-latest-post">
-      <div class="rh-latest-post-img">
+<!-- ===== 最新記事 全文表示 ===== -->
+<main class="bl-main">
+  <div class="bl-container">
+
+    <!-- 最新3件 全文 -->
+    <section class="bl-recent">
+      {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
+      {{- range (where .Site.RegularPages "Type" "posts") | first 3 }}
+      <article class="bl-article">
         {{- $postImg := .Params.image }}
         {{- if not $postImg }}
           {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
           {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
         {{- end }}
-        <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="eager">
-      </div>
-      <div class="rh-latest-post-body">
-        <time class="rh-latest-post-date">{{ .Date.Format "2006年1月2日" }}</time>
-        <h3 class="rh-latest-post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <div class="rh-latest-post-content">{{ .Content }}</div>
-      </div>
-    </article>
-    {{- end }}
-  </div>
-</section>
-
-<!-- ============ 記事一覧グリッド ============ -->
-<section class="rh-posts">
-  <div class="rh-posts-inner">
-    <div class="rh-section-head">
-      <span class="rh-section-label">BLOG</span>
-      <h2 class="rh-section-title">過去の投稿</h2>
-    </div>
-    <div class="rh-post-list">
-      {{- range (where .Site.RegularPages "Type" "posts") | first 9 | after 3 }}
-      <a href="{{ .Permalink }}" class="rh-post-item">
-        <div class="rh-post-item-img">
-          {{- $postImg := .Params.image }}
-          {{- if not $postImg }}
-            {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
-            {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
-          {{- end }}
-          <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="lazy">
+        <div class="bl-article-hero">
+          <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="eager">
         </div>
-        <div class="rh-post-item-body">
-          <time class="rh-post-date">{{ .Date.Format "2006.01.02" }}</time>
-          <p class="rh-post-title-text">{{ .Title }}</p>
+        <div class="bl-article-body">
+          <time class="bl-article-date">{{ .Date.Format "2006年1月2日" }}</time>
+          <h2 class="bl-article-title">{{ .Title }}</h2>
+          <div class="bl-article-content">{{ .Content }}</div>
+          <a href="{{ .Permalink }}" class="bl-article-link">この記事を見る →</a>
         </div>
-        <span class="rh-post-arr">›</span>
-      </a>
+      </article>
       {{- end }}
-    </div>
-    <div class="rh-posts-cta">
-      <a href="{{ "/posts/" | relURL }}" class="rh-btn-outline">すべての投稿を見る →</a>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ============ STORY ============ -->
-<section class="rh-story">
-  <div class="rh-story-inner">
-    <div class="rh-story-img">
-      <img src="https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_4029.jpg" alt="田んぼの風景" loading="lazy">
-    </div>
-    <div class="rh-story-text">
-      <span class="rh-story-label">OUR STORY</span>
-      <h2 class="rh-story-heading">富士山の<br>雪解け水が育てる米</h2>
-      <p>標高1,200mの富士山から流れ出る清冽な雪解け水。ミネラルを豊富に含んだその水が、私たちの田んぼを潤します。</p>
-      <p>安全で安心な農法を守り続け、「一粒の贅沢」と呼ばれる所以です。</p>
-      <a href="{{ site.Params.purchaseURL }}" class="rh-story-link" target="_blank" rel="noopener">詳しく見る →</a>
-    </div>
-  </div>
-</section>
+    <!-- 過去の記事グリッド -->
+    <section class="bl-archive">
+      <h2 class="bl-archive-title">過去の記事</h2>
+      <div class="bl-grid">
+        {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
+        {{- range (where .Site.RegularPages "Type" "posts") | first 12 | after 3 }}
+        <a href="{{ .Permalink }}" class="bl-card">
+          <div class="bl-card-img">
+            {{- $postImg := .Params.image }}
+            {{- if not $postImg }}
+              {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
+              {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
+            {{- end }}
+            <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="lazy">
+          </div>
+          <div class="bl-card-body">
+            <time class="bl-card-date">{{ .Date.Format "2006.01.02" }}</time>
+            <p class="bl-card-title">{{ .Title }}</p>
+          </div>
+        </a>
+        {{- end }}
+      </div>
+      <div class="bl-more">
+        <a href="{{ "/posts/" | relURL }}" class="bl-more-btn">すべての記事を見る →</a>
+      </div>
+    </section>
 
-<!-- ============ LINE CTA ============ -->
-<section class="rh-line">
-  <div class="rh-line-inner">
-    <div class="rh-line-icon">💬</div>
-    <h2 class="rh-line-title">LINE公式アカウント</h2>
-    <p class="rh-line-desc">お米の選び方、栽培の様子など気軽にご相談ください</p>
-    <p class="rh-line-id">{{ site.Params.lineID }}</p>
-    <a href="{{ site.Params.lineURL }}" class="rh-btn-line" target="_blank" rel="noopener">LINEで友だち追加する</a>
-  </div>
-</section>
+    <!-- 購入・LINE サイドバー的CTA -->
+    <aside class="bl-cta-bar">
+      <div class="bl-cta-box">
+        <p class="bl-cta-label">🛒 産地直送</p>
+        <p class="bl-cta-text">FUJI RICEをYahooショッピングで</p>
+        <a href="{{ site.Params.purchaseURL }}" class="bl-cta-btn" target="_blank" rel="noopener">購入する</a>
+      </div>
+      <div class="bl-cta-box bl-cta-box--line">
+        <p class="bl-cta-label">💬 LINEで相談</p>
+        <p class="bl-cta-text">{{ site.Params.lineID }}</p>
+        <a href="{{ site.Params.lineURL }}" class="bl-cta-btn bl-cta-btn--line" target="_blank" rel="noopener">友だち追加</a>
+      </div>
+    </aside>
 
-<!-- ============ BUY CTA ============ -->
-<section class="rh-cta">
-  <div class="rh-cta-inner">
-    <span class="rh-cta-label">Yahooショッピング公式店</span>
-    <h2 class="rh-cta-title">FUJI RICEをお試しください</h2>
-    <p class="rh-cta-sub">送料無料対応・産地直送・安心の品質保証</p>
-    <a href="{{ site.Params.purchaseURL }}" class="rh-cta-btn" target="_blank" rel="noopener">🛒 Yahooショッピングで購入する</a>
   </div>
-</section>
+</main>
 
 {{- end }}
