@@ -1,7 +1,14 @@
 {{- define "main" }}
 
 <!-- Post Hero Image -->
-{{- with .Params.image }}
+{{- $heroImg := .Params.image }}
+{{- if not $heroImg }}
+  {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
+  {{- if $matches }}
+    {{- $heroImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}
+  {{- end }}
+{{- end }}
+{{- with $heroImg }}
 <div class="post-hero">
   <img src="{{ . }}" alt="{{ $.Title }}" loading="eager">
   <div class="post-hero-overlay"></div>

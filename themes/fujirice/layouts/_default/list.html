@@ -15,7 +15,14 @@
       {{- range .Paginator.Pages }}
       <article class="post-card">
         <div class="post-card-image">
-          {{- with .Params.image }}
+          {{- $postImg := .Params.image }}
+          {{- if not $postImg }}
+            {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
+            {{- if $matches }}
+              {{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}
+            {{- end }}
+          {{- end }}
+          {{- with $postImg }}
           <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
           {{- else }}
           <div class="post-card-image-placeholder">🌾</div>
