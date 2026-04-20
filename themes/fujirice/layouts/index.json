@@ -1,6 +1,19 @@
-{{- $pages := (where .Site.RegularPages \"Type\" \"posts\") | first 10 -}}
+{{- $pages := (where .Site.RegularPages "Type" "posts") | first 10 -}}
 {
-  "generated": "{{ now.Format \"2006-01-02T15:04:05Z07:00\" }}",
+  "generated": "{{ now.Format "2006-01-02T15:04:05Z07:00" }}",
   "site": "{{ site.Title }}",
-  "items": [{{- range $i, $p := $pages -}}{{- if $i }},{{ end }}{"title": {{ $p.Title | jsonify }},"slug": "{{ $p.Slug }}","date": "{{ $p.Date.Format \"2006-01-02\" }}","summary": {{ $p.Summary | jsonify }},"image": {{ with $p.Params.image }}{{ . | jsonify }}{{ else }}""{{ end }},"url": {{ $p.Permalink | jsonify }},"tags": {{ with $p.Params.tags }}{{ . | jsonify }}{{ else }}[]{{ end }}}{{- end }}]
+  "items": [
+    {{- range $i, $p := $pages -}}
+    {{- if $i }},{{ end }}
+    {
+      "title": {{ $p.Title | jsonify }},
+      "slug": "{{ $p.Slug }}",
+      "date": "{{ $p.Date.Format "2006-01-02" }}",
+      "summary": {{ $p.Summary | jsonify }},
+      "image": {{ with $p.Params.image }}{{ . | jsonify }}{{ else }}""{{ end }},
+      "url": {{ $p.Permalink | jsonify }},
+      "tags": {{ with $p.Params.tags }}{{ . | jsonify }}{{ else }}[]{{ end }}
+    }
+    {{- end }}
+  ]
 }
