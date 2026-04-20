@@ -1194,8 +1194,9 @@ footer {
   </div>
   <div class="video-wrap reveal">
     <iframe
-      src="https://www.youtube.com/embed/videoseries?list=UUvvaEEAZoCEwlv11ubKSWxg"
+      src="https://www.youtube.com/embed/_HzcLq_Tt1w"
       title="富士山麓タイムラプス | FUJI RICE 公式チャンネル"
+      id="yt-latest-iframe"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
       loading="lazy">
@@ -1379,6 +1380,29 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+</script>
+
+<script>
+/* 最新YouTube動画を自動取得して埋め込む */
+(async function() {
+  const channelId = 'UCvvaEEAZoCEwlv11ubKSWxg';
+  const iframe = document.getElementById('yt-latest-iframe');
+  if (!iframe) return;
+  try {
+    const rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + channelId;
+    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl));
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text, 'text/xml');
+    const videoId = xml.querySelector('videoId')?.textContent
+                 || xml.querySelector('yt\\:videoId')?.textContent
+                 || (xml.querySelector('entry link') || {}).getAttribute?.('href')?.split('v=')[1];
+    if (videoId) {
+      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&autoplay=0';
+    }
+  } catch(e) {
+    /* フォールバック: 直近の動画をそのまま表示 */
+  }
+})();
 </script>
 </body>
 </html>
