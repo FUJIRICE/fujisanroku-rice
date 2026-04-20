@@ -3,915 +3,948 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FUJI RICE | にじのきらめき 富士山麓 特別栽培米</title>
-<meta name="description" content="富士山麓の清らかな湧水で育てた、最高品質の特別栽培米「にじのきらめき」。静岡県富士宮市の自然の恵みをそのままに、厳選された一粒をお届けします。">
-<meta name="keywords" content="富士山麓,特別栽培米,にじのきらめき,お米,富士宮,FUJI RICE">
-<meta property="og:title" content="FUJI RICE | にじのきらめき 富士山麓 特別栽培米">
-<meta property="og:description" content="富士山麓の清らかな湧水で育てた、最高品質の特別栽培米">
+<title>FUJI RICE | かじゅのみのる米 富士山麓 岩谷農場</title>
+<meta name="description" content="富士山麓の清らかな水と大地で育てた、プレミアム国産米。かじゅのみのる米。静岡県富士市岩谷農場の一粒一粒が届ける、誠実な美味しさ。">
+<meta name="keywords" content="富士山麓,岩谷農場,かじゅのみのる米,お米,富士市,FUJI RICE">
+<meta property="og:title" content="FUJI RICE | かじゅのみのる米 富士山麓 岩谷農場">
+<meta property="og:description" content="富士山麓の清らかな水と大地で育てた、プレミアム国産米。">
 <meta property="og:image" content="hero1.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --gold: #b8933a;
-    --gold-light: #d4af5a;
-    --gold-dark: #8a6820;
-    --black: #0a0a0a;
-    --dark: #1a1a1a;
-    --gray: #4a4a4a;
-    --light-gray: #f5f3ef;
-    --white: #fdfcfa;
-    --cream: #f9f5ed;
-  }
-
-  html { scroll-behavior: smooth; overflow-x: hidden; }
-
-  body {
-    font-family: 'Noto Serif JP', 'Shippori Mincho', serif;
-    background: var(--white);
-    color: var(--dark);
-    overflow-x: hidden;
-  }
-
-  /* ===== SCROLLBAR ===== */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--black); }
-  ::-webkit-scrollbar-thumb { background: var(--gold); }
-
-  /* ===== HEADER ===== */
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(184,147,58,0.3);
-    transition: all 0.3s ease;
-  }
-
-  .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-decoration: none;
-  }
-
-  .logo-main {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: 0.3em;
-    line-height: 1;
-  }
-
-  .logo-sub {
-    font-size: 0.55rem;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.4em;
-    margin-top: 4px;
-  }
-
-  nav { display: flex; gap: 36px; align-items: center; }
-
-  nav a {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    transition: color 0.3s;
-    position: relative;
-  }
-
-  nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; left: 0; right: 0;
-    height: 1px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-
-  nav a:hover { color: var(--gold); }
-  nav a:hover::after { transform: scaleX(1); }
-
-  .header-cta {
-    background: var(--gold);
-    color: var(--black) !important;
-    padding: 10px 24px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    transition: background 0.3s !important;
-  }
-
-  .header-cta::after { display: none; }
-  .header-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
-
-  /* ===== HAMBURGER ===== */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-    background: none;
-    border: none;
-  }
-
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 1.5px;
-    background: var(--gold);
-    transition: all 0.3s;
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    overflow: hidden;
-  }
-
-  .hero-slides { position: relative; width: 100%; height: 100%; }
-
-  .hero-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1.5s ease;
-  }
-
-  .hero-slide.active { opacity: 1; }
-
-  .hero-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transform: scale(1.05);
-    transition: transform 8s ease;
-  }
-
-  .hero-slide.active img { transform: scale(1); }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.3) 0%,
-      rgba(0,0,0,0.5) 50%,
-      rgba(0,0,0,0.7) 100%
-    );
-  }
-
-  .hero-content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--white);
-    padding: 20px;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.6em;
-    color: var(--gold);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 1s 0.5s forwards;
-  }
-
-  .hero-title {
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.2;
-    letter-spacing: 0.15em;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 1s 0.8s forwards;
-  }
-
-  .hero-title em {
-    display: block;
-    font-style: normal;
-    color: var(--gold);
-    font-weight: 700;
-  }
-
-  .hero-desc {
-    font-size: clamp(0.85rem, 2vw, 1rem);
-    color: rgba(255,255,255,0.85);
-    letter-spacing: 0.15em;
-    line-height: 2;
-    margin-bottom: 48px;
-    opacity: 0;
-    animation: fadeUp 1s 1.1s forwards;
-  }
-
-  .hero-btns {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    opacity: 0;
-    animation: fadeUp 1s 1.4s forwards;
-  }
-
-  .btn-primary {
-    background: var(--gold);
-    color: var(--black);
-    padding: 16px 40px;
-    font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
-  }
-
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--white);
-    padding: 16px 40px;
-    font-family: inherit;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    border: 1px solid rgba(255,255,255,0.5);
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
-  }
-
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-
-  .hero-indicators {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-  }
-
-  .indicator {
-    width: 32px;
-    height: 2px;
-    background: rgba(255,255,255,0.3);
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .indicator.active { background: var(--gold); }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    writing-mode: vertical-rl;
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    color: rgba(255,255,255,0.5);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .scroll-hint::before {
-    content: '';
-    width: 1px;
-    height: 40px;
-    background: var(--gold);
-    animation: scrollLine 2s ease infinite;
-  }
-
-  @keyframes scrollLine {
-    0% { height: 0; opacity: 1; }
-    100% { height: 40px; opacity: 0; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ===== SECTION COMMON ===== */
-  section { padding: 100px 40px; }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 70px;
-  }
-
-  .section-label {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.5em;
-    color: var(--gold);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-  }
-
-  .section-title {
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    line-height: 1.4;
-    color: var(--dark);
-  }
-
-  .section-line {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin: 24px auto 0;
-  }
-
-  /* ===== BRAND CONCEPT ===== */
-  .concept {
-    background: var(--black);
-    color: var(--white);
-    padding: 120px 40px;
-    overflow: hidden;
-  }
-
-  .concept-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    min-width: 0;
-  }
-  .concept-inner > * { min-width: 0; }
-
-  .concept-text .section-title { color: var(--white); }
-
-  .concept-copy {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    line-height: 2;
-    color: var(--gold);
-    margin-bottom: 32px;
-  }
-
-  .concept-body {
-    font-size: 0.9rem;
-    line-height: 2.2;
-    color: rgba(255,255,255,0.75);
-    letter-spacing: 0.05em;
-  }
-
-  .concept-img {
-    position: relative;
-  }
-
-  .concept-img img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-  }
-
-  .concept-img::before {
-    content: '';
-    position: absolute;
-    top: -16px; left: -16px;
-    right: 16px; bottom: 16px;
-    border: 1px solid var(--gold);
-    z-index: 0;
-  }
-
-  .concept-img img { position: relative; z-index: 1; }
-
-  /* ===== FEATURES ===== */
-  .features { background: var(--cream); }
-
-  .features-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-
-  .feature-card {
-    background: var(--white);
-    padding: 50px 40px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-  }
-
-  .feature-num {
-    font-size: 0.65rem;
-    letter-spacing: 0.4em;
-    color: var(--gold);
-    margin-bottom: 24px;
-  }
-
-  .feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  .feature-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-    color: var(--dark);
-  }
-
-  .feature-desc {
-    font-size: 0.85rem;
-    line-height: 2;
-    color: var(--gray);
-  }
-
-  /* ===== PRODUCTS ===== */
-  .products { background: var(--white); }
-
-  .products-inner { max-width: 1200px; margin: 0 auto; }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-
-  .product-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .product-card img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
-
-  .product-card:hover img { transform: scale(1.05); }
-
-  .product-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 32px;
-    color: var(--white);
-  }
-
-  .product-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.4em;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .product-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 8px;
-  }
-
-  .product-desc {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.8;
-  }
-
-  /* ===== COMMITMENT ===== */
-  .commitment { background: var(--light-gray); }
-
-  .commitment-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .commitment-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-
-  .commit-card { text-align: center; }
-
-  .commit-img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    margin-bottom: 28px;
-  }
-
-  .commit-num {
-    font-size: 0.65rem;
-    letter-spacing: 0.4em;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  .commit-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-  }
-
-  .commit-desc {
-    font-size: 0.82rem;
-    line-height: 2;
-    color: var(--gray);
-  }
-
-  /* ===== GALLERY ===== */
-  .gallery { background: var(--black); padding: 100px 0; }
-
-  .gallery .section-header { padding: 0 40px; }
-  .gallery .section-title { color: var(--white); }
-
-  .gallery-strip {
-    display: flex;
-    overflow-x: auto;
-    gap: 4px;
-    padding: 0 40px;
-    scrollbar-width: none;
-  }
-
-  .gallery-strip::-webkit-scrollbar { display: none; }
-
-  .gallery-item {
-    flex: 0 0 300px;
-    height: 400px;
-    overflow: hidden;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
-
-  .gallery-item:hover img { transform: scale(1.05); }
-
-  /* ===== CTA �ANNER ===== */
-  .cta-banner {
-    position: relative;
-    padding: 120px 40px;
-    overflow: hidden;
-    text-align: center;
-  }
-
-  .cta-banner-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .cta-banner-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .cta-banner-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-  }
-
-  .cta-banner-content {
-    position: relative;
-    z-index: 1;
-    color: var(--white);
-  }
-
-  .cta-banner-title {
-    font-size: clamp(1.8rem, 4vw, 3.5rem);
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    margin-bottom: 16px;
-  }
-
-  .cta-banner-title strong { color: var(--gold); font-weight: 700; }
-
-  .cta-banner-sub {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.75);
-    letter-spacing: 0.15em;
-    margin-bottom: 48px;
-    line-height: 2;
-  }
-
-  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-  /* ===== VIDEO ===== */
-  .video-section { background: var(--cream); }
-
-  .video-inner {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border: 1px solid rgba(184,147,58,0.3);
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  /* ===== CONTACT ===== */
-  .contact { background: var(--dark); color: var(--white); }
-
-  .contact-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .contact .section-title { color: var(--white); }
-
-  .contact-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin: 60px 0;
-  }
-
-  .contact-item { text-align: center; }
-
-  .contact-item-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.4em;
-    color: var(--gold);
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  .contact-item-value {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.85);
-    letter-spacing: 0.1em;
-    line-height: 1.8;
-  }
-
-  .contact-item-value a {
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .contact-item-value a:hover { color: var(--gold); }
-
-  .contact-form {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(184,147,58,0.2);
-    padding: 50px;
-    text-align: left;
-  }
-
-  .form-group { margin-bottom: 24px; }
-
-  .form-label {
-    display: block;
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .form-input,
-  .form-textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 14px 18px;
-    font-family: inherit;
-    font-size: 0.85rem;
-    color: var(--white);
-    transition: border-color 0.3s;
-    outline: none;
-  }
-
-  .form-input:focus,
-  .form-textarea:focus { border-color: var(--gold); }
-
-  .form-textarea { height: 140px; resize: vertical; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-  .form-submit {
-    width: 100%;
-    padding: 18px;
-    background: var(--gold);
-    color: var(--black);
-    font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 8px;
-  }
-
-  .form-submit:hover { background: var(--gold-light); }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--black);
-    border-top: 1px solid rgba(184,147,58,0.2);
-    padding: 60px 40px 30px;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    margin-bottom: 50px;
-  }
-
-  .footer-brand .logo-main { font-size: 1.3rem; display: block; margin-bottom: 8px; }
-
-  .footer-brand-desc {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.4);
-    line-height: 2;
-    margin-top: 16px;
-  }
-
-  .footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-
-  .footer-link-group h4 {
-    font-size: 0.65rem;
-    letter-spacing: 0.4em;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-
-  .footer-link-group ul { list-style: none; }
-
-  .footer-link-group ul li { margin-bottom: 12px; }
-
-  .footer-link-group ul li a {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    transition: color 0.3s;
-  }
-
-  .footer-link-group ul li a:hover { color: var(--gold); }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .footer-copy {
-    font-size: 0.7rem;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.1em;
-  }
-
-  .footer-cert {
-    font-size: 0.7rem;
-    color: var(--gold);
-    letter-spacing: 0.15em;
-  }
-
-  /* ===== MOBILE MENU ===== */
-  .mobile-nav {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10,10,10,0.97);
-    z-index: 999;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .mobile-nav.open { display: flex; }
-
-  .mobile-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 1.2rem;
-    letter-spacing: 0.3em;
-    transition: color 0.3s;
-  }
-
-  .mobile-nav a:hover { color: var(--gold); }
-
-  .mobile-nav-close {
-    position: absolute;
-    top: 24px; right: 24px;
-    background: none;
-    border: none;
-    color: var(--gold);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 8px;
-  }
-
-  /* ===== REVEAL ANIMATIONS ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 1024px) {
-    .concept-inner { grid-template-columns: 1fr; gap: 50px; }
-    .concept-img { max-width: 480px; }
-    .features-grid { grid-template-columns: 1fr 1fr; }
-    .products-grid { grid-template-columns: repeat(3, 1fr); }
-    .contact-info { grid-template-columns: 1fr; gap: 24px; }
-    .footer-top { grid-template-columns: 1fr; }
-    .footer-links { grid-template-columns: 1fr 1fr; }
-  }
-
-  @media (max-width: 768px) {
-    header { padding: 16px 20px; }
-    nav { display: none; }
-    .hamburger { display: flex; }
-    section { padding: 70px 20px; }
-    .concept { padding: 70px 20px; }
-    .cta-banner { padding: 80px 20px; }
-    .features-grid { grid-template-columns: 1fr; }
-    .products-grid { grid-template-columns: 1fr; }
-    .commitment-grid { grid-template-columns: 1fr; gap: 40px; }
-    .gallery-item { flex: 0 0 220px; height: 300px; }
-    .contact-form { padding: 30px 20px; }
-    .form-row { grid-template-columns: 1fr; }
-    .footer-top { gap: 30px; }
-    .footer-links { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; text-align: center; }
-    .scroll-hint { display: none; }
-  }
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:       #f7f3ec;
+  --cream-dark:  #ede8df;
+  --dark:        #0f0d0b;
+  --dark2:       #1a1714;
+  --gold:        #c9a055;
+  --gold-light:  #ddb96a;
+  --gold-pale:   rgba(201,160,85,0.15);
+  --text:        #1e1a15;
+  --text-mid:    #6b5f50;
+  --text-light:  #a09280;
+  --white:       #fdfaf6;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  background: var(--white);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--gold); color: var(--dark); }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { text-decoration: none; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp   { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+@keyframes grow     { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@keyframes slideDown{ from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes marquee  { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(.16,1,.3,1),
+              transform 0.9s cubic-bezier(.16,1,.3,1);
+}
+.reveal.visible           { opacity:1; transform:translateY(0); }
+.reveal.d1                { transition-delay:.12s; }
+.reveal.d2                { transition-delay:.24s; }
+.reveal.d3                { transition-delay:.36s; }
+.reveal.d4                { transition-delay:.48s; }
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.eyebrow {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: .7rem;
+  letter-spacing: .55em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.eyebrow::before { content:''; width:32px; height:1px; background:var(--gold); flex-shrink:0; }
+.eyebrow.center  { justify-content:center; }
+.eyebrow.center::before { display:none; }
+
+.sec-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: .06em;
+}
+.sec-lead {
+  font-size: clamp(.88rem, 1.4vw, 1rem);
+  line-height: 2.3;
+  color: var(--text-mid);
+  letter-spacing: .08em;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 14px 38px;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: 'Noto Serif JP', serif;
+  transition: background .3s, transform .3s;
+  border: none;
+  cursor: pointer;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.btn-ghost {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.45);
+  color: rgba(255,255,255,.9);
+  padding: 14px 38px;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.btn-border {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 12px 32px;
+  font-size: .7rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+.btn-border:hover { background: var(--gold); color: var(--dark); }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+  position: fixed;
+  top:0; left:0; right:0;
+  z-index: 1000;
+  height: 78px;
+  padding: 0 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background .4s, border-color .4s, backdrop-filter .4s;
+  border-bottom: 1px solid transparent;
+}
+header.scrolled {
+  background: rgba(15,13,11,.97);
+  border-color: rgba(201,160,85,.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* logo */
+.logo { display:flex; flex-direction:column; }
+.logo-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: .28em;
+  line-height: 1;
+}
+.logo-jp {
+  font-size: .42rem;
+  letter-spacing: .65em;
+  color: rgba(255,255,255,.38);
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* desktop nav */
+.desktop-nav { display:flex; align-items:center; gap:40px; list-style:none; }
+.desktop-nav a {
+  color: rgba(255,255,255,.72);
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  transition: color .3s;
+  position: relative;
+}
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left:0; right:0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.desktop-nav a:hover { color: var(--gold); }
+.desktop-nav a:hover::after { transform: scaleX(1); }
+
+.nav-shop {
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+  padding: 8px 20px;
+}
+.nav-shop::after { display:none !important; }
+.nav-shop:hover { background: var(--gold) !important; color: var(--dark) !important; }
+
+/* hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span { display:block; width:24px; height:1.5px; background:var(--gold); transition:all .3s; }
+
+/* mobile nav */
+.mob-nav {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+.mob-nav.open { opacity:1; pointer-events:all; }
+.mob-nav a {
+  color: rgba(255,255,255,.8);
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: .2em;
+  transition: color .3s;
+}
+.mob-nav a:hover { color: var(--gold); }
+.mob-close {
+  position: absolute;
+  top:26px; right:40px;
+  background:none; border:none;
+  color:var(--gold); font-size:1.8rem;
+  cursor:pointer; line-height:1;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+}
+
+/* slides */
+.hero-bg { position:absolute; inset:0; }
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+.slide.active { opacity:1; }
+.slide img { transform:scale(1.06); transition:transform 8s ease; }
+.slide.active img { transform:scale(1); }
+
+/* overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    130deg,
+    rgba(0,0,0,.68) 0%,
+    rgba(0,0,0,.32) 55%,
+    rgba(0,0,0,.08) 100%
+  );
+}
+
+/* content */
+.hero-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12% 0 13%;
+  color: var(--white);
+}
+
+.hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .72rem;
+  letter-spacing: .55em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 1s .6s forwards;
+}
+.hero-tag::before { content:''; width:40px; height:1px; background:var(--gold); }
+
+.hero-h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 300;
+  line-height: 1.12;
+  letter-spacing: .04em;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 1s .9s forwards;
+}
+.hero-h1 em {
+  display: block;
+  font-style: normal;
+  color: var(--gold);
+  font-size: .55em;
+  font-weight: 300;
+  letter-spacing: .18em;
+  margin-bottom: 10px;
+}
+
+.hero-sub {
+  font-size: clamp(.82rem, 1.3vw, .94rem);
+  line-height: 2.4;
+  color: rgba(255,255,255,.78);
+  letter-spacing: .12em;
+  max-width: 400px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 1s 1.2s forwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1s 1.5s forwards;
+}
+
+/* dots */
+.hero-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.dot {
+  width:28px; height:2px;
+  background: rgba(255,255,255,.3);
+  border:none; cursor:pointer;
+  transition: all .4s;
+}
+.dot.active { background:var(--gold); width:48px; }
+
+/* scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 42px; right: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeIn 1s 2.2s forwards;
+}
+.scroll-hint span {
+  writing-mode: vertical-rl;
+  font-size: .58rem;
+  letter-spacing: .42em;
+  color: rgba(255,255,255,.42);
+  text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent);
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee {
+  background: var(--gold);
+  padding: 13px 0;
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  white-space: nowrap;
+  animation: marquee 22s linear infinite;
+}
+.marquee-item {
+  flex-shrink: 0;
+  font-size: .66rem;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: var(--dark);
+  font-weight: 600;
+}
+.marquee-sep {
+  display: inline-block;
+  width: 4px; height: 4px;
+  background: rgba(0,0,0,.35);
+  border-radius: 50%;
+  margin: 0 18px;
+  vertical-align: middle;
+}
+
+/* ============================================================
+   CONCEPT
+   ============================================================ */
+.concept {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+}
+.concept-img {
+  position: relative;
+  overflow: hidden;
+}
+.concept-img img { height:100%; transition: transform 8s ease; }
+.concept-img:hover img { transform: scale(1.04); }
+.concept-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,.08), transparent);
+}
+
+.concept-body {
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 88px;
+}
+.concept-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5.5rem;
+  font-weight: 300;
+  color: rgba(0,0,0,.05);
+  line-height: 1;
+  margin-bottom: -16px;
+}
+.concept-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.45;
+  letter-spacing: .08em;
+  margin-bottom: 28px;
+}
+.concept-bar { width:36px; height:1px; background:var(--gold); margin-bottom:28px; }
+.concept-text {
+  font-size: .88rem;
+  line-height: 2.5;
+  color: var(--text-mid);
+  letter-spacing: .08em;
+  margin-bottom: 16px;
+  max-width: 460px;
+}
+
+/* ============================================================
+   FEATURES
+   ============================================================ */
+.features {
+  background: var(--dark);
+  padding: 120px 10%;
+}
+.features-head { text-align:center; margin-bottom:72px; }
+.features-head .sec-title { color:var(--white); }
+
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.feat-card {
+  background: rgba(255,255,255,.028);
+  border: 1px solid rgba(201,160,85,.07);
+  padding: 58px 44px;
+  position: relative;
+  overflow: hidden;
+  transition: background .4s, border-color .4s;
+}
+.feat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left:0; right:0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s;
+}
+.feat-card:hover { background: rgba(201,160,85,.05); border-color: rgba(201,160,85,.22); }
+.feat-card:hover::after { transform: scaleX(1); }
+
+.feat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: rgba(201,160,85,.18);
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.feat-icon { font-size: 2.2rem; margin-bottom: 18px; }
+.feat-title {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: .08em;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.feat-desc {
+  font-size: .82rem;
+  line-height: 2.2;
+  color: rgba(255,255,255,.46);
+  letter-spacing: .05em;
+}
+
+/* ============================================================
+   PRODUCTS
+   ============================================================ */
+.products {
+  padding: 120px 10%;
+  background: var(--white);
+}
+.products-head { margin-bottom:60px; }
+
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+.prod-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  display: block;
+}
+.prod-card img { transition: transform .8s cubic-bezier(.16,1,.3,1); }
+.prod-card:hover img { transform: scale(1.08); }
+
+.prod-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,0) 58%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 28px;
+}
+.prod-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .66rem;
+  letter-spacing: .45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.prod-name {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+.prod-desc {
+  font-size: .74rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,.6);
+  letter-spacing: .04em;
+}
+.prod-arrow {
+  position: absolute;
+  top:22px; right:22px;
+  width:38px; height:38px;
+  border: 1px solid rgba(255,255,255,.3);
+  display: flex; align-items:center; justify-content:center;
+  color: var(--white);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: all .4s;
+  font-size: .95rem;
+}
+.prod-card:hover .prod-arrow { opacity:1; transform:translate(0,0); border-color:var(--gold); color:var(--gold); }
+
+/* ============================================================
+   COMMITMENT
+   ============================================================ */
+.commitment { background: var(--dark2); padding-bottom: 2px; }
+.commit-head {
+  text-align: center;
+  padding: 120px 10% 80px;
+}
+.commit-head .sec-title { color:var(--white); }
+
+.commit-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+.commit-item:nth-child(even) .commit-img { order:2; }
+.commit-item:nth-child(even) .commit-txt { order:1; }
+.commit-img { position:relative; overflow:hidden; }
+.commit-img img { height:100%; transition: transform .8s ease; }
+.commit-item:hover .commit-img img { transform: scale(1.05); }
+
+.commit-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 88px;
+  background: rgba(255,255,255,.02);
+}
+.commit-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .66rem;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.commit-title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: .08em;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+.commit-desc {
+  font-size: .84rem;
+  line-height: 2.4;
+  color: rgba(255,255,255,.46);
+  letter-spacing: .06em;
+  max-width: 440px;
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery {
+  padding: 120px 0;
+  background: var(--cream);
+  overflow: hidden;
+}
+.gallery-head { padding:0 10%; margin-bottom:56px; }
+.gallery-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 0 10% 16px;
+  scrollbar-width: none;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-strip::-webkit-scrollbar { display:none; }
+.gallery-strip:active { cursor:grabbing; }
+.gal-item {
+  flex-shrink: 0;
+  width: 320px;
+  height: 420px;
+  overflow: hidden;
+}
+.gal-item img { transition: transform .6s ease; height:100%; }
+.gal-item:hover img { transform: scale(1.07); }
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-bg { position:absolute; inset:0; }
+.cta-bg img { transform:scale(1.06); }
+.cta-veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.64);
+}
+.cta-body {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: 0 20px;
+}
+.cta-h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  letter-spacing: .1em;
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+.cta-h2 strong { font-weight:500; color:var(--gold); }
+.cta-sub {
+  font-size: .88rem;
+  line-height: 2;
+  color: rgba(255,255,255,.68);
+  letter-spacing: .1em;
+  margin-bottom: 40px;
+}
+.cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+/* ============================================================
+   VIDEO
+   ============================================================ */
+.video-sec {
+  padding: 120px 10%;
+  background: var(--white);
+}
+.video-head { text-align:center; margin-bottom:56px; }
+.video-head .sec-title { text-align:center; }
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 880px;
+  margin: 0 auto 40px;
+  background: var(--dark);
+}
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width:100%; height:100%;
+  border: none;
+}
+.video-foot { text-align:center; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact {
+  background: var(--dark);
+  padding: 120px 10%;
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 96px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contact-info .sec-title { color:var(--white); margin-bottom:40px; }
+
+.c-items { margin-bottom:44px; }
+.c-item {
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.c-item:first-child { border-top: 1px solid rgba(255,255,255,.06); }
+.c-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .63rem;
+  letter-spacing: .48em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.c-val {
+  font-size: .86rem;
+  color: rgba(255,255,255,.7);
+  letter-spacing: .07em;
+  line-height: 1.7;
+}
+.c-val a { color:inherit; transition:color .3s; }
+.c-val a:hover { color:var(--gold); }
+
+/* form */
+.f-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.f-group { margin-bottom:22px; }
+.f-label {
+  display: block;
+  font-size: .65rem;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.38);
+  margin-bottom: 9px;
+}
+.f-label .req { color:var(--gold); margin-left:3px; }
+.f-input, .f-area {
+  width: 100%;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  color: var(--white);
+  padding: 13px 16px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: .86rem;
+  letter-spacing: .05em;
+  outline: none;
+  transition: border-color .3s;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.f-input::placeholder, .f-area::placeholder { color:rgba(255,255,255,.2); }
+.f-input:focus, .f-area:focus { border-color:var(--gold); }
+.f-area { height:138px; resize:vertical; }
+.f-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  font-family: 'Noto Serif JP', serif;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .3s;
+  margin-top: 6px;
+}
+.f-submit:hover { background:var(--gold-light); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: #080605;
+  padding: 80px 10% 36px;
+  border-top: 1px solid rgba(201,160,85,.1);
+}
+.ft-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 56px;
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.ft-brand .logo-en { font-size:1.5rem; }
+.ft-brand .logo-jp { display:block; margin-top:4px; }
+.ft-desc {
+  font-size: .76rem;
+  line-height: 2.3;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .05em;
+  margin-top: 20px;
+}
+.ft-col h4 {
+  font-size: .58rem;
+  letter-spacing: .48em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+.ft-col ul { list-style:none; }
+.ft-col li { margin-bottom:11px; }
+.ft-col a {
+  color: rgba(255,255,255,.38);
+  font-size: .78rem;
+  letter-spacing: .05em;
+  transition: color .3s;
+}
+.ft-col a:hover { color:var(--gold); }
+
+.ft-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ft-copy, .ft-cert {
+  font-size: .68rem;
+  color: rgba(255,255,255,.22);
+  letter-spacing: .05em;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1100px) {
+  header { padding:0 32px; }
+  .desktop-nav { display:none; }
+  .hamburger { display:flex; }
+
+  .concept { grid-template-columns:1fr; min-height:auto; }
+  .concept-img { height:56vw; }
+  .concept-body { padding:64px 40px; }
+
+  .feat-grid { grid-template-columns:1fr; }
+
+  .prod-grid { grid-template-columns:1fr 1fr; }
+
+  .commit-item,
+  .commit-item:nth-child(even) { grid-template-columns:1fr; }
+  .commit-item:nth-child(even) .commit-img { order:0; }
+  .commit-item:nth-child(even) .commit-txt { order:0; }
+  .commit-img { height:280px; }
+  .commit-txt { padding:56px 40px; }
+
+  .contact-inner { grid-template-columns:1fr; gap:56px; }
+  .ft-top { grid-template-columns:1fr 1fr; gap:40px; }
+}
+
+@media (max-width:640px) {
+  .hero-body { padding:0 6%; }
+  .scroll-hint { display:none; }
+  .hero-cta { flex-direction:column; }
+  .prod-grid { grid-template-columns:1fr; }
+  .f-row { grid-template-columns:1fr; }
+  .ft-top { grid-template-columns:1fr; }
+  .ft-bottom { flex-direction:column; align-items:flex-start; }
+  .concept-body { padding:48px 24px; }
+  .commit-txt { padding:44px 24px; }
+  .features { padding:80px 6%; }
+  .products { padding:80px 6%; }
+  .gallery-head { padding:0 6%; }
+}
 </style>
 </head>
 <body>
@@ -919,15 +952,18 @@
 <!-- ===== HEADER ===== -->
 <header id="header">
   <a href="#" class="logo">
-    <span class="logo-main">FUJI RICE</span>
-    <span class="logo-sub">富士山麓 特別栽培米</span>
+    <span class="logo-en">FUJI RICE</span>
+    <span class="logo-jp">富士山麓 岩谷農場</span>
   </a>
   <nav>
-    <a href="#concept">ブランドコンセプト</a>
-    <a href="#products">商品ラインナップ</a>
-    <a href="#commitment">こだわり</a>
-    <a href="#video">動画</a>
-    <a href="#contact">お問い合わせ</a>
+    <ul class="desktop-nav">
+      <li><a href="#concept">コンセプト</a></li>
+      <li><a href="#features">特長</a></li>
+      <li><a href="#products">商品</a></li>
+      <li><a href="#commitment">こだわり</a></li>
+      <li><a href="#video">動画</a></li>
+      <li><a href="#contact" class="nav-shop">購入 / お問い合わせ</a></li>
+    </ul>
   </nav>
   <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
     <span></span><span></span><span></span>
@@ -935,279 +971,284 @@
 </header>
 
 <!-- ===== MOBILE NAV ===== -->
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" id="navClose">✕</button>
-  <a href="#concept" class="mobile-link">ブランドコンセプト</a>
-  <a href="#products" class="mobile-link">商品ラインナップ</a>
-  <a href="#commitment" class="mobile-link">こだわり</a>
-  <a href="#video" class="mobile-link">動画</a>
-  <a href="#contact" class="mobile-link">お問い合わせ</a>
-</div>
+<nav class="mob-nav" id="mobileNav">
+  <button class="mob-close" id="navClose">✕</button>
+  <a href="#concept"    class="mob-link">コンセプト</a>
+  <a href="#features"   class="mob-link">特長</a>
+  <a href="#products"   class="mob-link">商品</a>
+  <a href="#commitment" class="mob-link">こだわり</a>
+  <a href="#video"      class="mob-link">動画</a>
+  <a href="#contact"    class="mob-link">お問い合わせ</a>
+</nav>
 
 <!-- ===== HERO ===== -->
-<section class="hero" id="hero">
-  <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide active">
-      <img src="hero1.jpg" alt="富士山麓の田んぼ" loading="eager">
-    </div>
-    <div class="hero-slide">
-      <img src="hero2.jpg" alt="にじのきらめき" loading="lazy">
-    </div>
-    <div class="hero-slide">
-      <img src="hero3.jpg" alt="富士山麓の自然" loading="lazy">
-    </div>
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="slide active"><img src="hero1.jpg" alt="富士山麓の稲穂"></div>
+    <div class="slide"><img src="hero2.jpg" alt="かじゅはみのる米"></div>
+    <div class="slide"><img src="hero3.jpg" alt="富士山麓の農場"></div>
   </div>
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">SHIZUOKA FUJINOMIYA / SPECIAL CULTIVATION</p>
-    <h1 class="hero-title">
-      富士山麓が育む<br>
-      <em>にじのきらめき</em>
+  <div class="hero-body">
+    <p class="hero-tag">Premium Japanese Rice</p>
+    <h1 class="hero-h1">
+      <em>かじゅはみのる米</em>
+      富士山麓から㱊ける、<br>一粒の誠実。
     </h1>
-    <p class="hero-desc">
-      清らかな湧水と、大地の力。<br>
-      一粒の贅沢が、あなたの食卓を彩る。
+    <p class="hero-sub">
+      富士の清流と大地が育む、上質な一粒。<br>
+      農家の誠実な手から、あなたの食卓へ。
     </p>
-    <div class="hero-btns">
-      <a href="#concept" class="btn-secondary">詳しく見る</a>
+    <div class="hero-cta">
+      <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="btn-gold">今すぐ購入する</a>
+      <a href="#concept" class="btn-ghost">もっと見る</a>
     </div>
   </div>
-  <div class="hero-indicators" id="heroIndicators">
-    <div class="indicator active" data-index="0"></div>
-    <div class="indicator" data-index="1"></div>
-    <div class="indicator" data-index="2"></div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
   </div>
-  <div class="scroll-hint">SCROLL</div>
 </section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Premium Rice<span class="marquee-sep"></span></span>
+    <span class="marquee-item">富士山麓産<span class="marquee-sep"></span></span>
+    <span class="marquee-item">Shizuoka Japan<span class="marquee-sep"></span></span>
+    <span class="marquee-item">自然農法<span class="marquee-sep"></span></span>
+    <span class="marquee-item">Yahoo! 購入可能<span class="marquee-sep"></span></span>
+    <span class="marquee-item">岩谷農場<span class="marquee-sep"></span></span>
+    <span class="marquee-item">Artisan Farming<span class="marquee-sep"></span></span>
+    <span class="marquee-item">かじゅのみのる米<span class="marquee-sep"></span></span>
+    <span class="marquee-item">Premium Rice<span class="marquee-sep"></span></span>
+    <span class="marquee-item">富士山麓産<span class="marquee-sep"></span></span>
+    <span class="marquee-item">Shizuoka Japan<span class="marquee-sep"></span></span>
+    <span class="marquee-item">自然農法<span class="marquee-sep"></span></span>
+    <span class="marquee-item">Yahoo! 購入可能<span class="marquee-sep"></span></span>
+    <span class="marquee-item">岩谷農場<span class="marquee-sep"></span></span>
+    <span class="marquee-item">Artisan Farming<span class="marquee-sep"></span></span>
+    <span class="marquee-item">かじゅのみのる米<span class="marquee-sep"></span></span>
+  </div>
+</div>
 
 <!-- ===== CONCEPT ===== -->
 <section class="concept" id="concept">
-  <div class="concept-inner">
-    <div class="concept-text reveal">
-      <div class="section-header" style="text-align:left; margin-bottom:40px;">
-        <span class="section-label">Brand Concept</span>
-        <h2 class="section-title" style="color:white;">一粒の贅沢<br>という哲学</h2>
-        <div class="section-line" style="margin:24px 0 0;"></div>
-      </div>
-      <p class="concept-copy">一粒一粒に、<br>魂を込めて。</p>
-      <p class="concept-body">
-        静岡県富士宮市青木。富士山の恵みを受けた清らかな湧水が流れる、この地にしか存在しない特別な環境で「にじのきらめき」は育まれます。<br><br>
-        農薬・化学肥料を極限まで抑えた特別栽培。土づくりから収穫まで、すべての工程に妥協を許さない。それが、私たちが「一粒の贅沢」と呼ばれる所以です。<br><br>
-        最高の素材が、最高の食卓を生み出す。その信念を、一粒の米に込めています。
-      </p>
-    </div>
-    <div class="concept-img reveal">
-      <img src="concept.jpg" alt="富士山麓のお米づくり">
-    </div>
+  <div class="concept-img">
+    <img src="concept.jpg" alt="富士山麓のお米コンセプト">
+  </div>
+  <div class="concept-body">
+    <div class="concept-num reveal">01</div>
+    <div class="eyebrow reveal">Our Concept</div>
+    <h2 class="concept-title reveal">土に向き合い、<br>誠実に育てる米。</h2>
+    <div class="concept-bar reveal"></div>
+    <p class="concept-text reveal d1">
+      富士山麓に広がら豊かな自然の中、清らかな湧き水と肥沃な大地に育まれた米を、一粒一粒丁寧に育てています。化学肥料に頼らず、自然の力を最大限に活かす農法で、本来の旨みを引き出した特別な一粒をお届けします。
+    </p>
+    <p class="concept-text reveal d2">
+      農家の誠実な手仕事から生まれる「かじゅのみのる米」は、食べる方の笑顔を思いながら、大切に育てた一粒一粒です。
+    </p>
+    <a href="#products" class="btn-border reveal d3" style="align-self:flex-start; margin-top:8px;">商品を見る</a>
   </div>
 </section>
 
 <!-- ===== FEATURES ===== -->
 <section class="features" id="features">
-  <div class="section-header reveal">
-    <span class="section-label">Why FUJI RICE</span>
-    <h2 class="section-title">選ばれる3つの理由</h2>
-    <div class="section-line"></div>
+  <div class="features-head reveal">
+    <div class="eyebrow center">Why FUJI RICE</div>
+    <h2 class="sec-title" style="color:var(--white);">選ばれる3つの理由</h2>
   </div>
-  <div class="features-grid">
-    <div class="feature-card reveal">
-      <div class="feature-num">01</div>
-      <div class="feature-icon">💧</div>
-      <h3 class="feature-title">富士山麓の湧水</h3>
-      <p class="feature-desc">富士山の地下を何十年も���けて浄化された、ミネラル豊富な清らかな湧水だけで育てます。水が美味しければ、米も美味しい。</p>
+  <div class="feat-grid">
+    <div class="feat-card reveal">
+      <div class="feat-num">01</div>
+      <div class="feat-icon">🌾</div>
+      <h3 class="feat-title">富士山麓の清冽な水</h3>
+      <p class="feat-desc">富士山の雪解け水が何年もかけて地中に浸み込み、湧き出した清らかな水で育てます。ミネラル豊富な水が、米本来の甘みと旨みを引き出します。粒が充実し、炊き上がりのツヤも格別です。</p>
     </div>
-    <div class="feature-card reveal">
-      <div class="feature-num">02</div>
-      <div class="feature-icon">🌱</div>
-      <h3 class="feature-title">減農薬</h3>
-      <p class="feature-desc">農薬・化学肥料を極力抑えた特別栽培。土本来の力を活かし、自然のリズムに寄り添って育てています。</p>
+    <div class="feat-card reveal d1">
+      <div class="feat-num">02</div>
+      <div class="feat-icon">🌱</div>
+      <h3 class="feat-title">自然農法へのこだわり</h3>
+      <p class="feat-desc">農薬・化学肥料を極力抑えた農法で、土壌本来の力を活かして育てます。自然のリズムに寄り添いながら、安心・安全な米作りを追求。食べる方に安心してお届けできる一粒を目指しています。</p>
     </div>
-    <div class="feature-card reveal">
-      <div class="feature-num">03</div>
-      <div class="feature-icon">🏆</div>
-      <h3 class="feature-title">にじのきらめき品種</h3>
-      <p class="feature-desc">静岡県が開発した希少品種「にじのきらめき」。大粒で粘りが強く、甘みが豊か。炊き上がりの白さと艶は、まさに宝石のような輝きです。</p>
+    <div class="feat-card reveal d2">
+      <div class="feat-num">03</div>
+      <div class="feat-icon">🏔</div>
+      <h3 class="feat-title">富士の大地が育む旨み</h3>
+      <p class="feat-desc">昼夜の寒暖差が大きい富士山麓の気候が、米にデンプンをしっかりと蓄えさせます。食べたときのふっくらとした甘みと豊かな風味は、この土地だからこそ生まれる特別な味わいです。</p>
     </div>
   </div>
 </section>
 
 <!-- ===== PRODUCTS ===== -->
 <section class="products" id="products">
-  <div class="products-inner">
-    <div class="section-header reveal">
-      <span class="section-label">Products</span>
-      <h2 class="section-title">商品ラインナップ</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="products-grid">
-      <div class="product-card reveal">
-        <img src="hero1.jpg" alt="にじのきらめき 白米">
-        <div class="product-overlay">
-          <p class="product-label">Signature</p>
-          <h3 class="product-name">にじのきらめき 白米</h3>
-          <p class="product-desc">富士山麓の湧水で育てた特別栽培米。令和の新米、厳選一等米。</p>
-        </div>
+  <div class="products-head">
+    <div class="eyebrow reveal">Products</div>
+    <h2 class="sec-title reveal">商品ラインナップ</h2>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card reveal">
+      <img src="hero1.jpg" alt="かじゅのみのる米 白米">
+      <div class="prod-overlay">
+        <p class="prod-tag">Signature</p>
+        <h3 class="prod-name">かじゅのみのる米 白米</h3>
+        <p class="prod-desc">富士山麓の大地で育てた特別な白米。炊き上がりのツヤと甘みが格別です。</p>
       </div>
-      <div class="product-card reveal">
-        <img src="gallery1.jpg" alt="にじのきらめき 玄米">
-        <div class="product-overlay">
-          <p class="product-label">Natural</p>
-          <h3 class="product-name">にじのきらめき 玄米</h3>
-          <p class="product-desc">栄養価の官い胚芽・ぬかをそのままに。素材の力をまるごと届けます。</p>
-        </div>
+      <div class="prod-arrow">↗</div>
+    </div>
+    <div class="prod-card reveal d1">
+      <img src="gallery1.jpg" alt="かじゅのみのる米 玄米">
+      <div class="prod-overlay">
+        <p class="prod-tag">Natural</p>
+        <h3 class="prod-name">かじゅのみのる米 玄米</h3>
+        <p class="prod-desc">精米前の栄養をそのぽぽに。自然な風味とコクをお楽しみください。</p>
       </div>
-      <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="product-card reveal" style="display:block; text-decoration:none;">
-        <img src="hero3.jpg" alt="Yahooショッピングで購入">
-        <div class="product-overlay">
-          <p class="product-label">Shop</p>
-          <h3 class="product-name">Yahooショッピングで購入</h3>
-          <p class="product-desc">最高品質の一粒を、あなたの食卓へ。今すぐご注文いただけます。</p>
-        </div>
-      </a>
+      <div class="prod-arrow">↗</div>
     </div>
-    <div style="text-align:center; margin-top:50px;" class="reveal">
-    </div>
+    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="prod-card reveal d2">
+      <img src="hero3.jpg" alt="Yahoo!シメッピングで購入">
+      <div class="prod-overlay">
+        <p class="prod-tag">Shop Online</p>
+        <h3 class="prod-name">Yahoo!ショッピングで購入</h3>
+        <p class="prod-desc">全国発送対応。ご自宅へ直送いたします。今すぐご注文を。</p>
+      </div>
+      <div class="prod-arrow">↗</div>
+    </a>
   </div>
 </section>
 
 <!-- ===== COMMITMENT ===== -->
 <section class="commitment" id="commitment">
-  <div class="commitment-inner">
-    <div class="section-header reveal">
-      <span class="section-label">Our Commitment</span>
-      <h2 class="section-title">農家のこだわり</h2>
-      <div class="section-line"></div>
+  <div class="commit-head">
+    <div class="eyebrow center reveal">Our Commitment</div>
+    <h2 class="sec-title reveal" style="color:var(--white);">農家のこだわり</h2>
+  </div>
+  <div class="commit-item">
+    <div class="commit-img">
+      <img src="commit1.jpg" alt="土づくりへのこだわり">
     </div>
-    <div class="commitment-grid">
-      <div class="commit-card reveal">
-        <img src="commit1.jpg" alt="土づくりへのこだわり" class="commit-img">
-        <p class="commit-num">COMMITMENT 01</p>
-        <h3 class="commit-title">土づくりから始まる</h3>
-        <p class="commit-desc">良いお米は良い土から生まれます。微生物が豊かに息づく土壌をつくるため、有機質肥料を中心とした丁寧な土づくりを行っています。</p>
-      </div>
-      <div class="commit-card reveal">
-        <img src="commit2.jpg" alt="水管理へのこだわり" class="commit-img">
-        <p class="commit-num">COMMITMENT 02</p>
-        <h3 class="commit-title">水管理の徹底</h3>
-        <p class="commit-desc">富士山の湧水を取り入れた水管理。田んぼの状態を毎日確認し、稲の生育段階に合わせて水位を細かく調整しています。</p>
-      </div>
-      <div class="commit-card reveal">
-        <img src="commit3.jpg" alt="収穫・乾燥へのこだわり" class="commit-img">
-        <p class="commit-num">COMMITMENT 03</p>
-        <h3 class="commit-title">丁寧な収穫と乾燥</h3>
-        <p class="commit-desc">最適な時期を見極めた収穫と、低温でゆっくり乾燥させる「自然乾燥」で旨みを閉じ込めます。米の品質を最後まで守ります。</p>
-      </div>
+    <div class="commit-txt">
+      <p class="commit-num reveal">Commitment 01</p>
+      <h3 class="commit-title reveal">土から始まる、<br>本物の農業。</h3>
+      <p class="commit-desc reveal d1">良い米は良い土から生まれます。有機物を丁寧に混ぜ込み、微生物が豊かに生きる土壌づくりに一年を費やします。化学的な近道を使わず、自然な土の力を信じて育てることが、私たちの信念です。</p>
+    </div>
+  </div>
+  <div class="commit-item">
+    <div class="commit-img">
+      <img src="commit2.jpg" alt="水管理へ���こだわり">
+    </div>
+    <div class="commit-txt">
+      <p class="commit-num reveal">Commitment 02</p>
+      <h3 class="commit-title reveal">水の管理が、<br>米の品質を決�る。</h3>
+      <p class="commit-desc reveal d1">富士山麓の清水を活かした細やかな水管理。稲の生育ステージに合わせて水位を調整し、最適な環境を維持することで、粒の充実した美味しい米が稔ります。</p>
+    </div>
+  </div>
+  <div class="commit-item">
+    <div class="commit-img">
+      <img src="commit3.jpg" alt="収穫へのこだわり">
+    </div>
+    <div class="commit-txt">
+      <p class="commit-num reveal">Commitment 03</p>
+      <h3 class="commit-title reveal">最適な時を見極め、<br>丁寧に収穫する。</h3>
+      <p class="commit-desc reveal d1">稲穂の色と状態を毎日確認しながら、最適な収穫タイミングを見極めます。機械に頼りすぎず、農家の目と手で品質を確認しながら大切に収穫します。</p>
     </div>
   </div>
 </section>
 
 <!-- ===== GALLERY ===== -->
 <section class="gallery" id="gallery">
-  <div class="section-header reveal">
-    <span class="section-label">Gallery</span>
-    <h2 class="section-title">富士山麓の四季</h2>
-    <div class="section-line"></div>
+  <div class="gallery-head">
+    <div class="eyebrow reveal">Gallery</div>
+    <h2 class="sec-title reveal">富士山麓の風景</h2>
   </div>
-  <div class="gallery-strip">
-    <div class="gallery-item"><img src="hero1.jpg" alt="富士山麓の田んぼ" loading="lazy"></div>
-    <div class="gallery-item"><img src="hero2.jpg" alt="にじのきらめき" loading="lazy"></div>
-    <div class="gallery-item"><img src="hero3.jpg" alt="富士山の夕景" loading="lazy"></div>
-    <div class="gallery-item"><img src="concept.jpg" alt="お米のクローズアップ" loading="lazy"></div>
-    <div class="gallery-item"><img src="gallery1.jpg" alt="収穫の季節" loading="lazy"></div>
-    <div class="gallery-item"><img src="farm-harvest.png" alt="農場の収穫" loading="lazy"></div>
+  <div class="gallery-strip" id="galleryStrip">
+    <div class="gal-item"><img src="hero1.jpg"         alt="稲穂"           loading="lazy"></div>
+    <div class="gal-item"><img src="hero2.jpg"         alt="かじゅのみのる米" loading="lazy"></div>
+    <div class="gal-item"><img src="hero3.jpg"         alt="富士山麓の風景"   loading="lazy"></div>
+    <div class="gal-item"><img src="concept.jpg"       alt="コンセプト"      loading="lazy"></div>
+    <div class="gal-item"><img src="gallery1.jpg"      alt="農場の景色"      loading="lazy"></div>
+    <div class="gal-item"><img src="farm-harvest.png"  alt="収穫の様子"      loading="lazy"></div>
   </div>
 </section>
 
 <!-- ===== CTA BANNER ===== -->
 <section class="cta-banner">
-  <div class="cta-banner-bg">
-    <img src="banner.jpg" alt="FUJI RICE">
-  </div>
-  <div class="cta-banner-content">
-    <h2 class="cta-banner-title">
-      今すぐ、<strong>本物の味</strong>を<br>食卓へ。
-    </h2>
-    <p class="cta-banner-sub">
-      数量限定・産地直送。<br>
-      富士山麓から、あなたのもとへ。
-    </p>
+  <div class="cta-bg"><img src="banner.jpg" alt="FUJI RICE"></div>
+  <div class="cta-veil"></div>
+  <div class="cta-body reveal">
+    <h2 class="cta-h2">今すぐ、<strong>本物の米</strong>を<br>食卓へ届けませんか。</h2>
+    <p class="cta-sub">富士山麓から、あなたの食卓へ。<br>大切に育てた一粒をお届けします。</p>
     <div class="cta-btns">
-      <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="btn-primary">Yahooショッピングで購入する</a>
-      <a href="#contact" class="btn-secondary">お問い合わせ</a>
+      <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="btn-gold">Yahoo!ショッピングで購入する</a>
+      <a href="#contact" class="btn-ghost">お問い合わせ</a>
     </div>
   </div>
 </section>
 
 <!-- ===== VIDEO ===== -->
-<section class="video-section" id="video">
-  <div class="section-header reveal">
-    <span class="section-label">Movie</span>
-    <h2 class="section-title">農場の記録</h2>
-    <div class="section-line"></div>
+<section class="video-sec" id="video">
+  <div class="video-head reveal">
+    <div class="eyebrow center">Movie</div>
+    <h2 class="sec-title">農場の映像</h2>
   </div>
-  <div class="video-inner reveal">
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/videoseries?list=UUvvaEEAZoCEwlv11ubKSWxg"
-        title="FUJI RICE YouTube チャンネル"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-    </div>
-    <div style="text-align:center; margin-top:28px;">
-      <a href="https://www.youtube.com/channel/UCvvaEEAZoCEwlv11ubKSWxg" target="_blank" rel="noopener" class="btn-primary">YouTubeチャンネルを見る</a>
-    </div>
+  <div class="video-wrap reveal">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=UUvvaEEAZoCEwlv11ubKSWxg"
+      title="FUJI RICE YouTube チャンネル"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+  <div class="video-foot reveal">
+    <a href="https://www.youtube.com/channel/UCvvaEEAZoCEwlv11ubKSWxg" target="_blank" rel="noopener" class="btn-gold">YouTubeチャンネルを見る</a>
   </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <div class="section-header reveal">
-      <span class="section-label">Contact</span>
-      <h2 class="section-title" style="color:white;">お問い合わせ</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="contact-info reveal">
-      <div class="contact-item">
-        <span class="contact-item-label">TEL</span>
-        <div class="contact-item-value">
-          <a href="tel:09068033699">090-6803-3699</a>
+    <div class="contact-info">
+      <div class="eyebrow reveal">Contact</div>
+      <h2 class="sec-title reveal" style="color:var(--white);">お気軽に<br>お問い合わせください</h2>
+      <div class="c-items reveal d1">
+        <div class="c-item">
+          <span class="c-label">Tel</span>
+          <div class="c-val"><a href="tel:09068033699">090-6803-3699</a></div>
+        </div>
+        <div class="c-item">
+          <span class="c-label">Email</span>
+          <div class="c-val"><a href="mailto:iwataku926@gmail.com">iwataku926@gmail.com</a></div>
+        </div>
+        <div class="c-item">
+          <span class="c-label">Address</span>
+          <div class="c-val">静岡県富士市岩淵378</div>
         </div>
       </div>
-      <div class="contact-item">
-        <span class="contact-item-label">EMAIL</span>
-        <div class="contact-item-value">
-          <a href="mailto:iwataku926@gmail.com">iwataku926@gmail.com</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">ADDRESS</span>
-        <div class="contact-item-value">静岡県富士宮市青木378</div>
-      </div>
+      <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="btn-gold reveal d2">Yahoo!ショッピングで購入</a>
     </div>
-    <div class="contact-form reveal">
+    <div class="contact-form reveal d1">
       <form id="contactForm" action="https://formspree.io/f/iwataku926@gmail.com" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="name">お名前 *</label>
-            <input class="form-input" type="text" id="name" name="name" required placeholder="山田 太郎">
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label" for="name">お名前<span class="req">*</span></label>
+            <input class="f-input" type="text" id="name" name="name" required placeholder="山田 太郎">
           </div>
-          <div class="form-group">
-            <label class="form-label" for="email">メールアドレス *</label>
-            <input class="form-input" type="email" id="email" name="email" required placeholder="example@email.com">
+          <div class="f-group">
+            <label class="f-label" for="email">メールアドレス<span class="req">*</span></label>
+            <input class="f-input" type="email" id="email" name="email" required placeholder="example@email.com">
           </div>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="subject">件名</label>
-          <input class="form-input" type="text" id="subject" name="subject" placeholder="商品についてのお問い合わせ">
+        <div class="f-group">
+          <label class="f-label" for="subject">件名</label>
+          <input class="f-input" type="text" id="subject" name="subject" placeholder="ご注文・お問い合わせについて">
         </div>
-        <div class="form-group">
-          <label class="form-label" for="message">メッセージ *</label>
-          <textarea class="form-textarea" id="message" name="message" required placeholder="お問い合わせ内容をご記入ください。"></textarea>
+        <div class="f-group">
+          <label class="f-label" for="message">メッセージ<span class="req">*</span></label>
+          <textarea class="f-area" id="message" name="message" required placeholder="お問い合わせ内容をご記入ください。"></textarea>
         </div>
-        <button type="submit" class="form-submit">送信する</button>
+        <button type="submit" class="f-submit">送信する</button>
       </form>
     </div>
   </div>
@@ -1215,115 +1256,129 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="logo-main">FUJI RICE</span>
-        <span class="logo-sub" style="color:rgba(255,255,255,0.4); font-size:0.6rem; letter-spacing:0.4em;">富士山麓 特別栽培米</span>
-        <p class="footer-brand-desc">
-          静岡県富士宮市青木378<br>
-          にじのきらめき 特別栽培米<br>
-          一粒の贅沢
-        </p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-link-group">
-          <h4>NAVIGATION</h4>
-          <ul>
-            <li><a href="#concept">ブランドコンセプト</a></li>
-            <li><a href="#products">商品ラインナップ</a></li>
-            <li><a href="#commitment">こだわり</a></li>
-            <li><a href="#video">動画</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
-          </ul>
-        </div>
-        <div class="footer-link-group">
-          <h4>SHOP</h4>
-          <ul>
-            <li><a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener">Yahooショッピング</a></li>
-          </ul>
-        </div>
-        <div class="footer-link-group">
-          <h4>SOCIAL</h4>
-          <ul>
-            <li><a href="https://www.youtube.com/channel/UCvvaEEAZoCEwlv11ubKSWxg" target="_blank" rel="noopener">YouTube</a></li>
-          </ul>
-        </div>
-      </div>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="#" class="logo">
+        <span class="logo-en">FUJI RICE</span>
+        <span class="logo-jp">富士山麓 岩谷農場</span>
+      </a>
+      <p class="ft-desc">
+        静岡県富士市岩淵378<br>
+        かじゅのみのる米 農場<br>
+        一粒の誠実を、あなたへ。
+      </p>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2024 FUJI RICE / 富士山麓 岩田農場. All Rights Reserved.</p>
-      <p class="footer-cert">静岡県認証農産物 | 特別栽培米</p>
+    <div class="ft-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#concept">コンセプト</a></li>
+        <li><a href="#features">選ばれる理由</a></li>
+        <li><a href="#products">商品ラインナップ</a></li>
+        <li><a href="#commitment">こだわり</a></li>
+        <li><a href="#video">動画</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
     </div>
+    <div class="ft-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener">Yahoo!ショッピング</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Social</h4>
+      <ul>
+        <li><a href="https://www.youtube.com/channel/UCvvaEEAZoCEwlv11ubKSWxg" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2024 FUJI RICE / 富士山麓 岩谷農場. All Rights Reserved.</p>
+    <p class="ft-cert">静岡県富士市農業生産法人 | 岩谷農場</p>
   </div>
 </footer>
 
 <script>
-// ===== HERO SLIDESHOW =====
-(function() {
-  const slides = document.querySelectorAll('.hero-slide');
-  const indicators = document.querySelectorAll('.indicator');
-  let current = 0;
-  let timer;
+/* ===== HERO SLIDESHOW ===== */
+(function () {
+  const slides = document.querySelectorAll('.slide');
+  const dotsEl = document.getElementById('heroDots');
+  let cur = 0, timer;
 
-  function goTo(n) {
-    slides[current].classList.remove('active');
-    indicators[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    indicators[current].classList.add('active');
-  }
-
-  function next() { goTo(current + 1); }
-
-  function startTimer() { timer = setInterval(next, 5000); }
-
-  indicators.forEach(ind => {
-    ind.addEventListener('click', () => {
-      clearInterval(timer);
-      goTo(+ind.dataset.index);
-      startTimer();
-    });
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'dot' + (i === 0 ? ' active' : '');
+    b.dataset.i = i;
+    b.addEventListener('click', () => { clearInterval(timer); go(i); startTimer(); });
+    dotsEl.appendChild(b);
   });
 
+  function go(n) {
+    slides[cur].classList.remove('active');
+    dotsEl.querySelectorAll('.dot')[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dotsEl.querySelectorAll('.dot')[cur].classList.add('active');
+  }
+  function startTimer() { timer = setInterval(() => go(cur + 1), 5200); }
   startTimer();
 })();
 
-// ===== HAMBURGER MENU =====
-(function() {
-  const btn = document.getElementById('hamburgerBtn');
-  const nav = document.getElementById('mobileNav');
-  const close = document.getElementById('navClose');
-  const links = document.querySelectorAll('.mobile-link');
-
-  btn.addEventListener('click', () => nav.classList.add('open'));
-  close.addEventListener('click', () => nav.classList.remove('open'));
-  links.forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+/* ===== HEADER SCROLL ===== */
+(function () {
+  const h = document.getElementById('header');
+  const tick = () => h.classList.toggle('scrolled', window.scrollY > 50);
+  window.addEventListener('scroll', tick, { passive: true });
 })();
 
-// ===== SCROLL REVEAL =====
-(function() {
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
+/* ===== HAMBURGER ===== */
+(function () {
+  const btn   = document.getElementById('hamburgerBtn');
+  const nav   = document.getElementById('mobileNav');
+  const close = document.getElementById('navClose');
+  const links = document.querySelectorAll('.mob-link');
+  const open  = () => nav.classList.add('open');
+  const shut  = () => nav.classList.remove('open');
+  btn.addEventListener('click', open);
+  close.addEventListener('click', shut);
+  links.forEach(l => l.addEventListener('click', shut));
+})();
+
+/* ===== SCROLL REVEAL ===== */
+(function () {
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
+  els.forEach(el => obs.observe(el));
 })();
 
-// ===== HEADER SCROLL =====
-(function() {
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.style.background = window.scrollY > 50
-      ? 'rgba(10,10,10,0.97)'
-      : 'rgba(10,10,10,0.85)';
+/* ===== GALLERY DRAG SCROLL ===== */
+(function () {
+  const strip = document.getElementById('galleryStrip');
+  let down = false, startX, scrollLeft;
+  strip.addEventListener('mousedown',  e => { down = true; startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft; });
+  strip.addEventListener('mouseleave', () => down = false);
+  strip.addEventListener('mouseup',    () => down = false);
+  strip.addEventListener('mousemove',  e => {
+    if (!down) return;
+    e.preventDefault();
+    strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX);
   });
 })();
+
+/* ===== SMOOTH ANCHOR (offset for fixed header) ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const top = target.getBoundingClientRect().top + window.scrollY - 78;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
 </script>
 </body>
 </html>
