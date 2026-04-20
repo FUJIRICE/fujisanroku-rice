@@ -1,0 +1,10 @@
+{
+  "name": "FUJI RICE - 新記事自動SNS投稿",
+  "flow": [
+    {"id": 1, "module": "gateway:CustomWebHook", "notes": "CloudflareのDeploy Webhookを受け取る"},
+    {"id": 2, "module": "http:ActionSendData", "mapper": {"url": "https://fujirice.pages.dev/index.json", "method": "GET"}, "notes": "最新記事情報を取得"},
+    {"id": 3, "module": "builtin:BasicFeeder", "mapper": {"array": "{{2.data.items}}", "limit": "1"}, "notes": "最新1記事のみ処理"},
+    {"id": 6, "module": "twitter:createTweet", "mapper": {"status": "🌾 新記事：{{3.title}}\n\nhttps://fujirice.pages.dev/posts/{{3.slug}}/\n\n#富士山 #お米 #農家 #FUJIRICE"}},
+    {"id": 7, "module": "http:ActionSendData", "mapper": {"url": "https://api.line.me/v2/bot/message/broadcast", "method": "POST"}, "notes": "LINE公式アカウントに一斉配信"}
+  ]
+}

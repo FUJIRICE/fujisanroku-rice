@@ -1,0 +1,69 @@
+baseURL = "https://fujirice.pages.dev/"
+languageCode = "ja"
+defaultContentLanguage = "ja"
+title = "FUJI RICE | 富士山麓で育てる、雪解け水のお米"
+theme = "fujirice"
+enableRobotsTXT = true
+enableEmoji = true
+hasCJKLanguage = true
+
+[params]
+  description = "富士山麓の清らかな雪解け水と豊かな自然の恵みで育てたお米、FUJI RICE。産地直送でお届けします。"
+  keywords = "富士山, お米, 米, 産地直送, 有機米, 新米, 山梨"
+  author = "FUJI RICE Farm"
+  logo = "/images/logo.png"
+  heroTitle = "富士山麓で育てる、雪解け水のお米"
+  heroSubtitle = "清らかな水と豊かな自然の恵みで育てた、特別なお米をあなたの食卓へ"
+  heroImage = "/images/hero-fuji.jpg"
+  purchaseURL = "https://store.shopping.yahoo.co.jp/fujirice/"
+  purchaseText = "今すぐ購入する"
+  lineID = "@508ouhoc"
+  lineURL = "https://line.me/R/ti/p/%40508ouhoc"
+  instagramURL = "https://www.instagram.com/fujirice_farm/"
+  youtubeURL = "https://www.youtube.com/@fujirice_official"
+  tiktokURL = "https://www.tiktok.com/@fuji.rice"
+  postsPerPage = 9
+  showReadingTime = true
+  googleFonts = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  [[menu.main]]
+    name = "ホーム"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "お米について"
+    url = "/pages/about/"
+    weight = 2
+  [[menu.main]]
+    name = "ブログ"
+    url = "/posts/"
+    weight = 3
+  [[menu.main]]
+    name = "LINEで相談"
+    url = "https://line.me/R/ti/p/%40508ouhoc"
+    weight = 4
+  [[menu.main]]
+    name = "購入する"
+    url = "https://store.shopping.yahoo.co.jp/fujirice/"
+    weight = 5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  term = ["HTML"]
+  taxonomy = ["HTML"]
+
+[pagination]
+  pagerSize = 9

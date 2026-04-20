@@ -1,0 +1,40 @@
+{{- define "main" }}
+{{- with .Params.image }}
+<div class="post-hero">
+  <img src="{{ . }}" alt="{{ $.Title }}" loading="eager">
+  <div class="post-hero-overlay"></div>
+</div>
+{{- else }}<div style="height:70px;"></div>{{- end }}
+<div class="post-header">
+  <div class="container-narrow">
+    {{- with .Params.categories }}<span class="post-category-badge">{{ index . 0 }}</span>{{- end }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format \"2006-01-02\" }}">📅 {{ .Date.Format \"2006年1月2日\" }}</time>
+      {{- with .Params.tags }}<span class="divider"></span><span>🏷️ {{ delimit . \" · \" }}</span>{{- end }}
+    </div>
+  </div>
+</div>
+<article class="post-content">
+  <div class="container-narrow">
+    {{ .Content }}
+    {{- with .Params.tags }}
+    <div class="tags">
+      {{- range . }}<a href="{{ \"/tags/\" | relURL }}{{ . | urlize }}/" class="tag"># {{ . }}</a>{{- end }}
+    </div>
+    {{- end }}
+  </div>
+</article>
+<div class="share-section">
+  <div class="container-narrow">
+    <p class="share-label">この記事をシェア</p>
+    <div class="share-buttons">
+      <a href="#" class="share-btn twitter" data-share="twitter">X (Twitter)</a>
+      <a href="#" class="share-btn line" data-share="line">LINE</a>
+    </div>
+  </div>
+</div>
+<div class="text-center" style="padding:2rem 0 4rem;">
+  <a href="{{ \"/posts/\" | relURL }}" class="btn btn-primary">← 記事一覧に戻る</a>
+</div>
+{{- end }}

@@ -1,0 +1,39 @@
+{{- define "main" }}
+<div class="page-hero" style="padding-top:100px;">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p>{{ with .Description }}{{ . }}{{ else }}FUJI RICEの農場から最新情報をお届け{{ end }}</p>
+  </div>
+</div>
+<section class="posts-section">
+  <div class="container">
+    {{- if .Pages }}
+    <div class="posts-grid">
+      {{- range .Paginator.Pages }}
+      <article class="post-card">
+        <div class="post-card-image">
+          {{- with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">{{- else }}<div class="post-card-image-placeholder">🌾</div>{{- end }}
+          {{- with .Params.categories }}<span class="post-card-category">{{ index . 0 }}</span>{{- end }}
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <time datetime="{{ .Date.Format \"2006-01-02\" }}">{{ .Date.Format \"2006年1月2日\" }}</time>
+          </div>
+          <h2 class="post-card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          <p class="post-card-excerpt">{{ .Summary }}</p>
+          <div class="post-card-footer"><a href="{{ .Permalink }}" class="read-more">続きを読む</a></div>
+        </div>
+      </article>
+      {{- end }}
+    </div>
+    {{- if gt .Paginator.TotalPages 1 }}
+    <nav class="pagination" aria-label="ページネーション">
+      {{- if .Paginator.HasPrev }}<span class="page-item"><a href="{{ .Paginator.Prev.URL }}" class="page-link">←</a></span>{{- end }}
+      {{- range .Paginator.Pagers }}<span class="page-item"><a href="{{ .URL }}" class="page-link{{ if eq . $.Paginator }} active{{ end }}">{{ .PageNumber }}</a></span>{{- end }}
+      {{- if .Paginator.HasNext }}<span class="page-item"><a href="{{ .Paginator.Next.URL }}" class="page-link">→</a></span>{{- end }}
+    </nav>
+    {{- end }}
+    {{- else }}<div class="text-center" style="padding:4rem 0;"><p>まだ投稿がありません。</p></div>{{- end }}
+  </div>
+</section>
+{{- end }}

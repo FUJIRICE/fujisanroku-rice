@@ -1,0 +1,8 @@
+name = "FUJI RICE"
+license = "MIT"
+description = "FUJI RICE - 富士山麓のお米農家向けカスタムHugoテーマ"
+homepage = "https://fujirice.pages.dev/"
+min_version = "0.112.0"
+
+[author]
+  name = "FUJI RICE Farm"
