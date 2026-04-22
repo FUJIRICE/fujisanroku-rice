@@ -1,53 +1,83 @@
 {{- define "main" }}
-<section class="hero">
-  <div class="hero-bg">{{- with site.Params.heroImage }}<img src="{{ . }}" alt="富士山と田んぼ" loading="eager">{{- end }}</div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-badge">🌾 産地直送 · 富士山麓</span>
-    <h1 class="hero-title">{{ site.Params.heroTitle }}</h1>
-    <p class="hero-subtitle">{{ site.Params.heroSubtitle }}</p>
-    <div class="hero-actions">
-      <a href="{{ site.Params.purchaseURL }}" class="btn btn-primary" target="_blank" rel="noopener">🛒 今すぐ購入する</a>
-      <a href="{{ site.Params.lineURL }}" class="btn btn-line" target="_blank" rel="noopener">💬 LINEで相談する</a>
-      <a href="#posts-section" class="btn btn-outline">ブログを読む</a>
-    </div>
+
+<!-- ===== BLOG TOP BANNER (slim) ===== -->
+<div class="bl-banner">
+  <div class="bl-banner-inner">
+    <p class="bl-banner-tag">富士山麓 農場だより</p>
+    <h1 class="bl-banner-title">田んぼからの最新情報</h1>
+    <p class="bl-banner-sub">富士山の雪解け水と大地が育むお米づくりの記録</p>
   </div>
-</section>
-<div class="features-strip"><div class="container">
-  <div class="feature-item"><span class="feature-icon">🏔️</span><div class="feature-text"><strong>富士山麓産</strong><span>標高の高い清浄な環境</span></div></div>
-  <div class="feature-item"><span class="feature-icon">💧</span><div class="feature-text"><strong>雪解け水使用</strong><span>ミネラル豊富な天然水</span></div></div>
-  <div class="feature-item"><span class="feature-icon">🌱</span><div class="feature-text"><strong>こだわりの栽培</strong><span>安心・安全な農法</span></div></div>
-  <div class="feature-item"><span class="feature-icon">📦</span><div class="feature-text"><strong>産地直送</strong><span>新鮮なままお届け</span></div></div>
-</div></div>
-<section class="posts-section" id="posts-section">
-  <div class="container">
-    <h2 class="section-title">最新の投稿</h2>
-    <p class="section-subtitle">田んぼの様子や農業の日常をお届けします</p>
-    <div class="posts-grid">
-      {{- $posts := (where .Site.RegularPages \"Type\" \"posts\") | first 6 }}
-      {{- range $posts }}
-      <article class="post-card">
-        <div class="post-card-image">{{- with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">{{- else }}<div class="post-card-image-placeholder">🌾</div>{{- end }}{{- with .Params.categories }}<span class="post-card-category">{{ index . 0 }}</span>{{- end }}</div>
-        <div class="post-card-body">
-          <div class="post-card-meta"><time datetime="{{ .Date.Format \"2006-01-02\" }}">{{ .Date.Format \"2006年1月2日\" }}</time></div>
-          <h3 class="post-card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-          <p class="post-card-excerpt">{{ .Summary }}</p>
-          <div class="post-card-footer"><a href="{{ .Permalink }}" class="read-more">続きを読む</a></div>
+</div>
+
+<!-- ===== 最新記事 全文表示 ===== -->
+<main class="bl-main">
+  <div class="bl-container">
+
+    <!-- 最新3件 全文 -->
+    <section class="bl-recent">
+      {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
+      {{- range (where .Site.RegularPages "Type" "posts") | first 3 }}
+      <article class="bl-article">
+        {{- $postImg := .Params.image }}
+        {{- if not $postImg }}
+          {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
+          {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
+        {{- end }}
+        <div class="bl-article-hero">
+          <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="eager">
+        </div>
+        <div class="bl-article-body">
+          <time class="bl-article-date">{{ .Date.Format "2006年1月2日" }}</time>
+          <h2 class="bl-article-title">{{ .Title }}</h2>
+          <div class="bl-article-content">{{ .Content }}</div>
+          <a href="{{ .Permalink }}" class="bl-article-link">この記事を見る →</a>
         </div>
       </article>
       {{- end }}
-    </div>
-    {{- if gt (len (where .Site.RegularPages \"Type\" \"posts\")) 6 }}<div class="text-center mt-6"><a href="{{ \"/posts/\" | relURL }}" class="btn btn-primary">すべての投稿を見る</a></div>{{- end }}
+    </section>
+
+    <!-- 過去の記事グリッド -->
+    <section class="bl-archive">
+      <h2 class="bl-archive-title">過去の記事</h2>
+      <div class="bl-grid">
+        {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
+        {{- range (where .Site.RegularPages "Type" "posts") | first 12 | after 3 }}
+        <a href="{{ .Permalink }}" class="bl-card">
+          <div class="bl-card-img">
+            {{- $postImg := .Params.image }}
+            {{- if not $postImg }}
+              {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
+              {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
+            {{- end }}
+            <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="lazy">
+          </div>
+          <div class="bl-card-body">
+            <time class="bl-card-date">{{ .Date.Format "2006.01.02" }}</time>
+            <p class="bl-card-title">{{ .Title }}</p>
+          </div>
+        </a>
+        {{- end }}
+      </div>
+      <div class="bl-more">
+        <a href="{{ "/posts/" | relURL }}" class="bl-more-btn">すべての記事を見る →</a>
+      </div>
+    </section>
+
+    <!-- 購入・LINE サイドバー的CTA -->
+    <aside class="bl-cta-bar">
+      <div class="bl-cta-box">
+        <p class="bl-cta-label">🛒 産地直送</p>
+        <p class="bl-cta-text">FUJI RICEをYahooショッピングで</p>
+        <a href="{{ site.Params.purchaseURL }}" class="bl-cta-btn" target="_blank" rel="noopener">購入する</a>
+      </div>
+      <div class="bl-cta-box bl-cta-box--line">
+        <p class="bl-cta-label">💬 LINEで相談</p>
+        <p class="bl-cta-text">{{ site.Params.lineID }}</p>
+        <a href="{{ site.Params.lineURL }}" class="bl-cta-btn bl-cta-btn--line" target="_blank" rel="noopener">友だち追加</a>
+      </div>
+    </aside>
+
   </div>
-</section>
-<section class="cta-section"><div class="container">
-  <h2 class="section-title">FUJI RICEをお試しください</h2>
-  <div class="cta-buttons"><a href="{{ site.Params.purchaseURL }}" class="btn btn-primary" target="_blank" rel="noopener">🛒 Yahooショッピングで購入する</a></div>
-</div></section>
-<section class="line-section"><div class="container"><div class="line-card">
-  <div class="line-icon">💬</div>
-  <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:0.5rem;">LINE公式アカウント</h2>
-  <p class="line-id">{{ site.Params.lineID }}</p>
-  <a href="{{ site.Params.lineURL }}" class="btn btn-line" target="_blank" rel="noopener">LINEで友だち追加する</a>
-</div></div></section>
+</main>
+
 {{- end }}

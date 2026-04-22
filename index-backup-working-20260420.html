@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FUJI RICE | にじのきらめき 富士山麓の米農家 岩谷農場</title>
+<title>FUJI RICE | にじのきらめき 富士山麓 岩谷農場</title>
 <meta name="description" content="富士山麓の清らかな水と大地で育てた、プレミアム国産米。にじのきらめき。静岡県富士市岩谷農場の一粒一粒が届ける、誠実な美味しさ。">
 <meta name="keywords" content="富士山麓,岩谷農場,にじのきらめき,お米,富士市,FUJI RICE">
-<meta property="og:title" content="FUJI RICE | にじのきらめき 富士山麓の米農家 岩谷農場">
+<meta property="og:title" content="FUJI RICE | にじのきらめき 富士山麓 岩谷農場">
 <meta property="og:description" content="富士山麓の清らかな水と大地で育てた、プレミアム国産米。">
 <meta property="og:image" content="hero1.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -751,7 +751,7 @@ header.scrolled {
   overflow: hidden;
   max-width: 1280px;
   margin: 0 auto 40px;
-  background: transparent;
+  background: var(--dark);
 }
 .video-wrap iframe {
   position: absolute;
@@ -953,7 +953,7 @@ footer {
 <header id="header">
   <a href="#" class="logo">
     <span class="logo-en">FUJI RICE</span>
-    <span class="logo-jp">富士山麓の米農家 岩谷農場</span>
+    <span class="logo-jp">富士山麓 岩谷農場</span>
   </a>
   <nav>
     <ul class="desktop-nav">
@@ -1177,8 +1177,8 @@ footer {
   <div class="cta-bg"><img src="banner.jpg" alt="FUJI RICE"></div>
   <div class="cta-veil"></div>
   <div class="cta-body reveal">
-    <h2 class="cta-h2">その食卓に、<strong>富士山麓の恵み</strong>を。</h2>
-    <p class="cta-sub">炊きあがりの香り、噛むほどに広がる甘み。<br>毎日の一膳が、特別な時間になります。</p>
+    <h2 class="cta-h2">今すぐ、<strong>本物の米</strong>を<br>食卓へ届けませんか。</h2>
+    <p class="cta-sub">富士山麓から、あなたの食卓へ。<br>大切に育てた一粒をお届けします。</p>
     <div class="cta-btns">
       <a href="https://store.shopping.yahoo.co.jp/iwatayacom/c7c0b2c8c4.html?X=5" target="_blank" rel="noopener" class="btn-gold">Yahoo!ショッピングで購入する</a>
       <a href="#contact" class="btn-ghost">お問い合わせ</a>
@@ -1261,7 +1261,7 @@ footer {
     <div class="ft-brand">
       <a href="#" class="logo">
         <span class="logo-en">FUJI RICE</span>
-        <span class="logo-jp">富士山麓の米農家 岩谷農場</span>
+        <span class="logo-jp">富士山麓 岩谷農場</span>
       </a>
       <p class="ft-desc">
         静岡県富士市岩淵378<br>
@@ -1294,7 +1294,7 @@ footer {
     </div>
   </div>
   <div class="ft-bottom">
-    <p class="ft-copy">© 2024 FUJI RICE / 富士山麓の米農家 岩谷農場. All Rights Reserved.</p>
+    <p class="ft-copy">© 2024 FUJI RICE / 富士山麓 岩谷農場. All Rights Reserved.</p>
     <p class="ft-cert">静岡県富士市農業生産法人 | 岩谷農場</p>
   </div>
 </footer>
@@ -1383,48 +1383,24 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 </script>
 
 <script>
-/* 最新YouTube動画を自動取得して埋め込む（Shortsスキップ対応） */
+/* 最新YouTube動画を自動取得して埋め込む */
 (async function() {
-  var FALLBACK_ID = '_HzcLq_Tt1w';
-  var iframe = document.getElementById('yt-latest-iframe');
+  const channelId = 'UCvvaEEAZoCEwlv11ubKSWxg';
+  const iframe = document.getElementById('yt-latest-iframe');
   if (!iframe) return;
-
-  var rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=UCvvaEEAZoCEwlv11ubKSWxg';
-  var proxies = [
-    'https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl),
-    'https://corsproxy.io/?' + encodeURIComponent(rssUrl),
-    'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(rssUrl)
-  ];
-
-  async function fetchRSS() {
-    for (var i = 0; i < proxies.length; i++) {
-      try {
-        var res = await fetch(proxies[i]);
-        if (res.ok) return await res.text();
-      } catch(e) { /* 次のプロキシへ */ }
-    }
-    return null;
-  }
-
   try {
-    var text = await fetchRSS();
-    if (!text) { return; }
-    var xml = new DOMParser().parseFromString(text, 'text/xml');
-    var entries = xml.querySelectorAll('entry');
-    var videoId = null;
-
-    for (var i = 0; i < entries.length; i++) {
-      var title = (entries[i].querySelector('title') || {}).textContent || '';
-      if (/shorts/i.test(title) || title.indexOf('#Shorts') !== -1) continue;
-      videoId = (entries[i].querySelector('videoId') || entries[i].querySelector('yt\\:videoId') || {}).textContent;
-      if (videoId) break;
-    }
-
+    const rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + channelId;
+    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl));
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text, 'text/xml');
+    const videoId = xml.querySelector('videoId')?.textContent
+                 || xml.querySelector('yt\\:videoId')?.textContent
+                 || (xml.querySelector('entry link') || {}).getAttribute?.('href')?.split('v=')[1];
     if (videoId) {
       iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&autoplay=0';
     }
   } catch(e) {
-    /* フォールバック: デフォルト動画IDをそのまま表示 */
+    /* フォールバック: 直近の動画をそのまま表示 */
   }
 })();
 </script>
