@@ -21,6 +21,9 @@ hasCJKLanguage = true
   instagramURL = "https://www.instagram.com/fujirice_farm/"
   youtubeURL = "https://www.youtube.com/@fujirice_official"
   tiktokURL = "https://www.tiktok.com/@fuji.rice"
+  facebookURL = "https://www.facebook.com/profile.php?id=61576422607058"
+  wordpressURL = "https://iwataya9.wordpress.com/"
+  libecityURL = "https://libecity.com/shops/577"
   postsPerPage = 9
   showReadingTime = true
   googleFonts = true
