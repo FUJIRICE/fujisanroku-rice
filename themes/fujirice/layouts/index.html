@@ -1,313 +1,219 @@
 {{- define "main" }}
 
-<!-- ==================== HERO ==================== -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  
-  <div class="hero-mountain-wrap">
-    <svg class="hero-mountain-svg" viewBox="0 0 1800 600" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 0 600 L 200 380 L 350 420 L 500 350 L 650 400 L 800 320 L 950 380 L 1100 350 L 1250 400 L 1400 380 L 1600 420 L 1800 380 L 1800 600 Z" 
-            fill="rgba(60, 70, 90, 0.3)" />
-      <path d="M 400 600 L 760 280 Q 790 250 810 250 L 870 200 Q 900 170 925 170 Q 950 170 980 200 L 1040 250 Q 1060 250 1090 280 L 1450 600 Z" 
-            fill="#3a4a5e" />
-      <path d="M 760 280 L 925 170 L 925 600 L 400 600 Z" fill="#2a3848" opacity="0.5" />
-      <path d="M 815 245 Q 805 235 800 245 L 845 215 L 870 200 Q 900 170 925 170 Q 950 170 980 200 L 1005 215 L 1050 245 Q 1045 235 1035 245 L 1010 220 Q 990 240 970 220 L 945 200 Q 925 230 905 200 L 880 220 Q 860 240 840 220 L 815 245 Z" 
-            fill="#e8e0d0" opacity="0.92" />
-      <path d="M 815 245 L 825 270 L 815 290 Z" fill="#e8e0d0" opacity="0.7" />
-      <path d="M 1050 245 L 1040 270 L 1050 290 Z" fill="#e8e0d0" opacity="0.7" />
-      <path d="M 870 220 L 880 250 L 875 240 Z" fill="#e8e0d0" opacity="0.5" />
-      <path d="M 980 220 L 970 250 L 975 240 Z" fill="#e8e0d0" opacity="0.5" />
-    </svg>
+<!-- ========================================= -->
+<!-- ===== NEW: 写真ヒーロー(スライドショー) ===== -->
+<!-- ========================================= -->
+<section class="hp-hero">
+  <div class="hp-hero-slideshow">
+    <div class="hp-slide hp-slide--active" style="background-image:url('/images/hero-fuji-sunset.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-sunset-rice.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-evening-pink.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-clear-blue.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-moon-evening.jpg')"></div>
+    <div class="hp-hero-overlay"></div>
   </div>
-  
-  <div class="hero-grain"></div>
-  
-  <div class="hero-content">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-eyebrow">— Established 1985 / Fujinomiya, Shizuoka —</div>
-        <h1 class="hero-title">
-          <span class="small">富士の</span><br />
-          <span class="accent">SOUL</span><br />
-          <span class="small">が宿る、</span><br />
-          一粒。
-        </h1>
-      </div>
-      
-      <div class="hero-meta-row">
-        <p class="hero-tagline">
-          山頂から100年かけて滲み出す伏流水。<br />
-          四代にわたり守り継いできた田。<br />
-          農薬を半減させ、稲と語り合う米作り。
-        </p>
-        
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-num">04<span class="unit">代</span></div>
-            <div class="hero-stat-label">Generations</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">50<span class="unit">%</span></div>
-            <div class="hero-stat-label">Less Pesticide</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">4.31<span class="unit">★</span></div>
-            <div class="hero-stat-label">Customer Rating</div>
-          </div>
-        </div>
-      </div>
+  <div class="hp-hero-content">
+    <div class="hp-hero-badge">富士山伏流水で育てた特別栽培米 · 減農薬</div>
+    <h1 class="hp-hero-title">
+      <span class="hp-hero-title-en">FUJI RICE</span>
+      <span class="hp-hero-title-jp">富士山麓の米</span>
+    </h1>
+    <p class="hp-hero-sub">富士山伏流水で育てた、にじのきらめき。</p>
+    <div class="hp-hero-cta">
+      <a href="{{ site.Params.purchaseURL }}" class="hp-cta-primary" target="_blank" rel="noopener">商品を見る</a>
+      <a href="#hp-story" class="hp-cta-secondary">物語を読む</a>
     </div>
   </div>
-  
-  <div class="scroll-indicator">Scroll</div>
 </section>
 
-<!-- ==================== PHILOSOPHY ==================== -->
-<section class="philosophy" id="philosophy">
-  <div class="philosophy-content">
-    <div class="eyebrow center">— Our Philosophy —</div>
-    <p class="philosophy-text">
-      <span class="accent">水</span>は、富士の魂。<br />
-      <span class="accent">土</span>は、四代の蓄積。<br />
-      <span class="accent">米</span>は、その応答。<br />
-      <em>Water flows. Soil remembers. Rice answers.</em>
-    </p>
-    <div class="philosophy-divider"></div>
-  </div>
-</section>
-
-<!-- ==================== CALENDAR ==================== -->
-<section class="calendar" id="calendar">
-  <div class="calendar-header">
-    <div class="eyebrow center">— A Year With Rice —</div>
-    <h2 class="calendar-title">
-      米と、私たちの<br />一年。
-      <em>Twelve Months of Rice Making</em>
-    </h2>
-    <p class="calendar-desc">
-      春の種まきから、冬の出荷まで。<br />
-      自然のリズムに寄り添いながら、一粒一粒、丁寧に。
+<!-- ===== NEW: ブランドストーリー ===== -->
+<section class="hp-intro" id="hp-story">
+  <div class="hp-intro-inner">
+    <p class="hp-intro-eyebrow">— 富士山麓、青木の地より</p>
+    <h2 class="hp-intro-title">水と、土と、時間がつくる味。</h2>
+    <p class="hp-intro-body">
+      富士山に降った雪と雨が、長い年月をかけて麓へ届く。<br>
+      その伏流水と、火山が育てた肥沃な土で、米はゆっくりと実ります。<br>
+      農薬を控えて、手間を惜しまず、<br>
+      ひと粒に土地のすべてを宿らせる。それが、私たちの仕事です。
     </p>
   </div>
-  
-  <div class="timeline">
-    <div class="season">
-      <div class="season-content">
-        <div class="season-month">April · 卯月</div>
-        <h3 class="season-name">種まき・苗作り</h3>
-        <p class="season-text">桜が散る頃、温かなビニールハウスで種もみをまきます。一粒一粒に「大きく育って」と願いを込めて。約一ヶ月かけて、緑の苗に育っていきます。</p>
-      </div>
-      <div class="season-marker"><div class="num">01</div><div class="marker-label">Spring</div></div>
-      <div class="season-visual"><div class="visual-circle spring1"><div class="visual-icon">🌱</div><div class="visual-label">Seedlings</div></div></div>
-    </div>
-    
-    <div class="season">
-      <div class="season-content">
-        <div class="season-month">May · 皐月</div>
-        <h3 class="season-name">田植え</h3>
-        <p class="season-text">ゴールデンウィーク前後、満を持して田植えの季節です。富士山の雪解け水を張った田んぼに、若い苗を一列一列植えていきます。鏡のような水面に映る富士山は、この時期ならでは。</p>
-      </div>
-      <div class="season-marker"><div class="num">02</div><div class="marker-label">Spring</div></div>
-      <div class="season-visual"><div class="visual-circle spring2"><div class="visual-icon">🌾</div><div class="visual-label">Planting</div></div></div>
-    </div>
-    
-    <div class="season">
-      <div class="season-content">
-        <div class="season-month">June – August · 水無月〜葉月</div>
-        <h3 class="season-name">育成・草取り</h3>
-        <p class="season-text">蒸し暑い夏。稲はぐんぐんと背を伸ばし、青々と田んぼを染めます。除草剤を最小限にしているため、手作業での草取りも欠かせません。汗と泥にまみれる季節です。</p>
-      </div>
-      <div class="season-marker"><div class="num">03</div><div class="marker-label">Summer</div></div>
-      <div class="season-visual"><div class="visual-circle summer"><div class="visual-icon">☀️</div><div class="visual-label">Growth</div></div></div>
-    </div>
-    
-    <div class="season">
-      <div class="season-content">
-        <div class="season-month">September · 長月</div>
-        <h3 class="season-name">出穂・登熟</h3>
-        <p class="season-text">稲穂が顔を出し、白い花をつける季節。やがて穂が垂れ、黄金色に色づいていきます。秋の光を浴びて、富士山と稲穂のコントラストは、何度見ても胸を打つ光景です。</p>
-      </div>
-      <div class="season-marker"><div class="num">04</div><div class="marker-label">Autumn</div></div>
-      <div class="season-visual"><div class="visual-circle autumn1"><div class="visual-icon">🌾</div><div class="visual-label">Heading</div></div></div>
-    </div>
-    
-    <div class="season">
-      <div class="season-content">
-        <div class="season-month">October · 神無月</div>
-        <h3 class="season-name">収穫・乾燥</h3>
-        <p class="season-text">一年で一番嬉しい時期。コンバインで稲を刈り取り、乾燥機にかけて、ちょうど良い水分量まで丁寧に。新米の香りが田んぼに広がります。</p>
-      </div>
-      <div class="season-marker"><div class="num">05</div><div class="marker-label">Autumn</div></div>
-      <div class="season-visual"><div class="visual-circle autumn2"><div class="visual-icon">🍚</div><div class="visual-label">Harvest</div></div></div>
-    </div>
-    
-    <div class="season">
-      <div class="season-content">
-        <div class="season-month">November – March · 霜月〜弥生</div>
-        <h3 class="season-name">出荷・休田</h3>
-        <p class="season-text">もみすり、選別、袋詰め。お客様のもとへお米をお届けする季節です。雪化粧した富士山を眺めながら、土づくり。次の春への準備が、もう始まっています。</p>
-      </div>
-      <div class="season-marker"><div class="num">06</div><div class="marker-label">Winter</div></div>
-      <div class="season-visual"><div class="visual-circle winter"><div class="visual-icon">❄️</div><div class="visual-label">Shipping</div></div></div>
-    </div>
-  </div>
 </section>
 
-<!-- ==================== PRODUCTS ==================== -->
-<section class="products" id="products">
-  <div class="products-content">
-    <div class="products-header">
-      <div class="eyebrow center">— Our Two Varieties —</div>
-      <h2 class="products-title">
-        二つのお米。<br />
-        <em>Niji-no-Kirameki & Koshihikari</em>
-      </h2>
-    </div>
-    
-    <div class="products-grid">
-      <article class="product">
-        <div class="product-tag">New Variety</div>
-        <div class="product-visual niji"><div class="product-icon">🌾</div></div>
-        <div class="product-info">
-          <div class="product-name-en">NIJI</div>
-          <h3 class="product-name-ja">にじのきらめき</h3>
-          <p class="product-desc">次世代の米。大粒で粒立ちがしっかりとし、冷めても食感が損なわれにくい。お弁当やおにぎりに、特に向いています。</p>
-          <ul class="product-features">
-            <li>食感<span>Robust Texture</span></li>
-            <li>冷めても美味しい<span>Cold-resistant</span></li>
-            <li>農薬50%削減<span>Eco-Certified</span></li>
-            <li>富士山伏流水<span>Fuji Spring Water</span></li>
-          </ul>
-          <a href="{{ site.Params.purchaseURL }}" class="product-cta" target="_blank" rel="noopener">購入する <span>→</span></a>
-        </div>
-      </article>
-      
-      <article class="product">
-        <div class="product-tag">Classic</div>
-        <div class="product-visual koshi"><div class="product-icon">🍚</div></div>
-        <div class="product-info">
-          <div class="product-name-en">KOSHI</div>
-          <h3 class="product-name-ja">コシヒカリ</h3>
-          <p class="product-desc">日本の食卓を支える定番。もっちりとした食感と強い甘み。和食、洋食、何にでも合う、安定の美味しさを誇ります。</p>
-          <ul class="product-features">
-            <li>食感<span>Sticky & Sweet</span></li>
-            <li>万能<span>Versatile</span></li>
-            <li>農薬50%削減<span>Eco-Certified</span></li>
-            <li>富士山伏流水<span>Fuji Spring Water</span></li>
-          </ul>
-          <a href="{{ site.Params.purchaseURL }}" class="product-cta" target="_blank" rel="noopener">購入する <span>→</span></a>
-        </div>
-      </article>
-    </div>
+<!-- ===== NEW: ストーリー 01 土づくり ===== -->
+<section class="hp-story hp-story--reverse">
+  <div class="hp-story-image">
+    <img src="/images/tractor-fuji.jpg" alt="富士山を背に田を耕すトラクター" loading="lazy">
   </div>
-</section>
-
-<!-- ==================== STATS ==================== -->
-<section class="stats">
-  <div class="stats-content">
-    <div class="stats-header">
-      <div class="eyebrow center">— By The Numbers —</div>
-      <h2 class="stats-title">数字が、<em>こだわり</em>を語る。</h2>
-    </div>
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-num">100<span class="unit">年</span></div><div class="stat-label">伏流水の旅</div><div class="stat-en">Spring Water Age</div></div>
-      <div class="stat"><div class="stat-num">50<span class="unit">%</span></div><div class="stat-label">農薬削減率</div><div class="stat-en">Less Pesticide</div></div>
-      <div class="stat"><div class="stat-num">04<span class="unit">代</span></div><div class="stat-label">続く農家</div><div class="stat-en">Generations</div></div>
-      <div class="stat"><div class="stat-num">402<span class="unit">+</span></div><div class="stat-label">お客様の声</div><div class="stat-en">Customer Reviews</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== VIDEO ==================== -->
-<section class="video-section">
-  <div class="video-content">
-    <div class="eyebrow center">— Daily Timelapse —</div>
-    <h2 class="video-title">
-      今日の、富士山。
-      <em>From Our Field, Today</em>
-    </h2>
-    <p class="video-desc">
-      毎日撮影している富士山のタイムラプス動画。<br />
-      朝焼けから夕焼けまで、一日の移ろいをお楽しみください。
+  <div class="hp-story-content">
+    <span class="hp-story-num">01</span>
+    <h3 class="hp-story-title">土づくり</h3>
+    <p class="hp-story-body">
+      春のはじまり、まだ富士山に雪が残るころ。<br>
+      赤いトラクターで田を起こし、空気を含ませる。<br>
+      この一手間が、根の深さを変え、味を変える。
     </p>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=fujirice_official" title="FUJI RICE タイムラプス" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="video-cta">
-      <a href="{{ site.Params.youtubeURL }}" class="btn-outline" target="_blank" rel="noopener">YouTubeチャンネル</a>
+  </div>
+</section>
+
+<!-- ===== NEW: ストーリー 02 種もみ ===== -->
+<section class="hp-story">
+  <div class="hp-story-image">
+    <img src="/images/seed-handful.jpg" alt="手のひらの種もみ" loading="lazy">
+  </div>
+  <div class="hp-story-content">
+    <span class="hp-story-num">02</span>
+    <h3 class="hp-story-title">種もみ</h3>
+    <p class="hp-story-body">
+      にじのきらめき、コシヒカリ。<br>
+      一粒ずつ選ばれた種もみを、塩水で選別し、<br>
+      消毒、浸水、そして発芽へと導く。<br>
+      ここからすべてが始まります。
+    </p>
+  </div>
+</section>
+
+<!-- ===== NEW: ストーリー 03 育苗 ===== -->
+<section class="hp-story hp-story--reverse">
+  <div class="hp-story-image">
+    <img src="/images/tunnel-overview.jpg" alt="育苗トンネルが並ぶ田" loading="lazy">
+  </div>
+  <div class="hp-story-content">
+    <span class="hp-story-num">03</span>
+    <h3 class="hp-story-title">育苗</h3>
+    <p class="hp-story-body">
+      白いトンネルの中で、種もみは静かに芽を出す。<br>
+      湿度、温度、日射し。すべてを毎日見て、調整する。<br>
+      この三週間が、夏の稲の強さを決めます。
+    </p>
+  </div>
+</section>
+
+<!-- ===== NEW: ギャラリー ===== -->
+<section class="hp-gallery">
+  <div class="hp-gallery-inner">
+    <h2 class="hp-gallery-title">FUJI RICE の風景</h2>
+    <div class="hp-gallery-grid">
+      <div class="hp-gallery-item hp-gallery-item--large">
+        <img src="/images/fuji-sunset-rice.jpg" alt="夕焼けの富士山と稲穂" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tunnel-inside-sprout.jpg" alt="トンネル内の発芽" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/water-spray.jpg" alt="水まき" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/seed-trays-perspective.jpg" alt="種もみトレイ" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tractor-low-angle.jpg" alt="GAIA トラクター" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tunnel-green-growth.jpg" alt="緑の発芽" loading="lazy">
+      </div>
+      <div class="hp-gallery-item hp-gallery-item--wide">
+        <img src="/images/field-fuji-evening.jpg" alt="夕暮れの田と富士山" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/work-team-trays.jpg" alt="作業風景" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tractor-mizo.jpg" alt="溝切り作業" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/fuji-clear-blue.jpg" alt="青空と雪富士" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/fuji-moon-evening.jpg" alt="夕暮れの富士と月" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tunnels-row-overview.jpg" alt="育苗トンネルの並び" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== JOURNAL (動的に最新3記事) ==================== -->
-<section class="journal" id="journal">
-  <div class="journal-content">
-    <div class="journal-header">
-      <div>
-        <div class="eyebrow">— Daily Journal —</div>
-        <h2 class="journal-title">
-          田んぼからの便り。
-          <em>Notes from the field</em>
-        </h2>
-      </div>
-      <a href="{{ "/posts/" | relURL }}" class="btn-outline">すべて見る</a>
-    </div>
-    
-    <div class="journal-grid">
+<!-- ===== ここから既存のブログ部分(完全保持) ===== -->
+
+<!-- ===== BLOG TOP BANNER (slim) ===== -->
+<div class="bl-banner">
+  <div class="bl-banner-inner">
+    <p class="bl-banner-tag">富士山麓 農場だより</p>
+    <h1 class="bl-banner-title">田んぼからの最新情報</h1>
+    <p class="bl-banner-sub">富士山の雪解け水と大地が育むお米づくりの記録</p>
+  </div>
+</div>
+
+<!-- ===== 最新記事 全文表示 ===== -->
+<main class="bl-main">
+  <div class="bl-container">
+
+    <!-- 最新3件 全文 -->
+    <section class="bl-recent">
       {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
-      {{- $journalIcons := slice "🌅" "☀️" "🌾" }}
-      {{- range $idx, $page := (where .Site.RegularPages "Type" "posts") | first 3 }}
+      {{- range (where .Site.RegularPages "Type" "posts") | first 3 }}
+      <article class="bl-article">
         {{- $postImg := .Params.image }}
         {{- if not $postImg }}
           {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
           {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
         {{- end }}
-        {{- $imgSrc := or $postImg $defaultImg }}
-        {{- $isMorning := in $page.File.BaseFileName "morning" }}
-        <a href="{{ .Permalink }}" class="journal-card">
-          <div class="journal-img" style="background-image: url('{{ $imgSrc }}'); background-size: cover; background-position: center;">
-            <div class="journal-img-icon">{{ index $journalIcons $idx }}</div>
+        <div class="bl-article-hero">
+          <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="eager">
+        </div>
+        <div class="bl-article-body">
+          <time class="bl-article-date">{{ .Date.Format "2006年1月2日" }}</time>
+          <h2 class="bl-article-title">{{ .Title }}</h2>
+          <div class="bl-article-content">{{ .Content }}</div>
+          <a href="{{ .Permalink }}" class="bl-article-link">この記事を見る →</a>
+        </div>
+      </article>
+      {{- end }}
+    </section>
+
+    <!-- 過去の記事グリッド -->
+    <section class="bl-archive">
+      <h2 class="bl-archive-title">過去の記事</h2>
+      <div class="bl-grid">
+        {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
+        {{- range (where .Site.RegularPages "Type" "posts") | first 12 | after 3 }}
+        <a href="{{ .Permalink }}" class="bl-card">
+          <div class="bl-card-img">
+            {{- $postImg := .Params.image }}
+            {{- if not $postImg }}
+              {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
+              {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
+            {{- end }}
+            <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="lazy">
           </div>
-          <div class="journal-info">
-            <div class="journal-meta">
-              <div class="journal-date">{{ .Date.Format "2006年1月2日" }}</div>
-              <div class="journal-tag">{{ if $isMorning }}Morning{{ else }}Evening{{ end }}</div>
-            </div>
-            <h3 class="journal-card-title">{{ .Title }}</h3>
-            <p class="journal-excerpt">{{ .Summary | plainify | truncate 120 }}</p>
+          <div class="bl-card-body">
+            <time class="bl-card-date">{{ .Date.Format "2006.01.02" }}</time>
+            <p class="bl-card-title">{{ .Title }}</p>
           </div>
         </a>
-      {{- end }}
-    </div>
-  </div>
-</section>
+        {{- end }}
+      </div>
+      <div class="bl-more">
+        <a href="{{ "/posts/" | relURL }}" class="bl-more-btn">すべての記事を見る →</a>
+      </div>
+    </section>
 
-<!-- ==================== CTA ==================== -->
-<section class="cta-purchase">
-  <div class="cta-content">
-    <p class="cta-en">— Order Now —</p>
-    <h2 class="cta-title">
-      富士の恵みを、<br />
-      あなたの<em>食卓</em>へ。
-    </h2>
-    <p class="cta-desc">
-      Yahoo!ショッピングのゴールドストアより、丁寧にお届けします。<br />
-      富士山の伏流水で育てた、特別栽培米。
-    </p>
-    
-    <div class="cta-rating">
-      <div class="cta-stars">★★★★★</div>
-      <div class="cta-rating-text">4.31 / 402 Reviews</div>
-    </div>
-    
-    <a href="{{ site.Params.purchaseURL }}" class="cta-btn-large" target="_blank" rel="noopener">Yahoo!ショッピングへ</a>
-    
-    {{- with site.Params.lineURL }}
-    <p class="cta-secondary">
-      お問い合わせは <a href="{{ . }}" target="_blank" rel="noopener">LINE公式アカウント</a> から
-    </p>
-    {{- end }}
+    <!-- 購入・LINE サイドバー的CTA -->
+    <aside class="bl-cta-bar">
+      <div class="bl-cta-box">
+        <p class="bl-cta-label">🛒 産地直送</p>
+        <p class="bl-cta-text">FUJI RICEをYahooショッピングで</p>
+        <a href="{{ site.Params.purchaseURL }}" class="bl-cta-btn" target="_blank" rel="noopener">購入する</a>
+      </div>
+      <div class="bl-cta-box bl-cta-box--line">
+        <p class="bl-cta-label">💬 LINEで相談</p>
+        <p class="bl-cta-text">{{ site.Params.lineID }}</p>
+        <a href="{{ site.Params.lineURL }}" class="bl-cta-btn bl-cta-btn--line" target="_blank" rel="noopener">友だち追加</a>
+      </div>
+    </aside>
+
   </div>
-</section>
+</main>
 
 {{- end }}
