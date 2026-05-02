@@ -450,3 +450,57 @@ html {
 
 /* ===== END OF HUGO V3 ADDITIONS ===== */
 
+
+
+/* ===== POSTS 内の画像・iframe を画面幅で制限 ===== */
+.bl-article-content img,
+.bl-article-content iframe,
+.bl-article-content video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+.bl-article-content iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+
+/* ===== ブログ記事内の画像・動画コンパクト化 ===== */
+.bl-article-content img,
+.bl-article-content video {
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+.bl-article-content iframe {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 720px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* 記事本文も読みやすい横幅に */
+.bl-article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.bl-article-hero img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* ===== END COMPACT FIX ===== */
