@@ -880,3 +880,24 @@ html {
 }
 
 /* ===== END ARCHIVE GRID FIX ===== */
+
+/* ===== Shorts(縦動画)を非表示 ===== */
+/* パターン1: URL に "shorts" が含まれる */
+.bl-article-content iframe[src*="shorts"],
+.bl-article-content iframe[src*="/shorts/"] {
+  display: none !important;
+}
+
+/* パターン2: 縦長アスペクト比の iframe(9:16) */
+.bl-article-content iframe[width="315"],
+.bl-article-content iframe[width="405"] {
+  display: none !important;
+}
+
+/* 「最新のYouTube動画」見出しの直後の iframe が非表示なら、見出しも消す */
+.bl-article-content h2:has(+ p iframe[src*="shorts"]),
+.bl-article-content h3:has(+ p iframe[src*="shorts"]) {
+  display: none !important;
+}
+
+/* ===== END SHORTS HIDE ===== */
