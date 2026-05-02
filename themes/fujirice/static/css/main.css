@@ -504,3 +504,88 @@ html {
 }
 
 /* ===== END COMPACT FIX ===== */
+
+/* ===== Hero スライドショー (Ken Burns効果) ===== */
+.hp-hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hp-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: hpSlideKenBurns 30s infinite;
+}
+
+.hp-slide:nth-child(1) { animation-delay: 0s; }
+.hp-slide:nth-child(2) { animation-delay: 6s; }
+.hp-slide:nth-child(3) { animation-delay: 12s; }
+.hp-slide:nth-child(4) { animation-delay: 18s; }
+.hp-slide:nth-child(5) { animation-delay: 24s; }
+
+@keyframes hpSlideKenBurns {
+  0% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  3% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  23% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* HEROアニメーション(zoom)を無効化(スライドショーが代わりにやる) */
+.hp-hero-slideshow + .hp-hero-overlay,
+.hp-hero-image img {
+  animation: none !important;
+}
+
+/* ===== ブログ記事内の画像・動画コンパクト化 ===== */
+.bl-article-content img,
+.bl-article-content video {
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+.bl-article-content iframe {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 720px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 4px;
+}
+
+.bl-article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.bl-article-hero img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* ===== END SLIDESHOW + COMPACT FIX ===== */

@@ -1,11 +1,15 @@
 {{- define "main" }}
 
 <!-- ========================================= -->
-<!-- ===== NEW: 写真ヒーローセクション ===== -->
+<!-- ===== NEW: 写真ヒーロー(スライドショー) ===== -->
 <!-- ========================================= -->
 <section class="hp-hero">
-  <div class="hp-hero-image">
-    <img src="/images/hero-fuji-sunset.jpg" alt="富士山麓の朝焼け" loading="eager">
+  <div class="hp-hero-slideshow">
+    <div class="hp-slide hp-slide--active" style="background-image:url('/images/hero-fuji-sunset.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-sunset-rice.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-evening-pink.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-clear-blue.jpg')"></div>
+    <div class="hp-slide" style="background-image:url('/images/fuji-moon-evening.jpg')"></div>
     <div class="hp-hero-overlay"></div>
   </div>
   <div class="hp-hero-content">
