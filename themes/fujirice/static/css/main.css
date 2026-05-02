@@ -348,3 +348,405 @@ img[loading="lazy"].loaded{opacity:1}
 /* === BLOG BANNER NAVBAR FIX === */
 .bl-banner { padding-top: 5.5rem !important; }
 @media(max-width:640px){ .bl-banner { padding-top: 5rem !important; } }
+
+
+/* ===========================
+   FUJI RICE - Hugo v3 写真版追加CSS
+   既存スタイルとは独立（hp- プレフィックス）
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+:root {
+  --hp-bg: #fafaf7;
+  --hp-bg-warm: #f5f0e8;
+  --hp-text: #2a2a2a;
+  --hp-text-light: #5a5a5a;
+  --hp-accent: #8b6f47;
+  --hp-accent-dark: #6b5535;
+  --hp-line: #d4cdbf;
+  --hp-font-serif: 'Noto Serif JP', serif;
+  --hp-font-display: 'Cormorant Garamond', 'Noto Serif JP', serif;
+}
+
+/* ===== HERO ===== */
+.hp-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  font-family: var(--hp-font-serif);
+  font-weight: 300;
+}
+
+.hp-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hp-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: hpHeroZoom 20s ease-out infinite alternate;
+}
+
+@keyframes hpHeroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.hp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.65) 100%);
+  z-index: 2;
+}
+
+.hp-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+  animation: hpFadeInUp 1.4s ease-out;
+}
+
+@keyframes hpFadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hp-hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.hp-hero-title {
+  font-family: var(--hp-font-display);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hp-hero-title-en {
+  display: block;
+  font-size: clamp(3rem, 9vw, 6rem);
+  letter-spacing: 0.05em;
+}
+
+.hp-hero-title-jp {
+  display: block;
+  font-family: var(--hp-font-serif);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 0.4em;
+  margin-top: 0.5rem;
+  font-weight: 300;
+}
+
+.hp-hero-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  letter-spacing: 0.15em;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+.hp-hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hp-cta-primary,
+.hp-cta-secondary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid;
+  text-decoration: none;
+}
+
+.hp-cta-primary {
+  background: #fff;
+  color: var(--hp-text);
+  border-color: #fff;
+}
+
+.hp-cta-primary:hover {
+  background: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.hp-cta-secondary {
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+  background: transparent;
+}
+
+.hp-cta-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== INTRO ===== */
+.hp-intro {
+  padding: 6rem 2rem;
+  background: var(--hp-bg);
+  text-align: center;
+  font-family: var(--hp-font-serif);
+}
+
+.hp-intro-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hp-intro-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--hp-accent);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.hp-intro-title {
+  font-family: var(--hp-font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 300;
+  margin: 0 0 2rem;
+  line-height: 1.4;
+  color: var(--hp-text);
+}
+
+.hp-intro-body {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 2.2;
+  color: var(--hp-text-light);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* ===== STORY SECTIONS ===== */
+.hp-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  align-items: stretch;
+  font-family: var(--hp-font-serif);
+}
+
+.hp-story--reverse {
+  direction: rtl;
+}
+
+.hp-story--reverse > * {
+  direction: ltr;
+}
+
+.hp-story-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+.hp-story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+  display: block;
+}
+
+.hp-story:hover .hp-story-image img {
+  transform: scale(1.05);
+}
+
+.hp-story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  background: var(--hp-bg-warm);
+}
+
+.hp-story-num {
+  font-family: var(--hp-font-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--hp-accent);
+  opacity: 0.6;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.hp-story-title {
+  font-family: var(--hp-font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  margin: 0 0 1.5rem;
+  color: var(--hp-text);
+  letter-spacing: 0.05em;
+}
+
+.hp-story-body {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 2.2;
+  color: var(--hp-text-light);
+  font-weight: 300;
+  margin: 0;
+  max-width: 480px;
+}
+
+/* ===== GALLERY ===== */
+.hp-gallery {
+  padding: 6rem 0;
+  background: var(--hp-bg);
+  font-family: var(--hp-font-serif);
+}
+
+.hp-gallery-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hp-gallery-title {
+  text-align: center;
+  font-family: var(--hp-font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 300;
+  margin: 0 0 3rem;
+  letter-spacing: 0.1em;
+  color: var(--hp-text);
+}
+
+.hp-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  grid-auto-flow: dense;
+}
+
+.hp-gallery-item {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.hp-gallery-item--large {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: 1 / 1;
+}
+
+.hp-gallery-item--wide {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+}
+
+.hp-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease, filter 0.4s ease;
+  filter: brightness(0.95);
+  display: block;
+}
+
+.hp-gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hp-hero {
+    height: 80vh;
+    min-height: 480px;
+  }
+
+  .hp-hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hp-cta-primary,
+  .hp-cta-secondary {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .hp-intro {
+    padding: 4rem 1.5rem;
+  }
+
+  .hp-story,
+  .hp-story--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .hp-story-image {
+    min-height: 280px;
+  }
+
+  .hp-story-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .hp-gallery {
+    padding: 4rem 0;
+  }
+
+  .hp-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hp-gallery-item--large,
+  .hp-gallery-item--wide {
+    grid-column: span 2;
+  }
+
+  .hp-gallery-item--large {
+    aspect-ratio: 1 / 1;
+  }
+
+  .hp-gallery-item--wide {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-hero-title-en {
+    font-size: 3rem;
+  }
+
+  .hp-hero-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+/* ===== END OF HUGO V3 ADDITIONS ===== */
+

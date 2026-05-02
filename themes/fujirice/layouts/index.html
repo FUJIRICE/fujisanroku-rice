@@ -1,5 +1,137 @@
 {{- define "main" }}
 
+<!-- ========================================= -->
+<!-- ===== NEW: 写真ヒーローセクション ===== -->
+<!-- ========================================= -->
+<section class="hp-hero">
+  <div class="hp-hero-image">
+    <img src="/images/hero-fuji-sunset.jpg" alt="富士山麓の朝焼け" loading="eager">
+    <div class="hp-hero-overlay"></div>
+  </div>
+  <div class="hp-hero-content">
+    <div class="hp-hero-badge">特別栽培米 · 農薬50%減</div>
+    <h1 class="hp-hero-title">
+      <span class="hp-hero-title-en">FUJI RICE</span>
+      <span class="hp-hero-title-jp">富士山麓の米</span>
+    </h1>
+    <p class="hp-hero-sub">富士山伏流水で育てた、にじのきらめき。</p>
+    <div class="hp-hero-cta">
+      <a href="{{ site.Params.purchaseURL }}" class="hp-cta-primary" target="_blank" rel="noopener">商品を見る</a>
+      <a href="#hp-story" class="hp-cta-secondary">物語を読む</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEW: ブランドストーリー ===== -->
+<section class="hp-intro" id="hp-story">
+  <div class="hp-intro-inner">
+    <p class="hp-intro-eyebrow">— 富士山麓、青木の地より</p>
+    <h2 class="hp-intro-title">水と、土と、時間がつくる味。</h2>
+    <p class="hp-intro-body">
+      富士山に降った雪と雨が、長い年月をかけて麓へ届く。<br>
+      その伏流水と、火山が育てた肥沃な土で、米はゆっくりと実ります。<br>
+      農薬を半分に減らし、手間を惜しまず、<br>
+      ひと粒に土地のすべてを宿らせる。それが、私たちの仕事です。
+    </p>
+  </div>
+</section>
+
+<!-- ===== NEW: ストーリー 01 土づくり ===== -->
+<section class="hp-story hp-story--reverse">
+  <div class="hp-story-image">
+    <img src="/images/tractor-fuji.jpg" alt="富士山を背に田を耕すトラクター" loading="lazy">
+  </div>
+  <div class="hp-story-content">
+    <span class="hp-story-num">01</span>
+    <h3 class="hp-story-title">土づくり</h3>
+    <p class="hp-story-body">
+      春のはじまり、まだ富士山に雪が残るころ。<br>
+      赤いトラクターで田を起こし、空気を含ませる。<br>
+      この一手間が、根の深さを変え、味を変える。
+    </p>
+  </div>
+</section>
+
+<!-- ===== NEW: ストーリー 02 種もみ ===== -->
+<section class="hp-story">
+  <div class="hp-story-image">
+    <img src="/images/seed-handful.jpg" alt="手のひらの種もみ" loading="lazy">
+  </div>
+  <div class="hp-story-content">
+    <span class="hp-story-num">02</span>
+    <h3 class="hp-story-title">種もみ</h3>
+    <p class="hp-story-body">
+      にじのきらめき、コシヒカリ。<br>
+      一粒ずつ選ばれた種もみを、塩水で選別し、<br>
+      消毒、浸水、そして発芽へと導く。<br>
+      ここからすべてが始まります。
+    </p>
+  </div>
+</section>
+
+<!-- ===== NEW: ストーリー 03 育苗 ===== -->
+<section class="hp-story hp-story--reverse">
+  <div class="hp-story-image">
+    <img src="/images/tunnel-overview.jpg" alt="育苗トンネルが並ぶ田" loading="lazy">
+  </div>
+  <div class="hp-story-content">
+    <span class="hp-story-num">03</span>
+    <h3 class="hp-story-title">育苗</h3>
+    <p class="hp-story-body">
+      白いトンネルの中で、種もみは静かに芽を出す。<br>
+      湿度、温度、日射し。すべてを毎日見て、調整する。<br>
+      この三週間が、夏の稲の強さを決めます。
+    </p>
+  </div>
+</section>
+
+<!-- ===== NEW: ギャラリー ===== -->
+<section class="hp-gallery">
+  <div class="hp-gallery-inner">
+    <h2 class="hp-gallery-title">FUJI RICE の風景</h2>
+    <div class="hp-gallery-grid">
+      <div class="hp-gallery-item hp-gallery-item--large">
+        <img src="/images/fuji-sunset-rice.jpg" alt="夕焼けの富士山と稲穂" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tunnel-inside-sprout.jpg" alt="トンネル内の発芽" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/water-spray.jpg" alt="水まき" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/seed-trays-perspective.jpg" alt="種もみトレイ" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tractor-low-angle.jpg" alt="GAIA トラクター" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tunnel-green-growth.jpg" alt="緑の発芽" loading="lazy">
+      </div>
+      <div class="hp-gallery-item hp-gallery-item--wide">
+        <img src="/images/field-fuji-evening.jpg" alt="夕暮れの田と富士山" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/work-team-trays.jpg" alt="作業風景" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tractor-mizo.jpg" alt="溝切り作業" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/fuji-clear-blue.jpg" alt="青空と雪富士" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/fuji-moon-evening.jpg" alt="夕暮れの富士と月" loading="lazy">
+      </div>
+      <div class="hp-gallery-item">
+        <img src="/images/tunnels-row-overview.jpg" alt="育苗トンネルの並び" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ここから既存のブログ部分(完全保持) ===== -->
+
 <!-- ===== BLOG TOP BANNER (slim) ===== -->
 <div class="bl-banner">
   <div class="bl-banner-inner">
