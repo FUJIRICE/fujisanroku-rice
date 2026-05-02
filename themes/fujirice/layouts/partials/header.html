@@ -1,37 +1,24 @@
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a href="{{ "/" | relURL }}" class="site-logo">
-      {{- with site.Params.logo }}
-      <img src="{{ . }}" alt="{{ site.Title }}" width="40" height="40">
+<nav class="nav" id="site-header">
+  <a href="{{ "/" | relURL }}" class="nav-brand">
+    <span class="en">FUJI RICE</span>
+    <span class="ja">富士山麓・岩谷農場</span>
+  </a>
+  <ul class="nav-menu" id="main-nav">
+    {{- range site.Menus.main }}
+      {{- if eq .Name "ホーム" }}
+      <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">Home</a></li>
+      {{- else if eq .Name "お米について" }}
+      <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">About</a></li>
+      {{- else if eq .Name "ブログ" }}
+      <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">Journal</a></li>
+      {{- else if eq .Name "LINEで相談" }}
+      <li><a href="{{ .URL }}" target="_blank" rel="noopener">LINE</a></li>
+      {{- else if eq .Name "購入する" }}
+      <li><a href="{{ .URL }}" class="btn-buy" target="_blank" rel="noopener">Shop</a></li>
       {{- end }}
-      <div class="logo-text">
-        FUJI RICE
-        <span class="logo-sub">富士山麓のお米</span>
-      </div>
-    </a>
-
-    <nav class="main-nav" id="main-nav" aria-label="メインナビゲーション">
-      {{- range site.Menus.main }}
-        {{- if eq .Name "購入する" }}
-        <a href="{{ .URL }}" class="nav-link nav-purchase" target="_blank" rel="noopener">
-          🛒 {{ .Name }}
-        </a>
-        {{- else if eq .Name "LINEで相談" }}
-        <a href="{{ .URL }}" class="nav-link" target="_blank" rel="noopener" style="color:#06C755;font-weight:700;">
-          💬 {{ .Name }}
-        </a>
-        {{- else }}
-        <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
-          {{ .Name }}
-        </a>
-        {{- end }}
-      {{- end }}
-    </nav>
-
-    <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
+    {{- end }}
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
