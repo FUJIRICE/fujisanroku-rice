@@ -1148,3 +1148,88 @@ html {
 }
 
 /* ===== END NAV/FOOTER FIX v2 ===== */
+
+/* ===== CTA バー (Yahoo!/LINE) ===== */
+.bl-cta-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.bl-cta-box {
+  background: linear-gradient(135deg, #fefdf9 0%, #f5f1e8 100%);
+  border: 1px solid #e8e0cf;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(139, 111, 71, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bl-cta-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 111, 71, 0.15);
+}
+
+.bl-cta-box--line {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: #86efac;
+}
+
+.bl-cta-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.bl-cta-text {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+}
+
+.bl-cta-btn {
+  display: inline-block;
+  background: #8b6f47;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.bl-cta-btn:hover {
+  background: #6b5535;
+  transform: scale(1.03);
+}
+
+.bl-cta-btn--line {
+  background: #06c755;
+}
+
+.bl-cta-btn--line:hover {
+  background: #04a043;
+}
+
+/* レスポンシブ */
+@media (max-width: 640px) {
+  .bl-cta-bar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2.5rem auto;
+  }
+  
+  .bl-cta-box {
+    padding: 1.5rem;
+  }
+}
+
+/* ===== END CTA BAR FIX ===== */
