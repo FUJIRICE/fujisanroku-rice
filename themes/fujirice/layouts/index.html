@@ -1,12 +1,19 @@
 {{- define "main" }}
 
-{{/* ── 最新記事からYouTube IDを取得 ── */}}
+{{/* ── YouTube ID: hugo.toml の youtubeFeatureID を優先、なければ最新記事から取得 ── */}}
 {{- $ytID := "V5m6K_LoO64" }}
 {{- $posts := where .Site.RegularPages "Type" "posts" }}
-{{- range $posts | first 1 }}
-  {{- $m := findRE `youtube\.com/embed/([a-zA-Z0-9_-]+)` .Content 1 }}
-  {{- if $m }}
-    {{- $ytID = replaceRE `youtube\.com/embed/([a-zA-Z0-9_-]+)` "$1" (index $m 0) }}
+{{- with site.Params.youtubeFeatureID }}
+  {{- $ytID = . }}
+{{- else }}
+  {{- range $posts | first 3 }}
+    {{- if eq $ytID "V5m6K_LoO64" }}
+      {{- $m := findRE `youtube\.com/embed/([a-zA-Z0-9_-]+)` .Content 1 }}
+      {{- if $m }}
+        {{- $candidate := replaceRE `youtube\.com/embed/([a-zA-Z0-9_-]+)` "$1" (index $m 0) }}
+        {{- $ytID = $candidate }}
+      {{- end }}
+    {{- end }}
   {{- end }}
 {{- end }}
 {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
