@@ -1,24 +1,16 @@
-<nav class="nav" id="site-header">
-  <a href="{{ "/" | relURL }}" class="nav-brand">
-    <span class="en">FUJI RICE</span>
-    <span class="ja">富士山麓・岩谷農場</span>
+<header class="gd-header" id="site-header">
+  <a href="{{ "/" | relURL }}" class="gd-header-logo">
+    <span class="gd-logo-en">FUJI RICE</span>
+    <span class="gd-logo-ja">富士山麓・富士宮で育てたお米</span>
   </a>
-  <ul class="nav-menu" id="main-nav">
-    {{- range site.Menus.main }}
-      {{- if eq .Name "ホーム" }}
-      <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">Home</a></li>
-      {{- else if eq .Name "お米について" }}
-      <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">About</a></li>
-      {{- else if eq .Name "ブログ" }}
-      <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">Journal</a></li>
-      {{- else if eq .Name "LINEで相談" }}
-      <li><a href="{{ .URL }}" target="_blank" rel="noopener">LINE</a></li>
-      {{- else if eq .Name "購入する" }}
-      <li><a href="{{ .URL }}" class="btn-buy" target="_blank" rel="noopener">Shop</a></li>
-      {{- end }}
-    {{- end }}
-  </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false">
+  <nav class="gd-header-nav" id="main-nav">
+    <a href="#gd-concept">Story</a>
+    <a href="#gd-timelapse">動画</a>
+    <a href="{{ "/posts/" | relURL }}">農場だより</a>
+    <a href="#gd-music">稲歌みほ</a>
+    <a href="{{ site.Params.purchaseURL }}" target="_blank" rel="noopener" class="gd-nav-buy">購入する</a>
+  </nav>
+  <button class="gd-nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
-</nav>
+</header>

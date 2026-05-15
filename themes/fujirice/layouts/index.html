@@ -1,233 +1,251 @@
 {{- define "main" }}
 
-<!-- ========================================= -->
-<!-- ===== NEW: 写真ヒーロー(スライドショー) ===== -->
-<!-- ========================================= -->
-<section class="hp-hero">
-  <div class="hp-hero-slideshow">
-    <div class="hp-slide hp-slide--active" style="background-image:url('/images/hero-fuji-sunset.jpg')"></div>
-    <div class="hp-slide" style="background-image:url('/images/fuji-sunset-rice.jpg')"></div>
-    <div class="hp-slide" style="background-image:url('/images/fuji-evening-pink.jpg')"></div>
-    <div class="hp-slide" style="background-image:url('/images/fuji-clear-blue.jpg')"></div>
-    <div class="hp-slide" style="background-image:url('/images/fuji-moon-evening.jpg')"></div>
-    <div class="hp-hero-overlay"></div>
-  </div>
-  <div class="hp-hero-content">
-    <div class="hp-hero-badge">富士山麓・富士宮で育てたお米 · 減農薬</div>
-    <h1 class="hp-hero-title">
-      <span class="hp-hero-title-en">FUJI RICE</span>
-      <span class="hp-hero-title-jp">富士山麓の米</span>
-    </h1>
-    <p class="hp-hero-sub">富士山伏流水で育てた、にじのきらめき。</p>
-    <div class="hp-hero-cta">
-      <a href="{{ site.Params.purchaseURL }}" class="hp-cta-primary" target="_blank" rel="noopener">商品を見る</a>
-      <a href="#hp-story" class="hp-cta-secondary">物語を読む</a>
+{{/* ── 最新記事からYouTube IDを取得 ── */}}
+{{- $ytID := "V5m6K_LoO64" }}
+{{- $posts := where .Site.RegularPages "Type" "posts" }}
+{{- range $posts | first 1 }}
+  {{- $m := findRE `youtube\.com/embed/([a-zA-Z0-9_-]+)` .Content 1 }}
+  {{- if $m }}
+    {{- $ytID = replaceRE `youtube\.com/embed/([a-zA-Z0-9_-]+)` "$1" (index $m 0) }}
+  {{- end }}
+{{- end }}
+{{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
+
+<!-- ========== HERO ========== -->
+<section class="gd-hero">
+  <div class="gd-hero-slides">
+    <div class="gd-slide">
+      <img src="/images/hero-fuji-sunset.jpg" alt="夕暮れの富士山" loading="eager">
+    </div>
+    <div class="gd-slide">
+      <img src="/images/fuji-sunset-rice.jpg" alt="稲穂と富士山" loading="lazy">
+    </div>
+    <div class="gd-slide">
+      <img src="/images/fuji-clear-blue.jpg" alt="青空と富士山" loading="lazy">
+    </div>
+    <div class="gd-slide">
+      <img src="/images/fuji-moon-evening.jpg" alt="月と富士山" loading="lazy">
     </div>
   </div>
-</section>
-
-<!-- ===== 稲歌みほ バンド ===== -->
-<section class="miho-band">
-  <div class="miho-band-inner">
-    <div class="miho-band-text">
-      <p class="miho-band-eyebrow">🎵 FUJI RICE 公式バーチャル歌姫</p>
-      <h2 class="miho-band-title">稲歌みほ</h2>
-      <p class="miho-band-sub">富士山麓の田んぼから生まれた歌声。Spotify・Apple Music など各種配信中。</p>
+  <div class="gd-hero-overlay"></div>
+  <div class="gd-hero-content">
+    <p class="gd-hero-badge">SHIZUOKA · FUJINOMIYA · NIJINOKIRAMEKI</p>
+    <h1 class="gd-hero-en">FUJI RICE</h1>
+    <p class="gd-hero-ja">富士山の雪解け水が育てた、一粒の美</p>
+    <div class="gd-hero-cta">
+      <a href="{{ site.Params.purchaseURL }}" target="_blank" rel="noopener" class="gd-btn-primary">今すぐ購入</a>
+      <a href="#gd-concept" class="gd-btn-ghost">物語を読む</a>
     </div>
-    <a href="https://hyperfollow.com/inautamiho" class="miho-band-btn" target="_blank" rel="noopener">
-      今すぐ聴く →
-    </a>
   </div>
+  <div class="gd-scroll-hint">SCROLL</div>
 </section>
 
-<!-- ===== NEW: ブランドストーリー ===== -->
-<section class="hp-intro" id="hp-story">
-  <div class="hp-intro-inner">
-    <p class="hp-intro-eyebrow">— 富士山麓、青木の地より</p>
-    <h2 class="hp-intro-title">水と、土と、時間がつくる味。</h2>
-    <p class="hp-intro-body">
-      富士山に降った雪と雨が、長い年月をかけて麓へ届く。<br>
-      その伏流水と、火山が育てた肥沃な土で、米はゆっくりと実ります。<br>
-      農薬を控えて、手間を惜しまず、<br>
-      ひと粒に土地のすべてを宿らせる。それが、私たちの仕事です。
-    </p>
-  </div>
-</section>
-
-<!-- ===== NEW: ストーリー 01 土づくり ===== -->
-<section class="hp-story hp-story--reverse">
-  <div class="hp-story-image">
+<!-- ========== CONCEPT ========== -->
+<section class="gd-concept" id="gd-concept">
+  <div class="gd-concept-img">
     <img src="/images/tractor-fuji.jpg" alt="富士山を背に田を耕すトラクター" loading="lazy">
   </div>
-  <div class="hp-story-content">
-    <span class="hp-story-num">01</span>
-    <h3 class="hp-story-title">土づくり</h3>
-    <p class="hp-story-body">
-      春のはじまり、まだ富士山に雪が残るころ。<br>
-      赤いトラクターで田を起こし、空気を含ませる。<br>
-      この一手間が、根の深さを変え、味を変える。
+  <div class="gd-concept-text">
+    <p class="gd-label">CONCEPT</p>
+    <h2 class="gd-en-title">Water,<br>Soil,<br>Time.</h2>
+    <div class="gd-divider"></div>
+    <p class="gd-concept-quote">水と、土と、時間がつくる味。</p>
+    <p class="gd-concept-body">
+      富士山に降った雪と雨が、長い年月をかけて麓へ届く。<br>
+      その伏流水と、火山が育てた肥沃な土で、<br>
+      米はゆっくりと実ります。<br><br>
+      農薬を控えて、手間を惜しまず、<br>
+      ひと粒に土地のすべてを宿らせる。<br>
+      それが、私たちの仕事です。
     </p>
   </div>
 </section>
 
-<!-- ===== NEW: ストーリー 02 種もみ ===== -->
-<section class="hp-story">
-  <div class="hp-story-image">
-    <img src="/images/seed-handful.jpg" alt="手のひらの種もみ" loading="lazy">
+<!-- ========== STATS ========== -->
+<div class="gd-stats">
+  <div class="gd-stat">
+    <div class="gd-stat-num">3,776<span class="gd-stat-unit">m</span></div>
+    <p class="gd-stat-label">富士山の高さ</p>
   </div>
-  <div class="hp-story-content">
-    <span class="hp-story-num">02</span>
-    <h3 class="hp-story-title">種もみ</h3>
-    <p class="hp-story-body">
-      にじのきらめき、コシヒカリ。<br>
-      一粒ずつ選ばれた種もみを、塩水で選別し、<br>
-      消毒、浸水、そして発芽へと導く。<br>
-      ここからすべてが始まります。
-    </p>
+  <div class="gd-stat">
+    <div class="gd-stat-num">100<span class="gd-stat-unit">%</span></div>
+    <p class="gd-stat-label">富士山伏流水使用</p>
   </div>
-</section>
-
-<!-- ===== NEW: ストーリー 03 育苗 ===== -->
-<section class="hp-story hp-story--reverse">
-  <div class="hp-story-image">
-    <img src="/images/tunnel-overview.jpg" alt="育苗トンネルが並ぶ田" loading="lazy">
-  </div>
-  <div class="hp-story-content">
-    <span class="hp-story-num">03</span>
-    <h3 class="hp-story-title">育苗</h3>
-    <p class="hp-story-body">
-      白いトンネルの中で、種もみは静かに芽を出す。<br>
-      湿度、温度、日射し。すべてを毎日見て、調整する。<br>
-      この三週間が、夏の稲の強さを決めます。
-    </p>
-  </div>
-</section>
-
-<!-- ===== NEW: ギャラリー ===== -->
-<section class="hp-gallery">
-  <div class="hp-gallery-inner">
-    <h2 class="hp-gallery-title">FUJI RICE の風景</h2>
-    <div class="hp-gallery-grid">
-      <div class="hp-gallery-item hp-gallery-item--large">
-        <img src="/images/fuji-sunset-rice.jpg" alt="夕焼けの富士山と稲穂" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/tunnel-inside-sprout.jpg" alt="トンネル内の発芽" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/water-spray.jpg" alt="水まき" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/seed-trays-perspective.jpg" alt="種もみトレイ" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/tractor-low-angle.jpg" alt="GAIA トラクター" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/tunnel-green-growth.jpg" alt="緑の発芽" loading="lazy">
-      </div>
-      <div class="hp-gallery-item hp-gallery-item--wide">
-        <img src="/images/field-fuji-evening.jpg" alt="夕暮れの田と富士山" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/work-team-trays.jpg" alt="作業風景" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/tractor-mizo.jpg" alt="溝切り作業" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/fuji-clear-blue.jpg" alt="青空と雪富士" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/fuji-moon-evening.jpg" alt="夕暮れの富士と月" loading="lazy">
-      </div>
-      <div class="hp-gallery-item">
-        <img src="/images/tunnels-row-overview.jpg" alt="育苗トンネルの並び" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ここから既存のブログ部分(完全保持) ===== -->
-
-<!-- ===== BLOG TOP BANNER (slim) ===== -->
-<div class="bl-banner">
-  <div class="bl-banner-inner">
-    <p class="bl-banner-tag">富士山麓 農場だより</p>
-    <h1 class="bl-banner-title">田んぼからの最新情報</h1>
-    <p class="bl-banner-sub">富士山の雪解け水と大地が育むお米づくりの記録</p>
+  <div class="gd-stat">
+    <div class="gd-stat-num" style="font-size:clamp(1.4rem,4vw,2.8rem);letter-spacing:0.05em;">にじのきらめき</div>
+    <p class="gd-stat-label">栽培品種</p>
   </div>
 </div>
 
-<!-- ===== 最新記事 全文表示 ===== -->
-<main class="bl-main">
-  <div class="bl-container">
-
-    <!-- 最新3件 全文 -->
-    <section class="bl-recent">
-      {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
-      {{- range (where .Site.RegularPages "Type" "posts") | first 3 }}
-      <article class="bl-article">
-        {{- $postImg := .Params.image }}
-        {{- if not $postImg }}
-          {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
-          {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
-        {{- end }}
-        <div class="bl-article-hero">
-          <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="eager">
-        </div>
-        <div class="bl-article-body">
-          <time class="bl-article-date">{{ .Date.Format "2006年1月2日" }}</time>
-          <h2 class="bl-article-title">{{ .Title }}</h2>
-          <div class="bl-article-content">{{ .Content }}</div>
-          <a href="{{ .Permalink }}" class="bl-article-link">この記事を見る →</a>
-        </div>
-      </article>
-      {{- end }}
-    </section>
-
-    <!-- 過去の記事グリッド -->
-    <section class="bl-archive">
-      <h2 class="bl-archive-title">過去の記事</h2>
-      <div class="bl-grid">
-        {{- $defaultImg := "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg" }}
-        {{- range (where .Site.RegularPages "Type" "posts") | first 12 | after 3 }}
-        <a href="{{ .Permalink }}" class="bl-card">
-          <div class="bl-card-img">
-            {{- $postImg := .Params.image }}
-            {{- if not $postImg }}
-              {{- $matches := findRE `src="(https?://[^"]+)"` .Content 1 }}
-              {{- if $matches }}{{- $postImg = replaceRE `src="(https?://[^"]+)"` "$1" (index $matches 0) }}{{- end }}
-            {{- end }}
-            <img src="{{ or $postImg $defaultImg }}" alt="{{ .Title }}" loading="lazy">
-          </div>
-          <div class="bl-card-body">
-            <time class="bl-card-date">{{ .Date.Format "2006.01.02" }}</time>
-            <p class="bl-card-title">{{ .Title }}</p>
-          </div>
-        </a>
-        {{- end }}
-      </div>
-      <div class="bl-more">
-        <a href="{{ "/posts/" | relURL }}" class="bl-more-btn">すべての記事を見る →</a>
-      </div>
-    </section>
-
-    <!-- 購入・LINE サイドバー的CTA -->
-    <aside class="bl-cta-bar">
-      <div class="bl-cta-box">
-        <p class="bl-cta-label">🛒 産地直送</p>
-        <p class="bl-cta-text">FUJI RICEをYahooショッピングで</p>
-        <a href="{{ site.Params.purchaseURL }}" class="bl-cta-btn" target="_blank" rel="noopener">購入する</a>
-      </div>
-      <div class="bl-cta-box bl-cta-box--line">
-        <p class="bl-cta-label">💬 LINEで相談</p>
-        <p class="bl-cta-text">{{ site.Params.lineID }}</p>
-        <a href="{{ site.Params.lineURL }}" class="bl-cta-btn bl-cta-btn--line" target="_blank" rel="noopener">友だち追加</a>
-      </div>
-    </aside>
-
+<!-- ========== TIMELAPSE ========== -->
+<section class="gd-timelapse" id="gd-timelapse">
+  <div class="gd-timelapse-inner">
+    <p class="gd-label">TIMELAPSE</p>
+    <h2 class="gd-en-title" style="font-size:clamp(2.2rem,5vw,4rem);">Live from the Field</h2>
+    <p class="gd-sub-title">富士山麓 — 毎朝・毎夕 更新のタイムラプス</p>
+    <div class="gd-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/{{ $ytID }}"
+        title="富士山麓タイムラプス"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="gd-video-caption">
+      最新動画は
+      <a href="{{ site.Params.youtubeURL }}" target="_blank" rel="noopener">YouTube @fujirice_official</a>
+      で毎日配信中
+    </p>
   </div>
-</main>
+</section>
+
+<!-- ========== GALLERY STRIP ========== -->
+<div class="gd-gallery-strip">
+  <div class="gd-strip-item"><img src="/images/seed-handful.jpg" alt="種もみ" loading="lazy"></div>
+  <div class="gd-strip-item"><img src="/images/tunnel-inside-sprout.jpg" alt="発芽" loading="lazy"></div>
+  <div class="gd-strip-item"><img src="/images/field-fuji-evening.jpg" alt="田んぼ" loading="lazy"></div>
+  <div class="gd-strip-item"><img src="/images/water-spray.jpg" alt="水まき" loading="lazy"></div>
+</div>
+
+<!-- ========== BLOG ========== -->
+<section class="gd-blog" id="gd-blog">
+  <div class="gd-blog-inner">
+    <div class="gd-blog-header">
+      <div>
+        <p class="gd-label">FARM DIARY</p>
+        <h2 class="gd-en-title" style="font-size:clamp(2.2rem,5vw,4rem);margin-bottom:0.4rem;">農場だより</h2>
+        <p class="gd-sub-title" style="margin-bottom:0;">富士山麓からの最新情報</p>
+      </div>
+      <a href="{{ "/posts/" | relURL }}" class="gd-more-link">すべての記事を見る →</a>
+    </div>
+    <div class="gd-blog-grid">
+      {{- range $posts | first 6 }}
+      {{- $img := .Params.image }}
+      {{- if not $img }}
+        {{- $m2 := findRE `src="(https?://[^"]+)"` .Content 1 }}
+        {{- if $m2 }}{{- $img = replaceRE `src="(https?://[^"]+)"` "$1" (index $m2 0) }}{{- end }}
+      {{- end }}
+      <a href="{{ .Permalink }}" class="gd-blog-card">
+        <div class="gd-blog-card-img">
+          <img src="{{ or $img $defaultImg }}" alt="{{ .Title }}" loading="lazy">
+        </div>
+        <div class="gd-blog-card-body">
+          <time class="gd-blog-card-date">{{ .Date.Format "2006.01.02" }}</time>
+          <p class="gd-blog-card-title">{{ .Title }}</p>
+        </div>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<!-- ========== PURCHASE CTA ========== -->
+<section class="gd-purchase">
+  <div class="gd-purchase-inner">
+    <p class="gd-label">PURCHASE</p>
+    <p class="gd-purchase-lead">富士山麓の米を、<br>あなたの食卓へ。</p>
+    <p class="gd-purchase-sub">産地直送 · にじのきらめき · 2026年新米は9月20日より</p>
+    <div class="gd-purchase-btns">
+      <a href="{{ site.Params.purchaseURL }}" target="_blank" rel="noopener" class="gd-btn-primary">Yahoo!ショッピングで購入</a>
+      {{- with site.Params.libecityURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-btn-ghost">リベ市場で購入</a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<!-- ========== MUSIC ========== -->
+<section class="gd-music" id="gd-music">
+  <div class="gd-music-text">
+    <p class="gd-music-badge">🎵 FUJI RICE 公式バーチャル歌姫</p>
+    <h2 class="gd-music-en">Inauta<br>Miho</h2>
+    <p class="gd-music-ja">稲歌みほ</p>
+    <div class="gd-divider" style="background:#8b6bbf;"></div>
+    <p class="gd-music-body">
+      富士山麓の田んぼから生まれた歌声。<br>
+      Spotify・Apple Music・YouTube Music<br>
+      など各種ストリーミングで配信中。<br><br>
+      シングル・アルバム「一年」（7曲）好評配信中。
+    </p>
+    <div class="gd-music-btns">
+      {{- with site.Params.mihoHyperFollowURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-btn-music">今すぐ聴く →</a>
+      {{- end }}
+      {{- with site.Params.mihoYouTubeURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-btn-ghost" style="font-size:0.75rem;">YouTube →</a>
+      {{- end }}
+    </div>
+  </div>
+  <div class="gd-music-visual">稲歌<br>みほ</div>
+</section>
+
+<!-- ========== LINE CTA ========== -->
+<div class="gd-line-cta">
+  <div class="gd-line-text">
+    <h3>LINEでご相談</h3>
+    <p>注文・ご質問はLINEが最も早く返信できます</p>
+  </div>
+  <a href="{{ site.Params.lineURL }}" target="_blank" rel="noopener" class="gd-btn-line">
+    💬 友だち追加 {{ site.Params.lineID }}
+  </a>
+</div>
+
+<!-- ========== SNS ========== -->
+<section class="gd-sns">
+  <div class="gd-sns-inner">
+    <p class="gd-label">FOLLOW US</p>
+    <h2 class="gd-en-title" style="font-size:clamp(2rem,4vw,3.5rem);">Stay Connected</h2>
+    <div class="gd-sns-grid">
+      {{- with site.Params.xURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-sns-link">
+        <span class="gd-sns-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </span>
+        <span class="gd-sns-name">@FUJIRICE_jp</span>
+      </a>
+      {{- end }}
+      {{- with site.Params.instagramURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-sns-link">
+        <span class="gd-sns-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </span>
+        <span class="gd-sns-name">@fujirice_farm</span>
+      </a>
+      {{- end }}
+      {{- with site.Params.youtubeURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-sns-link">
+        <span class="gd-sns-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </span>
+        <span class="gd-sns-name">YouTube</span>
+      </a>
+      {{- end }}
+      {{- with site.Params.tiktokURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-sns-link">
+        <span class="gd-sns-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.86 4.86 0 01-1.02-.08z"/></svg>
+        </span>
+        <span class="gd-sns-name">@fuji.rice</span>
+      </a>
+      {{- end }}
+      {{- with site.Params.threadsURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-sns-link">
+        <span class="gd-sns-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.868 1.205 8.621.024 12.197 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 013.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.583-1.289-.876-2.309-.876h-.03c-.803.004-1.742.214-2.268 1.201l-1.792-.981c.712-1.298 2.063-2.067 3.842-2.115.129-.003.259-.003.387-.003 1.554 0 2.849.462 3.847 1.374 1.061.971 1.676 2.366 1.83 4.146.135.025.27.053.4.083 1.352.312 2.449 1.021 3.177 2.053.833 1.183 1.118 2.742.79 4.267-.405 1.93-1.467 3.523-3.073 4.612-1.508 1.021-3.427 1.56-5.537 1.56z"/></svg>
+        </span>
+        <span class="gd-sns-name">Threads</span>
+      </a>
+      {{- end }}
+      {{- with site.Params.facebookURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-sns-link">
+        <span class="gd-sns-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </span>
+        <span class="gd-sns-name">Facebook</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>
 
 {{- end }}
