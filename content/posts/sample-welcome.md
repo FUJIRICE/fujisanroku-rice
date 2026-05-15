@@ -1,4 +1,4 @@
----
+﻿---
 title: "FUJI RICEブログへようこそ"
 date: 2024-04-01T10:00:00+09:00
 categories: ["お知らせ"]
@@ -19,4 +19,4 @@ description: "富士山麓のお米農家、FUJI RICEのブログです。"
 お米のご購入はYahooショッピングから、お気軽なご相談はLINE公式アカウントまでどうぞ。
 
 📱 LINE: [@508ouhoc](https://line.me/R/ti/p/%40508ouhoc)
-🛒 [Yahooショッピングで購入](https://store.shopping.yahoo.co.jp/fujirice/)
+🛒 [Yahooショッピングで購入](https://store.shopping.yahoo.co.jp/iwatayacom/)
