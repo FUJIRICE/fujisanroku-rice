@@ -1233,3 +1233,61 @@ html {
 }
 
 /* ===== END CTA BAR FIX ===== */
+/* ===== 稲歌みほ バンド ===== */
+.miho-band {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #1a2a1a 100%);
+  padding: 3rem 1.5rem;
+}
+.miho-band-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.miho-band-eyebrow {
+  color: #c8a96e;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.4rem;
+}
+.miho-band-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.05em;
+}
+.miho-band-sub {
+  color: #b0b8c8;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+.miho-band-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #c8a96e, #e8c87e);
+  color: #1a1a2e;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(200,169,110,0.35);
+}
+.miho-band-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(200,169,110,0.5);
+}
+@media (max-width: 640px) {
+  .miho-band-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .miho-band-title { font-size: 1.6rem; }
+}
+/* ===== END 稲歌みほ バンド ===== */
