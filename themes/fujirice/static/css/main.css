@@ -1291,3 +1291,134 @@ html {
   .miho-band-title { font-size: 1.6rem; }
 }
 /* ===== END 稲歌みほ バンド ===== */
+
+/* ===== ホームページ ブログセクション レイアウト ===== */
+.bl-main {
+  background: #fafaf7;
+  padding: 3rem 0 5rem;
+}
+
+.bl-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.bl-recent {
+  margin-bottom: 4rem;
+}
+
+.bl-article {
+  display: block;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid #e8e0d0;
+}
+
+.bl-article:last-child {
+  border-bottom: none;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.bl-article-hero {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+.bl-article-hero img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.bl-article-date {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6f47;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+  font-family: var(--hp-font-serif);
+}
+
+.bl-article-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #2a2a2a;
+  letter-spacing: 0.05em;
+}
+
+.bl-article-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #8b6f47;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid #8b6f47;
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.bl-article-link:hover {
+  opacity: 0.7;
+}
+
+/* バナーエリア */
+.bl-banner-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+
+.bl-banner-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: #8b6f47;
+  border: 1px solid #8b6f47;
+  padding: 0.35rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--hp-font-serif);
+}
+
+.bl-banner-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  color: #2a2a2a;
+}
+
+.bl-banner-sub {
+  font-size: 0.95rem;
+  color: #5a5a5a;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .bl-container {
+    padding: 0 1rem;
+  }
+  .bl-article {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+  }
+  .bl-article-hero img {
+    max-height: 320px;
+  }
+  .bl-banner-inner {
+    padding: 3rem 1rem 2rem;
+  }
+}
+/* ===== END ブログセクション レイアウト ===== */

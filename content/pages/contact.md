@@ -15,13 +15,18 @@ LINE ID：@508ouhoc
 
 ## SNS
 
-- Instagram: @fujirice_farm
-- YouTube: @fujirice_official
+- X (Twitter): [@FUJIRICE_jp](https://x.com/FUJIRICE_jp)
+- Instagram: [@fujirice_farm](https://www.instagram.com/fujirice_farm/)
+- Threads: [@fujirice_farm](https://www.threads.net/@fujirice_farm)
+- YouTube: [@fujirice_official](https://www.youtube.com/@fujirice_official)
+- TikTok: [@fuji.rice](https://www.tiktok.com/@fuji.rice)
+- Facebook: [FUJI RICE](https://www.facebook.com/profile.php?id=61576422607058)
+- 🎵 稲歌みほ（配信）: [hyperfollow.com/inautamiho](https://hyperfollow.com/inautamiho)
 
 ## 販売所
 
+- Yahoo!ショッピング: [store.shopping.yahoo.co.jp/iwatayacom](https://store.shopping.yahoo.co.jp/iwatayacom/)
 - リベ市場店舗: https://ichiba.libecity.com/shops/577
-- Yahoo!ショッピング: https://pro.store.yahoo.co.jp/pro.iwatayacom
 
 ## よくあるご質問
 
