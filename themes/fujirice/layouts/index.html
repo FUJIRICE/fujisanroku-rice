@@ -170,12 +170,32 @@
     var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
   }
   items.forEach(function(item){ strip.appendChild(item); });
+  // 無限ループ用に全アイテムを複製して末尾に追加
+  Array.from(strip.children).forEach(function(item){ strip.appendChild(item.cloneNode(true)); });
+  // 自動スクロール
+  var speed = 0.6;
+  var paused = false;
+  function tick(){
+    if(!paused){
+      strip.scrollLeft += speed;
+      if(strip.scrollLeft >= strip.scrollWidth / 2) strip.scrollLeft = 0;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  // ホバーで一時停止
+  strip.addEventListener('mouseenter', function(){ paused = true; });
+  strip.addEventListener('mouseleave', function(){ paused = false; });
   // ドラッグスクロール
   var down = false, startX, scrollLeft;
-  strip.addEventListener('mousedown', function(e){ down=true; startX=e.pageX-strip.offsetLeft; scrollLeft=strip.scrollLeft; });
-  strip.addEventListener('mouseleave', function(){ down=false; });
-  strip.addEventListener('mouseup', function(){ down=false; });
+  strip.addEventListener('mousedown', function(e){ down=true; paused=true; startX=e.pageX-strip.offsetLeft; scrollLeft=strip.scrollLeft; strip.style.cursor='grabbing'; });
+  document.addEventListener('mouseup', function(){ if(down){ down=false; paused=false; strip.style.cursor=''; } });
   strip.addEventListener('mousemove', function(e){ if(!down) return; e.preventDefault(); strip.scrollLeft = scrollLeft-(e.pageX-strip.offsetLeft-startX); });
+  // タッチ操作
+  var tx, tsl;
+  strip.addEventListener('touchstart', function(e){ paused=true; tx=e.touches[0].pageX; tsl=strip.scrollLeft; },{passive:true});
+  strip.addEventListener('touchend', function(){ paused=false; });
+  strip.addEventListener('touchmove', function(e){ strip.scrollLeft = tsl-(e.touches[0].pageX-tx); },{passive:true});
 })();
 </script>
 
