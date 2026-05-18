@@ -170,35 +170,20 @@
     var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
   }
   items.forEach(function(item){ strip.appendChild(item); });
-  // 無限ループ用に複製
-  Array.from(strip.children).forEach(function(item){ strip.appendChild(item.cloneNode(true)); });
+  // 瞬間カット切り替え（スクロールなし）
+  strip.style.transition = 'none';
+  var page = 0;
 
-  var INTERVAL = 15000;   // 切り替え間隔 (ms)
-  var DURATION = 1200;    // スクロールアニメーション時間 (ms)
-  var paused = false;
-  var halfWidth = strip.scrollWidth / 2;
-
-  // easeInOut
-  function ease(t){ return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
-
-  function scrollPage(){
-    if(paused) return;
+  function switchPage(){
     var pageW = strip.offsetWidth;
-    var from  = strip.scrollLeft;
-    var to    = from + pageW;
-    // 無限ループ: 折り返し
-    if(to >= halfWidth) to = to - halfWidth;
-    var start = null;
-    function step(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / DURATION, 1);
-      strip.scrollLeft = from + (to - from) * ease(p);
-      if(p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
+    var totalPages = Math.ceil(strip.scrollWidth / pageW);
+    page = (page + 1) % totalPages;
+    // 瞬間ジャンプ
+    strip.style.scrollBehavior = 'auto';
+    strip.scrollLeft = page * pageW;
   }
 
-  var timer = setInterval(scrollPage, INTERVAL);
+  setInterval(switchPage, 15000);
 
   // ホバーで一時停止
   strip.addEventListener('mouseenter', function(){ paused = true; });

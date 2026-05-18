@@ -288,6 +288,7 @@ img { display: block; max-width: 100%; }
 
 /* ==================== GALLERY STRIP ==================== */
 .gd-gallery-strip {
+  scroll-behavior: auto !important;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
