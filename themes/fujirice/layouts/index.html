@@ -162,12 +162,20 @@
 <script>
 (function(){
   var strip = document.getElementById('gdGalleryStrip');
+  if(!strip) return;
+  // シャッフル
   var items = Array.from(strip.children);
   for(var i = items.length - 1; i > 0; i--){
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
   }
   items.forEach(function(item){ strip.appendChild(item); });
+  // ドラッグスクロール
+  var down = false, startX, scrollLeft;
+  strip.addEventListener('mousedown', function(e){ down=true; startX=e.pageX-strip.offsetLeft; scrollLeft=strip.scrollLeft; });
+  strip.addEventListener('mouseleave', function(){ down=false; });
+  strip.addEventListener('mouseup', function(){ down=false; });
+  strip.addEventListener('mousemove', function(e){ if(!down) return; e.preventDefault(); strip.scrollLeft = scrollLeft-(e.pageX-strip.offsetLeft-startX); });
 })();
 </script>
 
