@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUJI RICE | 富士山麓の米 — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ====== RESET ====== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#080808;color:#f0ece4;font-family:'Noto Serif JP',serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+img{display:block;width:100%;height:100%;object-fit:cover;}
+
+/* ====== VARIABLES ====== */
+:root{
+  --gold:#c9a761;
+  --gold-dim:rgba(201,167,97,0.5);
+  --white:#f0ece4;
+  --gray:#8a8a8a;
+  --dark:#0a0a0a;
+  --card:#101010;
+  --en:'Cormorant Garamond',serif;
+  --jp:'Noto Serif JP',serif;
+}
+
+/* ====== HEADER ====== */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.5rem 3rem;
+  transition:background 0.4s;
+}
+.site-header.scrolled{background:rgba(8,8,8,0.95);backdrop-filter:blur(10px);}
+.logo{display:flex;flex-direction:column;gap:2px;}
+.logo-en{font-family:var(--en);font-size:1.5rem;font-weight:400;letter-spacing:0.15em;color:var(--white);}
+.logo-ja{font-size:0.6rem;letter-spacing:0.3em;color:var(--gold);font-weight:300;}
+.nav{display:flex;gap:2.5rem;align-items:center;}
+.nav a{font-size:0.75rem;letter-spacing:0.2em;color:var(--gray);transition:color 0.3s;}
+.nav a:hover{color:var(--white);}
+.nav .nav-buy{
+  border:1px solid var(--gold);color:var(--gold);
+  padding:0.5rem 1.5rem;font-size:0.7rem;letter-spacing:0.2em;
+  transition:all 0.3s;
+}
+.nav .nav-buy:hover{background:var(--gold);color:#080808;}
+
+/* ====== HERO ====== */
+.hero{
+  position:relative;height:100vh;min-height:600px;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-slides{position:absolute;inset:0;}
+.hero-slide{
+  position:absolute;inset:0;opacity:0;
+  animation:heroSlide 24s infinite;
+}
+.hero-slide:nth-child(1){animation-delay:0s;}
+.hero-slide:nth-child(2){animation-delay:6s;}
+.hero-slide:nth-child(3){animation-delay:12s;}
+.hero-slide:nth-child(4){animation-delay:18s;}
+.hero-slide img{width:100%;height:100%;object-fit:cover;}
+@keyframes heroSlide{
+  0%{opacity:0;transform:scale(1.05);}
+  5%{opacity:1;}
+  25%{opacity:1;transform:scale(1.0);}
+  30%{opacity:0;}
+  100%{opacity:0;}
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 3rem 5rem;
+  max-width:900px;
+}
+.hero-badge{
+  font-size:0.7rem;letter-spacing:0.35em;color:var(--gold);
+  margin-bottom:1.5rem;font-weight:300;
+}
+.hero-en{
+  font-family:var(--en);
+  font-size:clamp(3.5rem,9vw,7rem);
+  font-weight:300;letter-spacing:0.04em;
+  line-height:1;
+  color:var(--white);
+  margin-bottom:1rem;
+}
+.hero-ja{
+  font-size:clamp(1rem,2.5vw,1.4rem);
+  letter-spacing:0.3em;
+  color:rgba(240,236,228,0.7);
+  font-weight:300;
+  margin-bottom:2.5rem;
+}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{
+  display:inline-block;
+  background:var(--gold);color:#080808;
+  padding:0.9rem 2.5rem;
+  font-size:0.75rem;letter-spacing:0.25em;
+  font-weight:400;
+  transition:all 0.3s;
+  font-family:'Noto Sans JP',sans-serif;
+}
+.btn-primary:hover{background:#e8c078;}
+.btn-ghost{
+  display:inline-block;
+  border:1px solid rgba(240,236,228,0.4);color:var(--white);
+  padding:0.9rem 2.5rem;
+  font-size:0.75rem;letter-spacing:0.25em;
+  transition:all 0.3s;
+  font-family:'Noto Sans JP',sans-serif;
+}
+.btn-ghost:hover{border-color:var(--white);}
+.hero-scroll{
+  position:absolute;bottom:2rem;right:3rem;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  font-size:0.6rem;letter-spacing:0.3em;color:var(--gray);
+}
+.hero-scroll::after{
+  content:'';display:block;width:1px;height:60px;
+  background:linear-gradient(to bottom,var(--gray),transparent);
+  animation:scrollDown 2s ease-in-out infinite;
+}
+@keyframes scrollDown{
+  0%{transform:scaleY(0);transform-origin:top;}
+  50%{transform:scaleY(1);transform-origin:top;}
+  51%{transform:scaleY(1);transform-origin:bottom;}
+  100%{transform:scaleY(0);transform-origin:bottom;}
+}
+
+/* ====== SECTION BASE ====== */
+section{padding:8rem 3rem;}
+.section-label{
+  font-size:0.65rem;letter-spacing:0.4em;color:var(--gold);
+  margin-bottom:1.5rem;font-weight:300;
+}
+.section-en{
+  font-family:var(--en);
+  font-size:clamp(2.5rem,6vw,5rem);
+  font-weight:300;letter-spacing:0.03em;
+  color:var(--white);line-height:1.1;
+  margin-bottom:0.75rem;
+}
+.section-ja{
+  font-size:clamp(0.85rem,1.5vw,1rem);
+  letter-spacing:0.2em;color:var(--gray);
+  margin-bottom:3rem;
+}
+.divider{
+  width:40px;height:1px;
+  background:var(--gold);margin:2rem 0;
+}
+
+/* ====== CONCEPT ====== */
+.concept{
+  background:#0a0a0a;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  padding:0;
+}
+.concept-img{
+  height:70vh;min-height:480px;
+  overflow:hidden;
+  position:relative;
+}
+.concept-img img{transition:transform 1.5s ease;}
+.concept-img:hover img{transform:scale(1.05);}
+.concept-text{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:6rem 5rem;
+  background:#0f0f0f;
+}
+.concept-quote{
+  font-size:clamp(1.4rem,3vw,2.2rem);
+  line-height:2.2;letter-spacing:0.1em;
+  color:var(--white);font-weight:300;
+  margin-bottom:2.5rem;
+}
+.concept-body{
+  font-size:0.9rem;line-height:2.4;
+  color:var(--gray);letter-spacing:0.05em;
+}
+
+/* ====== STATS ====== */
+.stats{
+  background:#050505;
+  padding:5rem 3rem;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:linear-gradient(to right,transparent 33%,var(--gold-dim) 33%, var(--gold-dim) 34%, transparent 34%,transparent 66%, var(--gold-dim) 66%, var(--gold-dim) 67%, transparent 67%);
+}
+.stat{
+  text-align:center;padding:3rem;
+}
+.stat-num{
+  font-family:var(--en);
+  font-size:clamp(3rem,6vw,5rem);
+  font-weight:300;color:var(--gold);
+  letter-spacing:0.02em;line-height:1;
+}
+.stat-unit{font-size:1rem;color:var(--gold);}
+.stat-label{
+  font-size:0.75rem;letter-spacing:0.2em;
+  color:var(--gray);margin-top:0.75rem;
+}
+
+/* ====== TIMELAPSE ====== */
+.timelapse{
+  background:#050505;
+  padding:8rem 3rem;
+  text-align:center;
+}
+.timelapse-inner{max-width:1100px;margin:0 auto;}
+.video-wrap{
+  position:relative;
+  padding-bottom:56.25%;height:0;
+  overflow:hidden;
+  margin-top:4rem;
+  border:1px solid rgba(201,167,97,0.15);
+}
+.video-wrap iframe{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;border:0;
+}
+.video-caption{
+  margin-top:1.5rem;
+  font-size:0.75rem;letter-spacing:0.2em;
+  color:var(--gray);
+}
+.video-caption a{color:var(--gold);border-bottom:1px solid var(--gold-dim);}
+
+/* ====== BLOG ====== */
+.blog{background:#080808;padding:8rem 3rem;}
+.blog-inner{max-width:1300px;margin:0 auto;}
+.blog-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:4rem;
+}
+.blog-more{
+  font-size:0.7rem;letter-spacing:0.25em;color:var(--gold);
+  border-bottom:1px solid var(--gold-dim);padding-bottom:2px;
+  transition:border-color 0.3s;
+}
+.blog-more:hover{border-color:var(--gold);}
+.blog-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1.5rem;
+}
+.blog-card{
+  background:var(--card);
+  display:block;
+  transition:transform 0.4s ease;
+  border:1px solid rgba(255,255,255,0.04);
+}
+.blog-card:hover{transform:translateY(-6px);}
+.blog-card-img{
+  aspect-ratio:16/10;overflow:hidden;
+}
+.blog-card-img img{transition:transform 0.8s ease;width:100%;height:100%;object-fit:cover;}
+.blog-card:hover .blog-card-img img{transform:scale(1.06);}
+.blog-card-body{padding:1.5rem 1.75rem 2rem;}
+.blog-card-date{
+  font-size:0.65rem;letter-spacing:0.2em;
+  color:var(--gold);display:block;margin-bottom:0.75rem;
+}
+.blog-card-title{
+  font-size:0.9rem;line-height:1.7;
+  color:rgba(240,236,228,0.85);
+  display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* ====== PURCHASE CTA ====== */
+.purchase{
+  background:#0a0a0a;
+  padding:8rem 3rem;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.purchase::before{
+  content:'FUJI RICE';
+  position:absolute;
+  font-family:var(--en);
+  font-size:clamp(8rem,20vw,18rem);
+  font-weight:300;
+  color:rgba(201,167,97,0.04);
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+  letter-spacing:0.05em;
+  pointer-events:none;
+}
+.purchase-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;}
+.purchase-lead{
+  font-size:clamp(1.2rem,3vw,1.8rem);
+  letter-spacing:0.15em;line-height:2;
+  color:var(--white);margin-bottom:1rem;
+}
+.purchase-sub{
+  font-size:0.85rem;letter-spacing:0.1em;
+  color:var(--gray);margin-bottom:3rem;
+}
+.purchase-btns{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;}
+
+/* ====== MUSIC ====== */
+.music{
+  background:linear-gradient(160deg,#0a0a18 0%,#100820 50%,#080808 100%);
+  padding:8rem 3rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  align-items:center;
+}
+.music-text{padding:0 6rem 0 max(3rem, calc(50vw - 650px + 3rem));}
+.music-badge{
+  font-size:0.65rem;letter-spacing:0.4em;color:#8b7bb5;
+  margin-bottom:1.5rem;
+}
+.music-title-en{
+  font-family:var(--en);
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:300;letter-spacing:0.05em;
+  color:var(--white);line-height:1;
+  margin-bottom:0.5rem;
+}
+.music-title-ja{
+  font-size:clamp(1rem,2vw,1.4rem);
+  letter-spacing:0.3em;color:rgba(200,170,220,0.7);
+  margin-bottom:2rem;
+}
+.music-body{
+  font-size:0.85rem;line-height:2.4;
+  color:rgba(200,200,220,0.6);
+  margin-bottom:2.5rem;
+}
+.btn-music{
+  display:inline-block;
+  background:linear-gradient(135deg,#8b6bbf,#c45090);
+  color:#fff;
+  padding:0.9rem 2.5rem;
+  font-size:0.75rem;letter-spacing:0.25em;
+  transition:all 0.3s;border-radius:2px;
+}
+.btn-music:hover{filter:brightness(1.15);}
+.music-visual{
+  height:100%;min-height:500px;
+  background:radial-gradient(ellipse at center, rgba(139,107,191,0.2) 0%, rgba(196,80,144,0.1) 50%, transparent 70%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--en);
+  font-size:clamp(6rem,15vw,13rem);
+  font-weight:300;color:rgba(139,107,191,0.15);
+  letter-spacing:0.05em;
+  line-height:1;text-align:center;
+  padding:3rem;
+}
+
+/* ====== SNS ====== */
+.sns{
+  background:#050505;
+  padding:6rem 3rem;
+  text-align:center;
+}
+.sns-inner{max-width:900px;margin:0 auto;}
+.sns-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  justify-content:center;
+  margin-top:3rem;
+}
+.sns-link{
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  padding:1.5rem 2rem;
+  border:1px solid rgba(255,255,255,0.08);
+  color:var(--gray);
+  transition:all 0.3s;
+  min-width:120px;
+}
+.sns-link:hover{border-color:var(--gold);color:var(--white);}
+.sns-icon{font-size:1.5rem;}
+.sns-name{font-size:0.65rem;letter-spacing:0.15em;}
+
+/* ====== LINE ====== */
+.line-cta{
+  background:#0e1a0e;
+  padding:5rem 3rem;
+  display:flex;align-items:center;justify-content:center;gap:3rem;
+  flex-wrap:wrap;text-align:center;
+}
+.line-text h3{
+  font-size:clamp(1.2rem,3vw,1.8rem);
+  letter-spacing:0.15em;color:var(--white);
+  margin-bottom:0.5rem;
+}
+.line-text p{font-size:0.8rem;color:var(--gray);letter-spacing:0.1em;}
+.btn-line{
+  display:inline-block;
+  background:#06c755;color:#fff;
+  padding:0.9rem 2.5rem;
+  font-size:0.8rem;letter-spacing:0.2em;
+  border-radius:2px;transition:all 0.3s;
+}
+.btn-line:hover{background:#05b04c;}
+
+/* ====== FOOTER ====== */
+footer{
+  background:#000;
+  padding:5rem 3rem 2.5rem;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:4rem;padding-bottom:4rem;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.footer-brand-en{
+  font-family:var(--en);font-size:1.8rem;
+  font-weight:300;letter-spacing:0.1em;
+  color:var(--white);margin-bottom:0.25rem;
+}
+.footer-brand-ja{font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:1.5rem;}
+.footer-brand-text{font-size:0.78rem;line-height:2;color:var(--gray);}
+.footer-col h4{
+  font-size:0.65rem;letter-spacing:0.3em;color:var(--white);
+  margin-bottom:1.5rem;
+}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:0.75rem;}
+.footer-col a{font-size:0.78rem;color:var(--gray);letter-spacing:0.05em;transition:color 0.2s;}
+.footer-col a:hover{color:var(--white);}
+.footer-bottom{
+  max-width:1200px;margin:2rem auto 0;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-copy{font-size:0.65rem;letter-spacing:0.15em;color:rgba(138,138,138,0.5);}
+
+/* ====== PREVIEW BADGE ====== */
+.preview-badge{
+  position:fixed;bottom:1.5rem;left:1.5rem;z-index:9999;
+  background:#ff4444;color:#fff;
+  padding:0.5rem 1rem;font-size:0.65rem;letter-spacing:0.15em;
+  border-radius:2px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:900px){
+  .site-header{padding:1.25rem 1.5rem;}
+  .nav{gap:1.5rem;}
+  section{padding:5rem 1.5rem;}
+  .hero-content{padding:0 1.5rem 4rem;}
+  .concept{grid-template-columns:1fr;}
+  .concept-img{height:50vw;min-height:300px;}
+  .concept-text{padding:3.5rem 2rem;}
+  .stats{grid-template-columns:1fr;background:none;gap:0;}
+  .stat{border-bottom:1px solid rgba(201,167,97,0.2);}
+  .blog-grid{grid-template-columns:1fr 1fr;}
+  .music{grid-template-columns:1fr;}
+  .music-text{padding:3rem 1.5rem;}
+  .music-visual{min-height:250px;}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:2rem;}
+  .blog-header{flex-direction:column;align-items:flex-start;gap:1rem;}
+}
+@media(max-width:600px){
+  .blog-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .nav .nav-buy,.nav a:not(.nav-buy){display:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="preview-badge">▶ PREVIEW</div>
+
+<!-- HEADER -->
+<header class="site-header" id="header">
+  <a href="#" class="logo">
+    <span class="logo-en">FUJI RICE</span>
+    <span class="logo-ja">富士山麓・富士宮 — にじのきらめき</span>
+  </a>
+  <nav class="nav">
+    <a href="#concept">Our Story</a>
+    <a href="#timelapse">動画</a>
+    <a href="#blog">農場だより</a>
+    <a href="#music">稲歌みほ</a>
+    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/" target="_blank" class="nav-buy">購入する</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-slides">
+    <div class="hero-slide">
+      <img src="themes/fujirice/static/images/hero-fuji-sunset.jpg" alt="夕暮れの富士山">
+    </div>
+    <div class="hero-slide">
+      <img src="themes/fujirice/static/images/fuji-sunset-rice.jpg" alt="稲穂と富士山">
+    </div>
+    <div class="hero-slide">
+      <img src="themes/fujirice/static/images/fuji-clear-blue.jpg" alt="青空と富士山">
+    </div>
+    <div class="hero-slide">
+      <img src="themes/fujirice/static/images/fuji-moon-evening.jpg" alt="月と富士山">
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-badge">SHIZUOKA · FUJINOMIYA · NIJINOKIRAMEKI</p>
+    <h1 class="hero-en">FUJI RICE</h1>
+    <p class="hero-ja">富士山の雪解け水が育てた、一粒の美</p>
+    <div class="hero-cta">
+      <a href="https://store.shopping.yahoo.co.jp/iwatayacom/" target="_blank" class="btn-primary">今すぐ購入</a>
+      <a href="#concept" class="btn-ghost">物語を読む</a>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept" id="concept">
+  <div class="concept-img">
+    <img src="themes/fujirice/static/images/tractor-fuji.jpg" alt="富士山を背に田を耕すトラクター">
+  </div>
+  <div class="concept-text">
+    <p class="section-label">CONCEPT</p>
+    <h2 class="section-en">Water,<br>Soil,<br>Time.</h2>
+    <div class="divider"></div>
+    <p class="concept-quote">水と、土と、時間がつくる味。</p>
+    <p class="concept-body">
+      富士山に降った雪と雨が、長い年月をかけて麓へ届く。<br>
+      その伏流水と、火山が育てた肥沃な土で、<br>
+      米はゆっくりと実ります。<br><br>
+      農薬を控えて、手間を惜しまず、<br>
+      ひと粒に土地のすべてを宿らせる。<br>
+      それが、私たちの仕事です。
+    </p>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">3,776<span class="stat-unit">m</span></div>
+    <p class="stat-label">富士山の高さ</p>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100<span class="stat-unit">%</span></div>
+    <p class="stat-label">富士山伏流水使用</p>
+  </div>
+  <div class="stat">
+    <div class="stat-num">にじの<span style="font-size:0.6em">きらめき</span></div>
+    <p class="stat-label">栽培品種</p>
+  </div>
+</div>
+
+<!-- TIMELAPSE -->
+<section class="timelapse" id="timelapse">
+  <div class="timelapse-inner">
+    <p class="section-label">TIMELAPSE</p>
+    <h2 class="section-en">Live from the Field</h2>
+    <p class="section-ja">富士山麓 — 毎朝・毎夕 更新のタイムラプス</p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/V5m6K_LoO64"
+        title="富士山麓タイムラプス"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-caption">
+      最新動画は <a href="https://www.youtube.com/@fujirice_official" target="_blank">YouTube @fujirice_official</a> で毎日配信中
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);height:300px;gap:2px;">
+  <div style="overflow:hidden;"><img src="themes/fujirice/static/images/seed-handful.jpg" alt="種もみ" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s;"></div>
+  <div style="overflow:hidden;"><img src="themes/fujirice/static/images/tunnel-inside-sprout.jpg" alt="発芽" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s;"></div>
+  <div style="overflow:hidden;"><img src="themes/fujirice/static/images/field-fuji-evening.jpg" alt="田んぼ" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s;"></div>
+  <div style="overflow:hidden;"><img src="themes/fujirice/static/images/water-spray.jpg" alt="水まき" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s;"></div>
+</div>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="blog-inner">
+    <div class="blog-header">
+      <div>
+        <p class="section-label">FARM DIARY</p>
+        <h2 class="section-en" style="margin-bottom:0.5rem;">農場だより</h2>
+        <p class="section-ja" style="margin-bottom:0;">富士山麓からの最新情報</p>
+      </div>
+      <a href="/posts/" class="blog-more">すべての記事を見る →</a>
+    </div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card">
+        <div class="blog-card-img">
+          <img src="themes/fujirice/static/images/fuji-evening-pink.jpg" alt="記事1">
+        </div>
+        <div class="blog-card-body">
+          <time class="blog-card-date">2026.05.15</time>
+          <p class="blog-card-title">富士山麓だより 朝 2026年05月15日 — 爽やかな五月の朝、富士山の残雪がくっきりと見えています</p>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img">
+          <img src="themes/fujirice/static/images/fuji-moon-evening.jpg" alt="記事2">
+        </div>
+        <div class="blog-card-body">
+          <time class="blog-card-date">2026.05.14</time>
+          <p class="blog-card-title">富士山麓だより 夕方 2026年05月14日 — 田んぼの水面に夕日が反射しています</p>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img">
+          <img src="themes/fujirice/static/images/tractor-low-angle.jpg" alt="記事3">
+        </div>
+        <div class="blog-card-body">
+          <time class="blog-card-date">2026.05.13</time>
+          <p class="blog-card-title">富士山麓だより 朝 2026年05月13日 — トラクターで田起こし。春の作業が始まりました</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PURCHASE CTA -->
+<section class="purchase">
+  <div class="purchase-inner">
+    <p class="section-label">PURCHASE</p>
+    <p class="purchase-lead">富士山麓の米を、<br>あなたの食卓へ。</p>
+    <p class="purchase-sub">産地直送 · にじのきらめき · 2026年新米は9月20日より</p>
+    <div class="purchase-btns">
+      <a href="https://store.shopping.yahoo.co.jp/iwatayacom/" target="_blank" class="btn-primary">Yahoo!ショッピングで購入</a>
+      <a href="https://ichiba.libecity.com/shops/577" target="_blank" class="btn-ghost">リベ市場で購入</a>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section class="music" id="music">
+  <div class="music-text">
+    <p class="music-badge">🎵 FUJI RICE 公式バーチャル歌姫</p>
+    <h2 class="music-title-en">Inauta<br>Miho</h2>
+    <p class="music-title-ja">稲歌みほ</p>
+    <div class="divider" style="background:#8b6bbf;"></div>
+    <p class="music-body">
+      富士山麓の田んぼから生まれた歌声。<br>
+      Spotify・Apple Music・YouTube Music<br>
+      など各種ストリーミングで配信中。<br><br>
+      シングル・アルバム「一年」（7曲）好評配信中。
+    </p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="https://hyperfollow.com/inautamiho" target="_blank" class="btn-music">今すぐ聴く →</a>
+      <a href="https://www.youtube.com/@InautaMiho" target="_blank" class="btn-ghost" style="font-size:0.75rem;padding:0.9rem 2rem;">YouTube →</a>
+    </div>
+  </div>
+  <div class="music-visual">稲歌<br>みほ</div>
+</section>
+
+<!-- LINE CTA -->
+<div class="line-cta">
+  <div class="line-text">
+    <h3>LINEでご相談</h3>
+    <p>注文・ご質問はLINEが最も早く返信できます</p>
+  </div>
+  <a href="https://line.me/R/ti/p/%40508ouhoc" target="_blank" class="btn-line">💬 友だち追加 @508ouhoc</a>
+</div>
+
+<!-- SNS -->
+<section class="sns">
+  <div class="sns-inner">
+    <p class="section-label">FOLLOW US</p>
+    <h2 class="section-en" style="font-size:clamp(2rem,4vw,3.5rem);">Stay Connected</h2>
+    <div class="sns-grid">
+      <a href="https://x.com/FUJIRICE_jp" target="_blank" class="sns-link">
+        <span class="sns-icon">𝕏</span>
+        <span class="sns-name">@FUJIRICE_jp</span>
+      </a>
+      <a href="https://www.instagram.com/fujirice_farm/" target="_blank" class="sns-link">
+        <span class="sns-icon">📷</span>
+        <span class="sns-name">@fujirice_farm</span>
+      </a>
+      <a href="https://www.youtube.com/@fujirice_official" target="_blank" class="sns-link">
+        <span class="sns-icon">▶</span>
+        <span class="sns-name">YouTube</span>
+      </a>
+      <a href="https://www.tiktok.com/@fuji.rice" target="_blank" class="sns-link">
+        <span class="sns-icon">♪</span>
+        <span class="sns-name">@fuji.rice</span>
+      </a>
+      <a href="https://www.threads.net/@fujirice_farm" target="_blank" class="sns-link">
+        <span class="sns-icon">@</span>
+        <span class="sns-name">@fujirice_farm</span>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61576422607058" target="_blank" class="sns-link">
+        <span class="sns-icon">f</span>
+        <span class="sns-name">Facebook</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand-en">FUJI RICE</p>
+      <p class="footer-brand-ja">富士山麓・富士宮で育てたお米</p>
+      <p class="footer-brand-text">
+        富士山の雪解け水と肥沃な火山土で育てた<br>
+        にじのきらめき。産地直送でお届けします。<br><br>
+        静岡県富士宮市 · 青木地区
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>SHOP</h4>
+      <ul>
+        <li><a href="https://store.shopping.yahoo.co.jp/iwatayacom/" target="_blank">Yahoo!ショッピング</a></li>
+        <li><a href="https://ichiba.libecity.com/shops/577" target="_blank">リベ市場</a></li>
+        <li><a href="https://line.me/R/ti/p/%40508ouhoc" target="_blank">LINEで注文</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>CONTENT</h4>
+      <ul>
+        <li><a href="/posts/">農場だより</a></li>
+        <li><a href="https://www.youtube.com/@fujirice_official" target="_blank">タイムラプス動画</a></li>
+        <li><a href="https://hyperfollow.com/inautamiho" target="_blank">稲歌みほ（配信）</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>FOLLOW</h4>
+      <ul>
+        <li><a href="https://x.com/FUJIRICE_jp" target="_blank">X @FUJIRICE_jp</a></li>
+        <li><a href="https://www.instagram.com/fujirice_farm/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@fuji.rice" target="_blank">TikTok</a></li>
+        <li><a href="https://www.youtube.com/@fujirice_official" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 FUJI RICE. All rights reserved. · 富士山麓・富士宮</p>
+  </div>
+</footer>
+
+<script>
+// Header scroll effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 80);
+});
+</script>
+</body>
+</html>
