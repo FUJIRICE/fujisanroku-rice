@@ -1,0 +1,7 @@
+2026-05-31 09:40:49,939 INFO === rotate_concept_photo 開始 ===
+2026-05-31 09:40:49,940 INFO 選択した写真: IMG_4022.JPG
+2026-05-31 09:40:49,947 INFO コピー完了: C:\Users\iwata\Desktop\fujisanroku-rice\static\images\concept-fuji.jpg
+2026-05-31 09:40:50,021 INFO OK: git -C C:\Users\iwata\Desktop\fujisanroku-rice add C:\Users\iwata\Desktop\fujisanroku-rice\static\images\concept-fuji.jpg
+2026-05-31 09:40:50,089 INFO OK: git -C C:\Users\iwata\Desktop\fujisanroku-rice commit -m Daily concept photo update (2026-05-31): IMG_4022.JPG
+2026-05-31 09:40:53,948 INFO OK: git -C C:\Users\iwata\Desktop\fujisanroku-rice push
+2026-05-31 09:40:53,949 INFO === 完了 ===
