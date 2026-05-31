@@ -858,6 +858,7 @@ img { display: block; max-width: 100%; }
 .gd-ql-tiktok { background: #010101; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
 .gd-ql-ig    { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
 .gd-ql-yt    { background: #ff0000; color: #fff; }
+.gd-ql-threads { background: #000; color: #fff; }
 .gd-ql-line  { background: #06c755; color: #fff; }
 .gd-ql-icon  { display: flex; align-items: center; }
 @media (max-width: 600px) {
