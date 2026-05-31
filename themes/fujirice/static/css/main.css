@@ -816,3 +816,51 @@ img { display: block; max-width: 100%; }
   .post-nav { flex-direction: column; }
   .gd-sns-link { min-width: 90px; padding: 1.25rem 1rem; }
 }
+
+/* ========== QUICK LINKS ========== */
+.gd-quicklinks {
+  background: #0a0a0a;
+  padding: 2.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.gd-quicklinks-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.gd-quicklinks-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1.2rem;
+  font-family: var(--font-en);
+}
+.gd-quicklinks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.gd-ql-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.gd-ql-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+.gd-ql-shop  { background: #c9a84c; color: #000; }
+.gd-ql-tiktok { background: #010101; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.gd-ql-ig    { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
+.gd-ql-yt    { background: #ff0000; color: #fff; }
+.gd-ql-line  { background: #06c755; color: #fff; }
+.gd-ql-icon  { display: flex; align-items: center; }
+@media (max-width: 600px) {
+  .gd-quicklinks { padding: 2rem 1rem; }
+  .gd-ql-btn { font-size: 0.8rem; padding: 0.65rem 1.1rem; }
+}
