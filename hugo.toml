@@ -22,7 +22,7 @@ hasCJKLanguage = true
   youtubeURL = "https://www.youtube.com/@fujirice_official"
   tiktokURL = "https://www.tiktok.com/@fuji.rice"
   facebookURL = "https://www.facebook.com/profile.php?id=61576422607058"
-  xURL = "https://x.com/toushin_sokuho"
+  xURL = "https://x.com/FUJIRICE_jp"
   threadsURL = "https://www.threads.net/@fujirice_farm"
   mihoYouTubeURL = "https://www.youtube.com/@InautaMiho"
   mihoHyperFollowURL = "https://hyperfollow.com/inautamiho"
@@ -30,7 +30,7 @@ hasCJKLanguage = true
   libecityURL = "https://ichiba.libecity.com/shops/577"
   youtubeFeatureID = "6dcPb6rxR2M"
   # 24hライブのチャンネルID(UCxxxx)を入れるとトップの埋め込みがライブに自動切替。空ならタイムラプス動画のまま。
-  liveChannelID = ""
+  liveChannelID = "UCvvaEEAZoCEwlv11ubKSWxg"  # FUJI RICE公式チャンネルID→トップページに24hライブを埋め込む
   postsPerPage = 9
   showReadingTime = true
   googleFonts = true
