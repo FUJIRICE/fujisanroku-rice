@@ -76,6 +76,11 @@
 </script>
 {{ end }}
 
+<!-- Google Search Console verification -->
+{{ with site.Params.googleVerification }}
+<meta name="google-site-verification" content="{{ . }}">
+{{ end }}
+
 <!-- Canonical -->
 <link rel="canonical" href="{{ .Permalink }}">
 
