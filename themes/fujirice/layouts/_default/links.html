@@ -1,0 +1,94 @@
+{{ define "main" }}
+<style>
+.links-page {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.links-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 3px solid #c8a96e;
+}
+.links-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+}
+.links-bio {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #e8e0d0;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+.link-btn:hover {
+  background: #f8f4ee;
+  border-color: #c8a96e;
+  transform: translateY(-1px);
+}
+.link-btn.primary {
+  background: #c8a96e;
+  border-color: #c8a96e;
+  color: #fff;
+}
+.link-btn.primary:hover {
+  background: #b8955a;
+}
+.link-icon { font-size: 1.2rem; }
+</style>
+
+<div class="links-page">
+  <img class="links-avatar" src="{{ site.Params.heroImage }}" alt="FUJI RICE">
+  <h1 class="links-name">FUJI RICE</h1>
+  <p class="links-bio">富士山麓・富士宮市の田んぼから<br>毎日タイムラプスをお届け🗻<br>Mt. Fuji daily timelapse from our rice farm</p>
+
+  <a class="link-btn primary" href="{{ site.Params.youtubeURL }}?sub_confirmation=1" target="_blank" rel="noopener">
+    <span class="link-icon">▶️</span> YouTube（毎日タイムラプス）
+  </a>
+  <a class="link-btn" href="{{ site.Params.purchaseURL }}" target="_blank" rel="noopener">
+    <span class="link-icon">🛒</span> お米を購入する
+  </a>
+  <a class="link-btn" href="{{ site.Params.instagramURL }}" target="_blank" rel="noopener">
+    <span class="link-icon">📸</span> Instagram
+  </a>
+  <a class="link-btn" href="{{ site.Params.tiktokURL }}" target="_blank" rel="noopener">
+    <span class="link-icon">🎵</span> TikTok
+  </a>
+  <a class="link-btn" href="{{ site.Params.threadsURL }}" target="_blank" rel="noopener">
+    <span class="link-icon">🧵</span> Threads
+  </a>
+  <a class="link-btn" href="{{ site.Params.xURL }}" target="_blank" rel="noopener">
+    <span class="link-icon">✖️</span> X (Twitter)
+  </a>
+  <a class="link-btn" href="{{ site.Params.lineURL }}" target="_blank" rel="noopener">
+    <span class="link-icon">💬</span> LINE（お問い合わせ・注文）
+  </a>
+  <a class="link-btn" href="{{ site.BaseURL }}" target="_blank" rel="noopener">
+    <span class="link-icon">🌐</span> 公式サイト
+  </a>
+</div>
+{{ end }}

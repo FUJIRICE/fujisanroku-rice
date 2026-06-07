@@ -158,9 +158,23 @@
   </div>
 </div>
 
-<!-- ========== TIMELAPSE ========== -->
+<!-- ========== TIMELAPSE / LIVE ========== -->
+{{/* liveChannelID が設定されていれば24hライブを埋め込み、無ければ従来のタイムラプス動画 */}}
 <section class="gd-timelapse" id="gd-timelapse">
   <div class="gd-timelapse-inner">
+    {{- with site.Params.liveChannelID }}
+    <p class="gd-label">LIVE 🔴</p>
+    <h2 class="gd-en-title" style="font-size:clamp(2.2rem,5vw,4rem);">Mt. Fuji Live Camera</h2>
+    <p class="gd-sub-title">富士山麓 — 24時間ライブ配信中</p>
+    <div class="gd-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/live_stream?channel={{ . }}&autoplay=1&mute=1"
+        title="富士山24時間ライブカメラ"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    {{- else }}
     <p class="gd-label">TIMELAPSE</p>
     <h2 class="gd-en-title" style="font-size:clamp(2.2rem,5vw,4rem);">Live from the Field</h2>
     <p class="gd-sub-title">富士山麓 — 毎朝・毎夕 更新のタイムラプス</p>
@@ -172,6 +186,7 @@
         allowfullscreen>
       </iframe>
     </div>
+    {{- end }}
     <p class="gd-video-caption">
       最新動画は
       <a href="{{ site.Params.youtubeURL }}" target="_blank" rel="noopener">YouTube @fujirice_official</a>

@@ -11,6 +11,7 @@ hasCJKLanguage = true
   description = "富士山麓の清らかな雪解け水と豊かな自然の恵みで育てたお米、FUJI RICE。産地直送でお届けします。"
   keywords = "富士山, お米, 米, 産地直送, 有機米, 新米, 山梨"
   author = "FUJI RICE Farm"
+  googleVerification = "RQMqNghQW5t8AkKmSviuXEXUDDsH3Eov21dKrVo-qNg"
   heroTitle = "富士山麓で育てる、雪解け水のお米"
   heroSubtitle = "清らかな水と豊かな自然の恵みで育てた、特別なお米をあなたの食卓へ"
   heroImage = "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg"
@@ -28,7 +29,7 @@ hasCJKLanguage = true
   mihoHyperFollowURL = "https://hyperfollow.com/inautamiho"
   wordpressURL = "https://iwataya9.wordpress.com/"
   libecityURL = "https://ichiba.libecity.com/shops/577"
-  youtubeFeatureID = "6dcPb6rxR2M"
+  youtubeFeatureID = "bUZ63oshUz4"
   # 24hライブのチャンネルID(UCxxxx)を入れるとトップの埋め込みがライブに自動切替。空ならタイムラプス動画のまま。
   liveChannelID = "UCvvaEEAZoCEwlv11ubKSWxg"  # FUJI RICE公式チャンネルID→トップページに24hライブを埋め込む
   postsPerPage = 9

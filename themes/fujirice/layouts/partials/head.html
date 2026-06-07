@@ -9,15 +9,77 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="{{ with .Title }}{{ . }}{{ else }}{{ site.Title }}{{ end }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ if .Params.image -}}
+<meta property="og:image" content="{{ .Params.image | absURL }}">
+{{- else -}}
+<meta property="og:image" content="{{ site.Params.heroImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{{- end }}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@FUJIRICE_jp">
 <meta name="twitter:title" content="{{ with .Title }}{{ . }}{{ else }}{{ site.Title }}{{ end }}">
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+{{ if .Params.image -}}
+<meta name="twitter:image" content="{{ .Params.image | absURL }}">
+{{- else -}}
+<meta name="twitter:image" content="{{ site.Params.heroImage }}">
+{{- end }}
+
+<!-- Schema.org 構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FUJI RICE",
+  "url": "{{ site.BaseURL }}",
+  "logo": "{{ site.Params.heroImage }}",
+  "description": "{{ site.Params.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "富士宮市",
+    "addressRegion": "静岡県",
+    "addressCountry": "JP"
+  },
+  "sameAs": [
+    "{{ site.Params.youtubeURL }}",
+    "{{ site.Params.instagramURL }}",
+    "{{ site.Params.tiktokURL }}",
+    "{{ site.Params.facebookURL }}",
+    "{{ site.Params.threadsURL }}"
+  ]
+}
+</script>
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": { "@type": "Person", "name": "{{ site.Params.author }}" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FUJI RICE",
+    "logo": { "@type": "ImageObject", "url": "{{ site.Params.heroImage }}" }
+  }
+}
+</script>
+{{ end }}
+
+<!-- Google Search Console verification -->
+{{ with site.Params.googleVerification }}
+<meta name="google-site-verification" content="{{ . }}">
+{{ end }}
 
 <!-- Canonical -->
 <link rel="canonical" href="{{ .Permalink }}">
