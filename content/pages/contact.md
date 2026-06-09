@@ -1,4 +1,4 @@
----
+﻿---
 title: "お問い合わせ"
 date: 2026-04-19T02:23:57+09:00
 slug: "contact"
@@ -21,7 +21,7 @@ LINE ID：@508ouhoc
 - YouTube: [@fujirice_official](https://www.youtube.com/@fujirice_official)
 - TikTok: [@fuji.rice](https://www.tiktok.com/@fuji.rice)
 - Facebook: [FUJI RICE](https://www.facebook.com/profile.php?id=61576422607058)
-- 🎵 稲歌みほ（配信）: [hyperfollow.com/inautamiho](https://hyperfollow.com/inautamiho)
+- 🎵 稲歌みほ YouTube: [youtube.com/@inautamiho](https://youtube.com/@inautamiho)
 
 ## 販売所
 
