@@ -170,28 +170,71 @@
 </div>
 
 <!-- ========== TIMELAPSE / LIVE ========== -->
-{{/* liveChannelID が設定されていれば24hライブを埋め込み、無ければ従来のタイムラプス動画 */}}
+{{/* liveChannelID が設定されていればライブ優先表示（停止中はタイムラプスに自動フォールバック） */}}
 <section class="gd-timelapse" id="gd-timelapse">
   <div class="gd-timelapse-inner">
     {{- with site.Params.liveChannelID }}
-    <p class="gd-label">LIVE 🔴</p>
-    <h2 class="gd-en-title" style="font-size:clamp(2.2rem,5vw,4rem);">Mt. Fuji Live Camera</h2>
-    <p class="gd-sub-title">富士山麓 — 24時間ライブ配信中</p>
+    {{/* ライブ中はLIVEラベル、停止中はTIMELAPSEラベルにJSで切り替え */}}
+    <p class="gd-label" id="gdVideoLabel">LIVE 🔴</p>
+    <h2 class="gd-en-title" id="gdVideoTitle" style="font-size:clamp(2.2rem,5vw,4rem);">Mt. Fuji Live Camera</h2>
+    <p class="gd-sub-title" id="gdVideoSubtitle">富士山麓 — 24時間ライブ配信中</p>
     <div class="gd-video-wrap">
+      {{/* ライブ iframe（デフォルト表示） */}}
       <iframe
-        src="https://www.youtube.com/embed/live_stream?channel={{ . }}&autoplay=1&mute=1"
+        id="gdLiveIframe"
+        src="https://www.youtube.com/embed/live_stream?channel={{ . }}&autoplay=1&mute=1&enablejsapi=1"
         title="富士山24時間ライブカメラ"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
+      {{/* タイムラプス iframe（ライブ停止時に表示） */}}
+      <iframe
+        id="gdTimelapseIframe"
+        src="https://www.youtube.com/embed/{{ $ytID }}?rel=0"
+        title="富士山麓タイムラプス"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        style="display:none;">
+      </iframe>
     </div>
+    <script>
+    (function(){
+      var CHANNEL_ID = "{{ . }}";
+      var liveIframe = document.getElementById("gdLiveIframe");
+      var tlIframe   = document.getElementById("gdTimelapseIframe");
+      var label      = document.getElementById("gdVideoLabel");
+      var title      = document.getElementById("gdVideoTitle");
+      var subtitle   = document.getElementById("gdVideoSubtitle");
+
+      function switchToTimelapse() {
+        liveIframe.style.display  = "none";
+        tlIframe.style.display    = "";
+        label.textContent    = "TIMELAPSE";
+        title.textContent    = "Live from the Field";
+        subtitle.textContent = "富士山麓 — 毎朝・毎夕 更新のタイムラプス";
+      }
+
+      // YouTube oEmbed で live_stream が実際に存在するか確認（CORS OK）
+      fetch("https://www.youtube.com/oembed?url=https://www.youtube.com/channel/" + CHANNEL_ID + "/live&format=json")
+        .then(function(r){ if(!r.ok) throw new Error("no live"); return r.json(); })
+        .then(function(d){
+          // live ページが存在 → そのまま live iframe を表示
+          // タイトルを実際のライブタイトルに更新
+          if(d.title) subtitle.textContent = d.title;
+        })
+        .catch(function(){
+          // live が存在しない → タイムラプスに切り替え
+          switchToTimelapse();
+        });
+    })();
+    </script>
     {{- else }}
     <p class="gd-label">TIMELAPSE</p>
     <h2 class="gd-en-title" style="font-size:clamp(2.2rem,5vw,4rem);">Live from the Field</h2>
     <p class="gd-sub-title">富士山麓 — 毎朝・毎夕 更新のタイムラプス</p>
     <div class="gd-video-wrap">
       <iframe
-        src="https://www.youtube.com/embed/{{ $ytID }}"
+        src="https://www.youtube.com/embed/{{ $ytID }}?rel=0"
         title="富士山麓タイムラプス"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
