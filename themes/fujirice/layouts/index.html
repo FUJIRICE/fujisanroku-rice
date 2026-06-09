@@ -199,33 +199,64 @@
     </div>
     <script>
     (function(){
-      var CHANNEL_ID = "{{ . }}";
       var liveIframe = document.getElementById("gdLiveIframe");
       var tlIframe   = document.getElementById("gdTimelapseIframe");
       var label      = document.getElementById("gdVideoLabel");
       var title      = document.getElementById("gdVideoTitle");
       var subtitle   = document.getElementById("gdVideoSubtitle");
+      var switched   = false;
 
       function switchToTimelapse() {
-        liveIframe.style.display  = "none";
-        tlIframe.style.display    = "";
+        if (switched) return;
+        switched = true;
+        liveIframe.style.display = "none";
+        tlIframe.style.display   = "";
         label.textContent    = "TIMELAPSE";
         title.textContent    = "Live from the Field";
         subtitle.textContent = "富士山麓 — 毎朝・毎夕 更新のタイムラプス";
       }
 
-      // YouTube oEmbed で live_stream が実際に存在するか確認（CORS OK）
-      fetch("https://www.youtube.com/oembed?url=https://www.youtube.com/channel/" + CHANNEL_ID + "/live&format=json")
-        .then(function(r){ if(!r.ok) throw new Error("no live"); return r.json(); })
-        .then(function(d){
-          // live ページが存在 → そのまま live iframe を表示
-          // タイトルを実際のライブタイトルに更新
-          if(d.title) subtitle.textContent = d.title;
-        })
-        .catch(function(){
-          // live が存在しない → タイムラプスに切り替え
+      // YouTube IFrame Player API でライブ状態を検出
+      // onStateChange: -1=未開始(ライブなし), 1=再生中(ライブ中)
+      // onError: ライブストリームなし
+      window.onYouTubeIframeAPIReady = function() {};
+
+      window.addEventListener("message", function(e) {
+        if (!e.origin.includes("youtube.com")) return;
+        try {
+          var data = JSON.parse(e.data);
+          if (data.event === "onStateChange") {
+            // -1 = 未開始（ライブ配信なし）
+            if (data.info === -1) {
+              switchToTimelapse();
+            }
+          }
+          if (data.event === "onError") {
+            switchToTimelapse();
+          }
+        } catch(err) {}
+      });
+
+      // 15秒後にまだ再生が始まっていなければタイムラプスに切り替え
+      setTimeout(function() {
+        if (!switched) {
+          // iframeが黒画面かどうかは直接判定できないため、
+          // ライブ中なら iframe src が live_stream のまま → そのまま表示
+          // 念のため Player API に状態問い合わせ
+          try {
+            liveIframe.contentWindow.postMessage(
+              JSON.stringify({event:"listening"}), "*"
+            );
+          } catch(e) {}
+        }
+      }, 15000);
+
+      // 30秒後に onStateChange が来ていない = ライブなし → タイムラプス
+      setTimeout(function() {
+        if (!switched) {
           switchToTimelapse();
-        });
+        }
+      }, 30000);
     })();
     </script>
     {{- else }}
