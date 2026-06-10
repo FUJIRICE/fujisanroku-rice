@@ -29,7 +29,7 @@ hasCJKLanguage = true
   mihoHyperFollowURL = "https://youtube.com/@inautamiho"
   wordpressURL = "https://iwataya9.wordpress.com/"
   libecityURL = "https://ichiba.libecity.com/shops/577"
-  youtubeFeatureID = "gs3fMazqOa8"
+  youtubeFeatureID = "l22sez90Dqo"
   # 24hライブのチャンネルID(UCxxxx)を入れるとトップの埋め込みがライブに自動切替。空ならタイムラプス動画のまま。
   liveChannelID = "UCvvaEEAZoCEwlv11ubKSWxg"  # FUJI RICE公式チャンネルID→トップページに24hライブを埋め込む
   postsPerPage = 9
