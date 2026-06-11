@@ -54,7 +54,7 @@ hasCJKLanguage = true
     weight = 1
   [[menu.main]]
     name = "お米について"
-    url = "/pages/about/"
+    url = "/pages/about-nijinokirameki/"
     weight = 2
   [[menu.main]]
     name = "ブログ"

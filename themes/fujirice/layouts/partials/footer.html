@@ -59,8 +59,11 @@
         {{- with site.Params.youtubeURL }}
         <li><a href="{{ . }}" target="_blank" rel="noopener">タイムラプス動画</a></li>
         {{- end }}
-        {{- with site.Params.mihoHyperFollowURL }}
+        {{- with site.Params.mihoYouTubeURL }}
         <li><a href="{{ . }}" target="_blank" rel="noopener">稲歌みほ YouTube</a></li>
+        {{- end }}
+        {{- with site.Params.mihoHyperFollowURL }}
+        <li><a href="{{ . }}" target="_blank" rel="noopener">稲歌みほ 音楽配信</a></li>
         {{- end }}
       </ul>
     </div>
