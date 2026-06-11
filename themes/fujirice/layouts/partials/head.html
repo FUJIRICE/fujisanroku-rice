@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-{{- with .Title }}<title>{{ . }} | {{ site.Title }}</title>{{ else }}<title>{{ site.Title }}</title>{{ end }}
+{{- if and .Title (ne .Title site.Title) }}<title>{{ .Title }} | {{ site.Title }}</title>{{ else }}<title>{{ site.Title }}</title>{{ end }}
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
 <meta name="keywords" content="{{ site.Params.keywords }}">
 <meta name="author" content="{{ site.Params.author }}">

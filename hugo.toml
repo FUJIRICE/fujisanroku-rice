@@ -9,7 +9,7 @@ hasCJKLanguage = true
 
 [params]
   description = "富士山麓の清らかな雪解け水と豊かな自然の恵みで育てたお米、FUJI RICE。産地直送でお届けします。"
-  keywords = "富士山, お米, 米, 産地直送, 有機米, 新米, 山梨"
+  keywords = "富士山, お米, 米, 産地直送, 新米, 静岡, 富士宮, にじのきらめき"
   author = "FUJI RICE Farm"
   googleVerification = "RQMqNghQW5t8AkKmSviuXEXUDDsH3Eov21dKrVo-qNg"
   heroTitle = "富士山麓で育てる、雪解け水のお米"
@@ -26,10 +26,10 @@ hasCJKLanguage = true
   xURL = "https://x.com/FUJIRICE_jp"
   threadsURL = "https://www.threads.net/@fujirice_farm"
   mihoYouTubeURL = "https://www.youtube.com/@InautaMiho"
-  mihoHyperFollowURL = "https://youtube.com/@inautamiho"
+  mihoHyperFollowURL = "https://distrokid.com/hyperfollow/inautamiho/nDDz9rG8LC0"
   wordpressURL = "https://iwataya9.wordpress.com/"
   libecityURL = "https://ichiba.libecity.com/shops/577"
-  youtubeFeatureID = "gs3fMazqOa8"
+  youtubeFeatureID = "aFOX7gUgkgQ"
   # 24hライブのチャンネルID(UCxxxx)を入れるとトップの埋め込みがライブに自動切替。空ならタイムラプス動画のまま。
   liveChannelID = "UCvvaEEAZoCEwlv11ubKSWxg"  # FUJI RICE公式チャンネルID→トップページに24hライブを埋め込む
   postsPerPage = 9
@@ -54,7 +54,7 @@ hasCJKLanguage = true
     weight = 1
   [[menu.main]]
     name = "お米について"
-    url = "/pages/about/"
+    url = "/pages/about-nijinokirameki/"
     weight = 2
   [[menu.main]]
     name = "ブログ"
@@ -66,7 +66,7 @@ hasCJKLanguage = true
     weight = 4
   [[menu.main]]
     name = "購入する"
-    url = "https://store.shopping.yahoo.co.jp/fujirice/"
+    url = "https://store.shopping.yahoo.co.jp/iwatayacom/"
     weight = 5
 
 [outputs]
