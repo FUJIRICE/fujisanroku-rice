@@ -15,7 +15,7 @@ LINE ID：@508ouhoc
 
 ## SNS
 
-- X (Twitter): [@FUJIRICE_jp](https://x.com/FUJIRICE_jp)
+- X (Twitter): [@fuji_rice_8a](https://x.com/fuji_rice_8a)
 - Instagram: [@fujirice_farm](https://www.instagram.com/fujirice_farm/)
 - Threads: [@fujirice_farm](https://www.threads.net/@fujirice_farm)
 - YouTube: [@fujirice_official](https://www.youtube.com/@fujirice_official)
