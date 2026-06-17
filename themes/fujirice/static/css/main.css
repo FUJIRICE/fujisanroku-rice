@@ -69,8 +69,16 @@ img { display: block; max-width: 100%; }
   font-family: var(--sans);
   font-size: 0.75rem; letter-spacing: 0.2em;
   color: var(--gray); transition: color 0.3s;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.75);
 }
 .gd-header-nav a:hover { color: var(--white); }
+/* 🔴 LIVE: 赤・太字で目立たせる（CTA） */
+.gd-nav-live {
+  color: #ff3b3b !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9) !important;
+}
+.gd-nav-live:hover { color: #ff6b6b !important; }
 .gd-nav-buy {
   border: 1px solid var(--gold) !important;
   color: var(--gold) !important;
