@@ -199,69 +199,73 @@
 <section class="gd-timelapse" id="gd-timelapse">
   <div class="gd-timelapse-inner">
     {{- with site.Params.liveChannelID }}
-    {{/* ライブ中はLIVEラベル、停止中はTIMELAPSEラベルにJSで切り替え */}}
-    <p class="gd-label" id="gdVideoLabel">LIVE 🔴</p>
-    <h2 class="gd-en-title" id="gdVideoTitle" style="font-size:clamp(2.2rem,5vw,4rem);">Mt. Fuji Live Camera</h2>
-    <p class="gd-sub-title" id="gdVideoSubtitle">富士山麓 — 24時間ライブ配信中</p>
+    {{/* デフォルトはタイムラプス表示。ライブが実際に再生可能なときだけJSでLIVEに切替（エラー画面を訪問者に見せない） */}}
+    <p class="gd-label" id="gdVideoLabel">TIMELAPSE</p>
+    <h2 class="gd-en-title" id="gdVideoTitle" style="font-size:clamp(2.2rem,5vw,4rem);">Live from the Field</h2>
+    <p class="gd-sub-title" id="gdVideoSubtitle">富士山麓 — 毎朝・毎夕 更新のタイムラプス</p>
     <div class="gd-video-wrap">
-      {{/* ライブ iframe（デフォルト表示） */}}
-      <iframe
-        id="gdLiveIframe"
-        src="https://www.youtube.com/embed/live_stream?channel={{ . }}&autoplay=1&mute=1&enablejsapi=1"
-        title="富士山24時間ライブカメラ"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      {{/* タイムラプス iframe（ライブ停止時に表示） */}}
+      {{/* タイムラプス iframe（デフォルト表示・常に再生可能） */}}
       <iframe
         id="gdTimelapseIframe"
         src="https://www.youtube.com/embed/{{ $ytID }}?rel=0"
         title="富士山麓タイムラプス"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+      {{/* ライブ iframe（再生確認できたときのみ表示） */}}
+      <iframe
+        id="gdLiveIframe"
+        title="富士山24時間ライブカメラ"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
         style="display:none;">
       </iframe>
     </div>
+    <p class="gd-video-caption" id="gdLiveLink" style="margin-top:0.8rem;">
+      🔴 <a href="{{ site.Params.youtubeURL }}/live" target="_blank" rel="noopener">24時間ライブ配信はこちら</a>
+    </p>
     <script>
     (function(){
-      var liveIframe = document.getElementById("gdLiveIframe");
-      var tlIframe   = document.getElementById("gdTimelapseIframe");
-      var label      = document.getElementById("gdVideoLabel");
-      var title      = document.getElementById("gdVideoTitle");
-      var subtitle   = document.getElementById("gdVideoSubtitle");
+      var live = document.getElementById("gdLiveIframe");
+      var tl   = document.getElementById("gdTimelapseIframe");
 
-      function switchToTimelapse() {
-        liveIframe.style.display = "none";
-        tlIframe.style.display   = "";
-        label.textContent    = "TIMELAPSE";
-        title.textContent    = "Live from the Field";
-        subtitle.textContent = "富士山麓 — 毎朝・毎夕 更新のタイムラプス";
+      function showLive() {
+        tl.style.display   = "none";
+        live.style.display = "";
+        document.getElementById("gdVideoLabel").textContent    = "LIVE 🔴";
+        document.getElementById("gdVideoTitle").textContent    = "Mt. Fuji Live Camera";
+        document.getElementById("gdVideoSubtitle").textContent = "富士山麓 — 24時間ライブ配信中";
+        var link = document.getElementById("gdLiveLink");
+        if (link) link.style.display = "none";
       }
 
-      // YouTube RSS でライブ配信中か確認（APIキー不要・CORS OK）
-      fetch("https://www.youtube.com/feeds/videos.xml?channel_id={{ . }}")
-        .then(function(r){ return r.text(); })
-        .then(function(xml) {
-          // ライブ中の動画は title に "LIVE" を含む場合が多いが
-          // より確実に: /channel/xxx/live ページが動画にリダイレクトするかチェック
-          // RSS の最新エントリのビデオIDを取得してライブか確認
-          var match = xml.match(/<yt:videoId>([^<]+)<\/yt:videoId>/);
-          if (!match) { switchToTimelapse(); return; }
-          var videoId = match[1];
-          // oEmbed でそのビデオがライブ中か確認
-          return fetch("https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=" + videoId + "&format=json")
-            .then(function(r){ return r.json(); })
-            .then(function(d){
-              // ライブ中の動画は title に "LIVE:" が含まれることが多い
-              if (d.title && d.title.toUpperCase().indexOf("LIVE") !== -1) {
-                // ライブ中 → live iframe の src をその動画IDに更新
-                liveIframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&mute=1";
-              } else {
-                switchToTimelapse();
-              }
-            });
-        })
-        .catch(function(){ switchToTimelapse(); });
+      // ライブ埋め込みを裏で読み込み、YouTube IFrame API で
+      // 動画が実在すると確認できたときだけ表に出す。
+      // 失敗時（配信停止・埋め込みエラー等）は何もしない＝タイムラプスのまま。
+      live.src = "https://www.youtube.com/embed/live_stream?channel={{ . }}"
+               + "&autoplay=1&mute=1&playsinline=1&enablejsapi=1"
+               + "&origin=" + encodeURIComponent(location.origin);
+
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+
+      var switched = false;
+      window.onYouTubeIframeAPIReady = function(){
+        new YT.Player("gdLiveIframe", {
+          events: {
+            onReady: function(e){
+              try {
+                var d = e.target.getVideoData();
+                if (!switched && d && d.video_id) { switched = true; showLive(); }
+              } catch (err) {}
+            },
+            onStateChange: function(e){
+              if (!switched && e.data === YT.PlayerState.PLAYING) { switched = true; showLive(); }
+            }
+          }
+        });
+      };
     })();
     </script>
     {{- else }}

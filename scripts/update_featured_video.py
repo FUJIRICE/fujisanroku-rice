@@ -91,14 +91,22 @@ def main():
     env_git = dict(GIT_TERMINAL_PROMPT="0")
     import os
     env = {**os.environ, **env_git}
-    subprocess.run(["git", "add", "hugo.toml"], cwd=REPO, env=env)
-    subprocess.run(["git", "commit", "-m",
-                    f"Update featured timelapse to latest: {pick}"],
-                   cwd=REPO, capture_output=True, env=env)
-    subprocess.run(["git", "pull", "--rebase", "origin", "main"],
-                   cwd=REPO, capture_output=True, env=env)
-    subprocess.run(["git", "push", "origin", "main"],
-                   cwd=REPO, capture_output=True, env=env)
+
+    def git(*args, check_name=None):
+        r = subprocess.run(["git", *args], cwd=REPO,
+                           capture_output=True, text=True, env=env)
+        if check_name and r.returncode != 0:
+            err = (r.stderr or r.stdout or "").strip()
+            log(f"git {check_name} 失敗(exit={r.returncode}): {err[:300]}")
+        return r
+
+    git("add", "hugo.toml")
+    git("commit", "-m", f"Update featured timelapse to latest: {pick}")
+    if git("pull", "--rebase", "origin", "main", check_name="pull --rebase").returncode != 0:
+        git("rebase", "--abort")
+        return 1
+    if git("push", "origin", "main", check_name="push").returncode != 0:
+        return 1
     log("git push done -> Cloudflare rebuild")
     return 0
 
