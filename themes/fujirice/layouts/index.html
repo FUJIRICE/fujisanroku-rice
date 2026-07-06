@@ -257,7 +257,11 @@
             onReady: function(e){
               try {
                 var d = e.target.getVideoData();
-                if (!switched && d && d.video_id) { switched = true; showLive(); }
+                if (!switched && d && d.video_id) {
+                  switched = true;
+                  showLive();
+                  try { e.target.mute(); e.target.playVideo(); } catch (err2) {}
+                }
               } catch (err) {}
             },
             onStateChange: function(e){
