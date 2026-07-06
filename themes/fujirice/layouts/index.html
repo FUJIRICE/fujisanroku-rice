@@ -255,14 +255,8 @@
         new YT.Player("gdLiveIframe", {
           events: {
             onReady: function(e){
-              try {
-                var d = e.target.getVideoData();
-                if (!switched && d && d.video_id) {
-                  switched = true;
-                  showLive();
-                  try { e.target.mute(); e.target.playVideo(); } catch (err2) {}
-                }
-              } catch (err) {}
+              {{/* 再生開始を試みるだけ。切替は実際にPLAYINGになってから（黒画面を見せない） */}}
+              try { e.target.mute(); e.target.playVideo(); } catch (err) {}
             },
             onStateChange: function(e){
               if (!switched && e.data === YT.PlayerState.PLAYING) { switched = true; showLive(); }
