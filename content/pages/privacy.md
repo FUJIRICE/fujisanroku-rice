@@ -44,7 +44,7 @@ FUJI RICE（以下「当方」といいます）は、お客様の個人情報�
 
 本ポリシーに関するお問い合わせは、以下までお願いいたします。
 
-- LINE公式アカウント：@508ouhoc
+- LINE公式アカウント：@750jyemd
 - ウェブサイト：https://fujisanroku-rice.pages.dev/
 
 ## 7. 改定
