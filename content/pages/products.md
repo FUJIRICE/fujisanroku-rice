@@ -39,7 +39,7 @@ draft: false
 
 ## ご注文・お問い合わせ
 
-- LINE公式：@508ouhoc
+- LINE公式：@750jyemd
 - Yahoo!ショッピング：https://store.shopping.yahoo.co.jp/iwatayacom/
 - リベ市場店舗：https://ichiba.libecity.com/shops/577
 

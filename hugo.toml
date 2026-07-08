@@ -17,8 +17,8 @@ hasCJKLanguage = true
   heroImage = "https://iwataya9.wordpress.com/wp-content/uploads/2025/11/img_2016.jpg"
   purchaseURL = "https://store.shopping.yahoo.co.jp/iwatayacom/"
   purchaseText = "今すぐ購入する"
-  lineID = "@508ouhoc"
-  lineURL = "https://line.me/R/ti/p/%40508ouhoc"
+  lineID = "@750jyemd"
+  lineURL = "https://line.me/R/ti/p/%40750jyemd"
   instagramURL = "https://www.instagram.com/fujirice_farm/"
   youtubeURL = "https://www.youtube.com/@fujirice_official"
   tiktokURL = "https://www.tiktok.com/@fuji.rice"
@@ -29,7 +29,7 @@ hasCJKLanguage = true
   mihoHyperFollowURL = "https://distrokid.com/hyperfollow/inautamiho/nDDz9rG8LC0"
   wordpressURL = "https://iwataya9.wordpress.com/"
   libecityURL = "https://ichiba.libecity.com/shops/577"
-  youtubeFeatureID = "Bl9NwIrtnWI"
+  youtubeFeatureID = "-bJeMYeJzfE"
   # 24hライブのチャンネルID(UCxxxx)を入れるとトップの埋め込みがライブに自動切替。空ならタイムラプス動画のまま。
   liveChannelID = "UCvvaEEAZoCEwlv11ubKSWxg"  # FUJI RICE公式チャンネルID→トップページに24hライブを埋め込む
   postsPerPage = 9
@@ -62,7 +62,7 @@ hasCJKLanguage = true
     weight = 3
   [[menu.main]]
     name = "LINEで相談"
-    url = "https://line.me/R/ti/p/%40508ouhoc"
+    url = "https://line.me/R/ti/p/%40750jyemd"
     weight = 4
   [[menu.main]]
     name = "購入する"
