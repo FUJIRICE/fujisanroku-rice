@@ -1,0 +1,20 @@
+# /go/ 計測用リダイレクト（Cloudflare Pages がサーバー側で302転送する）
+# 飛び先を変えるときはここを編集してデプロイするだけ
+/go/yahoo      https://store.shopping.yahoo.co.jp/iwatayacom/          302
+/go/yahoo/     https://store.shopping.yahoo.co.jp/iwatayacom/          302
+/go/youtube    https://www.youtube.com/@fujirice_official              302
+/go/youtube/   https://www.youtube.com/@fujirice_official              302
+/go/live       https://www.youtube.com/@fujirice_official/live         302
+/go/live/      https://www.youtube.com/@fujirice_official/live         302
+/go/instagram  https://www.instagram.com/fujirice_farm/                302
+/go/instagram/ https://www.instagram.com/fujirice_farm/                302
+/go/line       https://line.me/R/ti/p/%40750jyemd                      302
+/go/line/      https://line.me/R/ti/p/%40750jyemd                      302
+/go/threads    https://www.threads.net/@fujirice_farm                  302
+/go/threads/   https://www.threads.net/@fujirice_farm                  302
+/go/tiktok     https://www.tiktok.com/@fuji.rice                       302
+/go/tiktok/    https://www.tiktok.com/@fuji.rice                       302
+/go/x          https://x.com/fuji_rice_8a                              302
+/go/x/         https://x.com/fuji_rice_8a                              302
+/go/bluesky    https://bsky.app/profile/fujirice.bsky.social           302
+/go/bluesky/   https://bsky.app/profile/fujirice.bsky.social           302

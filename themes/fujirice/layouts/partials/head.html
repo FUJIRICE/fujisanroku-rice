@@ -17,7 +17,7 @@
 {{ if .Params.image -}}
 <meta property="og:image" content="{{ .Params.image | absURL }}">
 {{- else -}}
-<meta property="og:image" content="{{ site.Params.heroImage }}">
+<meta property="og:image" content="{{ site.Params.heroImage | absURL }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 {{- end }}
@@ -30,7 +30,7 @@
 {{ if .Params.image -}}
 <meta name="twitter:image" content="{{ .Params.image | absURL }}">
 {{- else -}}
-<meta name="twitter:image" content="{{ site.Params.heroImage }}">
+<meta name="twitter:image" content="{{ site.Params.heroImage | absURL }}">
 {{- end }}
 
 <!-- Schema.org 構造化データ -->
@@ -40,7 +40,7 @@
   "@type": "Organization",
   "name": "FUJI RICE",
   "url": "{{ site.BaseURL }}",
-  "logo": "{{ site.Params.heroImage }}",
+  "logo": "{{ site.Params.heroImage | absURL }}",
   "description": "{{ site.Params.description }}",
   "address": {
     "@type": "PostalAddress",
@@ -70,7 +70,7 @@
   "publisher": {
     "@type": "Organization",
     "name": "FUJI RICE",
-    "logo": { "@type": "ImageObject", "url": "{{ site.Params.heroImage }}" }
+    "logo": { "@type": "ImageObject", "url": "{{ site.Params.heroImage | absURL }}" }
   }
 }
 </script>

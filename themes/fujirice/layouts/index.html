@@ -387,27 +387,13 @@
       <div>
         <p class="gd-label">FARM DIARY</p>
         <h2 class="gd-en-title" style="font-size:clamp(2.2rem,5vw,4rem);margin-bottom:0.4rem;">富士山農場だより</h2>
-        <p class="gd-sub-title" style="margin-bottom:0;">富士山麓からの最新情報</p>
+        <p class="gd-sub-title" style="margin-bottom:0;">田んぼの「今」は、記事ではなくライブでお届けしています</p>
       </div>
-      <a href="{{ "/posts/" | relURL }}" class="gd-more-link">すべての記事を見る →</a>
+      <a href="{{ "/posts/" | relURL }}" class="gd-more-link">過去の記事を見る →</a>
     </div>
-    <div class="gd-blog-grid">
-      {{- range $posts | first 6 }}
-      {{- $img := .Params.image }}
-      {{- if not $img }}
-        {{- $m2 := findRE `src="(https?://[^"]+)"` .Content 1 }}
-        {{- if $m2 }}{{- $img = replaceRE `src="(https?://[^"]+)"` "$1" (index $m2 0) }}{{- end }}
-      {{- end }}
-      <a href="{{ .Permalink }}" class="gd-blog-card">
-        <div class="gd-blog-card-img">
-          <img src="{{ or $img $defaultImg }}" alt="{{ .Title }}" loading="lazy">
-        </div>
-        <div class="gd-blog-card-body">
-          <time class="gd-blog-card-date">{{ .Date.Format "2006.01.02" }}</time>
-          <p class="gd-blog-card-title">{{ .Title }}</p>
-        </div>
-      </a>
-      {{- end }}
+    <div style="text-align:center;padding:3rem 1rem;">
+      <p style="font-family:var(--font-serif);font-size:clamp(1.1rem,2.5vw,1.5rem);margin-bottom:2rem;">令和8年産新米の生育状況は、<br>富士山とともに24時間ライブで公開中です。</p>
+      <a href="#gd-timelapse" class="gd-btn-primary">🔴 田んぼライブを見る</a>
     </div>
   </div>
 </section>
