@@ -15,7 +15,7 @@ hasCJKLanguage = true
   # Cloudflare Web Analyticsのトークン。※現在はPages自動設定で計測中のため空のままにすること(二重計測防止)
   # cfBeaconToken = ""
   # GA4の測定ID(G-XXXXXXXXXX)を入れると全ページで計測開始
-  # ga4ID = ""
+  ga4ID = "G-ZGY13FK4V1"
   heroImage = "/images/hero-fuji-sunset.jpg"
   purchaseURL = "https://store.shopping.yahoo.co.jp/iwatayacom/"
   purchaseText = "今すぐ購入する"
