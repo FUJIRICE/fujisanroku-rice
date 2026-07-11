@@ -82,8 +82,20 @@
 {{ end }}
 
 <!-- Cloudflare Web Analytics (hugo.toml の cfBeaconToken にトークンを入れると有効化) -->
+<!-- ※現在はPages自動設定で計測中のため cfBeaconToken は空のままにすること(二重計測防止) -->
 {{ with site.Params.cfBeaconToken }}
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
+{{ end }}
+
+<!-- Google Analytics 4 (hugo.toml の ga4ID に測定ID G-XXXX を入れると有効化) -->
+{{ with site.Params.ga4ID }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+</script>
 {{ end }}
 
 <!-- Canonical -->
