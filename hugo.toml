@@ -12,6 +12,8 @@ hasCJKLanguage = true
   keywords = "富士山, お米, 米, 産地直送, 新米, 静岡, 富士宮, にじのきらめき"
   author = "FUJI RICE Farm"
   googleVerification = "RQMqNghQW5t8AkKmSviuXEXUDDsH3Eov21dKrVo-qNg"
+  # Cloudflare Web Analyticsのトークン(ダッシュボード→Web Analytics→サイト追加で発行)を入れると計測開始
+  # cfBeaconToken = ""
   heroImage = "/images/hero-fuji-sunset.jpg"
   purchaseURL = "https://store.shopping.yahoo.co.jp/iwatayacom/"
   purchaseText = "今すぐ購入する"

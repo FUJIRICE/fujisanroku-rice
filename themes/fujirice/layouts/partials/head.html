@@ -81,6 +81,11 @@
 <meta name="google-site-verification" content="{{ . }}">
 {{ end }}
 
+<!-- Cloudflare Web Analytics (hugo.toml の cfBeaconToken にトークンを入れると有効化) -->
+{{ with site.Params.cfBeaconToken }}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
+{{ end }}
+
 <!-- Canonical -->
 <link rel="canonical" href="{{ .Permalink }}">
 
