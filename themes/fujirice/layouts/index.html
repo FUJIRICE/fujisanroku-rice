@@ -41,7 +41,7 @@
     <p class="gd-hero-ja">育つ景色まで届く新米</p>
     <p class="gd-hero-sub">ご予約いただいた新米が育つ田んぼを、富士山とともに24時間ライブ配信しています。</p>
     <div class="gd-hero-cta">
-      <a href="{{ site.Params.purchaseURL }}" target="_blank" rel="noopener" class="gd-btn-primary">令和8年産新米を予約する</a>
+      <a href="{{ "/reserve/" | relURL }}" class="gd-btn-primary">令和8年産新米を予約する</a>
       <a href="#gd-timelapse" class="gd-btn-ghost">田んぼを24時間見る</a>
     </div>
   </div>
@@ -52,12 +52,10 @@
 <section class="gd-quicklinks">
   <div class="gd-quicklinks-inner">
     <div class="gd-quicklinks-grid">
-      {{- with site.Params.purchaseURL }}
-      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-ql-btn gd-ql-shop">
+      <a href="{{ "/reserve/" | relURL }}" class="gd-ql-btn gd-ql-shop">
         <span class="gd-ql-icon">🛒</span>
         <span class="gd-ql-text">新米を予約する</span>
       </a>
-      {{- end }}
       {{- with site.Params.tiktokURL }}
       <a href="{{ . }}" target="_blank" rel="noopener" class="gd-ql-btn gd-ql-tiktok">
         <span class="gd-ql-icon">
@@ -405,11 +403,12 @@
     <p class="gd-purchase-lead">富士山麓の米を、<br>あなたの食卓へ。</p>
     <p class="gd-purchase-sub">産地直送 · にじのきらめき · 2026年新米は10月上旬より順次発送</p>
     <div class="gd-purchase-btns">
-      <a href="{{ site.Params.purchaseURL }}" target="_blank" rel="noopener" class="gd-btn-primary">Yahoo!ショッピングで予約する</a>
+      <a href="{{ "/reserve/" | relURL }}" class="gd-btn-primary">令和8年産新米を予約する</a>
       {{- with site.Params.libecityURL }}
       <a href="{{ . }}" target="_blank" rel="noopener" class="gd-btn-ghost">リベ市場で予約する</a>
       {{- end }}
     </div>
+    <p style="margin-top:1rem;font-size:0.8rem;"><a href="{{ "/faq/" | relURL }}" style="color:inherit;">よくあるご質問（発送時期・送料など）→</a></p>
   </div>
 </section>
 

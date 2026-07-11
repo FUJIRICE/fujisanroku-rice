@@ -63,8 +63,8 @@ hasCJKLanguage = true
     url = "https://line.me/R/ti/p/%40750jyemd"
     weight = 4
   [[menu.main]]
-    name = "購入する"
-    url = "https://store.shopping.yahoo.co.jp/iwatayacom/"
+    name = "新米予約"
+    url = "/reserve/"
     weight = 5
 
 [outputs]

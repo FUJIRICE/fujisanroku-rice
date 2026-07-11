@@ -1,5 +1,8 @@
 # /go/ 計測用リダイレクト（Cloudflare Pages がサーバー側で302転送する）
 # 飛び先を変えるときはここを編集してデプロイするだけ
+# 旧商品ページ(価格が古い)は新米予約LPへ
+/pages/products/ /reserve/ 302
+/pages/products  /reserve/ 302
 /go/yahoo      https://store.shopping.yahoo.co.jp/iwatayacom/          302
 /go/yahoo/     https://store.shopping.yahoo.co.jp/iwatayacom/          302
 /go/youtube    https://www.youtube.com/@fujirice_official              302
