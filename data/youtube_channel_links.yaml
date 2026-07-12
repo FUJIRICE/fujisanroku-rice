@@ -1,0 +1,83 @@
+# YouTubeチャンネル「リンク」ウィジェット 正解データ(2026-07-13 ソル裁定)
+#
+# 背景: このリンクはYouTube Studio UIでのみ編集可能で、Data API v3の brandingSettings には
+#   含まれない。そのためコード側の説明文(caption等)を更新しても、このリンクだけ自動反映されず
+#   長期間放置されていた(Yahoo旧URL・LINE旧ID・みほの死んだHyperFollowリンクが残存する事故が
+#   2026-07-13に発覚)。再発防止のため、正解をここに一元管理する。
+#
+# 運用ルール:
+#   1. リンクを変更する必要が生じたら、まずこのYAMLを更新する
+#   2. 次に functions/go/t/[[path]].js の PROFILE_ROUTES を同じ内容に更新する
+#   3. 最後にYouTube Studio → カスタマイズ → 基本情報 → リンク を手動で更新する
+#      (Studio UIのみでAPI操作不可のため、Playwright自動化 or 手動)
+#   4. last_verified を更新日に変更する
+#
+# 1番目のリンクは季節でローテーションする想定:
+#   予約期(現在〜発送開始): 令和8年産 新米予約｜公式
+#   通常販売期:            富士山麓のお米を購入｜公式
+#   完売・端境期:          FUJI RICE 公式サイト（または次回の新米情報｜公式）
+#   → 収穫カウントダウン(HARVEST_DATE, fuji_live_stream.py)が0になったら見直しの合図。
+
+last_verified: 2026-07-13
+channel: "@fujirice_official"
+channel_id: "UCvvaEEAZoCEwlv11ubKSWxg"
+
+links:
+  - order: 1
+    title: "令和8年産 新米予約｜公式"
+    route: "/go/t/youtube/profile/reserve"
+    destination_note: "/reserve/ へ302（UTM付き、GA4計測対象）"
+    rotation_note: "完売/端境期になったら「FUJI RICE 公式サイト」へ切替を検討"
+
+  - order: 2
+    title: "富士山・田んぼ 24時間LIVE"
+    direct_link: true
+    destination_note: "固定ライブURL(https://www.youtube.com/@fujirice_official/live)へ直接。YouTube内遷移のため/go/t/を経由しない"
+
+  - order: 3
+    title: "LINEで予約・お問い合わせ"
+    route: "/go/t/youtube/profile/line"
+    destination_note: "LINE公式(@750jyemd)へ直接転送。外部ドメインのためUTM無し"
+
+  - order: 4
+    title: "Yahoo!ショッピング｜新米予約"
+    route: "/go/t/youtube/profile/yahoo"
+    destination_note: "store.shopping.yahoo.co.jp/iwatayacom/ へ直接転送。外部ドメインのためUTM無し"
+
+  - order: 5
+    title: "FUJI RICE 公式サイト"
+    route: "/go/t/youtube/profile/site"
+    destination_note: "サイトトップへ302（UTM付き、GA4計測対象）"
+
+  - order: 6
+    title: "稲歌みほ｜公式YouTube"
+    direct_link: true
+    destination_note: "https://youtube.com/@inautamiho へ直接。YouTube内遷移のため/go/t/を経由しない。/miho/ ページ完成後、直リンクより明確に価値が高い場合のみ切替を検討(単なるリンク集なら現状維持)"
+
+  - order: 7
+    title: "Instagram｜農場の最新情報"
+    route: "/go/t/youtube/profile/instagram"
+    destination_note: "instagram.com/fujirice_farm/ へ直接転送。外部ドメインのためUTM無し"
+
+excluded_2026-07-13:
+  - X
+  - Threads
+  - Bluesky
+  - TikTok
+  - Facebook
+  - "WordPressブログ(iwataya9.wordpress.com)"
+exclusion_reason: >
+  2026-07-12のSNS役割分担議論(ソル裁定)により、これらはYouTube視聴者を積極的に誘導する先ではないと判断。
+  X/Threads/Blueskyは天候速報の受信場所、TikTokは海外認知、Facebookは国内向けだがInstagramで代表、
+  ブログは公式サイトと役割重複のため。再評価の余地はあるが今回は見送り。
+
+removed_stale_links_2026-07-13:
+  - title: "Yahoo!ショッピング(旧)"
+    old_url: "store.shopping.yahoo.co.jp/fujirice"
+    reason: "2026-06-21に正しいURL(iwatayacom)へ訂正済みだったが、このウィジェットだけ未反映のまま放置されていた"
+  - title: "LINE相談(旧)"
+    old_url: "line.me/R/ti/p/@508ouhoc"
+    reason: "2026-07-07に新LINE(@750jyemd)へ切替済みだったが、このウィジェットだけ未反映のまま放置されていた"
+  - title: "公式バーチャル歌姫「稲歌みほ」(旧)"
+    old_url: "hyperfollow.com/inautamiho"
+    reason: "2026-06-09にyoutube.com/@inautamihoへ全ファイル切替済みだったが、このウィジェットだけ死んだリンクのまま放置されていた"
