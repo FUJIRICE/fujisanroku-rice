@@ -51,19 +51,23 @@ def main():
     for blk in entries:
         m_vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", blk)
         m_ttl = re.search(r"<title>([^<]+)</title>", blk)
+        m_link = re.search(r'<link rel="alternate" href="([^"]+)"', blk)
         if m_vid:
-            parsed.append((m_vid.group(1), m_ttl.group(1) if m_ttl else ""))
+            is_short = bool(m_link and "/shorts/" in m_link.group(1))
+            parsed.append((m_vid.group(1), m_ttl.group(1) if m_ttl else "", is_short))
     pick = title = None
-    for vid, ttl in parsed:
-        # ライブ配信枠(12時間ごとにIDが変わる)はおすすめ動画にしない
-        if LIVE_PAT.search(ttl):
+    for vid, ttl, is_short in parsed:
+        # ライブ配信枠(12時間ごとにIDが変わる)とShorts(縦動画)はおすすめ動画にしない。
+        # タイトルの「タイムラプス」「4K」等の文言はShortsにも付くため、
+        # 判定はRSSのlink(/shorts/ vs /watch)の実URLを見る(タイトル文言に依存しない)。
+        if LIVE_PAT.search(ttl) or is_short:
             continue
         if re.search(r"タイムラプス|4K|timelapse", ttl):
             pick, title = vid, ttl
             break
     if not pick:
-        for vid, ttl in parsed:
-            if not LIVE_PAT.search(ttl):
+        for vid, ttl, is_short in parsed:
+            if not LIVE_PAT.search(ttl) and not is_short:
                 pick, title = vid, ttl
                 break
     if not pick:
