@@ -12,7 +12,11 @@
 const ROUTES = {
   "youtube/short": { source: "youtube", medium: "short" },
   "youtube/live": { source: "youtube", medium: "live" },
+  // 2026-07-13 ソル裁定: 「媒体×掲載場所」単位で分ける(自動投稿キャプションの/go/t/移行)
+  "youtube/video-description": { source: "youtube", medium: "video_description" },
+  "youtube/live-description": { source: "youtube", medium: "live_description" },
   "instagram/post": { source: "instagram", medium: "social_post" },
+  "instagram/profile": { source: "instagram", medium: "profile" },
   "tiktok/profile": { source: "tiktok", medium: "profile" },
   "tiktok/post": { source: "tiktok", medium: "social_post" },
   "x/post": { source: "x", medium: "social_post" },
