@@ -11,7 +11,7 @@ export const CHANNELS = {
   destinations: {
     yahoo: "https://store.shopping.yahoo.co.jp/iwatayacom/",
     base: "https://iwatayacom.thebase.in/",
-    libe: "https://libecity.com/shops/577",
+    libe: "https://ichiba.libecity.com/shops/577",
   },
 };
 
