@@ -7,6 +7,8 @@ enableRobotsTXT = true
 enableEmoji = true
 hasCJKLanguage = true
 
+# 2026-07-17: 公開文言と予約導線の監査反映済み
+
 [params]
   description = "静岡県富士宮市の田んぼで育てた、にじのきらめき。農家から産地直送でお届けします。"
   keywords = "富士山, お米, 米, 産地直送, 新米, 静岡, 富士宮, にじのきらめき"
