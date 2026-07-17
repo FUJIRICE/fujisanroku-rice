@@ -1,14 +1,14 @@
 baseURL = "https://fujisanroku-rice.pages.dev/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
-title = "FUJI RICE | 富士山麓で育てる、雪解け水のお米"
+title = "FUJI RICE | 富士山麓・富士宮で育てたお米"
 theme = "fujirice"
 enableRobotsTXT = true
 enableEmoji = true
 hasCJKLanguage = true
 
 [params]
-  description = "富士山麓の清らかな雪解け水と豊かな自然の恵みで育てたお米、FUJI RICE。産地直送でお届けします。"
+  description = "静岡県富士宮市の田んぼで育てた、にじのきらめき。農家から産地直送でお届けします。"
   keywords = "富士山, お米, 米, 産地直送, 新米, 静岡, 富士宮, にじのきらめき"
   author = "FUJI RICE Farm"
   googleVerification = "RQMqNghQW5t8AkKmSviuXEXUDDsH3Eov21dKrVo-qNg"
