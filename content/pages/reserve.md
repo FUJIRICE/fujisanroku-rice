@@ -14,6 +14,14 @@ draft: false
   <a href="#osusume" class="btn btn-primary">おすすめ商品を見る ↓</a>
 </div>
 
+<div style="text-align:center;margin:0 0 3rem;padding:1.5rem;border:1px solid rgba(201,167,97,0.45);border-radius:10px;">
+  <p style="font-family:var(--font-serif);font-size:1.15rem;margin:0 0 1rem;">ご購入先をお選びください</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;">
+    <a href="https://iwatayacom.thebase.in/" target="_blank" rel="noopener" class="btn btn-primary">BASE直売所で購入する</a>
+    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/" target="_blank" rel="noopener" class="btn btn-primary">Yahoo!ショッピングで購入する</a>
+  </div>
+</div>
+
 ## FUJI RICE の新米、3つの約束
 
 1. **富士山麓・富士宮で育てた新米** — 静岡県富士宮市の田んぼで、日々の水と稲の状態を確かめながら丁寧に育てています。
