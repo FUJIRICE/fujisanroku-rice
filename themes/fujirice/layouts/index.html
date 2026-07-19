@@ -405,6 +405,9 @@
     <p class="gd-purchase-sub">産地直送 · にじのきらめき · 2026年新米は10月上旬より順次発送</p>
     <div class="gd-purchase-btns">
       <a href="{{ "/reserve/" | relURL }}" class="gd-btn-primary">令和8年産新米を予約する</a>
+      {{- with site.Params.baseShopURL }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-btn-ghost">BASEで見る</a>
+      {{- end }}
       {{- with site.Params.libecityURL }}
       <a href="{{ . }}" target="_blank" rel="noopener" class="gd-btn-ghost">リベ市場で予約する</a>
       {{- end }}

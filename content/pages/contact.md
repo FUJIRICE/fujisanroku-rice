@@ -1,4 +1,4 @@
-﻿---
+﻿﻿---
 title: "お問い合わせ"
 date: 2026-04-19T02:23:57+09:00
 slug: "contact"
@@ -25,6 +25,7 @@ LINE ID：@750jyemd
 
 ## 販売所
 
+- BASE: [iwatayacom.thebase.in](https://iwatayacom.thebase.in/)
 - Yahoo!ショッピング: [store.shopping.yahoo.co.jp/iwatayacom](https://store.shopping.yahoo.co.jp/iwatayacom/)
 - リベ市場店舗: https://ichiba.libecity.com/shops/577
 

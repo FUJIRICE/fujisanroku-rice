@@ -40,6 +40,9 @@
     <div class="gd-footer-col">
       <h4>SHOP</h4>
       <ul>
+        {{- with site.Params.baseShopURL }}
+        <li><a href="{{ . }}" target="_blank" rel="noopener">BASE</a></li>
+        {{- end }}
         {{- with site.Params.purchaseURL }}
         <li><a href="{{ . }}" target="_blank" rel="noopener">Yahoo!ショッピング</a></li>
         {{- end }}

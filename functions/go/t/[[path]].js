@@ -29,7 +29,7 @@ const ROUTES = {
 // 正解データは data/youtube_channel_links.yaml で一元管理する(このFunctionはそれをハードコード
 // した写し。編集は必ずYAML→ここの順で行い、ズレたら気づけるようにする)。
 // 予約LP・サイトトップは自ドメインなのでUTM付きでGA4計測が効く。
-// Yahoo/LINE/Instagramは外部ドメインのためUTMは付けず直接転送する
+// Yahoo/LINE/Instagram/BASEは外部ドメインのためUTMは付けず直接転送する
 // (このURL自体へのアクセス数はCloudflareの標準アクセスログで見える)。
 const PROFILE_ROUTES = {
   reserve: { type: "internal", path: "/reserve/", medium: "profile" },
@@ -37,6 +37,7 @@ const PROFILE_ROUTES = {
   yahoo: { type: "external", url: "https://store.shopping.yahoo.co.jp/iwatayacom/" },
   line: { type: "external", url: "https://line.me/R/ti/p/%40750jyemd" },
   instagram: { type: "external", url: "https://www.instagram.com/fujirice_farm/" },
+  base: { type: "external", url: "https://iwatayacom.thebase.in/" },
 };
 
 const CAMPAIGN = "r8_2026_newrice";
@@ -45,7 +46,7 @@ const FALLBACK = "/reserve/";
 export async function onRequest(context) {
   const segments = (context.params.path || []);
 
-  // /go/t/youtube/profile/[reserve|site|yahoo|line|instagram] — チャンネルリンクウィジェット専用
+  // /go/t/youtube/profile/[reserve|site|yahoo|line|instagram|base] — チャンネルリンクウィジェット専用
   if (segments[0] === "youtube" && segments[1] === "profile") {
     const profileRoute = PROFILE_ROUTES[segments[2]];
     if (!profileRoute) {

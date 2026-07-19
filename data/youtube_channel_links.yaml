@@ -18,7 +18,7 @@
 #   完売・端境期:          FUJI RICE 公式サイト（または次回の新米情報｜公式）
 #   → 収穫カウントダウン(HARVEST_DATE, fuji_live_stream.py)が0になったら見直しの合図。
 
-last_verified: 2026-07-13
+last_verified: 2026-07-19
 channel: "@fujirice_official"
 channel_id: "UCvvaEEAZoCEwlv11ubKSWxg"
 
@@ -58,6 +58,11 @@ links:
     title: "Instagram｜農場の最新情報"
     route: "/go/t/youtube/profile/instagram"
     destination_note: "instagram.com/fujirice_farm/ へ直接転送。外部ドメインのためUTM無し"
+
+  - order: 8
+    title: "BASE｜FUJI RICE 直売所"
+    route: "/go/t/youtube/profile/base"
+    destination_note: "iwatayacom.thebase.in/ へ直接転送。外部ドメインのためUTM無し"
 
 excluded_2026-07-13:
   - X

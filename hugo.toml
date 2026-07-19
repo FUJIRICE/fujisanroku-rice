@@ -20,6 +20,7 @@ hasCJKLanguage = true
   ga4ID = "G-ZGY13FK4V1"
   heroImage = "/images/hero-fuji-sunset.jpg"
   purchaseURL = "https://store.shopping.yahoo.co.jp/iwatayacom/"
+  baseShopURL = "https://iwatayacom.thebase.in/"
   purchaseText = "今すぐ購入する"
   lineID = "@750jyemd"
   lineURL = "https://line.me/R/ti/p/%40750jyemd"
