@@ -23,6 +23,7 @@ const ROUTES = {
   "threads/post": { source: "threads", medium: "social_post" },
   "bluesky/post": { source: "bluesky", medium: "social_post" },
   "facebook/post": { source: "facebook", medium: "social_post" },
+  "pinterest/post": { source: "pinterest", medium: "social_post" },
 };
 
 // 2026-07-13 ソル裁定: YouTubeチャンネルの「リンク」ウィジェット(youtube/profile/*)専用。
