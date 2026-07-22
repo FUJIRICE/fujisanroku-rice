@@ -42,7 +42,7 @@ draft: false
     <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">5kgを予約する</a>
   </div>
   <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">いちばん人気</p>
+    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">おすすめ</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 10kg 小分け</p>
     <p style="font-size:0.85rem;">5kg×2袋・ご家庭の定番</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">9,580円 <span style="font-size:0.75rem;">送料無料</span></p>
@@ -70,7 +70,7 @@ draft: false
 
 当サイトのご予約ボタンは、農家直営の **BASE直売所（本店）** につながります。お支払い方法やご利用中のサービスに合わせて、他の販売所もお選びいただけます。お米・価格の内容は各販売所の商品ページに準じます。
 
-- **[BASE直売所（本店・おすすめ）](/go/buy/base/site/reserve)** — 当サイト・SNS・LINEをご覧の方はこちら。クーポンやリピーターのご案内も直売所で承ります。
+- **[BASE直売所（本店・おすすめ）](/go/buy/base/site/reserve)** — 当サイト・SNS・LINEをご覧の方はこちら。農家直営の本店です。
 - **[Yahoo!ショッピング](/go/buy/yahoo)** — PayPay残高でお支払いの方、Yahoo!内でお探しの方に。
 - **[リベ市場](/go/buy/libe)** — リベシティ会員の方向けの販売所です。
 
