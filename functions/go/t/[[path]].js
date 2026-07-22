@@ -27,6 +27,10 @@ const ROUTES = {
   "pinterest/profile": { source: "pinterest", medium: "profile" },
 };
 
+// Instagram/TikTok/Pinterestのプロフィール欄にすでに登録済みの旧URLを、
+// 画面で張り替えなくても媒体別BASE本店リンクとして使えるようにする。
+const BASE_PROFILE_SOURCES = new Set(["instagram", "tiktok", "pinterest"]);
+
 // 2026-07-13 ソル裁定: YouTubeチャンネルの「リンク」ウィジェット(youtube/profile/*)専用。
 // 正解データは data/youtube_channel_links.yaml で一元管理する(このFunctionはそれをハードコード
 // した写し。編集は必ずYAML→ここの順で行い、ズレたら気づけるようにする)。
@@ -73,6 +77,14 @@ export async function onRequest(context) {
   if (!route) {
     // 不明なパスは安全にフォールバック（外部URLへの任意転送はしない）
     return Response.redirect(new URL(FALLBACK, context.request.url).toString(), 302);
+  }
+
+  if (segments[1] === "profile" && BASE_PROFILE_SOURCES.has(segments[0])) {
+    const dest = new URL("https://iwatayacom.thebase.in/");
+    dest.searchParams.set("utm_source", route.source);
+    dest.searchParams.set("utm_medium", "profile");
+    dest.searchParams.set("utm_campaign", CAMPAIGN);
+    return Response.redirect(dest.toString(), 302);
   }
 
   const dest = new URL(FALLBACK, context.request.url);
