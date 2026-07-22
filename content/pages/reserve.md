@@ -29,38 +29,35 @@ draft: false
 2. **ご注文後に精米** — 白米はご注文を受けてから精米し、精米したての状態でお届けします。
 3. **育つ過程まで見える** — 田植えから収穫まで、あなたのお米が育つ田んぼを[24時間ライブ](/go/live)で公開しています。
 
-<h2 id="osusume">用途別おすすめ 4選</h2>
+<h2 id="osusume">はじめての方は、この3つから</h2>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:2rem 0;">
-  <div style="border:1px solid var(--gold,#c9a761);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">おすすめ</p>
+<p style="text-align:center;font-size:0.9rem;margin:0 0 1.5rem;">白米はご注文を受けてから精米します。まずは食べる量に合わせてお選びください。</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
+  <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
+    <p style="font-size:0.8rem;letter-spacing:0.15em;">お試し・少人数</p>
+    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 5kg</p>
+    <p style="font-size:0.85rem;">ひとり暮らし〜ご夫婦に</p>
+    <p style="font-size:1.4rem;margin:0.6rem 0;">5,500円 <span style="font-size:0.75rem;">送料無料</span></p>
+    <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">5kgを予約する</a>
+  </div>
+  <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.5rem;text-align:center;">
+    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">いちばん人気</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 10kg 小分け</p>
-    <p style="font-size:0.85rem;">5kg×2袋・保存しやすい</p>
+    <p style="font-size:0.85rem;">5kg×2袋・ご家庭の定番</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">9,580円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai10kgw" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai10kgw" target="_blank" rel="noopener" class="btn btn-primary">10kgを予約する</a>
   </div>
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="font-size:0.8rem;letter-spacing:0.15em;">はじめての方に</p>
-    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 3kg</p>
-    <p style="font-size:0.85rem;">お試しにちょうどいい量</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">3,280円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai3kg" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
-  </div>
-  <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="font-size:0.8rem;letter-spacing:0.15em;">玄米入門</p>
-    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">玄米 5kg</p>
-    <p style="font-size:0.85rem;">ご購入者レビューあり</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">4,580円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/genmai5kg" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
-  </div>
-  <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="font-size:0.8rem;letter-spacing:0.15em;">まとめ買いに</p>
+    <p style="font-size:0.8rem;letter-spacing:0.15em;">まとめ買い・ご家族</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 20kg 小分け</p>
-    <p style="font-size:0.85rem;">5kg×4袋・ご家族に</p>
+    <p style="font-size:0.85rem;">5kg×4袋・お得にたっぷり</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">18,480円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai20kgw" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai20kgw" target="_blank" rel="noopener" class="btn btn-primary">20kgを予約する</a>
   </div>
 </div>
+
+<p style="text-align:center;font-size:0.85rem;margin:0 0 1rem;">3kgのお試し・玄米・その他の容量は <a href="#lineup">全ラインナップ</a> からお選びいただけます。</p>
 
 ## 白米と玄米、どちらを選ぶ？
 
@@ -69,7 +66,15 @@ draft: false
 
 「小分け」は 5kg×2袋 のように小さな袋に分けてお届けする仕様です。開封後の劣化を抑えられるので、食べきるのに時間がかかるご家庭には小分けをおすすめします。
 
-## 全ラインナップ
+## 購入先の選び方
+
+当サイトのご予約ボタンは、農家直営の **BASE直売所（本店）** につながります。お支払い方法やご利用中のサービスに合わせて、他の販売所もお選びいただけます。お米・価格の内容は各販売所の商品ページに準じます。
+
+- **[BASE直売所（本店・おすすめ）](/go/buy/base/site/reserve)** — 当サイト・SNS・LINEをご覧の方はこちら。クーポンやリピーターのご案内も直売所で承ります。
+- **[Yahoo!ショッピング](/go/buy/yahoo)** — PayPay残高でお支払いの方、Yahoo!内でお探しの方に。
+- **[リベ市場](/go/buy/libe)** — リベシティ会員の方向けの販売所です。
+
+<h2 id="lineup">全ラインナップ</h2>
 
 すべて令和8年産にじのきらめき・予約商品（10月上旬より順次発送）。ボタンからBASE直売所の各商品ページへ移動します。
 
@@ -113,6 +118,13 @@ draft: false
 私たちは静岡県富士宮市の米農家です。富士山の麓の田んぼで、水の状態と稲の成長を毎日確かめながら、手間を惜しまず丁寧に育てています。
 
 その様子は隠さずぜんぶお見せしています。ご予約から発送までの約3ヶ月、あなたのお米が育っていく景色をお楽しみください。
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.6rem;margin:1.5rem 0;">
+  <img src="/images/farm/20260530_173002.jpg" alt="富士山と富士宮の田んぼ" loading="lazy" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;">
+  <img src="/images/farm/img_2947.jpg" alt="田植えの様子" loading="lazy" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;">
+  <img src="/images/farm/20260514_043002.jpg" alt="夜明けの田んぼ" loading="lazy" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;">
+</div>
+<p style="text-align:center;font-size:0.8rem;margin:0 0 1.5rem;">加工していない実際の田んぼの写真です。稲が育つ様子は <a href="/growth/">成長記録</a> でも公開しています。</p>
 
 <div style="text-align:center;margin:2rem 0;">
   <a href="/go/live" target="_blank" rel="noopener" class="btn btn-primary">🔴 田んぼの24時間ライブを見る</a>
