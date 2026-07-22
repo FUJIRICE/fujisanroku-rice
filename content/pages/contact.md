@@ -25,8 +25,8 @@ LINE ID：@750jyemd
 
 ## 販売所
 
-- BASE: [iwatayacom.thebase.in](https://iwatayacom.thebase.in/)
-- Yahoo!ショッピング: [store.shopping.yahoo.co.jp/iwatayacom](https://store.shopping.yahoo.co.jp/iwatayacom/)
+- BASE直売所（本店）: [商品を見る](/go/buy/base/site/home)
+- Yahoo!ショッピング（PayPay利用向け）: [商品を見る](/go/buy/yahoo)
 - リベ市場店舗: https://ichiba.libecity.com/shops/577
 
 ## よくあるご質問

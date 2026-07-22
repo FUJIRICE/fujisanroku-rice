@@ -15,11 +15,12 @@ draft: false
 </div>
 
 <div style="text-align:center;margin:0 0 3rem;padding:1.5rem;border:1px solid rgba(201,167,97,0.45);border-radius:10px;">
-  <p style="font-family:var(--font-serif);font-size:1.15rem;margin:0 0 1rem;">ご購入先をお選びください</p>
+  <p style="font-family:var(--font-serif);font-size:1.15rem;margin:0 0 0.5rem;">農家直営のBASE店からご予約いただけます</p>
+  <p style="font-size:0.85rem;margin:0 0 1rem;">商品や発送についてのご相談も、直売所で承ります。</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;">
-    <a href="https://iwatayacom.thebase.in/" target="_blank" rel="noopener" class="btn btn-primary">BASE直売所で購入する</a>
-    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/" target="_blank" rel="noopener" class="btn btn-primary">Yahoo!ショッピングで購入する</a>
+    <a href="/go/buy/base/site/reserve" target="_blank" rel="noopener" class="btn btn-primary">BASE直売所で購入する</a>
   </div>
+  <p style="font-size:0.78rem;margin:1rem 0 0;">PayPayをご利用の方は <a href="/go/buy/yahoo" target="_blank" rel="noopener">Yahoo!ショッピング</a> からも購入できます。</p>
 </div>
 
 ## FUJI RICE の新米、3つの約束
@@ -36,28 +37,28 @@ draft: false
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 10kg 小分け</p>
     <p style="font-size:0.85rem;">5kg×2袋・保存しやすい</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">9,580円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/hakumai10kgw.html" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai10kgw" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
   </div>
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="font-size:0.8rem;letter-spacing:0.15em;">はじめての方に</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 3kg</p>
     <p style="font-size:0.85rem;">お試しにちょうどいい量</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">3,280円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/hakumai3kg.html" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai3kg" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
   </div>
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="font-size:0.8rem;letter-spacing:0.15em;">玄米入門</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">玄米 5kg</p>
     <p style="font-size:0.85rem;">ご購入者レビューあり</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">4,580円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/genmai5k.html" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
+    <a href="/go/buy/base/site/reserve/genmai5kg" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
   </div>
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="font-size:0.8rem;letter-spacing:0.15em;">まとめ買いに</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 20kg 小分け</p>
     <p style="font-size:0.85rem;">5kg×4袋・ご家族に</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">18,480円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="https://store.shopping.yahoo.co.jp/iwatayacom/hakumai20kgw.html" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai20kgw" target="_blank" rel="noopener" class="btn btn-primary">予約する</a>
   </div>
 </div>
 
@@ -70,40 +71,40 @@ draft: false
 
 ## 全ラインナップ
 
-すべて令和8年産にじのきらめき・予約商品（10月上旬より順次発送）。ボタンからYahoo!ショッピングの各商品ページへ移動します。
+すべて令和8年産にじのきらめき・予約商品（10月上旬より順次発送）。ボタンからBASE直売所の各商品ページへ移動します。
 
 ### 白米（注文後精米）
 
 | 容量 | 内容 | 価格 | 送料 | |
 |---|---|---|---|---|
-| 1kg | | 999円 | +送料850円 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai.html) |
-| 2kg | | 2,480円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai2kg.html) |
-| 3kg | | 3,280円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai3kg.html) |
-| 4kg | | 4,180円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai4kg.html) |
-| 4kg 小分け | 2kg×2袋 | 4,380円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai4kgw.html) |
-| 5kg | | 5,500円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/okome5kg.html) |
-| 10kg | | 9,800円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai2.html) |
-| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,580円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai10kgw.html) |
-| 20kg | | 19,800円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai4.html) |
-| 20kg 小分け | 5kg×4袋 | 18,480円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai20kgw.html) |
-| 30kg | 2個口配送 | 27,000円 | +送料1,050円 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/okome24.html) |
-| 30kg 小分け | 5kg×6袋 | 28,080円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai30kgw.html) |
+| 1kg | | 999円 | +送料850円 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
+| 2kg | | 2,480円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai2kg) |
+| 3kg | | 3,280円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai3kg) |
+| 4kg | | 4,180円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kg) |
+| 4kg 小分け | 2kg×2袋 | 4,380円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kgw) |
+| 5kg | | 5,500円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai5kg) |
+| 10kg | | 9,800円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kg) |
+| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,580円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kgw) |
+| 20kg | | 19,800円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kg) |
+| 20kg 小分け | 5kg×4袋 | 18,480円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kgw) |
+| 30kg | 2個口配送 | 27,000円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
+| 30kg 小分け | 5kg×6袋 | 28,080円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kgw) |
 
 ### 玄米
 
 | 容量 | 内容 | 価格 | 送料 | |
 |---|---|---|---|---|
-| 1kg | お試し | 1,180円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai1kg.html) |
-| 2kg | | 2,380円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai2kg.html) |
-| 3kg | | 3,080円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai3kg.html) |
-| 4kg | | 3,880円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai4kg.html) |
-| 4kg 小分け | 2kg×2袋 | 4,080円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai4kgw.html) |
-| 5kg | レビューあり | 4,580円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai5k.html) |
-| 10kg | | 9,800円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai10.html) |
-| 10kg 小分け | 5kg×2袋 | 8,980円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai10kgw.html) |
-| 20kg | | 18,500円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai20.html) |
-| 30kg | 2個口配送 | 28,000円 | +送料1,050円 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/hakumai30.html) |
-| 30kg 小分け | 5kg×6袋 | 25,780円 | 無料 | [予約する](https://store.shopping.yahoo.co.jp/iwatayacom/genmai30kgw.html) |
+| 1kg | お試し | 1,180円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai1kg) |
+| 2kg | | 2,380円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai2kg) |
+| 3kg | | 3,080円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai3kg) |
+| 4kg | | 3,880円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kg) |
+| 4kg 小分け | 2kg×2袋 | 4,080円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kgw) |
+| 5kg | レビューあり | 4,580円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai5kg) |
+| 10kg | | 9,800円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
+| 10kg 小分け | 5kg×2袋 | 8,980円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
+| 20kg | | 18,500円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
+| 30kg | 2個口配送 | 28,000円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
+| 30kg 小分け | 5kg×6袋 | 25,780円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kgw) |
 
 ※価格が変更になる場合があります。最新の価格は各商品ページをご確認ください。
 

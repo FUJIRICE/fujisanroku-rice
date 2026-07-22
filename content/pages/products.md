@@ -40,8 +40,8 @@ draft: false
 ## ご注文・お問い合わせ
 
 - LINE公式：@750jyemd
-- BASE：https://iwatayacom.thebase.in/
-- Yahoo!ショッピング：https://store.shopping.yahoo.co.jp/iwatayacom/
+- BASE直売所（本店）：https://fujisanroku-rice.pages.dev/go/buy/base/site/home
+- Yahoo!ショッピング（PayPay・Yahoo内検索向け）：https://fujisanroku-rice.pages.dev/go/buy/yahoo
 - リベ市場店舗：https://ichiba.libecity.com/shops/577
 
 ※令和8年産新米の発送は2026年10月上旬より順次行います。

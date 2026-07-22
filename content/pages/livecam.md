@@ -23,4 +23,4 @@ YouTubeでリアルタイム映像をご覧いただけます：
 - 画質：4K / 24時間365日配信
 - 運営：FUJI RICE（米農家）
 
-🌾 この田んぼで育つお米は[新米予約受付中](https://store.shopping.yahoo.co.jp/iwatayacom/)です。
+🌾 この田んぼで育つお米は[BASE直売所で新米予約受付中](/go/buy/base/site/home)です。

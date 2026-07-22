@@ -5,9 +5,9 @@
 // effective_at は記録用(いつ切り替えたか)。コードでは参照しない。
 
 export const CHANNELS = {
-  primary_channel: "yahoo",
-  standby_channel: "base",
-  effective_at: null,
+  primary_channel: "base",
+  standby_channel: "yahoo",
+  effective_at: "2026-07-22T00:00:00+09:00",
   destinations: {
     yahoo: "https://store.shopping.yahoo.co.jp/iwatayacom/",
     base: "https://iwatayacom.thebase.in/",
