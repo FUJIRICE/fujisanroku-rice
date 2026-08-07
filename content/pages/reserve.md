@@ -10,7 +10,7 @@ draft: false
 <div style="text-align:center;margin-bottom:3rem;">
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">RESERVE 2026</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);margin:0.5rem 0;">育つ景色まで届く新米</h1>
-  <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき ── 10月上旬より順次発送。<br>ご予約いただいた新米が育つ田んぼを、富士山とともに24時間ライブ配信しています。</p>
+  <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき ── 10月上旬より順次発送。<br>いまご予約いただくお米は、この田んぼで育っています。<br>収穫までの景色を、富士山とともに24時間ライブでご覧いただけます。</p>
   <a href="#osusume" class="btn btn-primary">おすすめ商品を見る ↓</a>
 </div>
 
@@ -22,6 +22,12 @@ draft: false
   </div>
   <p style="font-size:0.78rem;margin:1rem 0 0;">PayPayをご利用の方は <a href="/go/buy/yahoo" target="_blank" rel="noopener">Yahoo!ショッピング</a> からも購入できます。</p>
 </div>
+
+## いま予約する3つの理由
+
+1. **ご予約いただいた分から、順にお届けします** — 10月上旬、収穫・検査を終えたものから順次発送します。早めのご予約ほど、早いお届けになります。
+2. **農家一軒でつくる分だけです** — 大量生産はしていません。お届けできる数量には限りがあります。
+3. **収穫までの2か月を、見ながら待てます** — いまご予約いただくお米は、この田んぼで穂を実らせているところです。その様子を[24時間ライブ](/go/live)と[成長記録](/growth/)で毎日公開しています。届いてから知るのではなく、育つところから見ていただけます。
 
 ## FUJI RICE の新米、3つの約束
 
@@ -38,21 +44,21 @@ draft: false
     <p style="font-size:0.8rem;letter-spacing:0.15em;">お試し・少人数</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 5kg</p>
     <p style="font-size:0.85rem;">ひとり暮らし〜ご夫婦に</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">5,500円 <span style="font-size:0.75rem;">送料無料</span></p>
+    <p style="font-size:1.4rem;margin:0.6rem 0;">5,080円 <span style="font-size:0.75rem;">送料無料</span></p>
     <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">5kgを予約する</a>
   </div>
   <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">おすすめ</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 10kg 小分け</p>
     <p style="font-size:0.85rem;">5kg×2袋・ご家庭の定番</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">9,580円 <span style="font-size:0.75rem;">送料無料</span></p>
+    <p style="font-size:1.4rem;margin:0.6rem 0;">9,520円 <span style="font-size:0.75rem;">送料無料</span></p>
     <a href="/go/buy/base/site/reserve/hakumai10kgw" target="_blank" rel="noopener" class="btn btn-primary">10kgを予約する</a>
   </div>
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="font-size:0.8rem;letter-spacing:0.15em;">まとめ買い・ご家族</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 20kg 小分け</p>
     <p style="font-size:0.85rem;">5kg×4袋・お得にたっぷり</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">18,480円 <span style="font-size:0.75rem;">送料無料</span></p>
+    <p style="font-size:1.4rem;margin:0.6rem 0;">18,460円 <span style="font-size:0.75rem;">送料無料</span></p>
     <a href="/go/buy/base/site/reserve/hakumai20kgw" target="_blank" rel="noopener" class="btn btn-primary">20kgを予約する</a>
   </div>
 </div>
@@ -82,34 +88,34 @@ draft: false
 
 | 容量 | 内容 | 価格 | 送料 | |
 |---|---|---|---|---|
-| 1kg | | 999円 | +送料850円 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
-| 2kg | | 2,480円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai2kg) |
-| 3kg | | 3,280円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai3kg) |
-| 4kg | | 4,180円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kg) |
-| 4kg 小分け | 2kg×2袋 | 4,380円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kgw) |
-| 5kg | | 5,500円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai5kg) |
-| 10kg | | 9,800円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kg) |
-| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,580円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kgw) |
-| 20kg | | 19,800円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kg) |
-| 20kg 小分け | 5kg×4袋 | 18,480円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kgw) |
-| 30kg | 2個口配送 | 27,000円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
-| 30kg 小分け | 5kg×6袋 | 28,080円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kgw) |
+| 1kg | | 1,690円 | +送料850円 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
+| 2kg | | 2,540円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai2kg) |
+| 3kg | | 3,380円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai3kg) |
+| 4kg | | 4,230円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kg) |
+| 4kg 小分け | 2kg×2袋 | 4,270円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kgw) |
+| 5kg | | 5,080円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai5kg) |
+| 10kg | | 9,480円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kg) |
+| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,520円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kgw) |
+| 20kg | | 18,330円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kg) |
+| 20kg 小分け | 5kg×4袋 | 18,460円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kgw) |
+| 30kg | 2個口配送 | 27,770円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
+| 30kg 小分け | 5kg×6袋 | 27,940円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kgw) |
 
 ### 玄米
 
 | 容量 | 内容 | 価格 | 送料 | |
 |---|---|---|---|---|
-| 1kg | お試し | 1,180円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai1kg) |
+| 1kg | お試し | 1,610円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai1kg) |
 | 2kg | | 2,380円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai2kg) |
-| 3kg | | 3,080円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai3kg) |
-| 4kg | | 3,880円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kg) |
-| 4kg 小分け | 2kg×2袋 | 4,080円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kgw) |
-| 5kg | レビューあり | 4,580円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai5kg) |
-| 10kg | | 9,800円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
-| 10kg 小分け | 5kg×2袋 | 8,980円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
-| 20kg | | 18,500円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
-| 30kg | 2個口配送 | 28,000円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
-| 30kg 小分け | 5kg×6袋 | 25,780円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kgw) |
+| 3kg | | 3,150円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai3kg) |
+| 4kg | | 3,920円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kg) |
+| 4kg 小分け | 2kg×2袋 | 3,970円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kgw) |
+| 5kg |  | 4,690円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai5kg) |
+| 10kg | | 8,710円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
+| 10kg 小分け | 5kg×2袋 | 8,750円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
+| 20kg | | 16,790円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
+| 30kg | 2個口配送 | 25,450円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
+| 30kg 小分け | 5kg×6袋 | 25,630円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kgw) |
 
 ※価格が変更になる場合があります。最新の価格は各商品ページをご確認ください。
 
