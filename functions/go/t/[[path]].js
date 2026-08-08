@@ -27,9 +27,10 @@ const ROUTES = {
   "pinterest/profile": { source: "pinterest", medium: "profile" },
 };
 
-// Instagram/TikTok/Pinterestのプロフィール欄にすでに登録済みの旧URLを、
-// 画面で張り替えなくても媒体別BASE本店リンクとして使えるようにする。
-const BASE_PROFILE_SOURCES = new Set(["instagram", "tiktok", "pinterest"]);
+// TikTokプロフィールに登録済みの旧URLは、画面で張り替えなくても
+// 媒体別BASE本店リンクとして使えるようにする。
+// InstagramとPinterestは商品選択前の説明が必要なため、予約LPへ送る。
+const BASE_PROFILE_SOURCES = new Set(["tiktok"]);
 
 // 2026-07-13 ソル裁定: YouTubeチャンネルの「リンク」ウィジェット(youtube/profile/*)専用。
 // 正解データは data/youtube_channel_links.yaml で一元管理する(このFunctionはそれをハードコード
