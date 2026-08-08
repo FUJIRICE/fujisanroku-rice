@@ -3,8 +3,10 @@
 # 旧商品ページ(価格が古い)は新米予約LPへ
 /pages/products/ /reserve/ 302
 /pages/products  /reserve/ 302
-/go/yahoo      https://store.shopping.yahoo.co.jp/iwatayacom/          302
-/go/yahoo/     https://store.shopping.yahoo.co.jp/iwatayacom/          302
+# Yahoo!ショッピング店は2026-09-30で解約。過去に配ったリンクが行き止まりに
+# ならないよう、予約LPへ送る（そこからBASE本店・リベ市場を選べる）
+/go/yahoo      /reserve/                                               302
+/go/yahoo/     /reserve/                                               302
 /go/youtube    https://www.youtube.com/@fujirice_official              302
 /go/youtube/   https://www.youtube.com/@fujirice_official              302
 /go/live       https://www.youtube.com/@fujirice_official/live         302

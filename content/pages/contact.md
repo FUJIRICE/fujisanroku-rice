@@ -26,7 +26,6 @@ LINE ID：@750jyemd
 ## 販売所
 
 - BASE直売所（本店）: [商品を見る](/go/buy/base/site/home)
-- Yahoo!ショッピング（PayPay利用向け）: [商品を見る](/go/buy/yahoo)
 - リベ市場店舗: https://ichiba.libecity.com/shops/577
 
 ## よくあるご質問

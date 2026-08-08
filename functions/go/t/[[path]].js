@@ -40,7 +40,8 @@ const BASE_PROFILE_SOURCES = new Set(["instagram", "tiktok", "pinterest"]);
 const PROFILE_ROUTES = {
   reserve: { type: "internal", path: "/reserve/", medium: "profile" },
   site: { type: "internal", path: "/", medium: "profile" },
-  yahoo: { type: "external", url: "https://store.shopping.yahoo.co.jp/iwatayacom/" },
+  // 2026-08-08: yahoo は削除。Yahoo!ショッピング店は2026-09-30で解約するため。
+  // 未定義キーは下の FALLBACK(/reserve/)へ落ちるので、既存リンクは死なない。
   line: { type: "external", url: "https://line.me/R/ti/p/%40750jyemd" },
   instagram: { type: "external", url: "https://www.instagram.com/fujirice_farm/" },
   base: { type: "external", url: "https://iwatayacom.thebase.in/" },

@@ -4,12 +4,15 @@
 // 切替手順の全体は Desktop\fuji_timelapse ではなく docs/channel_switch_runbook.md を参照。
 // effective_at は記録用(いつ切り替えたか)。コードでは参照しない。
 
+// 2026-08-08: Yahoo!ショッピング店は2026-09-30で解約するため destinations から外した。
+// これで /go/buy/yahoo は転送先が見つからず、安全に予約LP(/reserve/)へ落ちる。
+// 過去に配ったリンク(YouTube動画5本など)が9/30以降に行き止まりにならないための措置。
+// 解約前に前倒しで切ったのは、店じまい中に新規注文が入るのを防ぐため。
 export const CHANNELS = {
   primary_channel: "base",
-  standby_channel: "yahoo",
-  effective_at: "2026-07-22T00:00:00+09:00",
+  standby_channel: "libe",
+  effective_at: "2026-08-08T00:00:00+09:00",
   destinations: {
-    yahoo: "https://store.shopping.yahoo.co.jp/iwatayacom/",
     base: "https://iwatayacom.thebase.in/",
     libe: "https://ichiba.libecity.com/shops/577",
   },

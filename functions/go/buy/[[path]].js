@@ -4,7 +4,10 @@
 // 固定マニフェストのみ参照。/go/t/ と同じ安全設計(クエリからの任意転送はしない)。
 // - /go/buy および /go/buy/main は _channels.js の primary_channel へ転送する。
 //   SNS・LINE・HPに置くリンクは今後これを使う(販路切替時にリンク張り替え不要)
-// - /go/buy/yahoo 等の明示指定は従来どおり(既存リンクの互換維持)
+// - /go/buy/libe 等の明示指定は従来どおり(既存リンクの互換維持)
+// - 2026-08-08: Yahoo店の解約(9/30)に伴い _channels.js から yahoo を削除した。
+//   /go/buy/yahoo は転送先なしとなり、下の FALLBACK(/reserve/)へ落ちる。
+//   過去に配ったリンク(YouTube動画5本など)を死なせないための設計。
 
 import { CHANNELS, primaryUrl } from "../_channels.js";
 

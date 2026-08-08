@@ -20,7 +20,6 @@ draft: false
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;">
     <a href="/go/buy/base/site/reserve" target="_blank" rel="noopener" class="btn btn-primary">BASE直売所で購入する</a>
   </div>
-  <p style="font-size:0.78rem;margin:1rem 0 0;">PayPayをご利用の方は <a href="/go/buy/yahoo" target="_blank" rel="noopener">Yahoo!ショッピング</a> からも購入できます。</p>
 </div>
 
 ## いま予約する3つの理由
@@ -77,7 +76,6 @@ draft: false
 当サイトのご予約ボタンは、農家直営の **BASE直売所（本店）** につながります。お支払い方法やご利用中のサービスに合わせて、他の販売所もお選びいただけます。お米・価格の内容は各販売所の商品ページに準じます。
 
 - **[BASE直売所（本店・おすすめ）](/go/buy/base/site/reserve)** — 当サイト・SNS・LINEをご覧の方はこちら。農家直営の本店です。
-- **[Yahoo!ショッピング](/go/buy/yahoo)** — PayPay残高でお支払いの方、Yahoo!内でお探しの方に。
 - **[リベ市場](/go/buy/libe)** — リベシティ会員の方向けの販売所です。
 
 <h2 id="lineup">全ラインナップ</h2>
