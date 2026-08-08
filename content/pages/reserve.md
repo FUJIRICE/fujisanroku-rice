@@ -114,6 +114,7 @@ draft: false
 | 10kg | | 8,710円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
 | 10kg 小分け | 5kg×2袋 | 8,750円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
 | 20kg | | 16,790円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
+| 20kg 小分け | 5kg×4袋 | 16,920円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kgw) |
 | 30kg | 2個口配送 | 25,450円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
 | 30kg 小分け | 5kg×6袋 | 25,630円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kgw) |
 

@@ -48,6 +48,7 @@ const BASE_PRODUCTS = {
   genmai10kg: "150147708",
   genmai10kgw: "150147975",
   genmai20kg: "150147895",
+  genmai20kgw: "153138154",
   genmai30kg: "150147681",
   genmai30kgw: "150147999",
 };
