@@ -19,7 +19,9 @@ hasCJKLanguage = true
   # GA4の測定ID(G-XXXXXXXXXX)を入れると全ページで計測開始
   ga4ID = "G-ZGY13FK4V1"
   heroImage = "/images/hero-fuji-sunset.jpg"
-  purchaseURL = "https://store.shopping.yahoo.co.jp/iwatayacom/"
+  # 2026-08-08: Yahoo店の解約(9/30)に伴いBASE本店の計測リンクへ変更。
+  # 現在どのテンプレートからも参照されていないが、古い値のまま使われると事故になる。
+  purchaseURL = "/go/buy/base/site/home"
   baseShopURL = "https://iwatayacom.thebase.in/"
   purchaseText = "今すぐ購入する"
   lineID = "@750jyemd"
