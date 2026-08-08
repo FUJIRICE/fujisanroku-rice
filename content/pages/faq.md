@@ -61,7 +61,7 @@ draft: false
 
 ## 11. 注文内容の変更・キャンセルはできますか？
 
-発送準備の状況によりご対応できない場合があります。変更・キャンセルをご希望の際は、できるだけ早く[LINE](https://line.me/R/ti/p/%40750jyemd)またはYahoo!ショッピングのストアお問い合わせからご連絡ください。
+発送準備の状況によりご対応できない場合があります。変更・キャンセルをご希望の際は、できるだけ早く[LINE](https://line.me/R/ti/p/%40750jyemd)またはご購入先ストアのお問い合わせからご連絡ください。
 
 ## 12. 商品が破損・不良だった場合は？
 
@@ -81,12 +81,12 @@ draft: false
     {"@type": "Question", "name": "配達日の指定はできますか？", "acceptedAnswer": {"@type": "Answer", "text": "収穫のタイミングにより発送日が前後するため、確実なお約束が難しい商品です。ご希望がある場合はご注文時の備考欄またはLINEでご相談ください。"}},
     {"@type": "Question", "name": "送料はいくらですか？", "acceptedAnswer": {"@type": "Answer", "text": "ほとんどの商品は送料無料です。例外は白米1kg（+送料850円）と30kg袋分けなし（+送料1,050円）です。"}},
     {"@type": "Question", "name": "30kgの商品が2個口で届くのはなぜですか？", "acceptedAnswer": {"@type": "Answer", "text": "宅配便の重量制限のため、30kgは2箱に分けてのお届けになります。"}},
-    {"@type": "Question", "name": "支払い方法は何が使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "Yahoo!ショッピングの決済手段（クレジットカード・PayPayなど）がご利用いただけます。"}},
+    {"@type": "Question", "name": "支払い方法は何が使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "BASE直売所の購入画面に表示される決済手段がご利用いただけます。"}},
     {"@type": "Question", "name": "白米と玄米はどう違いますか？", "acceptedAnswer": {"@type": "Answer", "text": "白米はぬか層を取り除いた状態で届いてすぐ炊けます。玄米はぬか層が残った状態で、噛みごたえと風味があります。"}},
     {"@type": "Question", "name": "「注文後精米」とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "白米はご注文を受けてから精米して発送しています。精米したての鮮度の高い状態でお届けします。"}},
     {"@type": "Question", "name": "「小分け」とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "10kgを5kg×2袋のように小さな袋に分けてお届けする仕様です。鮮度を保ちやすく、保存場所も分けられます。"}},
     {"@type": "Question", "name": "お米の保存方法と目安の期間は？", "acceptedAnswer": {"@type": "Answer", "text": "直射日光と高温多湿を避け、密閉容器に入れて冷暗所（冷蔵庫の野菜室がおすすめ）で保存してください。白米は精米から約1ヶ月（夏場は2〜3週間）が目安です。"}},
-    {"@type": "Question", "name": "注文内容の変更・キャンセルはできますか？", "acceptedAnswer": {"@type": "Answer", "text": "発送準備の状況によりご対応できない場合があります。できるだけ早くLINEまたはYahoo!ショッピングのストアお問い合わせからご連絡ください。"}},
+    {"@type": "Question", "name": "注文内容の変更・キャンセルはできますか？", "acceptedAnswer": {"@type": "Answer", "text": "発送準備の状況によりご対応できない場合があります。できるだけ早くLINEまたはご購入先ストアのお問い合わせからご連絡ください。"}},
     {"@type": "Question", "name": "商品が破損・不良だった場合は？", "acceptedAnswer": {"@type": "Answer", "text": "商品の状態がわかる写真とあわせてご連絡ください。確認のうえ交換など誠実に対応いたします。"}}
   ]
 }
