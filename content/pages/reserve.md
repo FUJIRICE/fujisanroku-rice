@@ -55,10 +55,10 @@ draft: false
   </div>
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="font-size:0.8rem;letter-spacing:0.15em;">まとめ買い・ご家族</p>
-    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 20kg 小分け</p>
-    <p style="font-size:0.85rem;">5kg×4袋・お得にたっぷり</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">18,460円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai20kgw" target="_blank" rel="noopener" class="btn btn-primary">20kgを予約する</a>
+    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 20kg</p>
+    <p style="font-size:0.85rem;">お得にたっぷり</p>
+    <p style="font-size:1.4rem;margin:0.6rem 0;">18,330円 <span style="font-size:0.75rem;">送料無料</span></p>
+    <a href="/go/buy/base/site/reserve/hakumai20kg" target="_blank" rel="noopener" class="btn btn-primary">20kgを予約する</a>
   </div>
 </div>
 
@@ -69,7 +69,7 @@ draft: false
 - **白米（注文後精米）** — 届いてすぐ炊けます。ご注文を受けてから精米するので、精米したての香りをお楽しみいただけます。迷ったらこちら。
 - **玄米** — ぬか層に栄養が残った状態のお米です。噛みごたえと風味を楽しみたい方、ご家庭で精米される方、少しずつ精米して鮮度を保ちたい方に。
 
-「小分け」は 5kg×2袋 のように小さな袋に分けてお届けする仕様です。開封後の劣化を抑えられるので、食べきるのに時間がかかるご家庭には小分けをおすすめします。
+「小分け」は 5kg×2袋（4kgは2kg×2袋）に分けてお届けする仕様です。開封後の劣化を抑えられるので、食べきるのに時間がかかるご家庭にはこちらをおすすめします。
 
 ## 購入先の選び方
 
@@ -86,7 +86,7 @@ draft: false
 
 | 容量 | 内容 | 価格 | 送料 | |
 |---|---|---|---|---|
-| 1kg | | 1,690円 | +送料850円 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
+| 1kg | | 1,690円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
 | 2kg | | 2,540円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai2kg) |
 | 3kg | | 3,380円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai3kg) |
 | 4kg | | 4,230円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kg) |
@@ -95,9 +95,7 @@ draft: false
 | 10kg | | 9,480円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kg) |
 | **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,520円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kgw) |
 | 20kg | | 18,330円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kg) |
-| 20kg 小分け | 5kg×4袋 | 18,460円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kgw) |
-| 30kg | 2個口配送 | 27,770円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
-| 30kg 小分け | 5kg×6袋 | 27,940円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kgw) |
+| 30kg | 2個口配送 | 27,770円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
 
 ### 玄米
 
@@ -112,9 +110,7 @@ draft: false
 | 10kg | | 8,710円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
 | 10kg 小分け | 5kg×2袋 | 8,750円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
 | 20kg | | 16,790円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
-| 20kg 小分け | 5kg×4袋 | 16,920円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kgw) |
-| 30kg | 2個口配送 | 25,450円 | +送料1,050円 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
-| 30kg 小分け | 5kg×6袋 | 25,630円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kgw) |
+| 30kg | 2個口配送 | 25,450円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
 
 ※価格が変更になる場合があります。最新の価格は各商品ページをご確認ください。
 

@@ -37,6 +37,83 @@ def log(msg):
         pass
 
 
+
+def _iso8601_seconds(dur: str) -> int:
+    """PT1H2M3S 形式を秒に直す。取れなければ0。"""
+    m = re.fullmatch(r"P(?:(\d+)D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", dur or "")
+    if not m:
+        return 0
+    d, h, mi, se = (int(x) if x else 0 for x in m.groups())
+    return ((d * 24 + h) * 60 + mi) * 60 + se
+
+
+def pick_from_api():
+    """RSSで見つからないときに YouTube API で遡って探す。
+
+    RSSは最新15件しか返さない。ライブアーカイブが1日数本〜十数本
+    公開されるため、通常動画が15件の枠外に押し出され、2026-08-08以降
+    「動画IDが取得できませんでした」で1日3回失敗し続けていた。
+
+    判定はタイトルの文言ではなくAPIの実データで行う:
+      - liveStreamingDetails があるもの = ライブ配信/アーカイブ → 除外
+      - 61秒未満 = Shorts → 除外
+    """
+    import pickle
+    try:
+        from googleapiclient.discovery import build
+        from google.auth.transport.requests import Request
+    except Exception as e:
+        log(f"APIフォールバック不可(ライブラリ無し): {type(e).__name__}")
+        return None, None
+
+    tok = platform_utils.desktop_dir() / "fuji_timelapse" / "youtube_token.pkl"
+    try:
+        creds = pickle.load(open(tok, "rb"))
+        if creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+            pickle.dump(creds, open(tok, "wb"))
+        yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
+    except Exception as e:
+        log(f"APIフォールバック不可(認証): {type(e).__name__}")
+        return None, None
+
+    try:
+        ch = yt.channels().list(part="contentDetails", id=CHANNEL).execute()
+        uploads = ch["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    except Exception as e:
+        log(f"APIフォールバック失敗(uploads取得): {type(e).__name__}")
+        return None, None
+
+    page = None
+    for _ in range(6):          # 50件 × 6ページ = 最大300本まで遡る
+        try:
+            r = yt.playlistItems().list(part="contentDetails", playlistId=uploads,
+                                        maxResults=50, pageToken=page).execute()
+        except Exception as e:
+            log(f"APIフォールバック失敗(playlistItems): {type(e).__name__}")
+            break
+        ids = [i["contentDetails"]["videoId"] for i in r.get("items", [])]
+        if not ids:
+            break
+        try:
+            vs = yt.videos().list(part="snippet,contentDetails,liveStreamingDetails",
+                                  id=",".join(ids)).execute().get("items", [])
+        except Exception as e:
+            log(f"APIフォールバック失敗(videos): {type(e).__name__}")
+            break
+        for v in vs:
+            if "liveStreamingDetails" in v:
+                continue        # ライブ配信・そのアーカイブ
+            if _iso8601_seconds(v["contentDetails"].get("duration", "")) <= 60:
+                continue        # Shorts
+            return v["id"], v["snippet"]["title"]   # 最新の本編
+        page = r.get("nextPageToken")
+        if not page:
+            break
+
+    return None, None
+
+
 def main():
     try:
         with urllib.request.urlopen(RSS_URL, timeout=30) as r:
@@ -57,19 +134,24 @@ def main():
             parsed.append((m_vid.group(1), m_ttl.group(1) if m_ttl else "", is_short))
     pick = title = None
     for vid, ttl, is_short in parsed:
-        # ライブ配信枠(12時間ごとにIDが変わる)とShorts(縦動画)はおすすめ動画にしない。
-        # タイトルの「タイムラプス」「4K」等の文言はShortsにも付くため、
+        # ここで選ぶのは「トップの注目枠」ではなく、
+        # ライブが再生できないときに出す**代替動画**。
+        # トップは hugo.toml の liveChannelID により24hライブを優先表示する。
+        #
+        # ライブ配信枠とShorts(縦動画)は代替動画にしない。
         # 判定はRSSのlink(/shorts/ vs /watch)の実URLを見る(タイトル文言に依存しない)。
+        #
+        # 以前は「タイムラプス」「4K」を含むものを優先していたが、
+        # そのせいで新しい本編(例: 100日完全版)を飛ばして古い動画が
+        # 選ばれてしまう。代替に出すのは最新の本編でよいので優先をやめた。
         if LIVE_PAT.search(ttl) or is_short:
             continue
-        if re.search(r"タイムラプス|4K|timelapse", ttl):
-            pick, title = vid, ttl
-            break
+        pick, title = vid, ttl
+        break
     if not pick:
-        for vid, ttl, is_short in parsed:
-            if not LIVE_PAT.search(ttl) and not is_short:
-                pick, title = vid, ttl
-                break
+        # RSSの最新15件がライブアーカイブとShortsで埋まっている場合。
+        log("RSS内に候補なし（ライブ/Shortsで占有）→ APIで遡って検索")
+        pick, title = pick_from_api()
     if not pick:
         log("動画IDが取得できませんでした")
         return 1
