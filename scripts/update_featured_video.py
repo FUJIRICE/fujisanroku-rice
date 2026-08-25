@@ -3,7 +3,7 @@
 update_featured_video.py — サイトトップの埋め込みタイムラプスを最新に更新
 (Windows版 fujisanroku-rice/scripts/update_featured_video.ps1 のPython移植・クロスプラットフォーム)
 
-YouTubeチャンネルRSSから最新の「本編タイムラプス」動画IDを取得し、
+YouTube APIから最新の「本編タイムラプス」動画IDを取得し、
 hugo.toml の youtubeFeatureID を更新 → 変化があれば git push(Cloudflare再ビルド)。
 自動化パイプライン(タイムラプス生成・SNS投稿)には一切触れない。サイト更新のみ。
 
@@ -115,45 +115,14 @@ def pick_from_api():
 
 
 def main():
-    try:
-        with urllib.request.urlopen(RSS_URL, timeout=30) as r:
-            xml = r.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        log(f"RSS取得失敗: {e}")
-        return 1
-
-    entries = re.findall(r"<entry>.*?</entry>", xml, re.S)
-    LIVE_PAT = re.compile(r"ライブ|生中継|Live Camera|LIVE", re.I)
-    parsed = []
-    for blk in entries:
-        m_vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", blk)
-        m_ttl = re.search(r"<title>([^<]+)</title>", blk)
-        m_link = re.search(r'<link rel="alternate" href="([^"]+)"', blk)
-        if m_vid:
-            is_short = bool(m_link and "/shorts/" in m_link.group(1))
-            parsed.append((m_vid.group(1), m_ttl.group(1) if m_ttl else "", is_short))
-    pick = title = None
-    for vid, ttl, is_short in parsed:
-        # ここで選ぶのは「トップの注目枠」ではなく、
-        # ライブが再生できないときに出す**代替動画**。
-        # トップは hugo.toml の liveChannelID により24hライブを優先表示する。
-        #
-        # ライブ配信枠とShorts(縦動画)は代替動画にしない。
-        # 判定はRSSのlink(/shorts/ vs /watch)の実URLを見る(タイトル文言に依存しない)。
-        #
-        # 以前は「タイムラプス」「4K」を含むものを優先していたが、
-        # そのせいで新しい本編(例: 100日完全版)を飛ばして古い動画が
-        # 選ばれてしまう。代替に出すのは最新の本編でよいので優先をやめた。
-        if LIVE_PAT.search(ttl) or is_short:
-            continue
-        pick, title = vid, ttl
-        break
+    # YouTube RSSの動画リンクはShortsでも /watch を返すことがあり、
+    # URLだけでは通常動画と判別できない（2026-08-25に31秒動画で確認）。
+    # liveStreamingDetails と実再生時間を取得できるAPIを常に正とする。
+    pick, title = pick_from_api()
     if not pick:
-        # RSSの最新15件がライブアーカイブとShortsで埋まっている場合。
-        log("RSS内に候補なし（ライブ/Shortsで占有）→ APIで遡って検索")
-        pick, title = pick_from_api()
-    if not pick:
-        log("動画IDが取得できませんでした")
+        # 判定不能時は現在の主役動画を維持する。RSSだけで推測して
+        # Shortsやライブアーカイブへ誤更新するより安全。
+        log("動画IDが取得できませんでした（現在の設定を維持）")
         return 1
     log(f"最新タイムラプス: {pick}  ({title})")
 
