@@ -34,35 +34,28 @@ draft: false
 2. **ご注文後に精米** — 白米はご注文を受けてから精米し、精米したての状態でお届けします。
 3. **育つ過程まで見える** — 田植えから収穫まで、あなたのお米が育つ田んぼを[24時間ライブ](/go/live)で公開しています。
 
-<h2 id="osusume">はじめての方は、この3つから</h2>
+<h2 id="osusume">はじめての方は、この2つから</h2>
 
-<p style="text-align:center;font-size:0.9rem;margin:0 0 1.5rem;">白米はご注文を受けてから精米します。まずは食べる量に合わせてお選びください。</p>
+<p style="text-align:center;font-size:0.9rem;margin:0 0 1.5rem;">届いてすぐ炊ける白米と、風味を楽しむ玄米。迷ったら5kgからお選びください。</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="font-size:0.8rem;letter-spacing:0.15em;">お試し・少人数</p>
+    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">届いてすぐ炊ける</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 5kg</p>
-    <p style="font-size:0.85rem;">ひとり暮らし〜ご夫婦に</p>
+    <p style="font-size:0.85rem;">ご注文後に精米・迷ったらこちら</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">5,080円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">5kgを予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">白米5kgを予約する</a>
   </div>
   <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">おすすめ</p>
-    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 10kg 小分け</p>
-    <p style="font-size:0.85rem;">5kg×2袋・ご家庭の定番</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">9,520円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai10kgw" target="_blank" rel="noopener" class="btn btn-primary">10kgを予約する</a>
-  </div>
-  <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="font-size:0.8rem;letter-spacing:0.15em;">まとめ買い・ご家族</p>
-    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 20kg</p>
-    <p style="font-size:0.85rem;">お得にたっぷり</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">18,330円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai20kg" target="_blank" rel="noopener" class="btn btn-primary">20kgを予約する</a>
+    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">風味を楽しむ</p>
+    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">玄米 5kg</p>
+    <p style="font-size:0.85rem;">玄米食・ご家庭で精米する方に</p>
+    <p style="font-size:1.4rem;margin:0.6rem 0;">4,690円 <span style="font-size:0.75rem;">送料無料</span></p>
+    <a href="/go/buy/base/site/reserve/genmai5kg" target="_blank" rel="noopener" class="btn btn-primary">玄米5kgを予約する</a>
   </div>
 </div>
 
-<p style="text-align:center;font-size:0.85rem;margin:0 0 1rem;">3kgのお試し・玄米・その他の容量は <a href="#lineup">全ラインナップ</a> からお選びいただけます。</p>
+<p style="text-align:center;font-size:0.85rem;margin:0 0 1rem;">少量のお試し・10kg以上・小分け商品は <a href="#lineup">全ラインナップ</a> からお選びいただけます。</p>
 
 ## 白米と玄米、どちらを選ぶ？
 
