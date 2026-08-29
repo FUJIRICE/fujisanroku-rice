@@ -89,35 +89,35 @@ draft: false
 
 ### 白米（注文後精米）
 
-| 容量 | 内容 | 価格 | 送料 | |
-|---|---|---|---|---|
-| 1kg | | 1,690円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
-| 2kg | | 2,540円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai2kg) |
-| 3kg | | 3,380円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai3kg) |
-| 4kg | | 4,230円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kg) |
-| 4kg 小分け | 2kg×2袋 | 4,270円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kgw) |
-| 5kg | | 5,080円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai5kg) |
-| 10kg | | 9,480円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kg) |
-| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,520円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kgw) |
-| 20kg | | 18,330円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kg) |
-| 30kg | 2個口配送 | 27,770円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
+| 容量 | 選び方・内容 | 価格 | 1kgあたり目安 | 送料 | |
+|---|---|---:|---:|---|---|
+| 1kg | お試し | 1,690円 | 1,690円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
+| 2kg | 少量 | 2,540円 | 1,270円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai2kg) |
+| 3kg | 少量 | 3,380円 | 1,127円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai3kg) |
+| 4kg | 少量 | 4,230円 | 1,058円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kg) |
+| 4kg 小分け | 2kg×2袋 | 4,270円 | 1,068円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kgw) |
+| **5kg** ★売れ筋 | 迷ったらこちら | 5,080円 | 1,016円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai5kg) |
+| **10kg** ★単価がお得 | | 9,480円 | 948円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kg) |
+| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,520円 | 952円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kgw) |
+| **20kg** ★1kg単価最安 | | 18,330円 | 917円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kg) |
+| 30kg | 2個口配送 | 27,770円 | 926円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
 
 ### 玄米
 
-| 容量 | 内容 | 価格 | 送料 | |
-|---|---|---|---|---|
-| 1kg | お試し | 1,610円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai1kg) |
-| 2kg | | 2,380円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai2kg) |
-| 3kg | | 3,150円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai3kg) |
-| 4kg | | 3,920円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kg) |
-| 4kg 小分け | 2kg×2袋 | 3,970円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kgw) |
-| 5kg |  | 4,690円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai5kg) |
-| 10kg | | 8,710円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
-| 10kg 小分け | 5kg×2袋 | 8,750円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
-| 20kg | | 16,790円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
-| 30kg | 2個口配送 | 25,450円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
+| 容量 | 選び方・内容 | 価格 | 1kgあたり目安 | 送料 | |
+|---|---|---:|---:|---|---|
+| 1kg | お試し | 1,610円 | 1,610円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai1kg) |
+| 2kg | 少量 | 2,380円 | 1,190円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai2kg) |
+| 3kg | 少量 | 3,150円 | 1,050円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai3kg) |
+| 4kg | 少量 | 3,920円 | 980円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kg) |
+| 4kg 小分け | 2kg×2袋 | 3,970円 | 993円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kgw) |
+| **5kg** ★売れ筋 | 迷ったらこちら | 4,690円 | 938円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai5kg) |
+| **10kg** ★単価がお得 | | 8,710円 | 871円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
+| **10kg 小分け** ★おすすめ | 5kg×2袋 | 8,750円 | 875円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
+| **20kg** ★1kg単価最安 | | 16,790円 | 840円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
+| 30kg | 2個口配送 | 25,450円 | 848円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
 
-※価格が変更になる場合があります。最新の価格は各商品ページをご確認ください。
+※1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料は各商品ページをご確認ください。
 
 ## あなたのお米が育つ田んぼを、いつでも
 
