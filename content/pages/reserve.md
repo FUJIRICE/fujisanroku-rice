@@ -11,15 +11,27 @@ draft: false
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">RESERVE 2026</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);margin:0.5rem 0;">育つ景色まで届く新米</h1>
   <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき ── 10月上旬より順次発送。<br>いまご予約いただくお米は、この田んぼで育っています。<br>収穫までの景色を、富士山とともに24時間ライブでご覧いただけます。</p>
-  <a href="#osusume" class="btn btn-primary">おすすめ商品を見る ↓</a>
+  <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
 </div>
 
-<div style="text-align:center;margin:0 0 3rem;padding:1.5rem;border:1px solid rgba(201,167,97,0.45);border-radius:10px;">
-  <p style="font-family:var(--font-serif);font-size:1.15rem;margin:0 0 0.5rem;">農家直営のBASE店からご予約いただけます</p>
-  <p style="font-size:0.85rem;margin:0 0 1rem;">商品や発送についてのご相談も、直売所で承ります。</p>
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;">
-    <a href="/go/buy/base/site/reserve" target="_blank" rel="noopener" class="btn btn-primary">BASE直売所で購入する</a>
+<div id="purchase-route" style="scroll-margin-top:100px;text-align:center;margin:0 0 3rem;padding:1.5rem;border:1px solid rgba(201,167,97,0.45);border-radius:10px;">
+  <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0 0 0.5rem;">ご購入方法をお選びください</p>
+  <p style="font-size:0.85rem;margin:0 0 1.25rem;">ご利用中のサービスに合わせて、購入先をお選びいただけます。</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;text-align:left;">
+    <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.25rem;">
+      <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;margin:0 0 0.35rem;">一般のお客様</p>
+      <p style="font-family:var(--font-serif);font-size:1.1rem;margin:0 0 0.5rem;">公式オンラインショップ</p>
+      <p style="font-size:0.85rem;margin:0 0 1rem;">リベシティ会員ではない方はこちら。BASEの農家直営店からご予約いただけます。</p>
+      <a href="/go/buy/base/site/reserve" target="_blank" rel="noopener" class="btn btn-primary">公式ショップで予約する</a>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.25rem;">
+      <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;margin:0 0 0.35rem;">リベシティ会員の方</p>
+      <p style="font-family:var(--font-serif);font-size:1.1rem;margin:0 0 0.5rem;">リベ市場</p>
+      <p style="font-size:0.85rem;margin:0 0 1rem;">これまでのレビューを確認しながら、リベ市場の商品ページからご予約いただけます。</p>
+      <a href="/go/buy/libe" target="_blank" rel="noopener" class="btn">リベ市場で予約する</a>
+    </div>
   </div>
+  <p style="font-size:0.75rem;margin:1rem 0 0;opacity:0.8;">価格・送料・お支払い方法は、各販売所の商品ページでご確認ください。</p>
 </div>
 
 ## いま予約する3つの理由
@@ -66,9 +78,9 @@ draft: false
 
 ## 購入先の選び方
 
-当サイトのご予約ボタンは、農家直営の **BASE直売所（本店）** につながります。お支払い方法やご利用中のサービスに合わせて、他の販売所もお選びいただけます。お米・価格の内容は各販売所の商品ページに準じます。
+おすすめ商品と全ラインナップのご予約ボタンは、農家直営の **BASE直売所（本店）** につながります。リベシティ会員の方は、レビューを確認できるリベ市場もお選びいただけます。お米・価格の内容は各販売所の商品ページに準じます。
 
-- **[BASE直売所（本店・おすすめ）](/go/buy/base/site/reserve)** — 当サイト・SNS・LINEをご覧の方はこちら。農家直営の本店です。
+- **[BASE直売所（本店）](/go/buy/base/site/reserve)** — 一般のお客様向けの農家直営店です。
 - **[リベ市場](/go/buy/libe)** — リベシティ会員の方向けの販売所です。
 
 <h2 id="lineup">全ラインナップ</h2>
