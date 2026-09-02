@@ -41,6 +41,17 @@
   <div class="gd-scroll-hint">SCROLL</div>
 </section>
 
+<!-- ========== HARVEST STATUS ========== -->
+<section class="gd-harvest-status" aria-label="稲刈り予定">
+  <div class="gd-harvest-status-inner">
+    <p><span>🌾 稲刈り予定</span><strong>2026年9月15日〜20日</strong><small>天候・生育状況により前後します</small></p>
+    <div>
+      <a href="{{ "/reserve/" | relURL }}">新米を予約する</a>
+      <a href="#gd-timelapse">田んぼを見る</a>
+    </div>
+  </div>
+</section>
+
 <!-- ========== QUICK LINKS ========== -->
 <section class="gd-quicklinks">
   <div class="gd-quicklinks-inner">
@@ -398,14 +409,10 @@
   <div class="gd-purchase-inner">
     <p class="gd-label">PURCHASE</p>
     <p class="gd-purchase-lead">富士山麓の米を、<br>あなたの食卓へ。</p>
-    <p class="gd-purchase-sub">産地直送 · にじのきらめき · 2026年新米は10月上旬より順次発送</p>
+    <p class="gd-purchase-sub">産地直送 · にじのきらめき · 稲刈りは9月15日〜20日予定 · 10月上旬より順次発送</p>
     <div class="gd-purchase-btns">
-      <a href="{{ "/go/buy/base/site/home/hakumai5kg" | relURL }}" target="_blank" rel="noopener" class="gd-btn-primary">白米5kgを予約する</a>
-      <a href="{{ "/go/buy/base/site/home/genmai5kg" | relURL }}" target="_blank" rel="noopener" class="gd-btn-ghost">玄米5kgを予約する</a>
-      <a href="{{ "/reserve/" | relURL }}" class="gd-btn-ghost">全商品から選ぶ</a>
-      {{- with site.Params.libecityURL }}
-      <a href="{{ . }}" target="_blank" rel="noopener" class="gd-btn-ghost">リベ市場で予約する</a>
-      {{- end }}
+      <a href="{{ "/reserve/" | relURL }}" class="gd-btn-primary">購入先を選んで予約する</a>
+      <a href="{{ "/reserve/#lineup" | relURL }}" class="gd-btn-ghost">容量別の価格・1kg単価を見る</a>
     </div>
     <p style="margin-top:1rem;font-size:0.8rem;"><a href="{{ "/faq/" | relURL }}" style="color:inherit;">よくあるご質問（発送時期・送料など）→</a></p>
   </div>
