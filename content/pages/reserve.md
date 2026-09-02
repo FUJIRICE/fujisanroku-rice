@@ -1,6 +1,6 @@
 ---
 title: "令和8年産 新米予約"
-description: "富士山麓・富士宮で育てた令和8年産にじのきらめきの新米予約ページ。白米はご注文後に精米し、玄米は玄米のまま発送。10月上旬より順次発送します。"
+description: "富士山麓・富士宮で育てた令和8年産にじのきらめきの新米予約ページ。稲刈りは9月15日〜20日を予定し、10月上旬より順次発送します。"
 date: 2026-07-11T06:30:00+09:00
 url: /reserve/
 layout: lp
@@ -11,6 +11,8 @@ draft: false
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">RESERVE 2026</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);margin:0.5rem 0;">育つ景色まで届く新米</h1>
   <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき ── 10月上旬より順次発送。<br>いまご予約いただくお米は、この田んぼで育っています。<br>収穫までの景色を、富士山とともに24時間ライブでご覧いただけます。</p>
+  <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 稲刈り予定：2026年9月15日〜20日</p>
+  <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">天候・稲の生育状況により、日程は前後する場合があります。</p>
   <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
 </div>
 
@@ -36,7 +38,7 @@ draft: false
 
 ## いま予約する3つの理由
 
-1. **ご予約いただいた分から、順にお届けします** — 10月上旬、収穫・検査を終えたものから順次発送します。早めのご予約ほど、早いお届けになります。
+1. **9月15日〜20日に稲刈り予定です** — 天候と生育を見ながら収穫し、検査を終えた新米を10月上旬から順次発送します。
 2. **農家一軒でつくる分だけです** — 大量生産はしていません。お届けできる数量には限りがあります。
 3. **収穫までの2か月を、見ながら待てます** — いまご予約いただくお米は、この田んぼで穂を実らせているところです。その様子を[24時間ライブ](/go/live)と[成長記録](/growth/)で毎日公開しています。届いてから知るのではなく、育つところから見ていただけます。
 
@@ -48,15 +50,16 @@ draft: false
 
 <h2 id="osusume">はじめての方は、この2つから</h2>
 
-<p style="text-align:center;font-size:0.9rem;margin:0 0 1.5rem;">届いてすぐ炊ける白米と、風味を楽しむ玄米。迷ったら5kgからお選びください。</p>
+<p style="text-align:center;font-size:0.9rem;margin:0 0 1.5rem;">少量・お試しなら5kg、毎日のご家庭用なら1kg単価がお得な10kgがおすすめです。</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">届いてすぐ炊ける</p>
     <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 5kg</p>
-    <p style="font-size:0.85rem;">ご注文後に精米・迷ったらこちら</p>
+    <p style="font-size:0.85rem;">ご注文後に精米・少量のお試しに</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">5,080円 <span style="font-size:0.75rem;">送料無料</span></p>
     <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">白米5kgを予約する</a>
+    <p style="font-size:0.8rem;margin:1rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener">家庭用の白米10kgを見る（1kg 948円）</a></p>
   </div>
   <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">風味を楽しむ</p>
@@ -64,7 +67,13 @@ draft: false
     <p style="font-size:0.85rem;">玄米食・ご家庭で精米する方に</p>
     <p style="font-size:1.4rem;margin:0.6rem 0;">4,690円 <span style="font-size:0.75rem;">送料無料</span></p>
     <a href="/go/buy/base/site/reserve/genmai5kg" target="_blank" rel="noopener" class="btn btn-primary">玄米5kgを予約する</a>
+    <p style="font-size:0.8rem;margin:1rem 0 0;"><a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener">家庭用の玄米10kgを見る（1kg 871円）</a></p>
   </div>
+</div>
+
+<div style="margin:0 auto 1.5rem;max-width:720px;padding:1rem 1.25rem;border-left:3px solid var(--gold,#c9a761);background:rgba(201,167,97,0.08);">
+  <p style="margin:0 0 0.35rem;font-weight:700;">家族で食べるなら、10kg以上ほど1kg単価がお得です</p>
+  <p style="margin:0;font-size:0.85rem;">白米10kgは5kgを2袋買うより680円、白米20kgは5kgを4袋買うより1,990円お得。玄米10kgは670円、玄米20kgは1,970円お得です。</p>
 </div>
 
 <p style="text-align:center;font-size:0.85rem;margin:0 0 1rem;">少量のお試し・10kg以上・小分け商品は <a href="#lineup">全ラインナップ</a> からお選びいただけます。</p>
@@ -85,7 +94,7 @@ draft: false
 
 <h2 id="lineup">全ラインナップ</h2>
 
-すべて令和8年産にじのきらめき・予約商品（10月上旬より順次発送）。ボタンからBASE直売所の各商品ページへ移動します。
+すべて令和8年産にじのきらめき・予約商品（稲刈りは9月15日〜20日を予定、10月上旬より順次発送）。ボタンからBASE直売所の各商品ページへ移動します。
 
 ### 白米（注文後精米）
 
