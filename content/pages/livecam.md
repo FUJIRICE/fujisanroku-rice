@@ -7,6 +7,9 @@ draft: false
 
 静岡県富士宮市・富士山南西麓の田んぼから、富士山を24時間ライブ配信しています。
 
+> 🌾 **稲刈りは2026年9月15日〜20日を予定しています。**
+> 天候・稲の生育状況により日程は前後します。収穫までの田んぼの変化を、ライブでご覧ください。
+
 ## 📷 最新スナップショット（10分ごと更新）
 
 <img src="https://raw.githubusercontent.com/FUJIRICE/fuji-live-snapshot/main/snapshot.jpg" alt="Mt. Fuji Live Camera Snapshot - FUJI RICE 富士山ライブカメラ（富士宮市・田んぼより）" style="max-width:100%;height:auto;" />
@@ -23,4 +26,4 @@ YouTubeでリアルタイム映像をご覧いただけます：
 - 画質：4K / 24時間365日配信
 - 運営：FUJI RICE（米農家）
 
-🌾 この田んぼで育つお米は[BASE直売所で新米予約受付中](/go/buy/base/site/home)です。
+🌾 この田んぼで育つ令和8年産新米は予約受付中です。[一般のお客様とリベシティ会員、それぞれの購入先を選ぶ](/reserve/)ことができます。
