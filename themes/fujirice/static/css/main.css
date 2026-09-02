@@ -185,6 +185,32 @@ img { display: block; max-width: 100%; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
+/* ==================== HARVEST STATUS ==================== */
+.gd-harvest-status {
+  background: #17150f;
+  border-top: 1px solid rgba(201, 167, 97, 0.35);
+  border-bottom: 1px solid rgba(201, 167, 97, 0.35);
+  padding: 1rem 1.5rem;
+}
+.gd-harvest-status-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+.gd-harvest-status p { margin: 0; display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+.gd-harvest-status span { color: var(--gold); font-size: 0.82rem; letter-spacing: 0.1em; }
+.gd-harvest-status strong { color: var(--white); font-family: var(--en); font-size: 1.1rem; letter-spacing: 0.06em; }
+.gd-harvest-status small { color: rgba(240,236,228,0.62); }
+.gd-harvest-status div { display: flex; gap: 0.7rem; white-space: nowrap; }
+.gd-harvest-status a { color: var(--gold); font-size: 0.82rem; text-decoration: underline; text-underline-offset: 0.25em; }
+
+@media (max-width: 700px) {
+  .gd-harvest-status-inner { align-items: flex-start; flex-direction: column; }
+}
+
 /* ==================== BUTTONS ==================== */
 .gd-btn-primary {
   display: inline-block;
@@ -907,5 +933,6 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 600px) {
   .gd-quicklinks { padding: 2rem 1rem; }
-  .gd-ql-btn { font-size: 0.8rem; padding: 0.65rem 1.1rem; }
+  .gd-quicklinks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .gd-ql-btn { justify-content: center; min-width: 0; font-size: 0.78rem; padding: 0.65rem 0.75rem; }
 }
