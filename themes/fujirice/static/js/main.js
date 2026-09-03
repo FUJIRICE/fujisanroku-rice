@@ -43,6 +43,21 @@
     });
   });
 
+  // ── Purchase link measurement ──
+  // /go/buy/ is a same-domain redirect, so GA4's automatic outbound-click
+  // measurement cannot reliably identify the moment a visitor chooses a shop.
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href^="/go/buy/"]');
+    if (!link || typeof window.gtag !== 'function') return;
+
+    const pathParts = new URL(link.href, window.location.href).pathname.split('/').filter(Boolean);
+    window.gtag('event', 'purchase_link_click', {
+      destination: pathParts[2] || 'unknown',
+      link_url: link.href,
+      link_text: (link.textContent || '').trim().slice(0, 100),
+    });
+  });
+
   // ── Fade-in on scroll ──
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
