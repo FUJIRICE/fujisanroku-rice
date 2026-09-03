@@ -13,6 +13,10 @@ draft: false
   <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき ── 10月上旬より順次発送。<br>いまご予約いただくお米は、この田んぼで育っています。<br>収穫までの景色を、富士山とともに24時間ライブでご覧いただけます。</p>
   <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 稲刈り予定：2026年9月15日〜20日</p>
   <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">天候・稲の生育状況により、日程は前後する場合があります。</p>
+  <div style="max-width:560px;margin:0 auto 2rem;padding:1rem 1.25rem;background:rgba(201,167,97,0.1);border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
+    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">確認済みのご予約：35件・295kg</p>
+    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月1日までに各販売所の注文として確認できた分（リベ市場・BASE）</p>
+  </div>
   <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
 </div>
 
@@ -48,26 +52,32 @@ draft: false
 2. **ご注文後に精米** — 白米はご注文を受けてから精米し、精米したての状態でお届けします。
 3. **育つ過程まで見える** — 田植えから収穫まで、あなたのお米が育つ田んぼを[24時間ライブ](/go/live)で公開しています。
 
-<h2 id="osusume">はじめての方は、この2つから</h2>
+<h2 id="osusume">迷ったら、食べる量で選ぶ</h2>
 
-<p style="text-align:center;font-size:0.9rem;margin:0 0 1.5rem;">少量・お試しなら5kg、毎日のご家庭用なら1kg単価がお得な10kgがおすすめです。</p>
+<p style="text-align:center;font-size:0.9rem;margin:0 0 0.45rem;">少量のお試しは5kg、毎日のご家庭用は10kg、まとめ買いは白米・玄米それぞれで1kg単価が最も安い20kgがおすすめです。</p>
+<p style="text-align:center;font-size:0.75rem;margin:0 0 1.5rem;opacity:0.75;">この比較の表示価格はBASE直売所の税込・送料無料価格です。</p>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">届いてすぐ炊ける</p>
-    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">白米 5kg</p>
-    <p style="font-size:0.85rem;">ご注文後に精米・少量のお試しに</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">5,080円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">白米5kgを予約する</a>
-    <p style="font-size:0.8rem;margin:1rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener">家庭用の白米10kgを見る（1kg 948円）</a></p>
+    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">まず試したい方</p>
+    <p style="font-family:var(--font-serif);font-size:1.35rem;margin:0.4rem 0;">5kg</p>
+    <p style="font-size:0.85rem;">一人暮らし・少量のお試しに</p>
+    <p style="font-size:0.85rem;margin:0.8rem 0;">白米 5,080円（1kg 1,016円）<br>玄米 4,690円（1kg 938円）</p>
+    <p style="margin:0.9rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener">白米5kg</a>　／　<a href="/go/buy/base/site/reserve/genmai5kg" target="_blank" rel="noopener">玄米5kg</a></p>
   </div>
   <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.5rem;text-align:center;">
-    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">風味を楽しむ</p>
-    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0.4rem 0;">玄米 5kg</p>
-    <p style="font-size:0.85rem;">玄米食・ご家庭で精米する方に</p>
-    <p style="font-size:1.4rem;margin:0.6rem 0;">4,690円 <span style="font-size:0.75rem;">送料無料</span></p>
-    <a href="/go/buy/base/site/reserve/genmai5kg" target="_blank" rel="noopener" class="btn btn-primary">玄米5kgを予約する</a>
-    <p style="font-size:0.8rem;margin:1rem 0 0;"><a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener">家庭用の玄米10kgを見る（1kg 871円）</a></p>
+    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">家庭用おすすめ</p>
+    <p style="font-family:var(--font-serif);font-size:1.35rem;margin:0.4rem 0;">10kg</p>
+    <p style="font-size:0.85rem;">毎日のごはん・家族で食べる方に</p>
+    <p style="font-size:0.85rem;margin:0.8rem 0;">白米 9,480円（1kg 948円）<br>玄米 8,710円（1kg 871円）</p>
+    <p style="margin:0.9rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener">白米10kg</a>　／　<a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener">玄米10kg</a></p>
+  </div>
+  <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
+    <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">同じ精米状態で1kg単価が最安</p>
+    <p style="font-family:var(--font-serif);font-size:1.35rem;margin:0.4rem 0;">20kg</p>
+    <p style="font-size:0.85rem;">まとめ買い・おすそ分けに</p>
+    <p style="font-size:0.85rem;margin:0.8rem 0;">白米 18,330円（1kg 917円）<br>玄米 16,790円（1kg 840円）</p>
+    <p style="margin:0.9rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai20kg" target="_blank" rel="noopener">白米20kg</a>　／　<a href="/go/buy/base/site/reserve/genmai20kg" target="_blank" rel="noopener">玄米20kg</a></p>
   </div>
 </div>
 
@@ -126,7 +136,7 @@ draft: false
 | **20kg** ★1kg単価最安 | | 16,790円 | 840円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
 | 30kg | 2個口配送 | 25,450円 | 848円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
 
-※1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料は各商品ページをご確認ください。
+※表示価格はBASE直売所の税込・送料無料価格です。1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料は各商品ページをご確認ください。
 
 ## あなたのお米が育つ田んぼを、いつでも
 
