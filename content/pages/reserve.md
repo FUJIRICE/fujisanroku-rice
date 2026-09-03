@@ -14,8 +14,8 @@ draft: false
   <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 稲刈り予定：2026年9月15日〜20日</p>
   <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">天候・稲の生育状況により、日程は前後する場合があります。</p>
   <div style="max-width:560px;margin:0 auto 2rem;padding:1rem 1.25rem;background:rgba(201,167,97,0.1);border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
-    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">確認済みのご予約：35件・295kg</p>
-    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月1日までに各販売所の注文として確認できた分（リベ市場・BASE）</p>
+    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">確認済みのご予約：34件・290kg</p>
+    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月3日までに各販売所の注文として確認できた分（リベ市場・BASE）</p>
   </div>
   <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
 </div>
