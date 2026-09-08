@@ -14,8 +14,8 @@ draft: false
   <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 稲刈り予定：2026年9月15日〜20日</p>
   <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">天候・稲の生育状況により、日程は前後する場合があります。</p>
   <div style="max-width:560px;margin:0 auto 2rem;padding:1rem 1.25rem;background:rgba(201,167,97,0.1);border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
-    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">確認済みのご予約：34件・290kg</p>
-    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月3日までに各販売所の注文として確認できた分（リベ市場・BASE）</p>
+    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">確認済みのご予約：35件・300kg</p>
+    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月5日確認の新米予約分（リベ市場・BASEの合計）</p>
   </div>
   <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
 </div>
@@ -55,7 +55,7 @@ draft: false
 <h2 id="osusume">迷ったら、食べる量で選ぶ</h2>
 
 <p style="text-align:center;font-size:0.9rem;margin:0 0 0.45rem;">少量のお試しは5kg、毎日のご家庭用は10kg、まとめ買いは白米・玄米それぞれで1kg単価が最も安い20kgがおすすめです。</p>
-<p style="text-align:center;font-size:0.75rem;margin:0 0 1.5rem;opacity:0.75;">この比較の表示価格はBASE直売所の税込・送料無料価格です。</p>
+<p style="text-align:center;font-size:0.75rem;margin:0 0 1.5rem;opacity:0.75;">以下はBASE直売所の税込・送料無料価格です。リベ市場をご利用の方は、リベ市場の商品ページで価格・送料をご確認ください。</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
@@ -82,7 +82,7 @@ draft: false
 </div>
 
 <div style="margin:0 auto 1.5rem;max-width:720px;padding:1rem 1.25rem;border-left:3px solid var(--gold,#c9a761);background:rgba(201,167,97,0.08);">
-  <p style="margin:0 0 0.35rem;font-weight:700;">家族で食べるなら、10kg以上ほど1kg単価がお得です</p>
+  <p style="margin:0 0 0.35rem;font-weight:700;">5kgと比べると、10kg・20kgは1kg単価がお得です</p>
   <p style="margin:0;font-size:0.85rem;">白米10kgは5kgを2袋買うより680円、白米20kgは5kgを4袋買うより1,990円お得。玄米10kgは670円、玄米20kgは1,970円お得です。</p>
 </div>
 
