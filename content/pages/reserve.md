@@ -22,7 +22,17 @@ draft: false
 
 <div id="purchase-route" style="scroll-margin-top:100px;text-align:center;margin:0 0 3rem;padding:1.5rem;border:1px solid rgba(201,167,97,0.45);border-radius:10px;">
   <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0 0 0.5rem;">ご購入方法をお選びください</p>
-  <p style="font-size:0.85rem;margin:0 0 1.25rem;">ご利用中のサービスに合わせて、購入先をお選びいただけます。</p>
+  <div style="max-width:720px;margin:0 auto 2rem;padding:1.25rem;text-align:center;border:2px solid var(--gold,#c9a761);border-radius:10px;">
+  <p style="margin:0 0 0.35rem;color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;">迷った方はこちら</p>
+  <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">毎日のご家庭用なら10kg</p>
+  <p style="margin:0 0 1rem;font-size:0.85rem;">届いてすぐ炊ける白米と、ご家庭で精米できる玄米から選べます。BASE直売所は税込・送料無料です。</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
+    <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを予約する</a>
+    <a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener" class="btn">玄米10kgを予約する</a>
+  </div>
+</div>
+
+<p style="font-size:0.85rem;margin:0 0 1.25rem;">ご利用中のサービスに合わせて、購入先をお選びいただけます。</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;text-align:left;">
     <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.25rem;">
       <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;margin:0 0 0.35rem;">一般のお客様</p>
