@@ -68,7 +68,7 @@ hasCJKLanguage = true
     url = "/posts/"
     weight = 3
   [[menu.main]]
-    name = "LINEで相談"
+    name = "販売通知LINE"
     url = "https://line.me/R/ti/p/%40750jyemd"
     weight = 4
   [[menu.main]]

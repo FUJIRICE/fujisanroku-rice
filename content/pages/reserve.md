@@ -18,6 +18,10 @@ draft: false
     <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月10日確認の新米予約分（リベ市場・BASEの合計）</p>
   </div>
   <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
+  <div style="max-width:620px;margin:1.25rem auto 0;padding:0.9rem 1rem;border:1px solid rgba(6,199,85,0.55);border-radius:8px;background:rgba(6,199,85,0.08);">
+    <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>収穫・販売開始のお知らせを受け取る</strong><br>LINE追加後「新米案内希望」と送ってください。</p>
+    <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener" class="btn">LINEで販売通知を受け取る</a>
+  </div>
 </div>
 
 <div id="purchase-route" style="scroll-margin-top:100px;text-align:center;margin:0 0 3rem;padding:1.5rem;border:1px solid rgba(201,167,97,0.45);border-radius:10px;">
