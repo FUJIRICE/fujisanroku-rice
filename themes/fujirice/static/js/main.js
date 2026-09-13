@@ -47,15 +47,34 @@
   // /go/buy/ is a same-domain redirect, so GA4's automatic outbound-click
   // measurement cannot reliably identify the moment a visitor chooses a shop.
   document.addEventListener('click', (event) => {
-    const link = event.target.closest('a[href^="/go/buy/"]');
+    const link = event.target.closest('a[href]');
     if (!link || typeof window.gtag !== 'function') return;
 
-    const pathParts = new URL(link.href, window.location.href).pathname.split('/').filter(Boolean);
-    window.gtag('event', 'purchase_link_click', {
-      destination: pathParts[2] || 'unknown',
-      link_url: link.href,
-      link_text: (link.textContent || '').trim().slice(0, 100),
-    });
+    const target = new URL(link.href, window.location.href);
+    const pathParts = target.pathname.split('/').filter(Boolean);
+    const linkText = (link.textContent || '').trim().slice(0, 100);
+
+    if (target.origin === window.location.origin && pathParts[0] === 'go' && pathParts[1] === 'buy') {
+      window.gtag('event', 'purchase_link_click', {
+        destination: pathParts[2] || 'unknown',
+        placement: pathParts.slice(3, 5).join('/') || 'unspecified',
+        product_code: pathParts[5] || 'unspecified',
+        source_page: window.location.pathname,
+        link_url: link.href,
+        link_text: linkText,
+        transport_type: 'beacon',
+      });
+      return;
+    }
+
+    if (target.hostname === 'line.me' || target.pathname === '/go/line' || target.pathname === '/go/line/') {
+      window.gtag('event', 'line_lead_click', {
+        source_page: window.location.pathname,
+        link_url: link.href,
+        link_text: linkText,
+        transport_type: 'beacon',
+      });
+    }
   });
 
   // ── Fade-in on scroll ──

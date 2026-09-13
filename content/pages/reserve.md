@@ -19,7 +19,7 @@ draft: false
   </div>
   <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
   <div style="max-width:620px;margin:1.25rem auto 0;padding:0.9rem 1rem;border:1px solid rgba(6,199,85,0.55);border-radius:8px;background:rgba(6,199,85,0.08);">
-    <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>収穫・販売開始のお知らせを受け取る</strong><br>LINE追加後「新米案内希望」と送ってください。</p>
+    <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>まだ迷っている方は、LINEで販売案内を受け取れます</strong><br>友だち追加後「新米案内希望」と送ってください。すぐ予約する方は、下の購入先へ直接お進みください。</p>
     <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener" class="btn">LINEで販売通知を受け取る</a>
   </div>
 </div>
@@ -66,16 +66,36 @@ draft: false
 2. **ご注文後に精米** — 白米はご注文を受けてから精米し、精米したての状態でお届けします。
 3. **育つ過程まで見える** — 田植えから収穫まで、あなたのお米が育つ田んぼを[24時間ライブ](/go/live)で公開しています。
 
+## ご予約前に確認できること
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0 2rem;">
+  <div style="padding:1.2rem;border:1px solid rgba(255,255,255,0.22);border-radius:8px;">
+    <p style="margin:0 0 0.45rem;font-weight:700;">実際の田んぼ</p>
+    <p style="margin:0 0 0.65rem;font-size:0.85rem;">24時間ライブと成長記録で、予約したお米が育つ場所と現在の様子をご覧いただけます。</p>
+    <a href="/go/live" target="_blank" rel="noopener">24時間ライブを見る</a>　／　<a href="/growth/">成長記録を見る</a>
+  </div>
+  <div style="padding:1.2rem;border:1px solid rgba(255,255,255,0.22);border-radius:8px;">
+    <p style="margin:0 0 0.45rem;font-weight:700;">精米・農作業の記録</p>
+    <p style="margin:0 0 0.65rem;font-size:0.85rem;">YouTubeで精米、草刈り、水管理など、日々の作業を公開しています。</p>
+    <a href="/go/youtube" target="_blank" rel="noopener">農作業の動画を見る</a>
+  </div>
+  <div style="padding:1.2rem;border:1px solid rgba(255,255,255,0.22);border-radius:8px;">
+    <p style="margin:0 0 0.45rem;font-weight:700;">購入者のレビュー</p>
+    <p style="margin:0 0 0.65rem;font-size:0.85rem;">掲載許可のない感想は転載していません。これまでのレビューはリベ市場の商品ページでご確認いただけます。</p>
+    <a href="/go/buy/libe" target="_blank" rel="noopener">リベ市場でレビューを見る</a>
+  </div>
+</div>
+
 <h2 id="osusume">迷ったら、食べる量で選ぶ</h2>
 
-<p style="text-align:center;font-size:0.9rem;margin:0 0 0.45rem;">少量のお試しは5kg、毎日のご家庭用は10kg、まとめ買いは白米・玄米それぞれで1kg単価が最も安い20kgがおすすめです。</p>
+<p style="text-align:center;font-size:0.9rem;margin:0 0 0.45rem;">初めての方や保管量を抑えたい方は5kg、毎日のご家庭用は10kg、まとめ買いは白米・玄米それぞれで1kg単価が最も安い20kgがおすすめです。</p>
 <p style="text-align:center;font-size:0.75rem;margin:0 0 1.5rem;opacity:0.75;">以下はBASE直売所の税込・送料無料価格です。リベ市場をご利用の方は、リベ市場の商品ページで価格・送料をご確認ください。</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">まず試したい方</p>
     <p style="font-family:var(--font-serif);font-size:1.35rem;margin:0.4rem 0;">5kg</p>
-    <p style="font-size:0.85rem;">一人暮らし・少量のお試しに</p>
+    <p style="font-size:0.85rem;">初めての購入・保管量を抑えたい方に</p>
     <p style="font-size:0.85rem;margin:0.8rem 0;">白米 5,080円（1kg 1,016円）<br>玄米 4,690円（1kg 938円）</p>
     <p style="margin:0.9rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener">白米5kg</a>　／　<a href="/go/buy/base/site/reserve/genmai5kg" target="_blank" rel="noopener">玄米5kg</a></p>
   </div>
