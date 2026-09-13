@@ -96,6 +96,16 @@ draft: false
   <p style="margin:0;font-size:0.85rem;">白米10kgは5kgを2袋買うより680円、白米20kgは5kgを4袋買うより1,990円お得。玄米10kgは670円、玄米20kgは1,970円お得です。</p>
 </div>
 
+<div style="max-width:720px;margin:0 auto 2rem;padding:1.25rem;text-align:center;border:2px solid var(--gold,#c9a761);border-radius:10px;">
+  <p style="margin:0 0 0.35rem;color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;">迷った方はこちら</p>
+  <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">毎日のご家庭用なら10kg</p>
+  <p style="margin:0 0 1rem;font-size:0.85rem;">届いてすぐ炊ける白米と、ご家庭で精米できる玄米から選べます。BASE直売所は税込・送料無料です。</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
+    <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを予約する</a>
+    <a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener" class="btn">玄米10kgを予約する</a>
+  </div>
+</div>
+
 <p style="text-align:center;font-size:0.85rem;margin:0 0 1rem;">少量のお試し・10kg以上・小分け商品は <a href="#lineup">全ラインナップ</a> からお選びいただけます。</p>
 
 ## 白米と玄米、どちらを選ぶ？
