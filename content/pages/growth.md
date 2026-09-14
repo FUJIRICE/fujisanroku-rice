@@ -30,7 +30,7 @@ draft: false
 
 1. **夏** — 中干し・水管理。水の状態と稲の成長を毎日確かめます。
 2. **初秋** — 出穂・登熟。穂が実り、田んぼが金色に変わっていきます。
-3. **10月上旬〜** — 収穫・検査を終えたものから、ご予約順に順次発送します。
+3. **9月16日頃〜** — 収穫後の乾燥・調製を終えたものから、ご予約順に順次発送する予定です。
 
 <div style="text-align:center;margin:3rem 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.15);">
   <p style="font-family:var(--font-serif);font-size:1.2rem;">この田んぼのお米、予約受付中です。</p>

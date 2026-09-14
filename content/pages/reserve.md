@@ -1,6 +1,6 @@
 ---
 title: "令和8年産 新米予約"
-description: "富士山麓・富士宮で育てた令和8年産にじのきらめきの新米予約ページ。本格的な稲刈りは9月20日頃を予定し、10月上旬より順次発送します。"
+description: "富士山麓・富士宮で育てた令和8年産にじのきらめき。2026年9月14日に稲刈りを開始し、早いご注文は9月16日頃から順次発送予定です。"
 date: 2026-07-11T06:30:00+09:00
 url: /reserve/
 layout: lp
@@ -10,9 +10,13 @@ draft: false
 <div style="text-align:center;margin-bottom:3rem;">
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">RESERVE 2026</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);margin:0.5rem 0;">育つ景色まで届く新米</h1>
-  <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき ── 10月上旬より順次発送。<br>いまご予約いただくお米は、この田んぼで育っています。<br>収穫までの景色を、富士山とともに24時間ライブでご覧いただけます。</p>
-  <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 本格的な稲刈り予定：2026年9月20日頃</p>
-  <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">天候・稲の生育状況により、日程は前後する場合があります。</p>
+  <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき。<br>2026年9月14日、稲刈りを始めました。<br>収穫・乾燥・調製を終えたお米から、ご予約順に発送します。</p>
+  <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 初回発送予定：2026年9月16日頃から</p>
+  <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">天候・収穫後の乾燥や調製の進み具合により、発送日は前後する場合があります。</p>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.65rem;max-width:720px;margin:0 auto 1.5rem;">
+    <figure style="margin:0;"><img src="/images/hero-rice-ears-fuji.jpg" alt="富士山麓の田んぼと実った稲穂" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">富士山麓の田んぼ</figcaption></figure>
+    <figure style="margin:0;"><img src="/images/farm/img_2947.jpg" alt="田んぼで育つにじのきらめき" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">実際の田んぼの稲</figcaption></figure>
+  </div>
   <div style="max-width:560px;margin:0 auto 2rem;padding:1rem 1.25rem;background:rgba(201,167,97,0.1);border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
     <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">確認済みのご予約：36件・305kg</p>
     <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月10日確認の新米予約分（リベ市場・BASEの合計）</p>
@@ -56,7 +60,7 @@ draft: false
 
 ## いま予約する3つの理由
 
-1. **本格的な稲刈りは9月20日頃を予定しています** — 雨のため予定を見直しました。当日の天候と田んぼの状態を確認して収穫し、検査を終えた新米を10月上旬から順次発送します。
+1. **9月14日に稲刈りを始めました** — 収穫後の乾燥・調製・精米を進め、早いご注文は9月16日頃からご予約順に発送する予定です。
 2. **農家一軒でつくる分だけです** — 大量生産はしていません。お届けできる数量には限りがあります。
 3. **収穫までの様子を、見ながら待てます** — いまご予約いただくお米は、この田んぼで穂を実らせているところです。その様子を[24時間ライブ](/go/live)と[成長記録](/growth/)で毎日公開しています。届いてから知るのではなく、育つところから見ていただけます。
 
@@ -148,7 +152,7 @@ draft: false
 
 <h2 id="lineup">全ラインナップ</h2>
 
-すべて令和8年産にじのきらめき・予約商品（本格的な稲刈りは9月20日頃を予定、10月上旬より順次発送）。ボタンからBASE直売所の各商品ページへ移動します。
+すべて令和8年産にじのきらめきです。9月14日に稲刈りを開始し、早いご注文は9月16日頃からご予約順に発送予定です。ボタンからBASE直売所の各商品ページへ移動します。
 
 ### 白米（注文後精米）
 
@@ -201,7 +205,7 @@ draft: false
 
 ## よくあるご質問（抜粋）
 
-- **いつ届きますか？** — 令和8年（2026年）10月上旬より、収穫・検査を終えたものから順次発送します。
+- **いつ届きますか？** — 早いご注文は2026年9月16日頃から、ご予約順に発送予定です。天候や乾燥・調製の進み具合により前後します。
 - **予約後のキャンセルはできますか？** — 発送準備の状況によりご対応できない場合があります。まずは[LINE](https://line.me/R/ti/p/%40750jyemd)またはストアの問い合わせからご連絡ください。
 - **30kgが2個口なのはなぜ？** — 配送規格の重量制限のため、2箱に分けてお届けします。
 
