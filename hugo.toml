@@ -72,7 +72,7 @@ hasCJKLanguage = true
     url = "https://line.me/R/ti/p/%40750jyemd"
     weight = 4
   [[menu.main]]
-    name = "新米予約"
+    name = "新米を購入"
     url = "/reserve/"
     weight = 5
 

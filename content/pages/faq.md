@@ -1,6 +1,6 @@
 ---
 title: "よくあるご質問"
-description: "FUJI RICE（富士山麓・富士宮のにじのきらめき）の新米予約に関するよくあるご質問。発送時期・送料・支払い方法・白米と玄米の違い・保存方法など。"
+description: "FUJI RICE（富士山麓・富士宮のにじのきらめき）の新米販売に関するよくあるご質問。発送時期・送料・支払い方法・白米と玄米の違い・保存方法など。"
 date: 2026-07-11T06:30:00+09:00
 url: /faq/
 layout: lp
@@ -10,24 +10,24 @@ draft: false
 <div style="text-align:center;margin-bottom:3rem;">
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">FAQ</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3rem);margin:0.5rem 0;">よくあるご質問</h1>
-  <p>令和8年産 新米予約について、よくいただくご質問をまとめました。<br>解決しない場合は <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener">LINE（@750jyemd）</a> が最も早くご返信できます。</p>
+  <p>令和8年産 新米の販売について、よくいただくご質問をまとめました。<br>解決しない場合は <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener">LINE（@750jyemd）</a> が最も早くご返信できます。</p>
 </div>
 
-## 1. 「予約商品」とは何ですか？
+## 1. 令和8年産の新米ですか？
 
-これから収穫する令和8年産（2026年産）の新米を、収穫前にご予約いただく商品です。ご予約いただいたお米が育つ田んぼは、[24時間ライブ](/go/live)でいつでもご覧いただけます。
+はい。2026年9月に収穫した令和8年産の新米です。お米が育った田んぼは、[24時間ライブ](/go/live)と[成長記録](/growth/)でご覧いただけます。
 
 ## 2. いつ発送されますか？
 
-2026年9月14日に稲刈りを開始しました。収穫後の乾燥・調製を終え、早いご注文は9月16日頃からご予約順に発送予定です。天候や作業の進み具合により前後する場合があります。
+2026年9月16日から、ご注文順に発送しています。白米はご注文後に精米するため、発送まで少しお時間をいただく場合があります。
 
 ## 3. 配達日の指定はできますか？
 
-収穫のタイミングにより発送日が前後するため、確実なお約束が難しい商品です。ご希望がある場合は、ご注文時の備考欄または[LINE](https://line.me/R/ti/p/%40750jyemd)でご相談ください。
+ご希望がある場合は、ご注文時の備考欄または[LINE](https://line.me/R/ti/p/%40750jyemd)でご相談ください。発送準備の状況によってはご希望に添えない場合があります。
 
 ## 4. 送料はいくらですか？
 
-本店のBASE直売所の新米予約商品は、表示価格に送料が含まれています。白米1kg・30kgも送料無料です。リベ市場など、ほかの販売所とは価格・送料条件が異なります。ご購入先の商品ページで、最新の価格と送料をご確認ください。
+本店のBASE直売所の新米商品は、表示価格に送料が含まれています。白米1kg・30kgも送料無料です。リベ市場など、ほかの販売所とは価格・送料条件が異なります。ご購入先の商品ページで、最新の価格と送料をご確認ください。
 
 ## 5. 30kgの商品が2個口で届くのはなぜですか？
 
@@ -63,7 +63,7 @@ draft: false
 お手数ですが、商品の状態がわかる写真とあわせてご連絡ください。確認のうえ、交換など誠実に対応いたします。ご連絡は[LINE](https://line.me/R/ti/p/%40750jyemd)またはストアお問い合わせからお願いします。
 
 <div style="text-align:center;margin:3rem 0;">
-  <a href="/reserve/" class="btn btn-primary">令和8年産 新米を予約する</a>
+  <a href="/reserve/" class="btn btn-primary">令和8年産 新米を購入する</a>
 </div>
 
 <script type="application/ld+json">
@@ -71,10 +71,10 @@ draft: false
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "「予約商品」とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "これから収穫する令和8年産（2026年産）の新米を、収穫前にご予約いただく商品です。ご予約いただいたお米が育つ田んぼは24時間ライブでご覧いただけます。"}},
-    {"@type": "Question", "name": "いつ発送されますか？", "acceptedAnswer": {"@type": "Answer", "text": "2026年9月14日に稲刈りを開始しました。早いご注文は9月16日頃から、ご予約順に発送予定です。天候や乾燥・調製の進み具合により前後します。"}},
-    {"@type": "Question", "name": "配達日の指定はできますか？", "acceptedAnswer": {"@type": "Answer", "text": "収穫のタイミングにより発送日が前後するため、確実なお約束が難しい商品です。ご希望がある場合はご注文時の備考欄またはLINEでご相談ください。"}},
-    {"@type": "Question", "name": "送料はいくらですか？", "acceptedAnswer": {"@type": "Answer", "text": "本店のBASE直売所の新米予約商品は送料込みで、白米1kg・30kgも送料無料です。リベ市場などほかの販売所とは価格・送料条件が異なるため、ご購入先の商品ページをご確認ください。"}},
+    {"@type": "Question", "name": "令和8年産の新米ですか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。2026年9月に収穫した令和8年産の新米です。お米が育った田んぼは24時間ライブと成長記録でご覧いただけます。"}},
+    {"@type": "Question", "name": "いつ発送されますか？", "acceptedAnswer": {"@type": "Answer", "text": "2026年9月16日から、ご注文順に発送しています。白米はご注文後に精米するため、発送まで少しお時間をいただく場合があります。"}},
+    {"@type": "Question", "name": "配達日の指定はできますか？", "acceptedAnswer": {"@type": "Answer", "text": "ご希望がある場合はご注文時の備考欄またはLINEでご相談ください。発送準備の状況によってはご希望に添えない場合があります。"}},
+    {"@type": "Question", "name": "送料はいくらですか？", "acceptedAnswer": {"@type": "Answer", "text": "本店のBASE直売所の新米商品は送料込みで、白米1kg・30kgも送料無料です。リベ市場などほかの販売所とは価格・送料条件が異なるため、ご購入先の商品ページをご確認ください。"}},
     {"@type": "Question", "name": "30kgの商品が2個口で届くのはなぜですか？", "acceptedAnswer": {"@type": "Answer", "text": "宅配便の重量制限のため、30kgは2箱に分けてのお届けになります。"}},
     {"@type": "Question", "name": "支払い方法は何が使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "BASE直売所の購入画面に表示される決済手段がご利用いただけます。"}},
     {"@type": "Question", "name": "白米と玄米はどう違いますか？", "acceptedAnswer": {"@type": "Answer", "text": "白米はぬか層を取り除いた状態で届いてすぐ炊けます。玄米はぬか層が残った状態で、噛みごたえと風味があります。"}},

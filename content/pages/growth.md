@@ -10,7 +10,7 @@ draft: false
 <div style="text-align:center;margin-bottom:3rem;">
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">GROWTH RECORD 2026</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3rem);margin:0.5rem 0;">令和8年産にじのきらめき 生育記録</h1>
-  <p>ご予約いただいた新米が、いまどう育っているか。<br>富士山麓の田んぼの記録を、このページに残していきます。</p>
+  <p>今年の新米が、どのように育ったのか。<br>富士山麓の田んぼの記録を、このページに残していきます。</p>
   <a href="/go/live" target="_blank" rel="noopener" class="btn btn-primary">🔴 いまの田んぼを24時間ライブで見る</a>
 </div>
 
@@ -30,9 +30,9 @@ draft: false
 
 1. **夏** — 中干し・水管理。水の状態と稲の成長を毎日確かめます。
 2. **初秋** — 出穂・登熟。穂が実り、田んぼが金色に変わっていきます。
-3. **9月16日頃〜** — 収穫後の乾燥・調製を終えたものから、ご予約順に順次発送する予定です。
+3. **9月16日〜** — 収穫後の乾燥・調製を終えた新米から、ご注文順に発送しています。
 
 <div style="text-align:center;margin:3rem 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.15);">
-  <p style="font-family:var(--font-serif);font-size:1.2rem;">この田んぼのお米、予約受付中です。</p>
-  <a href="/reserve/" class="btn btn-primary">令和8年産新米を予約する</a>
+  <p style="font-family:var(--font-serif);font-size:1.2rem;">この田んぼで収穫した新米、販売中です。</p>
+  <a href="/reserve/" class="btn btn-primary">令和8年産新米を購入する</a>
 </div>

@@ -1,6 +1,6 @@
 ---
-title: "令和8年産 新米予約"
-description: "富士山麓・富士宮で育てた令和8年産にじのきらめき。2026年9月14日に稲刈りを開始し、早いご注文は9月16日頃から順次発送予定です。"
+title: "令和8年産 新米販売"
+description: "富士山麓・富士宮で育てた令和8年産にじのきらめき。2026年9月16日から順次発送しています。白米はご注文後に精米してお届けします。"
 date: 2026-07-11T06:30:00+09:00
 url: /reserve/
 layout: lp
@@ -8,22 +8,22 @@ draft: false
 ---
 
 <div style="text-align:center;margin-bottom:3rem;">
-  <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">RESERVE 2026</p>
+  <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">NEW RICE 2026</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);margin:0.5rem 0;">育つ景色まで届く新米</h1>
-  <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき。<br>2026年9月14日、稲刈りを始めました。<br>収穫・乾燥・調製を終えたお米から、ご予約順に発送します。</p>
-  <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 初回発送予定：2026年9月16日頃から</p>
-  <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">天候・収穫後の乾燥や調製の進み具合により、発送日は前後する場合があります。</p>
+  <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき。<br>収穫・乾燥・調製を終えた新米を、<br>ご注文順に農家から直接発送します。</p>
+  <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 2026年9月16日から順次発送中</p>
+  <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">白米はご注文を受けてから精米し、順次発送します。</p>
   <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.65rem;max-width:720px;margin:0 auto 1.5rem;">
     <figure style="margin:0;"><img src="/images/hero-rice-ears-fuji.jpg" alt="富士山麓の田んぼと実った稲穂" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">富士山麓の田んぼ</figcaption></figure>
     <figure style="margin:0;"><img src="/images/farm/img_2947.jpg" alt="田んぼで育つにじのきらめき" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">実際の田んぼの稲</figcaption></figure>
   </div>
   <div style="max-width:560px;margin:0 auto 2rem;padding:1rem 1.25rem;background:rgba(201,167,97,0.1);border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
-    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">確認済みのご予約：36件・305kg</p>
-    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月10日確認の新米予約分（リベ市場・BASEの合計）</p>
+    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">これまでのご注文：36件・305kg</p>
+    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月10日確認分（リベ市場・BASEの合計）</p>
   </div>
   <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
   <div style="max-width:620px;margin:1.25rem auto 0;padding:0.9rem 1rem;border:1px solid rgba(6,199,85,0.55);border-radius:8px;background:rgba(6,199,85,0.08);">
-    <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>まだ迷っている方は、LINEで販売案内を受け取れます</strong><br>友だち追加後「新米案内希望」と送ってください。すぐ予約する方は、下の購入先へ直接お進みください。</p>
+    <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>まだ迷っている方は、LINEで販売案内を受け取れます</strong><br>友だち追加後「新米案内希望」と送ってください。すぐ購入する方は、下の購入先へ直接お進みください。</p>
     <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener" class="btn">LINEで販売通知を受け取る</a>
   </div>
 </div>
@@ -35,8 +35,8 @@ draft: false
   <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">毎日のご家庭用なら10kg</p>
   <p style="margin:0 0 1rem;font-size:0.85rem;">届いてすぐ炊ける白米と、ご家庭で精米できる玄米から選べます。BASE直売所は税込・送料無料です。</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
-    <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを予約する</a>
-    <a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener" class="btn">玄米10kgを予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを購入する</a>
+    <a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener" class="btn">玄米10kgを購入する</a>
   </div>
 </div>
 
@@ -45,24 +45,24 @@ draft: false
     <div style="border:2px solid var(--gold,#c9a761);border-radius:8px;padding:1.25rem;">
       <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;margin:0 0 0.35rem;">一般のお客様</p>
       <p style="font-family:var(--font-serif);font-size:1.1rem;margin:0 0 0.5rem;">公式オンラインショップ</p>
-      <p style="font-size:0.85rem;margin:0 0 1rem;">リベシティ会員ではない方はこちら。BASEの農家直営店からご予約いただけます。</p>
-      <a href="/go/buy/base/site/reserve" target="_blank" rel="noopener" class="btn btn-primary">公式ショップで予約する</a>
+      <p style="font-size:0.85rem;margin:0 0 1rem;">リベシティ会員ではない方はこちら。BASEの農家直営店からご購入いただけます。</p>
+      <a href="/go/buy/base/site/reserve" target="_blank" rel="noopener" class="btn btn-primary">公式ショップで購入する</a>
     </div>
     <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.25rem;">
       <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;margin:0 0 0.35rem;">リベシティ会員の方</p>
       <p style="font-family:var(--font-serif);font-size:1.1rem;margin:0 0 0.5rem;">リベ市場</p>
-      <p style="font-size:0.85rem;margin:0 0 1rem;">これまでのレビューを確認しながら、リベ市場の商品ページからご予約いただけます。</p>
-      <a href="/go/buy/libe" target="_blank" rel="noopener" class="btn">リベ市場で予約する</a>
+      <p style="font-size:0.85rem;margin:0 0 1rem;">これまでのレビューを確認しながら、リベ市場の商品ページからご購入いただけます。</p>
+      <a href="/go/buy/libe" target="_blank" rel="noopener" class="btn">リベ市場で購入する</a>
     </div>
   </div>
   <p style="font-size:0.75rem;margin:1rem 0 0;opacity:0.8;">価格・送料・お支払い方法は、各販売所の商品ページでご確認ください。</p>
 </div>
 
-## いま予約する3つの理由
+## いま購入する3つの理由
 
-1. **9月14日に稲刈りを始めました** — 収穫後の乾燥・調製・精米を進め、早いご注文は9月16日頃からご予約順に発送する予定です。
+1. **新米を順次発送中です** — 収穫後の乾燥・調製を終えたお米を、9月16日からご注文順に発送しています。
 2. **農家一軒でつくる分だけです** — 大量生産はしていません。お届けできる数量には限りがあります。
-3. **収穫までの様子を、見ながら待てます** — いまご予約いただくお米は、この田んぼで穂を実らせているところです。その様子を[24時間ライブ](/go/live)と[成長記録](/growth/)で毎日公開しています。届いてから知るのではなく、育つところから見ていただけます。
+3. **育った過程まで確認できます** — お届けするお米が育った田んぼの様子を、[24時間ライブ](/go/live)と[成長記録](/growth/)で公開しています。
 
 ## FUJI RICE の新米、3つの約束
 
@@ -70,12 +70,12 @@ draft: false
 2. **ご注文後に精米** — 白米はご注文を受けてから精米し、精米したての状態でお届けします。
 3. **育つ過程まで見える** — 田植えから収穫まで、あなたのお米が育つ田んぼを[24時間ライブ](/go/live)で公開しています。
 
-## ご予約前に確認できること
+## ご購入前に確認できること
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0 2rem;">
   <div style="padding:1.2rem;border:1px solid rgba(255,255,255,0.22);border-radius:8px;">
     <p style="margin:0 0 0.45rem;font-weight:700;">実際の田んぼ</p>
-    <p style="margin:0 0 0.65rem;font-size:0.85rem;">24時間ライブと成長記録で、予約したお米が育つ場所と現在の様子をご覧いただけます。</p>
+    <p style="margin:0 0 0.65rem;font-size:0.85rem;">24時間ライブと成長記録で、お届けするお米が育った場所と現在の様子をご覧いただけます。</p>
     <a href="/go/live" target="_blank" rel="noopener">24時間ライブを見る</a>　／　<a href="/growth/">成長記録を見る</a>
   </div>
   <div style="padding:1.2rem;border:1px solid rgba(255,255,255,0.22);border-radius:8px;">
@@ -129,8 +129,8 @@ draft: false
   <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">毎日のご家庭用なら10kg</p>
   <p style="margin:0 0 1rem;font-size:0.85rem;">届いてすぐ炊ける白米と、ご家庭で精米できる玄米から選べます。BASE直売所は税込・送料無料です。</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
-    <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを予約する</a>
-    <a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener" class="btn">玄米10kgを予約する</a>
+    <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを購入する</a>
+    <a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener" class="btn">玄米10kgを購入する</a>
   </div>
 </div>
 
@@ -145,44 +145,44 @@ draft: false
 
 ## 購入先の選び方
 
-おすすめ商品と全ラインナップのご予約ボタンは、農家直営の **BASE直売所（本店）** につながります。リベシティ会員の方は、レビューを確認できるリベ市場もお選びいただけます。お米・価格の内容は各販売所の商品ページに準じます。
+おすすめ商品と全ラインナップの購入ボタンは、農家直営の **BASE直売所（本店）** につながります。リベシティ会員の方は、レビューを確認できるリベ市場もお選びいただけます。お米・価格の内容は各販売所の商品ページに準じます。
 
 - **[BASE直売所（本店）](/go/buy/base/site/reserve)** — 一般のお客様向けの農家直営店です。
 - **[リベ市場](/go/buy/libe)** — リベシティ会員の方向けの販売所です。
 
 <h2 id="lineup">全ラインナップ</h2>
 
-すべて令和8年産にじのきらめきです。9月14日に稲刈りを開始し、早いご注文は9月16日頃からご予約順に発送予定です。ボタンからBASE直売所の各商品ページへ移動します。
+すべて令和8年産にじのきらめきです。9月16日からご注文順に発送しています。ボタンからBASE直売所の各商品ページへ移動します。
 
 ### 白米（注文後精米）
 
 | 容量 | 選び方・内容 | 価格 | 1kgあたり目安 | 送料 | |
 |---|---|---:|---:|---|---|
-| 1kg | お試し | 1,690円 | 1,690円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai1kg) |
-| 2kg | 少量 | 2,540円 | 1,270円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai2kg) |
-| 3kg | 少量 | 3,380円 | 1,127円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai3kg) |
-| 4kg | 少量 | 4,230円 | 1,058円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kg) |
-| 4kg 小分け | 2kg×2袋 | 4,270円 | 1,068円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai4kgw) |
-| **5kg** ★売れ筋 | 迷ったらこちら | 5,080円 | 1,016円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai5kg) |
-| **10kg** ★単価がお得 | | 9,480円 | 948円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kg) |
-| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,520円 | 952円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai10kgw) |
-| **20kg** ★1kg単価最安 | | 18,330円 | 917円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai20kg) |
-| 30kg | 2個口配送 | 27,770円 | 926円 | 無料 | [予約する](/go/buy/base/site/reserve/hakumai30kg) |
+| 1kg | お試し | 1,690円 | 1,690円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai1kg) |
+| 2kg | 少量 | 2,540円 | 1,270円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai2kg) |
+| 3kg | 少量 | 3,380円 | 1,127円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai3kg) |
+| 4kg | 少量 | 4,230円 | 1,058円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai4kg) |
+| 4kg 小分け | 2kg×2袋 | 4,270円 | 1,068円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai4kgw) |
+| **5kg** ★売れ筋 | 迷ったらこちら | 5,080円 | 1,016円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai5kg) |
+| **10kg** ★単価がお得 | | 9,480円 | 948円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kg) |
+| **10kg 小分け** ★おすすめ | 5kg×2袋 | 9,520円 | 952円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kgw) |
+| **20kg** ★1kg単価最安 | | 18,330円 | 917円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai20kg) |
+| 30kg | 2個口配送 | 27,770円 | 926円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai30kg) |
 
 ### 玄米
 
 | 容量 | 選び方・内容 | 価格 | 1kgあたり目安 | 送料 | |
 |---|---|---:|---:|---|---|
-| 1kg | お試し | 1,610円 | 1,610円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai1kg) |
-| 2kg | 少量 | 2,380円 | 1,190円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai2kg) |
-| 3kg | 少量 | 3,150円 | 1,050円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai3kg) |
-| 4kg | 少量 | 3,920円 | 980円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kg) |
-| 4kg 小分け | 2kg×2袋 | 3,970円 | 993円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai4kgw) |
-| **5kg** ★売れ筋 | 迷ったらこちら | 4,690円 | 938円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai5kg) |
-| **10kg** ★単価がお得 | | 8,710円 | 871円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kg) |
-| **10kg 小分け** ★おすすめ | 5kg×2袋 | 8,750円 | 875円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai10kgw) |
-| **20kg** ★1kg単価最安 | | 16,790円 | 840円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai20kg) |
-| 30kg | 2個口配送 | 25,450円 | 848円 | 無料 | [予約する](/go/buy/base/site/reserve/genmai30kg) |
+| 1kg | お試し | 1,610円 | 1,610円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai1kg) |
+| 2kg | 少量 | 2,380円 | 1,190円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai2kg) |
+| 3kg | 少量 | 3,150円 | 1,050円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai3kg) |
+| 4kg | 少量 | 3,920円 | 980円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai4kg) |
+| 4kg 小分け | 2kg×2袋 | 3,970円 | 993円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai4kgw) |
+| **5kg** ★売れ筋 | 迷ったらこちら | 4,690円 | 938円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai5kg) |
+| **10kg** ★単価がお得 | | 8,710円 | 871円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai10kg) |
+| **10kg 小分け** ★おすすめ | 5kg×2袋 | 8,750円 | 875円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai10kgw) |
+| **20kg** ★1kg単価最安 | | 16,790円 | 840円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai20kg) |
+| 30kg | 2個口配送 | 25,450円 | 848円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai30kg) |
 
 ※表示価格はBASE直売所の税込・送料無料価格です。1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料は各商品ページをご確認ください。
 
@@ -190,7 +190,7 @@ draft: false
 
 私たちは静岡県富士宮市の米農家です。富士山の麓の田んぼで、水の状態と稲の成長を毎日確かめながら、手間を惜しまず丁寧に育てています。
 
-その様子は隠さずぜんぶお見せしています。ご予約からお届けまで、あなたのお米が育っていく景色や収穫の記録をお楽しみください。
+その様子は隠さずぜんぶお見せしています。田植えから収穫、お届けまで、お米が育ってきた景色や記録をお楽しみください。
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.6rem;margin:1.5rem 0;">
   <img src="/images/farm/20260530_173002.jpg" alt="富士山と富士宮の田んぼ" loading="lazy" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;">
@@ -205,8 +205,8 @@ draft: false
 
 ## よくあるご質問（抜粋）
 
-- **いつ届きますか？** — 早いご注文は2026年9月16日頃から、ご予約順に発送予定です。天候や乾燥・調製の進み具合により前後します。
-- **予約後のキャンセルはできますか？** — 発送準備の状況によりご対応できない場合があります。まずは[LINE](https://line.me/R/ti/p/%40750jyemd)またはストアの問い合わせからご連絡ください。
+- **いつ届きますか？** — 2026年9月16日から、ご注文順に発送しています。白米はご注文後に精米するため、発送まで少しお時間をいただく場合があります。
+- **注文後のキャンセルはできますか？** — 発送準備の状況によりご対応できない場合があります。まずは[LINE](https://line.me/R/ti/p/%40750jyemd)またはストアの問い合わせからご連絡ください。
 - **30kgが2個口なのはなぜ？** — 配送規格の重量制限のため、2箱に分けてお届けします。
 
 [→ よくあるご質問をすべて見る](/faq/)
