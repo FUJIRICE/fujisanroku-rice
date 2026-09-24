@@ -14,8 +14,8 @@ draft: false
   <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 2026年9月16日から順次発送中</p>
   <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">白米はご注文を受けてから精米し、順次発送します。</p>
   <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.65rem;max-width:720px;margin:0 auto 1.5rem;">
-    <figure style="margin:0;"><img src="/images/hero-rice-ears-fuji.jpg" alt="富士山麓の田んぼと実った稲穂" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">富士山麓の田んぼ</figcaption></figure>
-    <figure style="margin:0;"><img src="/images/farm/img_2947.jpg" alt="田んぼで育つにじのきらめき" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">実際の田んぼの稲</figcaption></figure>
+    <figure style="margin:0;"><img src="/images/products/r8-rice-bag-fuji-20260925.webp" alt="富士山麓の田んぼの前に置いたFUJI RICEの米袋" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">令和8年産のお米の包装例（白米・玄米共通）</figcaption></figure>
+    <figure style="margin:0;"><img src="/images/products/r8-cooked-rice-20260925.webp" alt="令和8年産にじのきらめきを炊いたご飯" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">令和8年産にじのきらめきの炊きたてご飯</figcaption></figure>
   </div>
   <div style="max-width:640px;margin:0 auto 1.5rem;padding:1.25rem;border:2px solid var(--gold,#c9a761);border-radius:10px;">
     <p style="margin:0 0 0.4rem;color:var(--gold,#c9a761);font-size:0.8rem;">はじめての方に</p>
