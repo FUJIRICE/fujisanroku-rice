@@ -17,11 +17,13 @@ draft: false
     <figure style="margin:0;"><img src="/images/hero-rice-ears-fuji.jpg" alt="富士山麓の田んぼと実った稲穂" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">富士山麓の田んぼ</figcaption></figure>
     <figure style="margin:0;"><img src="/images/farm/img_2947.jpg" alt="田んぼで育つにじのきらめき" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">実際の田んぼの稲</figcaption></figure>
   </div>
-  <div style="max-width:560px;margin:0 auto 2rem;padding:1rem 1.25rem;background:rgba(201,167,97,0.1);border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
-    <p style="margin:0;color:var(--gold,#c9a761);font-family:var(--font-serif);font-size:1.15rem;">これまでのご注文：36件・305kg</p>
-    <p style="margin:0.35rem 0 0;font-size:0.72rem;opacity:0.75;">2026年9月10日確認分（リベ市場・BASEの合計）</p>
+  <div style="max-width:640px;margin:0 auto 1.5rem;padding:1.25rem;border:2px solid var(--gold,#c9a761);border-radius:10px;">
+    <p style="margin:0 0 0.4rem;color:var(--gold,#c9a761);font-size:0.8rem;">はじめての方に</p>
+    <p style="margin:0 0 0.5rem;font-family:var(--font-serif);font-size:1.3rem;">令和8年産 にじのきらめき 白米5kg</p>
+    <p style="margin:0 0 0.9rem;font-size:0.9rem;">ご注文後に精米。4,310円（税込・送料無料）で農家から直接お届けします。</p>
+    <a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener" class="btn btn-primary">白米5kgの商品ページを見る</a>
   </div>
-  <a href="#purchase-route" class="btn btn-primary">購入先を選ぶ ↓</a>
+  <a href="#purchase-route" class="btn">ほかの容量・購入先を見る ↓</a>
   <div style="max-width:620px;margin:1.25rem auto 0;padding:0.9rem 1rem;border:1px solid rgba(6,199,85,0.55);border-radius:8px;background:rgba(6,199,85,0.08);">
     <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>まだ迷っている方は、LINEで販売案内を受け取れます</strong><br>友だち追加後「新米案内希望」と送ってください。すぐ購入する方は、下の購入先へ直接お進みください。</p>
     <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener" class="btn">LINEで販売通知を受け取る</a>
@@ -31,8 +33,8 @@ draft: false
 <div id="purchase-route" style="scroll-margin-top:100px;text-align:center;margin:0 0 3rem;padding:1.5rem;border:1px solid rgba(201,167,97,0.45);border-radius:10px;">
   <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0 0 0.5rem;">ご購入方法をお選びください</p>
   <div style="max-width:720px;margin:0 auto 2rem;padding:1.25rem;text-align:center;border:2px solid var(--gold,#c9a761);border-radius:10px;">
-  <p style="margin:0 0 0.35rem;color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;">迷った方はこちら</p>
-  <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">毎日のご家庭用なら10kg</p>
+  <p style="margin:0 0 0.35rem;color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;">家族で毎日食べる方に</p>
+  <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">10kgも選べます</p>
   <p style="margin:0 0 1rem;font-size:0.85rem;">届いてすぐ炊ける白米と、ご家庭で精米できる玄米から選べます。BASE直売所は税込・送料無料です。</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
     <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを購入する</a>
@@ -71,6 +73,12 @@ draft: false
 3. **育つ過程まで見える** — 田植えから収穫まで、あなたのお米が育つ田んぼを[24時間ライブ](/go/live)で公開しています。
 
 ## ご購入前に確認できること
+
+<div style="max-width:720px;margin:1rem auto 1.5rem;padding:1rem 1.25rem;border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
+  <p style="margin:0 0 0.4rem;font-weight:700;">実際の稲刈りを30秒で</p>
+  <p style="margin:0 0 0.8rem;font-size:0.85rem;">9月22日に撮影した富士宮の田んぼと収穫作業です。収穫したお米を、農家からお届けします。</p>
+  <a href="https://www.youtube.com/shorts/GDXSXWa6BFU" target="_blank" rel="noopener">稲刈り動画を見る</a>　／　<a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener">白米5kgを選ぶ</a>
+</div>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0 2rem;">
   <div style="padding:1.2rem;border:1px solid rgba(255,255,255,0.22);border-radius:8px;">
@@ -186,11 +194,11 @@ draft: false
 
 ※表示価格はBASE直売所の税込・送料無料価格です。1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料は各商品ページをご確認ください。
 
-## あなたのお米が育つ田んぼを、いつでも
+## お米が育った田んぼを、いつでも
 
 私たちは静岡県富士宮市の米農家です。富士山の麓の田んぼで、水の状態と稲の成長を毎日確かめながら、手間を惜しまず丁寧に育てています。
 
-その様子は隠さずぜんぶお見せしています。田植えから収穫、お届けまで、お米が育ってきた景色や記録をお楽しみください。
+田植えから収穫までの田んぼの景色や作業記録を公開しています。
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.6rem;margin:1.5rem 0;">
   <img src="/images/farm/20260530_173002.jpg" alt="富士山と富士宮の田んぼ" loading="lazy" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;">
