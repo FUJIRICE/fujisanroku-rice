@@ -133,8 +133,8 @@ draft: false
 </div>
 
 <div style="max-width:720px;margin:0 auto 2rem;padding:1.25rem;text-align:center;border:2px solid var(--gold,#c9a761);border-radius:10px;">
-  <p style="margin:0 0 0.35rem;color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;">迷った方はこちら</p>
-  <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">毎日のご家庭用なら10kg</p>
+  <p style="margin:0 0 0.35rem;color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.12em;">家族で毎日食べる方に</p>
+  <p style="margin:0 0 0.75rem;font-family:var(--font-serif);font-size:1.2rem;">10kgも選べます</p>
   <p style="margin:0 0 1rem;font-size:0.85rem;">届いてすぐ炊ける白米と、ご家庭で精米できる玄米から選べます。BASE直売所は税込・送料無料です。</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
     <a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener" class="btn btn-primary">白米10kgを購入する</a>
