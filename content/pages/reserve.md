@@ -75,9 +75,9 @@ draft: false
 ## ご購入前に確認できること
 
 <div style="max-width:720px;margin:1rem auto 1.5rem;padding:1rem 1.25rem;border:1px solid rgba(201,167,97,0.35);border-radius:8px;">
-  <p style="margin:0 0 0.4rem;font-weight:700;">実際の稲刈りを30秒で</p>
-  <p style="margin:0 0 0.8rem;font-size:0.85rem;">9月22日に撮影した富士宮の田んぼと収穫作業です。収穫したお米を、農家からお届けします。</p>
-  <a href="https://www.youtube.com/shorts/GDXSXWa6BFU" target="_blank" rel="noopener">稲刈り動画を見る</a>　／　<a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener">白米5kgを選ぶ</a>
+  <p style="margin:0 0 0.4rem;font-weight:700;">田んぼから袋詰めまで、実際の作業を動画で</p>
+  <p style="margin:0 0 0.8rem;font-size:0.85rem;">9月に撮影した稲刈りと袋詰め作業の記録です。袋詰め映像は作業の様子で、5kg商品の完成袋を示すものではありません。</p>
+  <a href="https://www.youtube.com/shorts/GDXSXWa6BFU" target="_blank" rel="noopener">稲刈りを見る</a>　／　<a href="https://youtube.com/shorts/G1DQlbcAgUE" target="_blank" rel="noopener">袋詰めを見る</a>　／　<a href="/go/buy/base/site/reserve/hakumai5kg" target="_blank" rel="noopener">白米5kgを選ぶ</a>
 </div>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0 2rem;">
