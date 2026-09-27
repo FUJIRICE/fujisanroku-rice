@@ -1,6 +1,6 @@
 ---
 title: "令和8年産 新米販売"
-description: "富士山麓・富士宮で育てた令和8年産にじのきらめき。2026年9月16日から順次発送しています。白米はご注文後に精米してお届けします。"
+description: "富士山麓・富士宮で育てた令和8年産にじのきらめき。新米販売中。入金確認後2日以内に発送。白米はご注文後に精米してお届けします。"
 date: 2026-07-11T06:30:00+09:00
 url: /reserve/
 layout: lp
@@ -11,8 +11,8 @@ draft: false
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">NEW RICE 2026</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);margin:0.5rem 0;">育つ景色まで届く新米</h1>
   <p style="margin:1rem 0 2rem;">令和8年産 にじのきらめき。<br>収穫・乾燥・調製を終えた新米を、<br>ご注文順に農家から直接発送します。</p>
-  <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 2026年9月16日から順次発送中</p>
-  <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">白米はご注文を受けてから精米し、順次発送します。</p>
+  <p style="display:inline-block;margin:0 0 2rem;padding:0.65rem 1rem;border:1px solid var(--gold,#c9a761);border-radius:999px;color:var(--gold,#c9a761);font-size:0.9rem;">🌾 新米販売中 · 入金確認後2日以内に発送</p>
+  <p style="margin:-1.35rem 0 2rem;font-size:0.75rem;opacity:0.75;">白米はご注文後に精米します。到着日はお届け先・配送状況により異なります。</p>
   <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.65rem;max-width:720px;margin:0 auto 1.5rem;">
     <figure style="margin:0;"><img src="/images/products/r8-rice-bag-fuji-20260925.webp" alt="富士山麓の田んぼの前に置いたFUJI RICEの米袋" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">令和8年産のお米の包装例（白米・玄米共通）</figcaption></figure>
     <figure style="margin:0;"><img src="/images/products/r8-cooked-rice-20260925.webp" alt="令和8年産にじのきらめきを炊いたご飯" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;"><figcaption style="font-size:0.72rem;margin-top:0.35rem;opacity:0.8;">令和8年産にじのきらめきの炊きたてご飯</figcaption></figure>
@@ -25,7 +25,7 @@ draft: false
   </div>
   <a href="#purchase-route" class="btn">ほかの容量・購入先を見る ↓</a>
   <div style="max-width:620px;margin:1.25rem auto 0;padding:0.9rem 1rem;border:1px solid rgba(6,199,85,0.55);border-radius:8px;background:rgba(6,199,85,0.08);">
-    <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>まだ迷っている方は、LINEで販売案内を受け取れます</strong><br>友だち追加後「新米案内希望」と送ってください。すぐ購入する方は、下の購入先へ直接お進みください。</p>
+    <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>容量・白米と玄米の選び方はLINEでご相談ください</strong><br>再購入のご相談も受け付けています。すぐ購入する方は、下の購入先へ直接お進みください。</p>
     <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener" class="btn">LINEで販売通知を受け取る</a>
   </div>
 </div>
@@ -62,7 +62,7 @@ draft: false
 
 ## いま購入する3つの理由
 
-1. **新米を順次発送中です** — 収穫後の乾燥・調製を終えたお米を、9月16日からご注文順に発送しています。
+1. **入金確認後2日以内に発送します** — 収穫後の乾燥・調製を終えた令和8年産の新米を販売中です。到着日はお届け先・配送状況により異なります。
 2. **農家一軒でつくる分だけです** — 大量生産はしていません。お届けできる数量には限りがあります。
 3. **育った過程まで確認できます** — お届けするお米が育った田んぼの様子を、[24時間ライブ](/go/live)と[成長記録](/growth/)で公開しています。
 
@@ -160,7 +160,7 @@ draft: false
 
 <h2 id="lineup">全ラインナップ</h2>
 
-すべて令和8年産にじのきらめきです。9月16日からご注文順に発送しています。ボタンからBASE直売所の各商品ページへ移動します。
+すべて令和8年産にじのきらめきです。入金確認後2日以内に発送します。ボタンからBASE直売所の各商品ページへ移動します。
 
 ### 白米（注文後精米）
 
@@ -213,7 +213,7 @@ draft: false
 
 ## よくあるご質問（抜粋）
 
-- **いつ届きますか？** — 2026年9月16日から、ご注文順に発送しています。白米はご注文後に精米するため、発送まで少しお時間をいただく場合があります。
+- **いつ届きますか？** — 入金確認後2日以内に発送します。白米はご注文後に精米します。到着日はお届け先・配送状況により異なります。2日以内の到着をお約束するものではありません。
 - **注文後のキャンセルはできますか？** — 発送準備の状況によりご対応できない場合があります。まずは[LINE](https://line.me/R/ti/p/%40750jyemd)またはストアの問い合わせからご連絡ください。
 - **30kgが2個口なのはなぜ？** — 配送規格の重量制限のため、2箱に分けてお届けします。
 

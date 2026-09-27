@@ -42,9 +42,9 @@
 </section>
 
 <!-- ========== HARVEST STATUS ========== -->
-<section class="gd-harvest-status" aria-label="稲刈り予定">
+<section class="gd-harvest-status" aria-label="新米の販売・発送">
   <div class="gd-harvest-status-inner">
-    <p><span>🌾 稲刈り開始</span><strong>2026年9月14日</strong><small>初回発送は9月16日頃からを予定しています</small></p>
+    <p><span>🌾 令和8年産</span><strong>新米販売・発送中</strong><small>入金確認後2日以内に発送 · 白米はご注文後に精米</small></p>
     <div>
       <a href="{{ "/reserve/" | relURL }}">新米を購入する</a>
       <a href="#gd-timelapse">田んぼを見る</a>
@@ -145,15 +145,15 @@
   <div class="gd-timelapse-inner">
     {{- with site.Params.liveChannelID }}
     {{/* デフォルトはタイムラプス表示。ライブが実際に再生可能なときだけJSでLIVEに切替（エラー画面を訪問者に見せない） */}}
-    <p class="gd-label" id="gdVideoLabel">TIMELAPSE</p>
-    <h2 class="gd-en-title" id="gdVideoTitle" style="font-size:clamp(2.2rem,5vw,4rem);">Live from the Field</h2>
-    <p class="gd-sub-title" id="gdVideoSubtitle">富士山麓 — 毎朝・毎夕 更新のタイムラプス</p>
+    <p class="gd-label" id="gdVideoLabel">FARM VIDEO</p>
+    <h2 class="gd-en-title" id="gdVideoTitle" style="font-size:clamp(2.2rem,5vw,4rem);">From Field to Table</h2>
+    <p class="gd-sub-title" id="gdVideoSubtitle">富士山麓の米づくり — 新米を一袋ずつ仕上げます</p>
     <div class="gd-video-wrap">
-      {{/* タイムラプス iframe（デフォルト表示・常に再生可能） */}}
+      {{/* 公開確認済み動画。予約時点の動画IDを指定しない。 */}}
       <iframe
         id="gdTimelapseIframe"
         src="https://www.youtube.com/embed/{{ $ytID }}?rel=0"
-        title="富士山麓タイムラプス"
+        title="FUJI RICE 新米を一袋ずつ仕上げます"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
@@ -397,7 +397,7 @@
       <a href="{{ "/posts/" | relURL }}" class="gd-more-link">過去の記事を見る →</a>
     </div>
     <div style="text-align:center;padding:3rem 1rem;">
-      <p style="font-family:var(--font-serif);font-size:clamp(1.1rem,2.5vw,1.5rem);margin-bottom:2rem;">令和8年産新米の生育状況は、<br>富士山とともに24時間ライブで公開中です。</p>
+      <p style="font-family:var(--font-serif);font-size:clamp(1.1rem,2.5vw,1.5rem);margin-bottom:2rem;">新米が育った田んぼの今を、<br>富士山とともに24時間ライブでお届けしています。</p>
       <a href="#gd-timelapse" class="gd-btn-primary">🔴 田んぼライブを見る</a>
       <a href="{{ "/growth/" | relURL }}" class="gd-btn-ghost" style="margin-left:0.5rem;">生育記録を見る</a>
     </div>
@@ -409,7 +409,7 @@
   <div class="gd-purchase-inner">
     <p class="gd-label">PURCHASE</p>
     <p class="gd-purchase-lead">富士山麓の米を、<br>あなたの食卓へ。</p>
-    <p class="gd-purchase-sub">産地直送 · にじのきらめき · 9月14日稲刈り開始 · 早いご注文は9月16日頃から順次発送予定</p>
+    <p class="gd-purchase-sub">令和8年産にじのきらめき · 新米販売中 · 入金確認後2日以内に発送 · 白米は注文後精米</p>
     <div class="gd-purchase-btns">
       <a href="{{ "/reserve/" | relURL }}" class="gd-btn-primary">購入先を選ぶ</a>
       <a href="{{ "/reserve/#lineup" | relURL }}" class="gd-btn-ghost">容量別の価格・1kg単価を見る</a>
