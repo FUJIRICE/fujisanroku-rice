@@ -37,7 +37,7 @@ hasCJKLanguage = true
   wordpressURL = "https://iwataya9.wordpress.com/"
   libecityURL = "https://ichiba.libecity.com/shops/577"
   # 公開確認済みの動画だけ指定する。予約動画は公開確認後に切り替える。
-  youtubeFeatureID = "PlQhW9Zjwwc"
+  youtubeFeatureID = "G1DQlbcAgUE"
   # 24hライブのチャンネルID(UCxxxx)を入れるとトップの埋め込みがライブに自動切替。空ならタイムラプス動画のまま。
   liveChannelID = "UCvvaEEAZoCEwlv11ubKSWxg"  # FUJI RICE公式チャンネルID→トップページに24hライブを埋め込む
   postsPerPage = 9
