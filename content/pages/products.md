@@ -33,7 +33,7 @@ draft: false
 
 ## ご購入・お問い合わせ
 
-- LINE公式：@750jyemd
+- LINE公式：@508ouhoc
 - 一般のお客様：[BASE直売所（本店）](/go/buy/base/site/reserve)
 - リベシティ会員の方：[リベ市場](/go/buy/libe)
 

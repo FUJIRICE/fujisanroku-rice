@@ -11,11 +11,11 @@ FUJI RICE へのお問い合わせは、以下の方法でお受けしていま�
 
 最も早くご返信できます。新米のご注文もこちらから。
 
-LINE ID：@750jyemd
+LINE ID：@508ouhoc
 
 友だち追加後、容量・白米と玄米の選び方・再購入など、ご相談内容を送ってください。今すぐ購入する方は、LINEを経由せず[購入先を選ぶ](/reserve/#purchase-route)から直接お進みください。
 
-[→ LINEで相談する](https://line.me/R/ti/p/%40750jyemd)
+[→ LINEで相談する](https://line.me/R/ti/p/%40508ouhoc)
 
 ## SNS
 

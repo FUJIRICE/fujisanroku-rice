@@ -26,7 +26,7 @@ draft: false
   <a href="#purchase-route" class="btn">ほかの容量・購入先を見る ↓</a>
   <div style="max-width:620px;margin:1.25rem auto 0;padding:0.9rem 1rem;border:1px solid rgba(6,199,85,0.55);border-radius:8px;background:rgba(6,199,85,0.08);">
     <p style="margin:0 0 0.55rem;font-size:0.85rem;"><strong>容量・白米と玄米の選び方はLINEでご相談ください</strong><br>再購入のご相談も受け付けています。すぐ購入する方は、下の購入先へ直接お進みください。</p>
-    <a href="https://line.me/R/ti/p/%40750jyemd" target="_blank" rel="noopener" class="btn">LINEで容量・再購入を相談する</a>
+    <a href="https://line.me/R/ti/p/%40508ouhoc" target="_blank" rel="noopener" class="btn">LINEで容量・再購入を相談する</a>
   </div>
 </div>
 
@@ -214,7 +214,7 @@ draft: false
 ## よくあるご質問（抜粋）
 
 - **いつ届きますか？** — 入金確認後2日以内に発送します。白米はご注文後に精米します。到着日はお届け先・配送状況により異なります。2日以内の到着をお約束するものではありません。
-- **注文後のキャンセルはできますか？** — 発送準備の状況によりご対応できない場合があります。まずは[LINE](https://line.me/R/ti/p/%40750jyemd)またはストアの問い合わせからご連絡ください。
+- **注文後のキャンセルはできますか？** — 発送準備の状況によりご対応できない場合があります。まずは[LINE](https://line.me/R/ti/p/%40508ouhoc)またはストアの問い合わせからご連絡ください。
 - **30kgが2個口なのはなぜ？** — 配送規格の重量制限のため、2箱に分けてお届けします。
 
 [→ よくあるご質問をすべて見る](/faq/)

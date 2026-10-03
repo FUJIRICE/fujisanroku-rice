@@ -37,7 +37,7 @@ links:
   - order: 3
     title: "LINEで予約・お問い合わせ"
     route: "/go/t/youtube/profile/line"
-    destination_note: "LINE公式(@750jyemd)へ直接転送。外部ドメインのためUTM無し"
+    destination_note: "LINE公式(@508ouhoc)へ直接転送。外部ドメインのためUTM無し"
 
   - order: 4
     title: "Yahoo!ショッピング｜新米予約"
@@ -82,7 +82,7 @@ removed_stale_links_2026-07-13:
     reason: "2026-06-21に正しいURL(iwatayacom)へ訂正済みだったが、このウィジェットだけ未反映のまま放置されていた"
   - title: "LINE相談(旧)"
     old_url: "line.me/R/ti/p/@508ouhoc"
-    reason: "2026-07-07に新LINE(@750jyemd)へ切替済みだったが、このウィジェットだけ未反映のまま放置されていた"
+    reason: "2026-07-07に新LINE(@508ouhoc)へ切替済みだったが、このウィジェットだけ未反映のまま放置されていた"
   - title: "公式バーチャル歌姫「稲歌みほ」(旧)"
     old_url: "hyperfollow.com/inautamiho"
     reason: "2026-06-09にyoutube.com/@inautamihoへ全ファイル切替済みだったが、このウィジェットだけ死んだリンクのまま放置されていた"

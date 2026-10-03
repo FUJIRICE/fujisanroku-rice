@@ -18,5 +18,5 @@ description: "富士山麓のお米農家、FUJI RICEのブログです。"
 
 お米のご購入は農家直営のBASE直売所から、お気軽なご相談はLINE公式アカウントまでどうぞ。
 
-📱 LINE: [@750jyemd](https://line.me/R/ti/p/%40750jyemd)
+📱 LINE: [@508ouhoc](https://line.me/R/ti/p/%40508ouhoc)
 🛒 [BASE直売所で予約・購入する](/go/buy/base/site/home)
