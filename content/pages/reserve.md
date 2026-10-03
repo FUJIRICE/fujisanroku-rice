@@ -177,7 +177,7 @@ draft: false
 | **10kg** ★単価がお得 | | 7,520円 | 752円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kg) |
 | **10kg 小分け** ★おすすめ | 5kg×2袋 | 7,520円 | 752円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kgw) |
 | **20kg** ★1kg単価最安 | | 13,520円 | 676円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai20kg) |
-| 30kg | 2個口配送 | 21,970円 | 732円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai30kg) |
+| 30kg | 2個口配送 | 20,150円 | 672円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai30kg) |
 
 ### 玄米
 
@@ -192,7 +192,7 @@ draft: false
 | **10kg** ★単価がお得 | | 6,880円 | 688円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai10kg) |
 | **10kg 小分け** ★おすすめ | 5kg×2袋 | 6,880円 | 688円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai10kgw) |
 | **20kg** ★1kg単価最安 | | 12,340円 | 617円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai20kg) |
-| 30kg | 2個口配送 | 20,050円 | 668円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai30kg) |
+| 30kg | 2個口配送 | 18,330円 | 611円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai30kg) |
 
 ※表示価格はBASE直売所の税込・送料無料価格です。1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料は各商品ページをご確認ください。
 
