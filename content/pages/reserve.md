@@ -29,8 +29,8 @@ draft: false
     <p style="margin:0 0 0.85rem;text-align:center;font-size:0.9rem;">まず試す5kg、毎日のご飯に10kg、たくさん食べるご家庭・分け合う方に20kg。白米はご注文後に精米します。</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0.65rem;">
       <a href="https://ichiba.libecity.com/products/01KN1NTQ6P082QQVJQ60SSYJ1P" target="_blank" rel="noopener" style="display:block;padding:0.85rem;border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:inherit;text-decoration:none;"><strong>白米5kg</strong><br><span style="font-size:0.9rem;">3,350円</span><br><span class="btn" style="display:inline-block;margin-top:0.55rem;padding:0.45rem 0.7rem;font-size:0.8rem;">商品ページを見る</span></a>
-      <a href="https://ichiba.libecity.com/products/01M3RRZ42V8FKZA2XNTX29EA78" target="_blank" rel="noopener" style="display:block;padding:0.85rem;border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:inherit;text-decoration:none;"><strong>白米10kg（5kg×2袋）</strong><br><span style="font-size:0.9rem;">5,980円</span><br><span class="btn" style="display:inline-block;margin-top:0.55rem;padding:0.45rem 0.7rem;font-size:0.8rem;">商品ページを見る</span></a>
-      <a href="https://ichiba.libecity.com/products/01KN1NTVSD7YH7EZPBDR8S5YC5" target="_blank" rel="noopener" style="display:block;padding:0.85rem;border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:inherit;text-decoration:none;"><strong>白米20kg（5kg×4袋）</strong><br><span style="font-size:0.9rem;">11,480円</span><br><span class="btn" style="display:inline-block;margin-top:0.55rem;padding:0.45rem 0.7rem;font-size:0.8rem;">商品ページを見る</span></a>
+      <a href="https://ichiba.libecity.com/products/01M3RRZ42V8FKZA2XNTX29EA78" target="_blank" rel="noopener" style="display:block;padding:0.85rem;border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:inherit;text-decoration:none;"><strong>白米10kg（5kg×2袋）</strong><br><span style="font-size:0.9rem;">5,730円</span><br><span class="btn" style="display:inline-block;margin-top:0.55rem;padding:0.45rem 0.7rem;font-size:0.8rem;">商品ページを見る</span></a>
+      <a href="https://ichiba.libecity.com/products/01KN1NTVSD7YH7EZPBDR8S5YC5" target="_blank" rel="noopener" style="display:block;padding:0.85rem;border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:inherit;text-decoration:none;"><strong>白米20kg（5kg×4袋）</strong><br><span style="font-size:0.9rem;">11,380円</span><br><span class="btn" style="display:inline-block;margin-top:0.55rem;padding:0.45rem 0.7rem;font-size:0.8rem;">商品ページを見る</span></a>
     </div>
     <p style="margin:0.85rem 0 0;font-size:0.75rem;opacity:0.8;">店舗累計レビュー400件以上（リベシティ市場）。基本送料込み。北海道・九州・沖縄の追加送料は商品ページでご確認ください。</p>
   </div>
@@ -126,14 +126,14 @@ draft: false
     <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">家庭用おすすめ</p>
     <p style="font-family:var(--font-serif);font-size:1.35rem;margin:0.4rem 0;">10kg</p>
     <p style="font-size:0.85rem;">毎日のごはん・家族で食べる方に</p>
-    <p style="font-size:0.85rem;margin:0.8rem 0;">白米 6,450円（1kg 645円）<br>玄米 5,910円（1kg 591円）</p>
+    <p style="font-size:0.85rem;margin:0.8rem 0;">白米 6,180円（1kg 618円）<br>玄米 5,910円（1kg 591円）</p>
     <p style="margin:0.9rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai10kg" target="_blank" rel="noopener">白米10kg</a>　／　<a href="/go/buy/base/site/reserve/genmai10kg" target="_blank" rel="noopener">玄米10kg</a></p>
   </div>
   <div style="border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:1.5rem;text-align:center;">
     <p style="color:var(--gold,#c9a761);font-size:0.8rem;letter-spacing:0.15em;">まとめ買い・おすそ分けに</p>
     <p style="font-family:var(--font-serif);font-size:1.35rem;margin:0.4rem 0;">20kg</p>
     <p style="font-size:0.85rem;">たくさん召し上がるご家庭や、分け合う方に</p>
-    <p style="font-size:0.85rem;margin:0.8rem 0;">白米 12,330円（1kg 617円）<br>玄米 11,260円（1kg 563円）</p>
+    <p style="font-size:0.85rem;margin:0.8rem 0;">白米 12,230円（1kg 612円）<br>玄米 11,260円（1kg 563円）</p>
     <p style="margin:0.9rem 0 0;"><a href="/go/buy/base/site/reserve/hakumai20kg" target="_blank" rel="noopener">白米20kg</a>　／　<a href="/go/buy/base/site/reserve/genmai20kg" target="_blank" rel="noopener">玄米20kg</a></p>
   </div>
 </div>
@@ -185,9 +185,9 @@ BASE直売所の「小分け」は、10kgは5kg×2袋、4kgは2kg×2袋でお届
 | 4kg | 少量 | 3,350円 | 838円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai4kg) |
 | 4kg 小分け | 2kg×2袋 | 3,380円 | 845円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai4kgw) |
 | **5kg** ★売れ筋 | 迷ったらこちら | 3,630円 | 726円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai5kg) |
-| **10kg** ★単価がお得 | | 6,450円 | 645円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kg) |
-| **10kg 小分け** ★おすすめ | 5kg×2袋 | 6,450円 | 645円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kgw) |
-| **20kg** | | 12,330円 | 617円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai20kg) |
+| **10kg** ★単価がお得 | | 6,180円 | 618円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kg) |
+| **10kg 小分け** ★おすすめ | 5kg×2袋 | 6,180円 | 618円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai10kgw) |
+| **20kg** | | 12,230円 | 612円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai20kg) |
 | 30kg | 2個口配送 | 18,120円 | 604円 | 無料 | [購入する](/go/buy/base/site/reserve/hakumai30kg) |
 
 ### 玄米
