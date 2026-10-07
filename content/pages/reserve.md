@@ -203,7 +203,7 @@ BASE直売所の「小分け」は、10kgは5kg×2袋、4kgは2kg×2袋でお届
 | **10kg** ★単価がお得 | | 5,910円 | 591円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai10kg) |
 | **10kg 小分け** ★おすすめ | 5kg×2袋 | 5,910円 | 591円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai10kgw) |
 | **20kg** | | 11,260円 | 563円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai20kg) |
-| 30kg | 2個口配送 | 16,510円 | 550円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai30kg) |
+| 30kg | 2個口配送 | 16,080円 | 536円 | 無料 | [購入する](/go/buy/base/site/reserve/genmai30kg) |
 
 ※表示価格はBASE直売所の税込・送料無料価格です。1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料は各商品ページをご確認ください。
 

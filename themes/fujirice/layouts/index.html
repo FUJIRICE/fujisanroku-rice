@@ -20,14 +20,14 @@
 
 <!-- ========== HERO ========== -->
 <section class="gd-hero">
-  <div class="gd-hero-slides" id="gdHeroSlides">
-    <div class="gd-slide"><img src="/images/hero-rice-ears-fuji.jpg" alt="稲穂と富士山" loading="eager"></div>
-    <div class="gd-slide"><img src="/images/hero-benifuji.jpg" alt="朝焼けの富士山" loading="lazy"></div>
-    <div class="gd-slide"><img src="/images/hero-sunrise-fuji.jpg" alt="朝日と富士山" loading="lazy"></div>
-    <div class="gd-slide"><img src="/images/hero-kasagumo-fuji.jpg" alt="笠雲の富士山と田んぼ" loading="lazy"></div>
-    <div class="gd-slide"><img src="/images/hero-fuji-sunset.jpg" alt="夕暮れの富士山" loading="lazy"></div>
-  </div>
+  {{/* 2026-10: 1年分の映像でヒーローを動画化（定点カメラ4月→10月＋稲刈り。音なし・ループ）。
+       旧スライド(gd-hero-slides)は update_farm_images.py の置換対象だったが、この形では置換が空振りになる。 */}}
+  <video class="gd-hero-video" id="gdHeroVideo" autoplay muted loop playsinline preload="metadata"
+         poster="/images/season/hero-poster.jpg" aria-label="富士山麓の田んぼの半年（定点カメラ）と稲刈り">
+    <source src="/video/hero-2026.mp4" type="video/mp4">
+  </video>
   <div class="gd-hero-overlay"></div>
+  <p class="gd-hero-cam" aria-hidden="true">定点カメラ 2026.4 → 10 ／ 稲刈り</p>
   <div class="gd-hero-content">
     <p class="gd-hero-badge">SHIZUOKA · FUJINOMIYA · NIJINOKIRAMEKI</p>
     <h1 class="gd-hero-en">FUJI RICE</h1>
@@ -102,10 +102,102 @@
   </div>
 </section>
 
+<!-- ========== SEASONS（田んぼの一年） ========== -->
+{{- $seasons := slice
+  (dict "en" "JAN" "m" "1月" "t" "冬の田んぼ" "d" "稲刈りを終えた田んぼで、土が春を待ちます。" "img" "01-winter-field-b" "alt" "雪をかぶった富士山と冬の田んぼ")
+  (dict "en" "APR" "m" "4月" "t" "田起こし" "d" "夜明けの田んぼ。土を起こして、今年の米づくりが始まります。" "img" "04-dawn-fuji" "alt" "夜明けの富士山と田起こし後の田んぼ")
+  (dict "en" "APR" "m" "4月" "t" "種まき・育苗" "d" "苗箱に種をまき、毎日水をかけて苗を育てます。" "img" "04-ikubyo-a" "alt" "苗箱への水やり")
+  (dict "en" "MAY" "m" "5月" "t" "苗" "d" "田植えを待つ、若い苗。" "img" "05-nae-b" "alt" "育苗ハウスの若い苗")
+  (dict "en" "MAY" "m" "5月" "t" "田植え" "d" "水を張った田んぼに、田植え機で一列ずつ植えていきます。" "img" "05-taue-a" "alt" "田植え機による田植え")
+  (dict "en" "JUN" "m" "6月" "t" "水鏡" "d" "植えたばかりの田んぼに、富士山と空が映ります。" "img" "06-reflection-b" "alt" "水を張った田んぼに映る富士山")
+  (dict "en" "JUL" "m" "7月" "t" "青田" "d" "夏の日差しを受けて、稲がぐんぐん伸びます。" "img" "07-aota-sky" "alt" "青々とした夏の田んぼと富士山")
+  (dict "en" "AUG" "m" "8月" "t" "出穂" "d" "穂が出て、一粒ずつ実っていきます。" "img" "08-inaho" "alt" "実り始めた稲穂")
+  (dict "en" "SEP" "m" "9月" "t" "稲刈り" "d" "黄金色の田んぼを、コンバインで刈り取ります。" "img" "09-inekari" "alt" "富士山を背にした稲刈り")
+  (dict "en" "OCT" "m" "10月" "t" "新米" "d" "ご注文を受けてから精米して、炊きたての味をお届けします。" "img" "10-gohan" "alt" "炊きたての新米")
+}}
+<section class="gd-seasons" id="gd-seasons">
+  <div class="gd-seasons-head">
+    <p class="gd-label">ONE YEAR IN THE FIELD</p>
+    <h2 class="gd-en-title">A Year of Rice</h2>
+    <p class="gd-sub-title">田んぼの一年 — 同じ田んぼで、季節ごとに撮りためた写真です</p>
+  </div>
+  <ol class="gd-seasons-track">
+    {{- range $i, $s := $seasons }}
+    <li class="gd-season">
+      <figure>
+        <img src="/images/season/{{ $s.img }}.jpg" alt="{{ $s.alt }}" loading="lazy" width="1600" height="1200">
+        <figcaption>
+          <span class="gd-season-month"><em>{{ $s.en }}</em>{{ $s.m }}</span>
+          <strong>{{ $s.t }}</strong>
+          <span class="gd-season-desc">{{ $s.d }}</span>
+        </figcaption>
+      </figure>
+    </li>
+    {{- end }}
+  </ol>
+  <p class="gd-seasons-hint">← 横にスクロール →</p>
+</section>
+
+<!-- ========== FIELD TO TABLE（田んぼから食卓へ） ========== -->
+{{- $steps := slice
+  (dict "n" "01" "t" "稲刈り" "d" "黄金色になった稲を、コンバインで刈り取ります。" "v" "p1-inekari")
+  (dict "n" "02" "t" "籾を運ぶ" "d" "刈り取った籾をトラックに移して、乾燥へ。" "v" "p2-unpan")
+  (dict "n" "03" "t" "籾摺り" "d" "籾殻を外して玄米に。玄米のまま保管します。" "v" "p3-momisuri")
+  (dict "n" "04" "t" "精米" "d" "白米は、ご注文を受けてから精米します。" "v" "p4-seimai")
+  (dict "n" "05" "t" "袋詰め・発送" "d" "袋に詰めて、農家から直接お届けします。" "v" "p5-fukurozume")
+}}
+<section class="gd-process" id="gd-process">
+  <div class="gd-process-inner">
+    <p class="gd-label">FROM FIELD TO TABLE</p>
+    <h2 class="gd-en-title">From Field to Table</h2>
+    <p class="gd-sub-title">田んぼから食卓へ — 令和8年産の新米ができるまで</p>
+    <ol class="gd-process-list">
+      {{- range $steps }}
+      <li class="gd-step">
+        <div class="gd-step-media">
+          <video muted loop playsinline preload="none" poster="/video/{{ .v }}.jpg" data-src="/video/{{ .v }}.mp4" aria-label="{{ .t }}の様子"></video>
+        </div>
+        <p class="gd-step-num">{{ .n }}</p>
+        <h3>{{ .t }}</h3>
+        <p>{{ .d }}</p>
+      </li>
+      {{- end }}
+    </ol>
+    <div class="gd-process-cta">
+      <a href="{{ "/reserve/" | relURL }}" class="gd-btn-primary">令和8年産の新米を購入する</a>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  // 工程動画は画面に入ったときだけ読み込んで再生（通信量を抑える）
+  var vids = document.querySelectorAll('.gd-step-media video');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v = e.target;
+      if (e.isIntersecting) {
+        if (!v.src) { v.src = v.dataset.src; }
+        var p = v.play(); if (p && p.catch) p.catch(function(){});
+      } else { v.pause(); }
+    });
+  }, { rootMargin: '200px 0px', threshold: 0.2 });
+  vids.forEach(function(v){ io.observe(v); });
+})();
+(function(){
+  // 動きを減らす設定の人にはヒーロー動画を止めてポスター画像だけ見せる
+  var v = document.getElementById('gdHeroVideo');
+  if (v && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay'); v.pause();
+  }
+})();
+</script>
+
 <!-- ========== CONCEPT ========== -->
 <section class="gd-concept" id="gd-concept">
   <div class="gd-concept-img">
-    <img src="/images/concept-fuji.jpg" alt="富士山を望む田んぼ" loading="lazy">
+    <img src="/images/season/05-mizukagami-a.jpg" alt="水を張った田んぼと富士山" loading="lazy">
   </div>
   <div class="gd-concept-text">
     <p class="gd-label">CONCEPT</p>
@@ -146,7 +238,7 @@
     {{- with site.Params.liveChannelID }}
     {{/* デフォルトはタイムラプス表示。ライブが実際に再生可能なときだけJSでLIVEに切替（エラー画面を訪問者に見せない） */}}
     <p class="gd-label" id="gdVideoLabel">FARM VIDEO</p>
-    <h2 class="gd-en-title" id="gdVideoTitle" style="font-size:clamp(2.2rem,5vw,4rem);">From Field to Table</h2>
+    <h2 class="gd-en-title" id="gdVideoTitle" style="font-size:clamp(2.2rem,5vw,4rem);">Life in the Field</h2>
     <p class="gd-sub-title" id="gdVideoSubtitle">富士山麓の米づくり — 新米を一袋ずつ仕上げます</p>
     <div class="gd-video-wrap">
       {{/* 公開確認済み動画。予約時点の動画IDを指定しない。 */}}
