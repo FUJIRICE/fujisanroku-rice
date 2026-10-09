@@ -1,0 +1,19 @@
+{{ range slice (dict "kind" "hakumai" "title" "白米（注文後精米）") (dict "kind" "genmai" "title" "玄米") }}
+{{ $kind := .kind }}
+<h3>{{ .title }}</h3>
+<table>
+  <caption>{{ .title }}：BASE直売所の税込・送料無料価格</caption>
+  <thead><tr><th scope="col">容量</th><th scope="col">内容</th><th scope="col">価格</th><th scope="col">1kg目安</th><th scope="col">購入</th></tr></thead>
+  <tbody>
+  {{ range slice (dict "slug" "1kg" "label" "1kg" "note" "お試し") (dict "slug" "2kg" "label" "2kg" "note" "少量") (dict "slug" "3kg" "label" "3kg" "note" "少量") (dict "slug" "4kg" "label" "4kg" "note" "少量") (dict "slug" "4kgw" "label" "4kg 小分け" "note" "2kg×2袋") (dict "slug" "5kg" "label" "5kg" "note" "初めての方に") (dict "slug" "10kg" "label" "10kg" "note" "毎日のご家庭用") (dict "slug" "10kgw" "label" "10kg 小分け" "note" "5kg×2袋") (dict "slug" "20kg" "label" "20kg" "note" "まとめ買い") (dict "slug" "30kg" "label" "30kg" "note" "2個口配送") }}
+  {{ $key := printf "%s%s" $kind .slug }}
+  <tr data-price-key="{{ $key }}">
+    <th scope="row">{{ .label }}</th><td>{{ .note }}</td>
+    <td>{{ partial "rice/amount.html" (dict "key" $key) }}円</td>
+    <td>{{ partial "rice/amount.html" (dict "key" $key "mode" "unit") }}円</td>
+    <td><a href="/go/buy/base/site/reserve/{{ $key }}" target="_blank" rel="noopener" aria-label="{{ if eq $kind "hakumai" }}白米{{ else }}玄米{{ end }}{{ .label }}をBASEで見る">商品を見る</a></td>
+  </tr>
+  {{ end }}
+  </tbody>
+</table>
+{{ end }}

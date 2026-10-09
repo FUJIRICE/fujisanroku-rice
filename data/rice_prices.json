@@ -1,0 +1,29 @@
+{
+  "base": {
+    "hakumai1kg": {"price": 1490, "kg": 1},
+    "hakumai2kg": {"price": 2200, "kg": 2},
+    "hakumai3kg": {"price": 2650, "kg": 3},
+    "hakumai4kg": {"price": 3350, "kg": 4},
+    "hakumai4kgw": {"price": 3380, "kg": 4},
+    "hakumai5kg": {"price": 3630, "kg": 5},
+    "hakumai10kg": {"price": 6180, "kg": 10},
+    "hakumai10kgw": {"price": 6180, "kg": 10},
+    "hakumai20kg": {"price": 12230, "kg": 20},
+    "hakumai30kg": {"price": 18120, "kg": 30},
+    "genmai1kg": {"price": 1360, "kg": 1},
+    "genmai2kg": {"price": 1990, "kg": 2},
+    "genmai3kg": {"price": 2450, "kg": 3},
+    "genmai4kg": {"price": 3090, "kg": 4},
+    "genmai4kgw": {"price": 3130, "kg": 4},
+    "genmai5kg": {"price": 3340, "kg": 5},
+    "genmai10kg": {"price": 5910, "kg": 10},
+    "genmai10kgw": {"price": 5910, "kg": 10},
+    "genmai20kg": {"price": 11260, "kg": 20},
+    "genmai30kg": {"price": 16080, "kg": 30}
+  },
+  "libe": {
+    "hakumai5kg": {"price": 3350, "kg": 5},
+    "hakumai10kg": {"price": 5730, "kg": 10},
+    "hakumai20kg": {"price": 11380, "kg": 20}
+  }
+}

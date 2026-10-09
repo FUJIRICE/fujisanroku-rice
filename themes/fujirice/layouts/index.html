@@ -32,10 +32,11 @@
     <p class="gd-hero-badge">SHIZUOKA · FUJINOMIYA · NIJINOKIRAMEKI</p>
     <h1 class="gd-hero-en">FUJI RICE</h1>
     <p class="gd-hero-ja">育つ景色まで届く新米</p>
-    <p class="gd-hero-sub">お届けする新米が育った田んぼを、富士山とともに24時間ライブ配信しています。</p>
+    <p class="gd-hero-sub">令和8年産にじのきらめき。白米は注文後に精米し、入金確認後2日以内に農家から発送します。</p>
+    <p class="rice-hero-price">白米5kg：BASE {{ partial "rice/amount.html" (dict "key" "hakumai5kg") }}円／リベ市場 {{ partial "rice/amount.html" (dict "store" "libe" "key" "hakumai5kg") }}円<br><small>税込。販売先ごとの送料条件は下のご案内へ。</small></p>
     <div class="gd-hero-cta">
-      <a href="{{ "/reserve/" | relURL }}" class="gd-btn-primary">令和8年産新米を購入する</a>
-      <a href="#gd-timelapse" class="gd-btn-ghost">田んぼを24時間見る</a>
+      <a href="#rice-shop" class="gd-btn-primary">新米の写真・購入先を見る</a>
+      <a href="/go/live" target="_blank" rel="noopener" class="gd-btn-ghost">田んぼを24時間見る</a>
     </div>
   </div>
   <div class="gd-scroll-hint">SCROLL</div>
@@ -47,10 +48,12 @@
     <p><span>🌾 令和8年産</span><strong>新米販売・発送中</strong><small>入金確認後2日以内に発送 · 白米はご注文後に精米</small></p>
     <div>
       <a href="{{ "/reserve/" | relURL }}">新米を購入する</a>
-      <a href="#gd-timelapse">田んぼを見る</a>
+      <a href="/go/live" target="_blank" rel="noopener">田んぼを見る</a>
     </div>
   </div>
 </section>
+
+{{ partial "rice/home-offer.html" . }}
 
 <!-- ========== QUICK LINKS ========== -->
 <section class="gd-quicklinks">
@@ -490,7 +493,7 @@
     </div>
     <div style="text-align:center;padding:3rem 1rem;">
       <p style="font-family:var(--font-serif);font-size:clamp(1.1rem,2.5vw,1.5rem);margin-bottom:2rem;">新米が育った田んぼの今を、<br>富士山とともに24時間ライブでお届けしています。</p>
-      <a href="#gd-timelapse" class="gd-btn-primary">🔴 田んぼライブを見る</a>
+      <a href="/go/live" class="gd-btn-primary" target="_blank" rel="noopener">🔴 田んぼライブを見る</a>
       <a href="{{ "/growth/" | relURL }}" class="gd-btn-ghost" style="margin-left:0.5rem;">生育記録を見る</a>
     </div>
   </div>

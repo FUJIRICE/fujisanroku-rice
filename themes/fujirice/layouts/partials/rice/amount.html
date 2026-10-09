@@ -1,0 +1,22 @@
+{{- $storeName := .store | default "base" -}}
+{{- $mode := .mode | default "price" -}}
+{{- $prices := site.Data.rice_prices -}}
+{{- if not (isset $prices $storeName) -}}{{ errorf "unknown rice price store: %s" $storeName }}{{- end -}}
+{{- $store := index $prices $storeName -}}
+{{- $key := .key -}}
+{{- if not (isset $store $key) -}}{{ errorf "unknown rice price key: %s/%s" $storeName $key }}{{- end -}}
+{{- $item := index $store $key -}}
+{{- $amount := $item.price -}}
+{{- if eq $mode "unit" -}}
+  {{- $amount = math.Floor (add (div (float $item.price) (float $item.kg)) 0.5) -}}
+{{- else if eq $mode "saving" -}}
+  {{- $rice := replaceRE "(hakumai|genmai).*" "$1" $key -}}
+  {{- $fiveKey := printf "%s5kg" $rice -}}
+  {{- if not (isset $store $fiveKey) -}}{{ errorf "saving requires a 5kg item: %s/%s" $storeName $key }}{{- end -}}
+  {{- $five := index $store $fiveKey -}}
+  {{- $amount = sub (mul $five.price (div $item.kg 5)) $item.price -}}
+  {{- if lt $amount 0 -}}{{ $amount = 0 }}{{- end -}}
+{{- else if ne $mode "price" -}}
+  {{- errorf "unknown rice price mode: %s" $mode -}}
+{{- end -}}
+{{- lang.FormatNumber 0 $amount -}}
