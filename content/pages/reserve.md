@@ -2,7 +2,7 @@
 title: "令和8年産 新米販売"
 description: "富士山麓・富士宮で育てた令和8年産にじのきらめき。新米販売中。入金確認後2日以内に発送。白米はご注文後に精米してお届けします。"
 date: 2026-07-11T06:30:00+09:00
-lastmod: 2026-10-09
+lastmod: 2026-10-10
 url: /reserve/
 layout: lp
 draft: false
@@ -14,21 +14,13 @@ draft: false
   <p>富士山麓・富士宮で育てたお米。<br>白米はご注文後に精米して、農家から直接お届けします。</p>
   <p class="rice-dispatch">入金確認後2日以内に発送</p>
   <p class="rice-note">到着日はお届け先・配送状況により異なります。</p>
-  <nav class="rice-route-nav" aria-label="価格と購入先へのご案内">
-    <a href="#base-first">BASEの価格を見る</a>
-    <a href="#libe-lineup">リベ市場の価格を見る</a>
-  </nav>
 </header>
 
 {{< rice-photos >}}
 
-{{< rice-buying-guide >}}
-
 ## FUJI RICEのお米について
 
-- **富士山麓・富士宮の農家から直接** — 静岡県富士宮市で育て、収穫した令和8年産「にじのきらめき」です。
-- **白米はご注文を受けてから精米** — 玄米で保管し、ご注文に合わせて精米・発送します。
-- **田んぼから袋詰めまで見える** — 実際の米づくりを写真と動画で公開しています。
+{{< rice-qualities >}}
 
 ## 田んぼから食卓まで、実際の作業をご覧ください
 
@@ -45,21 +37,26 @@ draft: false
 
 BASE直売所の「小分け」は、10kgは5kg×2袋、4kgは2kg×2袋でお届けします。袋ごとに持ち運びや分け合いがしやすい仕様です。未開封でも精米後の時間は進むため、消費量と保管場所に合わせてお選びください。
 
-<div class="rice-sales rice-consult">
-  <h3>容量や再購入のご相談はLINEへ</h3>
-  <p>白米・玄米の選び方など、お気軽にご相談ください。購入が決まっている方は、各商品の購入ボタンから直接お進みいただけます。</p>
-  <a href="https://line.me/R/ti/p/%40508ouhoc" target="_blank" rel="noopener" class="rice-text-link">LINEで容量・再購入を相談する →</a>
-</div>
+{{< rice-buying-guide >}}
 
-<h2 id="lineup">全ラインナップ</h2>
+<details class="rice-catalog" id="lineup">
+<summary>容量・価格の一覧を見る</summary>
 
-すべて令和8年産にじのきらめきです。以下は**BASE直売所の税込・送料無料価格**です。各ボタンからBASEの商品ページへ移動します。リベシティ会員の方は、[リベ市場の全商品](/go/buy/libe)からお選びください。
+すべて令和8年産にじのきらめきです。以下は**BASE直売所の税込・送料無料価格**です。各ボタンからBASEの商品ページへ移動します。リベ市場は上の販売所案内からご確認ください。
 
 > 🌾 **はじめての方へ**：1kg・2kgのお試しに使える200円OFFクーポン「**FUJITRY200**」（BASE直売所・お一人1回）をご用意しています。
 
 {{< rice-lineup >}}
 
 ※1kgあたりは商品価格を内容量で割り、1円単位に四捨五入した目安です。価格が変更になる場合があります。最新の価格・送料・お支払い方法は、ご利用になる販売所の商品ページをご確認ください。
+
+</details>
+
+<div class="rice-sales rice-consult">
+  <h3>選び方に迷ったら</h3>
+  <p>白米・玄米や容量の選び方など、お気軽にご相談ください。</p>
+  <a href="https://line.me/R/ti/p/%40508ouhoc" target="_blank" rel="noopener" class="rice-text-link">LINEで相談する →</a>
+</div>
 
 ## よくあるご質問（抜粋）
 
@@ -69,8 +66,3 @@ BASE直売所の「小分け」は、10kgは5kg×2袋、4kgは2kg×2袋でお届
 - **30kgが2個口なのはなぜ？** — 配送規格の重量制限のため、2箱に分けてお届けします。
 
 [よくあるご質問をすべて見る →](/faq/)
-
-<div class="rice-sales rice-closing">
-  <p>富士山麓の新米を、あなたの食卓へ。</p>
-  <a href="#purchase-route" class="rice-buy"><strong>容量・購入先を選ぶ ↑</strong></a>
-</div>

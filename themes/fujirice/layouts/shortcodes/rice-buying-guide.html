@@ -1,42 +1,24 @@
 <section class="rice-sales rice-guide" id="purchase-route" aria-labelledby="osusume">
-  <h2 id="osusume">食べる量と、購入先で選ぶ</h2>
-  <p>まず試す5kg、毎日のご飯に10kg、たくさん食べるご家庭・分け合う方に20kg。</p>
-  <nav class="rice-route-nav" aria-label="購入先を選ぶ">
-    <a href="#base-first">一般のお客様：BASE</a>
-    <a href="#libe-lineup">リベシティ会員：リベ市場</a>
-  </nav>
+  <h2 id="osusume">暮らしに合わせて、ひと袋から。</h2>
+  <p>白米・玄米と、毎日のごはんに合う容量をご用意しています。ご利用の販売所でお選びください。</p>
   <div class="rice-store-grid">
     <section class="rice-store" id="base-first" aria-labelledby="base-heading">
       <p class="rice-eyebrow">一般のお客様</p>
       <h3 id="base-heading">BASE公式ショップ</h3>
       <p class="rice-note">税込・送料無料。農家直営のオンラインショップです。</p>
-      {{ range slice (dict "key" "hakumai5kg" "name" "白米5kg" "use" "まず試したい方に") (dict "key" "hakumai10kgw" "name" "白米10kg（5kg×2袋）" "use" "毎日のご家庭用に") (dict "key" "hakumai20kg" "name" "白米20kg" "use" "まとめ買いに") }}
-      <a class="rice-buy" href="/go/buy/base/site/reserve/{{ .key }}" target="_blank" rel="noopener">
-        <span>{{ .use }}｜{{ .name }}</span>
-        <strong>{{ partial "rice/amount.html" (dict "key" .key) }}円</strong>
-        <small>1kg目安 {{ partial "rice/amount.html" (dict "key" .key "mode" "unit") }}円 · 商品を見る →</small>
-      </a>
-      {{ end }}
-      <a class="rice-text-link" href="#lineup">玄米・1〜4kg・30kgも見る ↓</a>
+      <a class="rice-shop-link" href="/go/buy/base/site/reserve" target="_blank" rel="noopener"><span>BASEでお米を選ぶ</span><span class="rice-arrow" aria-hidden="true">↗</span></a>
     </section>
     <section class="rice-store" id="libe-lineup" aria-labelledby="libe-heading">
       <p class="rice-eyebrow">リベシティ会員の方</p>
       <h3 id="libe-heading">リベ市場</h3>
       <p class="rice-note">税込・基本送料込み。北海道・九州・沖縄の追加送料は各商品ページをご確認ください。</p>
-      {{ range slice (dict "key" "hakumai5kg" "name" "白米5kg" "id" "01KN1NTQ6P082QQVJQ60SSYJ1P") (dict "key" "hakumai10kg" "name" "白米10kg（5kg×2袋）" "id" "01M3RRZ42V8FKZA2XNTX29EA78") (dict "key" "hakumai20kg" "name" "白米20kg（5kg×4袋）" "id" "01KN1NTVSD7YH7EZPBDR8S5YC5") }}
-      <a class="rice-buy rice-buy-secondary" href="https://ichiba.libecity.com/products/{{ .id }}" target="_blank" rel="noopener">
-        <span>{{ .name }}</span>
-        <strong>{{ partial "rice/amount.html" (dict "store" "libe" "key" .key) }}円</strong>
-        <small>1kg目安 {{ partial "rice/amount.html" (dict "store" "libe" "key" .key "mode" "unit") }}円 · 商品を見る →</small>
-      </a>
-      {{ end }}
-      <a class="rice-text-link" href="/go/buy/libe" target="_blank" rel="noopener">リベ市場の玄米・ほかの容量を見る →</a>
+      <a class="rice-shop-link" href="/go/buy/libe" target="_blank" rel="noopener"><span>リベ市場でお米を選ぶ</span><span class="rice-arrow" aria-hidden="true">↗</span></a>
     </section>
   </div>
   <p class="rice-review">店舗累計レビュー400件以上（リベシティ市場）。<a href="https://ichiba.libecity.com/shops/577/reviews" target="_blank" rel="noopener">購入者の声を読む →</a></p>
-  <div class="rice-saving">
-    <h3>5kgを複数買う場合との比較</h3>
-    <p>BASEの上記表示価格で比べると、白米10kgは5kgを2袋買うより<strong>{{ partial "rice/amount.html" (dict "key" "hakumai10kg" "mode" "saving") }}円</strong>、白米20kgは5kgを4袋買うより<strong>{{ partial "rice/amount.html" (dict "key" "hakumai20kg" "mode" "saving") }}円</strong>お得です。</p>
+  <details class="rice-saving">
+    <summary>容量ごとの価格差を確認する</summary>
+    <p>BASEの価格表で比べると、白米10kgは5kgを2袋買うより<strong>{{ partial "rice/amount.html" (dict "key" "hakumai10kg" "mode" "saving") }}円</strong>、白米20kgは5kgを4袋買うより<strong>{{ partial "rice/amount.html" (dict "key" "hakumai20kg" "mode" "saving") }}円</strong>お得です。</p>
     <p>玄米も同じ比べ方で、10kgは<strong>{{ partial "rice/amount.html" (dict "key" "genmai10kg" "mode" "saving") }}円</strong>、20kgは<strong>{{ partial "rice/amount.html" (dict "key" "genmai20kg" "mode" "saving") }}円</strong>お得です。必要な量と保管場所に合わせてお選びください。</p>
-  </div>
+  </details>
 </section>

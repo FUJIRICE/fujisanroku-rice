@@ -1,28 +1,11 @@
 <section class="rice-home-offer rice-sales" id="rice-shop" aria-labelledby="rice-shop-title">
   <div class="rice-home-inner">
     <p class="rice-eyebrow">令和8年産 にじのきらめき</p>
-    <h2 id="rice-shop-title">富士山麓の新米を、<br>毎日の食卓へ。</h2>
-    <p>白米はご注文を受けてから精米。富士宮の農家から直接お届けします。</p>
+    <h2 id="rice-shop-title">富士山麓で育てたお米を、<br>いつもの食卓へ。</h2>
+    <p>一杯のごはんから、私たちの米づくりを知っていただけたら。</p>
     <div class="rice-home-grid">
       {{ partial "rice/photos.html" (dict "loading" "lazy") }}
-      <div class="rice-home-actions">
-        <p class="rice-dispatch">入金確認後2日以内に発送</p>
-        <p class="rice-note">到着日はお届け先・配送状況により異なります。</p>
-        <h3>まずは白米5kgから</h3>
-        <a class="rice-buy" href="/go/buy/base/site/home/hakumai5kg" target="_blank" rel="noopener">
-          <span>一般のお客様｜BASE公式ショップ</span>
-          <strong>白米5kg {{ partial "rice/amount.html" (dict "key" "hakumai5kg") }}円</strong>
-          <small>税込・送料無料で商品を見る →</small>
-        </a>
-        <a class="rice-buy rice-buy-secondary" href="https://ichiba.libecity.com/products/01KN1NTQ6P082QQVJQ60SSYJ1P" target="_blank" rel="noopener">
-          <span>リベシティ会員の方｜リベ市場</span>
-          <strong>白米5kg {{ partial "rice/amount.html" (dict "store" "libe" "key" "hakumai5kg") }}円</strong>
-          <small>税込・基本送料込みで商品を見る →</small>
-        </a>
-        <p class="rice-note">リベ市場は北海道・九州・沖縄に追加送料があります。各商品ページをご確認ください。</p>
-        <a class="rice-text-link" href="/reserve/#purchase-route">10kg・20kg、玄米・ほかの容量を選ぶ →</a>
-      </div>
+      {{ partial "rice/qualities.html" . }}
     </div>
-    <p class="rice-review">店舗累計レビュー400件以上（リベシティ市場）。<a href="https://ichiba.libecity.com/shops/577/reviews" target="_blank" rel="noopener">購入者の声を読む →</a></p>
   </div>
 </section>

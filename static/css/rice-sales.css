@@ -2,50 +2,58 @@
 .rice-sales { color: #f0ece4; font-family: var(--sans, sans-serif); line-height: 1.8; }
 .rice-sales *, .rice-photos * { box-sizing: border-box; }
 .rice-sales p { margin: 0 0 1rem; }
-.rice-sales h1, .rice-sales h2, .rice-sales h3 { font-family: var(--serif, serif); color: #f0ece4; }
+.rice-sales h1, .rice-sales h2, .rice-sales h3 { font-family: var(--jp, serif); color: #f0ece4; }
 .rice-sales h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.55; margin: .5rem 0 1rem; }
 .rice-sales h3 { font-size: 1.15rem; margin: .6rem 0; }
 .rice-sales .rice-eyebrow { color: #e8c078; font-size: .8rem; letter-spacing: .12em; margin: 0 0 .5rem; }
 .rice-sales .rice-note { color: #cec8bd; font-size: .8rem; line-height: 1.7; margin: .5rem 0 1rem; }
-.rice-sales .rice-dispatch { font-weight: 600; color: #f0d49d; margin-bottom: .25rem; }
-.rice-sales .rice-text-link, .rice-sales .rice-review a { color: #e8c078; text-decoration: underline; text-underline-offset: .25em; }
+.rice-sales .rice-dispatch { font-weight: 400; color: #cec8bd; margin-bottom: .25rem; font-size: .85rem; }
+.rice-sales .rice-text-link, .rice-sales .rice-review a { color: #d8c7a3; text-decoration: underline; text-underline-offset: .3em; font-size: .8rem; }
 .rice-sales .rice-buy {
   display: block; padding: .9rem 1rem; margin: .7rem 0;
-  background: #d5b46e; color: #17140e; border: 1px solid #d5b46e;
-  border-radius: 6px; text-decoration: none; line-height: 1.55;
+  background: transparent; color: #f0ece4; border: 1px solid #665b47;
+  border-radius: 2px; text-decoration: none; line-height: 1.55;
 }
-.rice-sales .rice-buy span, .rice-sales .rice-buy small, .rice-sales .rice-buy strong { display: block; color: inherit; }
-.rice-sales .rice-buy span { font-size: .8rem; }
-.rice-sales .rice-buy strong { font-size: 1.35rem; font-weight: 700; margin: .2rem 0; }
-.rice-sales .rice-buy small { font-size: .8rem; }
-.rice-sales .rice-buy:hover { background: #e8c078; border-color: #e8c078; }
-.rice-sales .rice-buy-secondary { background: transparent; color: #f0ece4; border-color: #c9a761; }
-.rice-sales .rice-buy-secondary:hover { background: #252017; color: #fff; }
+.rice-sales .rice-buy strong { color: inherit; font-size: .9rem; font-weight: 400; }
+.rice-sales .rice-buy:hover { background: #181611; border-color: #b29b70; }
 .rice-sales a:focus-visible { outline: 3px solid #f0d49d; outline-offset: 4px; }
-.rice-home-offer { padding: 3.5rem 1.5rem; background: #13120f; }
+.rice-home-offer { padding: 4.5rem 1.5rem; background: #0f0f0e; }
 .rice-home-inner { max-width: 1120px; margin: 0 auto; }
-.rice-home-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2rem; align-items: center; margin-top: 1.5rem; }
+.rice-home-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 3rem; align-items: center; margin-top: 2rem; }
+.rice-qualities section + section { margin-top: 1.5rem; }
+.rice-qualities h3, .post-content .rice-qualities h3 { margin: 0 0 .5rem; font-size: 1.05rem; font-weight: 400; }
+.rice-qualities p { font-size: .85rem; color: #d3cdc2; line-height: 1.9; }
+.rice-qualities .rice-variety-source { margin-top: 1rem; font-size: .7rem; color: #bdb6a9; }
+.rice-variety-source a { color: inherit; text-underline-offset: .25em; }
+.rice-sales .rice-shop-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-top: 1px solid #38352e; color: #f0ece4; text-decoration: none; }
+.rice-sales .rice-shop-link strong { display: block; font-family: var(--jp, serif); font-size: 1rem; font-weight: 400; color: inherit; }
+.rice-sales .rice-shop-link small { display: block; margin-top: .25rem; font-size: .72rem; color: #bdb6a9; }
+.rice-sales .rice-shop-link:hover { color: #e8c078; }
+.rice-arrow { font-size: .9rem; color: #b9a578; margin-left: .3rem; }
 .rice-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; max-width: 860px; margin: 1rem auto 1.5rem; }
 .rice-photos figure { margin: 0; min-width: 0; }
 .rice-photos img, .post-content .rice-photos img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; margin: 0; filter: none; }
 .rice-photos figcaption { font: .72rem/1.6 var(--sans, sans-serif); color: #cec8bd; margin-top: .45rem; }
 .rice-home-grid .rice-photos { margin: 0; }
 .rice-sales .rice-review { font-size: .82rem; color: #d7cdbc; margin: 1.5rem 0; }
-.rice-hero-price { color: #f0ece4; font: .95rem/1.8 var(--sans, sans-serif); margin: -1rem 0 1.5rem; }
-.rice-hero-price small { font-size: .75rem; color: #ddd5c6; }
 .rice-intro { text-align: center; margin-bottom: 1rem; }
 .rice-intro h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); line-height: 1.5; margin: .5rem 0 1rem; }
-.rice-route-nav { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin: 1rem 0; }
-.rice-route-nav a { padding: .55rem .85rem; border: 1px solid #776541; border-radius: 5px; color: #f0d49d; }
 .rice-guide, .rice-store, #osusume, #lineup, #rice-shop { scroll-margin-top: 100px; }
-.rice-store-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.rice-store { padding: 1.15rem; border: 1px solid #66563c; border-radius: 8px; background: #15130f; min-width: 0; }
+.rice-store-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; margin-top: 2rem; }
+.rice-store { padding: 1.5rem 0 .5rem; border-top: 1px solid #4c4435; min-width: 0; }
 .post-content .rice-store h3 { margin-top: .35rem; }
 .rice-store > .rice-note { min-height: 4.2em; }
-.rice-saving { border-left: 3px solid #c9a761; background: #1a1711; padding: 1rem 1.2rem; }
-.post-content .rice-saving h3 { margin: 0 0 .5rem; }
-.rice-saving p { font-size: .85rem; }
-.rice-consult { border: 1px solid #42674e; padding: 1rem 1.25rem; border-radius: 6px; margin: 2rem 0; }
+.rice-saving, .rice-catalog { border-top: 1px solid #38352e; border-bottom: 1px solid #38352e; margin: 1.5rem 0 2rem; }
+.rice-saving summary, .rice-catalog summary { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; cursor: pointer; color: #c6bfae; font: .85rem/1.8 var(--sans, sans-serif); list-style: none; }
+.rice-saving summary::-webkit-details-marker, .rice-catalog summary::-webkit-details-marker { display: none; }
+.rice-saving summary::after, .rice-catalog summary::after { content: '＋'; }
+.rice-saving[open] summary::after, .rice-catalog[open] summary::after { content: '−'; }
+.rice-saving summary:focus-visible, .rice-catalog summary:focus-visible { outline: 2px solid #d8c7a3; outline-offset: 3px; }
+.rice-catalog > p { font-size: .85rem; }
+.rice-guide { margin-top: 3rem; }
+.rice-saving p { font-size: .8rem; color: #cec8bd; }
+.post-content .rice-saving strong { font-weight: 400; color: inherit; }
+.rice-consult { border-top: 1px solid #38352e; padding: 1.5rem 0 0; margin: 2rem 0; font-size: .85rem; }
 .post-content .rice-consult h3 { margin-top: 0; }
 .rice-closing { text-align: center; border-top: 1px solid #66563c; margin-top: 2rem; padding-top: 2rem; }
 .rice-closing .rice-buy { max-width: 360px; margin: 1rem auto; }
@@ -53,14 +61,12 @@
 @media (max-width: 760px) {
   .rice-home-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .rice-home-offer { padding: 2.5rem 1.25rem; }
-  .rice-home-actions { max-width: 560px; width: 100%; margin: 0 auto; }
-  .rice-hero-price { font-size: .8rem; }
+  .rice-home-grid .rice-qualities { max-width: 560px; width: 100%; margin: 0 auto; }
 }
 @media (max-width: 560px) {
-  .rice-store-grid { grid-template-columns: 1fr; }
+  .rice-store-grid { grid-template-columns: 1fr; gap: 2rem; }
   .rice-store > .rice-note { min-height: 0; }
-  .rice-route-nav a { font-size: .8rem; }
   .rice-photos { gap: .5rem; }
   .rice-photos figcaption { font-size: .68rem; }
-  .gd-hero { min-height: 720px; height: 100svh; }
+  .gd-hero { min-height: 640px; height: 100svh; }
 }
