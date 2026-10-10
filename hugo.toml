@@ -25,7 +25,7 @@ hasCJKLanguage = true
   baseShopURL = "https://iwatayacom.thebase.in/"
   purchaseText = "今すぐ購入する"
   lineID = "@508ouhoc"
-  lineURL = "https://line.me/R/ti/p/%40508ouhoc"
+  lineURL = "https://lin.ee/Clcbnkj"
   instagramURL = "https://www.instagram.com/fujirice_farm/"
   youtubeURL = "https://www.youtube.com/@fujirice_official"
   tiktokURL = "https://www.tiktok.com/@fuji.rice"
@@ -70,7 +70,7 @@ hasCJKLanguage = true
     weight = 3
   [[menu.main]]
     name = "販売通知LINE"
-    url = "https://line.me/R/ti/p/%40508ouhoc"
+    url = "https://lin.ee/Clcbnkj"
     weight = 4
   [[menu.main]]
     name = "新米を購入"

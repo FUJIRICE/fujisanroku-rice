@@ -10,7 +10,7 @@ draft: false
 <div style="text-align:center;margin-bottom:3rem;">
   <p style="font-size:0.85rem;letter-spacing:0.2em;color:var(--gold,#c9a761);">FAQ</p>
   <h1 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3rem);margin:0.5rem 0;">よくあるご質問</h1>
-  <p>令和8年産 新米の販売について、よくいただくご質問をまとめました。<br>解決しない場合は <a href="https://line.me/R/ti/p/%40508ouhoc" target="_blank" rel="noopener">LINE（@508ouhoc）</a> が最も早くご返信できます。</p>
+  <p>令和8年産 新米の販売について、よくいただくご質問をまとめました。<br>解決しない場合は <a href="https://lin.ee/Clcbnkj" target="_blank" rel="noopener">LINE（@508ouhoc）</a> が最も早くご返信できます。</p>
 </div>
 
 ## 1. 令和8年産の新米ですか？
@@ -23,7 +23,7 @@ draft: false
 
 ## 3. 配達日の指定はできますか？
 
-ご希望がある場合は、ご注文時の備考欄または[LINE](https://line.me/R/ti/p/%40508ouhoc)でご相談ください。発送準備の状況によってはご希望に添えない場合があります。
+ご希望がある場合は、ご注文時の備考欄または[LINE](https://lin.ee/Clcbnkj)でご相談ください。発送準備の状況によってはご希望に添えない場合があります。
 
 ## 4. 送料はいくらですか？
 
@@ -56,11 +56,11 @@ draft: false
 
 ## 11. 注文内容の変更・キャンセルはできますか？
 
-発送準備の状況によりご対応できない場合があります。変更・キャンセルをご希望の際は、できるだけ早く[LINE](https://line.me/R/ti/p/%40508ouhoc)またはご購入先ストアのお問い合わせからご連絡ください。
+発送準備の状況によりご対応できない場合があります。変更・キャンセルをご希望の際は、できるだけ早く[LINE](https://lin.ee/Clcbnkj)またはご購入先ストアのお問い合わせからご連絡ください。
 
 ## 12. 商品が破損・不良だった場合は？
 
-お手数ですが、商品の状態がわかる写真とあわせてご連絡ください。確認のうえ、交換など誠実に対応いたします。ご連絡は[LINE](https://line.me/R/ti/p/%40508ouhoc)またはストアお問い合わせからお願いします。
+お手数ですが、商品の状態がわかる写真とあわせてご連絡ください。確認のうえ、交換など誠実に対応いたします。ご連絡は[LINE](https://lin.ee/Clcbnkj)またはストアお問い合わせからお願いします。
 
 <div style="text-align:center;margin:3rem 0;">
   <a href="/reserve/" class="btn btn-primary">令和8年産 新米を購入する</a>

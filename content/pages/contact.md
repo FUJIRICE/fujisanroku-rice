@@ -15,7 +15,11 @@ LINE ID：@508ouhoc
 
 友だち追加後、容量・白米と玄米の選び方・再購入など、ご相談内容を送ってください。今すぐ購入する方は、LINEを経由せず[購入先を選ぶ](/reserve/#purchase-route)から直接お進みください。
 
-[→ LINEで相談する](https://line.me/R/ti/p/%40508ouhoc)
+[→ LINEで相談する](https://lin.ee/Clcbnkj)
+
+<a href="https://lin.ee/Clcbnkj"><img src="/images/line-qr-20261010.jpeg" width="240" height="240" style="width:240px;max-width:100%;height:auto;filter:none" alt="LINE友だち追加QR"></a>
+
+スマートフォンでは、上のリンクまたはQR画像をタップして友だち追加できます。
 
 ## SNS
 

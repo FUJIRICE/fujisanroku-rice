@@ -67,7 +67,7 @@
       return;
     }
 
-    if (target.hostname === 'line.me' || target.pathname === '/go/line' || target.pathname === '/go/line/') {
+    if (target.hostname === 'line.me' || target.hostname === 'lin.ee' || target.pathname === '/go/line' || target.pathname === '/go/line/') {
       window.gtag('event', 'line_lead_click', {
         source_page: window.location.pathname,
         link_url: link.href,
