@@ -2,7 +2,7 @@
 title: "令和8年産 新米販売"
 description: "富士山麓・富士宮で育てた令和8年産にじのきらめき。新米販売中。入金確認後2日以内に発送。白米はご注文後に精米してお届けします。"
 date: 2026-07-11T06:30:00+09:00
-lastmod: 2026-10-10
+lastmod: 2026-10-11
 url: /reserve/
 layout: lp
 draft: false
@@ -21,6 +21,13 @@ draft: false
 ## FUJI RICEのお米について
 
 {{< rice-qualities >}}
+
+<section class="rice-sales rice-consult" id="customer-reviews" aria-labelledby="customer-reviews-heading">
+  <h3 id="customer-reviews-heading">購入者の感想を、ご購入の参考に。</h3>
+  <p>実際に購入された方のレビューは、リベシティ市場の店舗ページでご覧いただけます。</p>
+  <a href="https://ichiba.libecity.com/shops/577/reviews" target="_blank" rel="noopener" class="rice-text-link">購入者レビューを読む ↗</a>
+  <p class="rice-note">過年度のお米など、令和8年産以外の商品へのレビューも含まれます。商品名・年産をご確認ください。</p>
+</section>
 
 ## 田んぼから食卓まで、実際の作業をご覧ください
 

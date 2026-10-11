@@ -38,7 +38,7 @@
 .rice-sales .rice-review { font-size: .82rem; color: #d7cdbc; margin: 1.5rem 0; }
 .rice-intro { text-align: center; margin-bottom: 1rem; }
 .rice-intro h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); line-height: 1.5; margin: .5rem 0 1rem; }
-.rice-guide, .rice-store, #osusume, #lineup, #rice-shop { scroll-margin-top: 100px; }
+.rice-guide, .rice-store, #osusume, #lineup, #rice-shop, #customer-reviews { scroll-margin-top: 100px; }
 .rice-store-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; margin-top: 2rem; }
 .rice-store { padding: 1.5rem 0 .5rem; border-top: 1px solid #4c4435; min-width: 0; }
 .post-content .rice-store h3 { margin-top: .35rem; }

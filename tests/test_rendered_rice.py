@@ -126,6 +126,18 @@ class RenderedRiceTest(unittest.TestCase):
         without_scripts = re.sub(r"<script\b.*?</script>", "", self.home + self.reserve, flags=re.S)
         self.assertNotRegex(without_scripts, r"{{|}}")
 
+    def test_reviews_are_linked_once_without_reposting_or_stale_count(self):
+        sections = self.reserve_dom.find_all("section", id="customer-reviews")
+        self.assertEqual(len(sections), 1)
+        links = [n for n in self.reserve_dom.find_all("a") if n.attrs.get("href") == "https://ichiba.libecity.com/shops/577/reviews"]
+        self.assertEqual(len(links), 1)
+        self.assertIn(links[0], sections[0].find_all("a"))
+        self.assertEqual(links[0].attrs.get("target"), "_blank")
+        self.assertIn("noopener", links[0].attrs.get("rel", ""))
+        self.assertIn("令和8年産以外", sections[0].text())
+        self.assertIn("商品名・年産をご確認", sections[0].text())
+        self.assertNotIn("店舗累計レビュー400件以上", self.reserve)
+
     def test_table_routes_match_data_and_base_function_definitions(self):
         catalog = [n for n in self.reserve_dom.find_all("details") if "rice-catalog" in n.attrs.get("class", "").split()]
         self.assertEqual(len(catalog), 1)
