@@ -48,6 +48,8 @@ const PROFILE_ROUTES = {
   base: { type: "external", url: "https://iwatayacom.thebase.in/" },
 };
 
+import { measuredRedirect } from "../_measure.js";
+
 const CAMPAIGN = "r8_2026_newrice";
 const FALLBACK = "/reserve/";
 
@@ -61,7 +63,9 @@ export async function onRequest(context) {
       return Response.redirect(new URL(FALLBACK, context.request.url).toString(), 302);
     }
     if (profileRoute.type === "external") {
-      return Response.redirect(profileRoute.url, 302);
+      return measuredRedirect(context.request, profileRoute.url,
+        { destination: segments[2], source: "youtube", placement: "profile", product_code: "none" },
+        segments[2] === "base" ? "FUJI RICE 直売所（BASE）" : "FUJI RICE");
     }
     const dest = new URL(profileRoute.path, context.request.url);
     dest.searchParams.set("utm_source", "youtube");
@@ -86,7 +90,9 @@ export async function onRequest(context) {
     dest.searchParams.set("utm_source", route.source);
     dest.searchParams.set("utm_medium", "profile");
     dest.searchParams.set("utm_campaign", CAMPAIGN);
-    return Response.redirect(dest.toString(), 302);
+    return measuredRedirect(context.request, dest.toString(),
+      { destination: "base", source: route.source, placement: "profile", product_code: "none" },
+      "FUJI RICE 直売所（BASE）");
   }
 
   const dest = new URL(FALLBACK, context.request.url);

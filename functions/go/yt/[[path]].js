@@ -2,6 +2,8 @@
 // SNSからYouTubeへの回遊を、販売導線と混ぜずに計測する固定リダイレクト。
 // 任意URLは受け付けず、下記の媒体と掲載場所だけを許可する。
 
+import { measuredRedirect } from "../_measure.js";
+
 const TARGETS = {
   shorts: "https://www.youtube.com/@fujirice_official/shorts",
   live: "https://www.youtube.com/@fujirice_official/live",
@@ -29,5 +31,7 @@ export async function onRequest(context) {
   dest.searchParams.set("utm_source", platform);
   dest.searchParams.set("utm_medium", placement);
   dest.searchParams.set("utm_campaign", CAMPAIGN);
-  return Response.redirect(dest.toString(), 302);
+  return measuredRedirect(context.request, dest.toString(),
+    { destination: "youtube_" + kind, source: platform, placement, product_code: "none" },
+    "FUJI RICE の YouTube");
 }

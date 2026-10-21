@@ -10,6 +10,7 @@
 //   過去に配ったリンク(YouTube動画5本など)を死なせないための設計。
 
 import { CHANNELS, primaryUrl } from "../_channels.js";
+import { measuredRedirect } from "../_measure.js";
 
 const FALLBACK = "/reserve/";
 const CAMPAIGN = "r8_2026_newrice";
@@ -79,7 +80,9 @@ export async function onRequest(context) {
   const key = segments[0];
 
   if (!key || key === "main") {
-    return Response.redirect(primaryUrl(), 302);
+    return measuredRedirect(context.request, primaryUrl(),
+      { destination: CHANNELS.primary_channel, source: "unspecified", placement: "main", product_code: "none" },
+      "FUJI RICE 直売所");
   }
 
   if (key === "base" && segments.length >= 3) {
@@ -87,12 +90,16 @@ export async function onRequest(context) {
     if (!dest) {
       return Response.redirect(new URL(FALLBACK, context.request.url).toString(), 302);
     }
-    return Response.redirect(dest, 302);
+    return measuredRedirect(context.request, dest,
+      { destination: "base", source: segments[1], placement: segments[2], product_code: segments[3] || "none" },
+      "FUJI RICE 直売所（BASE）");
   }
 
   const dest = CHANNELS.destinations[key];
   if (!dest) {
     return Response.redirect(new URL(FALLBACK, context.request.url).toString(), 302);
   }
-  return Response.redirect(dest, 302);
+  return measuredRedirect(context.request, dest,
+    { destination: key, source: "unspecified", placement: "direct", product_code: "none" },
+    key === "libe" ? "リベ市場" : "FUJI RICE 直売所");
 }
