@@ -20,6 +20,7 @@ const ROUTES = {
   "tiktok/profile": { source: "tiktok", medium: "profile" },
   "tiktok/post": { source: "tiktok", medium: "social_post" },
   "x/post": { source: "x", medium: "social_post" },
+  "x/profile": { source: "x", medium: "profile" },
   "threads/post": { source: "threads", medium: "social_post" },
   "bluesky/post": { source: "bluesky", medium: "social_post" },
   "facebook/post": { source: "facebook", medium: "social_post" },
@@ -36,8 +37,7 @@ const BASE_PROFILE_SOURCES = new Set(["tiktok"]);
 // 正解データは data/youtube_channel_links.yaml で一元管理する(このFunctionはそれをハードコード
 // した写し。編集は必ずYAML→ここの順で行い、ズレたら気づけるようにする)。
 // 予約LP・サイトトップは自ドメインなのでUTM付きでGA4計測が効く。
-// Yahoo/LINE/Instagram/BASEは外部ドメインのためUTMは付けず直接転送する
-// (このURL自体へのアクセス数はCloudflareの標準アクセスログで見える)。
+// LINE/Instagramは外部へ転送する。BASEには媒体別UTMを付け、購入クリックも計測する。
 const PROFILE_ROUTES = {
   reserve: { type: "internal", path: "/reserve/", medium: "profile" },
   site: { type: "internal", path: "/", medium: "profile" },
@@ -63,7 +63,13 @@ export async function onRequest(context) {
       return Response.redirect(new URL(FALLBACK, context.request.url).toString(), 302);
     }
     if (profileRoute.type === "external") {
-      return measuredRedirect(context.request, profileRoute.url,
+      const target = new URL(profileRoute.url);
+      if (segments[2] === "base") {
+        target.searchParams.set("utm_source", "youtube");
+        target.searchParams.set("utm_medium", "profile");
+        target.searchParams.set("utm_campaign", CAMPAIGN);
+      }
+      return measuredRedirect(context.request, target.toString(),
         { destination: segments[2], source: "youtube", placement: "profile", product_code: "none" },
         segments[2] === "base" ? "FUJI RICE 直売所（BASE）" : "FUJI RICE");
     }

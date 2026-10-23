@@ -17,10 +17,10 @@ const CAMPAIGN = "r8_2026_newrice";
 
 // BASEの媒体別計測導線。任意URLは受け付けず、ここにある媒体・掲載場所だけを許可する。
 const BASE_PLACEMENTS = {
-  youtube: ["video", "short", "live"],
+  youtube: ["video", "short", "live", "profile"],
   instagram: ["profile", "post"],
   tiktok: ["profile", "post"],
-  x: ["post", "morning-reserve", "evening-reserve"],
+  x: ["profile", "post", "morning-reserve", "evening-reserve"],
   threads: ["post", "morning-reserve", "evening-reserve"],
   facebook: ["post", "morning-reserve", "evening-reserve"],
   bluesky: ["post", "morning-reserve", "evening-reserve"],

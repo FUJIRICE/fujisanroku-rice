@@ -1,11 +1,13 @@
 // 外部販売所・外部サイトへ出る /go/ リンクのクリック計測(2026-10-22)
 //
 // これまで /go/buy などは 302 で即転送していたため、SNSから直接来た人は
-// LPのGA4を一度も通らず、どの媒体・掲載場所から何人来たかが記録されていなかった。
+// LPのGA4を一度も通らず、どの媒体・掲載場所でクリックされたか記録されていなかった。
 // (LP上のボタンは main.js の purchase_link_click で計測済み)
 //
-// そこで「人間が自サイト以外から来た場合だけ」、GA4イベント go_redirect を送ってから
+// そこで「自サイト以外からの通常のブラウザアクセス」で、GA4イベントを送ってから
 // 転送する短いページを返す。転送は最長0.8秒で必ず行う(GA4が読めなくても止まらない)。
+// 購入先は purchase_link_click、それ以外は従来の go_redirect。
+// クローラー判定は完全ではないため、イベント数を実人数・注文数と扱わない。
 //
 // 次の場合は従来どおり 302 で即転送する:
 //   - LP内のボタンから来た(Refererが自ドメイン) … main.js で計測済みのため二重計測を避ける
@@ -58,11 +60,29 @@ function safeJson(v) {
 export function measuredRedirect(request, dest, params, label) {
   if (!shouldMeasure(request)) return Response.redirect(dest, 302);
 
+  const purchase = ["base", "libe"].includes(params.destination);
+  const eventName = purchase ? "purchase_link_click" : "go_redirect";
   const event = {
     ...params,
+    ...(purchase ? {
+      purchase_source: params.source === "site" ? "official_site" : params.source,
+      purchase_placement: params.placement,
+      source_page: new URL(request.url).pathname,
+    } : {}),
     go_path: new URL(request.url).pathname,
     transport_type: "beacon",
   };
+  const config = {
+    send_page_view: false,
+    // 任意の入力クエリ（個人情報等の混入）をGA4へ渡さない。
+    page_location: new URL(request.url).origin + new URL(request.url).pathname,
+  };
+  const target = new URL(dest);
+  if (purchase && target.searchParams.has("utm_source")) {
+    config.campaign_source = target.searchParams.get("utm_source");
+    config.campaign_medium = target.searchParams.get("utm_medium");
+    config.campaign_name = target.searchParams.get("utm_campaign");
+  }
   const html = `<!doctype html>
 <html lang="ja">
 <head>
@@ -84,11 +104,11 @@ p{margin:.5em 1em;font-size:15px}a{color:#3b6b35}
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag("js", new Date());
-  gtag("config", ${safeJson(GA4_ID)}, { send_page_view: false });
+  gtag("config", ${safeJson(GA4_ID)}, ${safeJson(config)});
   var ev = ${safeJson(event)};
   ev.event_callback = go;
   ev.event_timeout = 600;
-  gtag("event", "go_redirect", ev);
+  gtag("event", ${safeJson(eventName)}, ev);
   setTimeout(go, 800);
 })();
 </script>
