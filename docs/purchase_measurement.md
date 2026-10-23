@@ -38,6 +38,8 @@ GAの読込がブロックされても中継は800msで転送する。JavaScript
 - YouTube動画: `/go/buy/base/youtube/video`
 - X投稿: `/go/buy/base/x/post`
 - Threads投稿: `/go/buy/base/threads/post`
+- Threadsプロフィール: `/go/t/threads/profile`
+- Facebookプロフィール: `/go/t/facebook/profile`
 - Facebook投稿: `/go/buy/base/facebook/post`
 - Instagramから白米5kgへ: `/go/buy/base/instagram/profile/hakumai5kg`
 

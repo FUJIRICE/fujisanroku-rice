@@ -29,6 +29,36 @@ test('YouTube profile source is valid for product purchase links', async () => {
   assert.equal(new URL(response.headers.get('Location')).searchParams.get('utm_source'), 'youtube');
 });
 
+test('Threads profile entry reaches the profile purchase route with product intact', async () => {
+  const entryResponse = await entry(context('/go/t/threads/profile', { method: 'HEAD' }));
+  const entryTarget = new URL(entryResponse.headers.get('Location'));
+  assert.equal(entryTarget.pathname, '/reserve/');
+  assert.equal(entryTarget.searchParams.get('utm_source'), 'threads');
+  assert.equal(entryTarget.searchParams.get('utm_medium'), 'profile');
+
+  const purchaseResponse = await buy(context('/go/buy/base/threads/profile/hakumai5kg', { referrer: origin + '/reserve/' }));
+  const purchaseTarget = new URL(purchaseResponse.headers.get('Location'));
+  assert.equal(purchaseTarget.pathname, '/items/150147936');
+  assert.equal(purchaseTarget.searchParams.get('utm_source'), 'threads');
+  assert.equal(purchaseTarget.searchParams.get('utm_medium'), 'profile');
+  assert.equal(purchaseTarget.searchParams.get('utm_content'), 'hakumai5kg');
+});
+
+test('Facebook profile entry reaches the profile purchase route with product intact', async () => {
+  const entryResponse = await entry(context('/go/t/facebook/profile', { method: 'HEAD' }));
+  const entryTarget = new URL(entryResponse.headers.get('Location'));
+  assert.equal(entryTarget.pathname, '/reserve/');
+  assert.equal(entryTarget.searchParams.get('utm_source'), 'facebook');
+  assert.equal(entryTarget.searchParams.get('utm_medium'), 'profile');
+
+  const purchaseResponse = await buy(context('/go/buy/base/facebook/profile/hakumai5kg', { referrer: origin + '/reserve/' }));
+  const purchaseTarget = new URL(purchaseResponse.headers.get('Location'));
+  assert.equal(purchaseTarget.pathname, '/items/150147936');
+  assert.equal(purchaseTarget.searchParams.get('utm_source'), 'facebook');
+  assert.equal(purchaseTarget.searchParams.get('utm_medium'), 'profile');
+  assert.equal(purchaseTarget.searchParams.get('utm_content'), 'hakumai5kg');
+});
+
 test('unsupported source, placement, or product never redirects externally', async () => {
   for (const path of ['/go/buy/base/evil/profile', '/go/buy/base/instagram/evil', '/go/buy/base/instagram/profile/evil']) {
     const response = await buy(context(path));

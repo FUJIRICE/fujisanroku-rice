@@ -22,8 +22,10 @@ const ROUTES = {
   "x/post": { source: "x", medium: "social_post" },
   "x/profile": { source: "x", medium: "profile" },
   "threads/post": { source: "threads", medium: "social_post" },
+  "threads/profile": { source: "threads", medium: "profile" },
   "bluesky/post": { source: "bluesky", medium: "social_post" },
   "facebook/post": { source: "facebook", medium: "social_post" },
+  "facebook/profile": { source: "facebook", medium: "profile" },
   "pinterest/post": { source: "pinterest", medium: "social_post" },
   "pinterest/profile": { source: "pinterest", medium: "profile" },
 };
