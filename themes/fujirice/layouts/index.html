@@ -20,14 +20,14 @@
 
 <!-- ========== HERO ========== -->
 <section class="gd-hero">
-  {{/* 2026-10: 1年分の映像でヒーローを動画化（定点カメラ4月→10月＋稲刈り。音なし・ループ）。
+  {{/* 2026-11: 春から実りまでを音なしで再生し、稲穂と富士山の写真で静止する。
        旧スライド(gd-hero-slides)は update_farm_images.py の置換対象だったが、この形では置換が空振りになる。 */}}
-  <video class="gd-hero-video" id="gdHeroVideo" autoplay muted loop playsinline preload="metadata"
-         poster="/images/season/hero-poster-soft-20261101.jpg" aria-label="富士山麓の田んぼの半年（定点カメラ）と稲刈り">
-    <source src="/video/hero-2026-soft-20261101.mp4" type="video/mp4">
+  <video class="gd-hero-video" id="gdHeroVideo" autoplay muted playsinline preload="metadata"
+         poster="/images/season/hero-poster-ripening-20261101.jpg" aria-label="富士山麓の田んぼが育ち、稲穂が実るまで">
+    <source src="/video/hero-2026-ripening-20261101.mp4" type="video/mp4">
   </video>
   <div class="gd-hero-overlay"></div>
-  <p class="gd-hero-cam" aria-hidden="true">定点カメラ 2026.4 → 10 ／ 稲刈り</p>
+  <p class="gd-hero-cam" aria-hidden="true">2026年 春から実りの季節へ</p>
   <div class="gd-hero-content">
     <p class="gd-hero-badge">SHIZUOKA · FUJINOMIYA · NIJINOKIRAMEKI</p>
     <h1 class="gd-hero-en">FUJI RICE</h1>
@@ -139,7 +139,7 @@
     v.removeAttribute('autoplay'); v.pause();
   }
   function updateButton() {
-    button.textContent = v.paused ? '映像を再生' : '映像を一時停止';
+    button.textContent = v.ended ? 'もう一度再生' : (v.paused ? '映像を再生' : '映像を一時停止');
   }
   button.hidden = false;
   button.addEventListener('click', function(){
@@ -149,6 +149,7 @@
   });
   v.addEventListener('play', updateButton);
   v.addEventListener('pause', updateButton);
+  v.addEventListener('ended', updateButton);
   updateButton();
 })();
 </script>

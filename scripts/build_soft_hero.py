@@ -10,8 +10,9 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "static/video/hero-2026.mp4"
-OUTPUT = ROOT / "static/video/hero-2026-soft-20261101.mp4"
-POSTER = ROOT / "static/images/season/hero-poster-soft-20261101.jpg"
+ENDING = ROOT / "static/images/season/08-yugure-b.jpg"
+OUTPUT = ROOT / "static/video/hero-2026-ripening-20261101.mp4"
+POSTER = ROOT / "static/images/season/hero-poster-ripening-20261101.jpg"
 
 
 def run(*args):
@@ -39,20 +40,23 @@ def main():
             "eq=gamma=1.12:gamma_weight=0.7:saturation=1.02,"
             "setpts=2*PTS,minterpolate=fps=30:mi_mode=blend"
         )
-        run("ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(SOURCE),
+        # Stop before the harvested fields; retain only spring through ripening rice.
+        run("ffmpeg", "-hide_banner", "-loglevel", "error", "-t", "10.2", "-i", str(SOURCE),
             "-vf", filters, "-an", "-c:v", "libx264", "-preset", "fast",
             "-crf", "22", "-pix_fmt", "yuv420p", str(smooth))
-        fade = 1.5
-        # End with the opening 1.5 seconds, crossfaded over the ending scene.
-        # Start at 1.5 seconds so the native loop continues to the very next frame.
-        offset = duration(smooth) - 2 * fade
+        fade = 2.0
+        # Settle on a real pre-harvest photograph of rice ears and Mt. Fuji.
+        # The website holds this final frame rather than looping to bare fields.
+        offset = duration(smooth) - fade
         graph = (
-            f"[0:v]split[a][b];[a]trim=start={fade},setpts=PTS-STARTPTS[body];"
-            f"[b]trim=end={fade},setpts=PTS-STARTPTS[head];"
-            f"[body][head]xfade=transition=fade:duration={fade}:offset={offset},"
+            "[0:v]settb=AVTB,setpts=PTS-STARTPTS[body];"
+            "[1:v]scale=1280:960,crop=1280:720:0:120,setsar=1,"
+            "settb=AVTB,setpts=PTS-STARTPTS[ending];"
+            f"[body][ending]xfade=transition=fade:duration={fade}:offset={offset},"
             "format=yuv420p[out]"
         )
         run("ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(smooth),
+            "-loop", "1", "-framerate", "30", "-t", "8", "-i", str(ENDING),
             "-filter_complex", graph, "-map", "[out]", "-an", "-c:v", "libx264",
             "-preset", "slow", "-crf", "24", "-movflags", "+faststart", str(OUTPUT))
         # Use the first video frame as the poster to avoid a flash on autoplay start.
