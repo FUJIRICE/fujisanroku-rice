@@ -26,24 +26,36 @@ jobs:
           hugo-version: '0.128.0'
           extended: true
 
+      - name: Setup Node.js for Wrangler
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Build
         run: hugo --gc --minify
 
       - name: Deploy to Cloudflare Pages
+        # Pull requests are build-only; never publish a PR to the main site.
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         id: deploy
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: fujisanroku-rice
-          directory: public
+          command: pages deploy public --project-name=fujisanroku-rice --branch=main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
 
       - name: Notify Make.com for SNS auto-posting
-        if: github.ref == 'refs/heads/main' && success()
+        # Maintenance-only deploys can opt out of external SNS automation.
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && success() && !contains(github.event.head_commit.message, '[skip sns]')
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
         run: |
-          curl -s -X POST "${{ secrets.MAKE_WEBHOOK_URL }}" \
+          if [ -z "$MAKE_WEBHOOK_URL" ]; then
+            echo "Make.com webhook is not configured; skipping SNS notification."
+            exit 0
+          fi
+          curl --fail --silent --show-error --max-time 30 -X POST "$MAKE_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
-            -d '{"event":"deploy_complete","branch":"main","url":"https://fujirice.pages.dev"}'
+            -d '{"event":"deploy_complete","branch":"main","url":"https://fujisanroku-rice.pages.dev"}'
           echo "✅ Make.com に通知しました"
