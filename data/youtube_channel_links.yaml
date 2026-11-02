@@ -18,15 +18,15 @@
 #   完売・端境期:          FUJI RICE 公式サイト（または次回の新米情報｜公式）
 #   → 収穫カウントダウン(HARVEST_DATE, fuji_live_stream.py)が0になったら見直しの合図。
 
-last_verified: 2026-07-19
+last_verified: 2026-11-02
 channel: "@fujirice_official"
 channel_id: "UCvvaEEAZoCEwlv11ubKSWxg"
 
 links:
   - order: 1
-    title: "令和8年産 新米予約｜公式"
-    route: "/go/t/youtube/profile/reserve"
-    destination_note: "/reserve/ へ302（UTM付き、GA4計測対象）"
+    title: "令和8年産 新米を購入｜BASE直売所"
+    route: "/go/t/youtube/profile/base"
+    destination_note: "BASE本店へ直接転送（YouTubeプロフィールのUTMと購入クリック計測付き）"
     rotation_note: "完売/端境期になったら「FUJI RICE 公式サイト」へ切替を検討"
 
   - order: 2
@@ -35,34 +35,30 @@ links:
     destination_note: "固定ライブURL(https://www.youtube.com/@fujirice_official/live)へ直接。YouTube内遷移のため/go/t/を経由しない"
 
   - order: 3
-    title: "LINEで予約・お問い合わせ"
+    title: "LINEでご注文・お問い合わせ"
     route: "/go/t/youtube/profile/line"
     destination_note: "LINE公式(@508ouhoc)へ直接転送。外部ドメインのためUTM無し"
 
   - order: 4
-    title: "Yahoo!ショッピング｜新米予約"
-    route: "/go/t/youtube/profile/yahoo"
-    destination_note: "store.shopping.yahoo.co.jp/iwatayacom/ へ直接転送。外部ドメインのためUTM無し"
-
-  - order: 5
     title: "FUJI RICE 公式サイト"
     route: "/go/t/youtube/profile/site"
     destination_note: "サイトトップへ302（UTM付き、GA4計測対象）"
 
-  - order: 6
+  - order: 5
     title: "稲歌みほ｜公式YouTube"
     direct_link: true
     destination_note: "https://youtube.com/@inautamiho へ直接。YouTube内遷移のため/go/t/を経由しない。/miho/ ページ完成後、直リンクより明確に価値が高い場合のみ切替を検討(単なるリンク集なら現状維持)"
 
-  - order: 7
+  - order: 6
     title: "Instagram｜農場の最新情報"
     route: "/go/t/youtube/profile/instagram"
     destination_note: "instagram.com/fujirice_farm/ へ直接転送。外部ドメインのためUTM無し"
 
-  - order: 8
-    title: "BASE｜FUJI RICE 直売所"
-    route: "/go/t/youtube/profile/base"
-    destination_note: "iwatayacom.thebase.in/ へ直接転送。外部ドメインのためUTM無し"
+removed_links_2026-11-02:
+  - title: "Yahoo!ショッピング｜新米販売中"
+    reason: "一般SNSの購入先をBASEへ集約するためプロフィールから除外（店舗や商品自体は変更しない）"
+  - title: "BASE｜FUJI RICE 直売所"
+    reason: "購入リンクを先頭に移したため末尾の重複を解消"
 
 excluded_2026-07-13:
   - X

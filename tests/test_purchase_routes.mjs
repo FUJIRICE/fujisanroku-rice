@@ -93,11 +93,33 @@ test('YouTube profile BASE link now carries attribution', async () => {
   assert.equal(target.searchParams.get('utm_medium'), 'profile');
 });
 
-test('existing Instagram and TikTok entries retain their destinations', async () => {
-  const instagram = await entry(context('/go/t/instagram/profile', { method: 'HEAD' }));
-  const tiktok = await entry(context('/go/t/tiktok/profile', { method: 'HEAD' }));
-  assert.equal(new URL(instagram.headers.get('Location')).pathname, '/reserve/');
-  assert.equal(new URL(tiktok.headers.get('Location')).hostname, 'iwatayacom.thebase.in');
+test('existing Instagram and TikTok profile entries reach BASE with attribution', async () => {
+  for (const source of ['instagram', 'tiktok']) {
+    const response = await entry(context(`/go/t/${source}/profile`, { method: 'HEAD' }));
+    const target = new URL(response.headers.get('Location'));
+    assert.equal(target.hostname, 'iwatayacom.thebase.in');
+    assert.equal(target.searchParams.get('utm_source'), source);
+    assert.equal(target.searchParams.get('utm_medium'), 'profile');
+    assert.equal(target.searchParams.get('utm_campaign'), 'r8_2026_newrice');
+  }
+});
+
+test('Instagram profile bridge measures purchase without forwarding arbitrary queries', async () => {
+  const ctx = context('/go/t/instagram/profile');
+  ctx.request = new Request(origin + '/go/t/instagram/profile?url=https://evil.example', {
+    headers: { 'User-Agent': 'Mozilla/5.0' },
+  });
+  const html = await (await entry(ctx)).text();
+  assert.match(html, /gtag\("event", "purchase_link_click", ev\)/);
+  assert.match(html, /"purchase_source":"instagram"/);
+  assert.doesNotMatch(html, /evil\.example/);
+});
+
+test('Instagram posts still reach the explanatory landing page', async () => {
+  const response = await entry(context('/go/t/instagram/post', { method: 'HEAD' }));
+  const target = new URL(response.headers.get('Location'));
+  assert.equal(target.pathname, '/reserve/');
+  assert.equal(target.searchParams.get('utm_source'), 'instagram');
 });
 
 test('non-purchase redirects retain go_redirect and arbitrary queries are not sent', async () => {
