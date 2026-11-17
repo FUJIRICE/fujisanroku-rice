@@ -1,0 +1,22 @@
+<section class="rice-home-buy rice-sales" id="rice-buy" aria-labelledby="rice-buy-title">
+  <div class="rice-home-inner">
+    <p class="rice-eyebrow">令和8年産 新米 · 税込・送料無料</p>
+    <h2 id="rice-buy-title">はじめての方に、この3つ。</h2>
+    <div class="rice-buy-grid">
+      {{- range slice
+        (dict "key" "hakumai5kg" "name" "白米 5kg" "note" "まずはひと袋。ご注文後に精米します。")
+        (dict "key" "hakumai10kg" "name" "白米 10kg" "note" "毎日のごはんに。ご家庭用の定番です。")
+        (dict "key" "genmai5kg" "name" "玄米 5kg" "note" "玄米で食べたい方、ご家庭で精米する方に。")
+      }}
+      <a class="rice-buy-card" href="/go/buy/base/site/home/{{ .key }}" target="_blank" rel="noopener">
+        <strong>{{ .name }}</strong>
+        <span class="rice-buy-price">{{ partial "rice/amount.html" (dict "key" .key) }}<small>円</small></span>
+        <span class="rice-buy-note">{{ .note }}</span>
+        <span class="rice-buy-cta">購入ページへ <span aria-hidden="true">↗</span></span>
+      </a>
+      {{- end }}
+    </div>
+    <p class="rice-note rice-buy-info">お支払い：クレジットカード・PayPay・銀行振込・あと払い（コンビニ／口座振替）｜お支払い確認の翌日までに発送｜販売はBASE公式ショップで行います（<a href="https://iwatayacom.thebase.in/law" target="_blank" rel="noopener">特定商取引法に基づく表記</a>）</p>
+    <p class="rice-note"><a href="{{ "/reserve/" | relURL }}#lineup">1kg〜30kgのすべての容量・価格を見る →</a></p>
+  </div>
+</section>
