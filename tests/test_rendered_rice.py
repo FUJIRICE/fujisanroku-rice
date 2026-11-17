@@ -150,10 +150,20 @@ class RenderedRiceTest(unittest.TestCase):
         function_keys = set(re.findall(r'^\s+([a-z]+\d+kgw?)\s*:', self.buy_js, re.M))
         self.assertTrue(set(table_keys) <= function_keys)
 
-    def test_home_leads_with_quality_and_keeps_purchase_link_only_at_end(self):
+    def test_home_shows_price_and_buy_button_first_then_quality(self):
+        # 2026-11-17 方針変更: 最初の画面に価格と購入ボタンを置く(旧: 購入導線は末尾のみ)。
         hero = re.search(r'<section[^>]+class=(?:["\']gd-hero["\']|gd-hero)(?:\s|>).*?</section>', self.home, re.S)
         self.assertIsNotNone(hero)
-        self.assertNotRegex(text_without_tags(hero.group(0)), r'\d[\d,]*円')
+        price = f'{self.data["base"]["hakumai5kg"]["price"]:,}円'
+        self.assertIn(price, text_without_tags(hero.group(0)))
+        self.assertIn('/go/buy/base/site/home/hakumai5kg', hero.group(0))
+        buys = [n for n in self.home_dom.find_all("section") if n.attrs.get("id") == "rice-buy"]
+        self.assertEqual(len(buys), 1)
+        buy_links = [n.attrs.get("href", "") for n in buys[0].find_all("a") if n.attrs.get("href", "").startswith("/go/buy/base/site/home/")]
+        self.assertEqual([h.rsplit("/", 1)[-1] for h in buy_links], ["hakumai5kg", "hakumai10kg", "genmai5kg"])
+        for key in ("hakumai5kg", "hakumai10kg", "genmai5kg"):
+            self.assertIn(f'{self.data["base"][key]["price"]:,}', buys[0].text())
+        self.assertIn("https://iwatayacom.thebase.in/law", [n.attrs.get("href") for n in buys[0].find_all("a")])
         hero_nodes = [n for n in self.home_dom.find_all("a") if n.attrs.get("href") == "#rice-shop"]
         self.assertTrue(any("このお米について" in n.text() for n in hero_nodes))
         shops = [n for n in self.home_dom.find_all("section") if n.attrs.get("id") == "rice-shop"]
@@ -170,7 +180,7 @@ class RenderedRiceTest(unittest.TestCase):
             self.assertIn("/" + asset, [n.attrs.get("src") for n in shop.find_all("img")], asset)
         mains = self.home_dom.find_all("main")
         self.assertEqual(len(mains), 1)
-        self.assertEqual(sum(n.attrs.get("href", "").startswith("/reserve/") or n.attrs.get("href") == "/reserve" for n in mains[0].find_all("a")), 1)
+        self.assertEqual(sum(n.attrs.get("href", "").startswith("/reserve/") or n.attrs.get("href") == "/reserve" for n in mains[0].find_all("a")), 2)
 
     def test_reserve_explains_quality_before_purchase_and_has_two_store_links(self):
         headings = [(n.text().strip(), n) for n in self.reserve_dom.find_all("h2")]
