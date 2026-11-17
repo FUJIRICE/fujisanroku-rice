@@ -70,3 +70,20 @@
   .rice-photos figcaption { font-size: .68rem; }
   .gd-hero { min-height: 640px; height: 100svh; }
 }
+
+/* ==================== HOME BUY (2026-11) ==================== */
+.gd-btn-buy small { display: block; margin-top: .35rem; font-size: .72rem; letter-spacing: .08em; }
+.rice-home-buy { padding: 3.5rem 1.5rem 0; background: #0f0f0e; }
+#rice-buy { scroll-margin-top: 100px; }
+.rice-buy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 2rem 0 1.25rem; }
+.rice-sales .rice-buy-card { display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem 1.25rem; border: 1px solid #38352e; color: #f0ece4; text-decoration: none; transition: border-color .2s, transform .2s; }
+.rice-sales .rice-buy-card:hover { border-color: #e8c078; transform: translateY(-2px); }
+.rice-buy-card strong { font-family: var(--jp, serif); font-size: 1.05rem; font-weight: 400; }
+.rice-buy-price { font-size: 1.7rem; color: #e8c078; line-height: 1.2; }
+.rice-buy-price small { font-size: .8rem; margin-left: .15rem; }
+.rice-buy-note { font-size: .78rem; color: #bdb6a9; line-height: 1.7; }
+.rice-buy-cta { margin-top: auto; padding-top: .75rem; font-size: .8rem; letter-spacing: .12em; color: #e8c078; }
+.rice-buy-info { line-height: 1.9; }
+@media (max-width: 700px) {
+  .rice-buy-grid { grid-template-columns: 1fr; }
+}
