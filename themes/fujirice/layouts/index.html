@@ -38,8 +38,8 @@
     <p class="gd-hero-ja">育つ景色まで届く新米</p>
     <p class="gd-hero-sub">富士山麓・富士宮で育てた、にじのきらめき。<br>白米はご注文に合わせて精米し、農家からお届けします。</p>
     <div class="gd-hero-cta">
-      <a href="#rice-shop" class="gd-btn-primary">このお米について</a>
-      <a href="/go/live" target="_blank" rel="noopener" class="gd-btn-ghost">田んぼを24時間見る</a>
+      <a href="/go/buy/base/site/home/hakumai5kg" target="_blank" rel="noopener" class="gd-btn-primary gd-btn-buy">新米を買う<small>白米5kg {{ partial "rice/amount.html" (dict "key" "hakumai5kg") }}円・送料込</small></a>
+      <a href="#rice-shop" class="gd-btn-ghost">このお米について</a>
     </div>
   </div>
   <button class="gd-hero-playback" id="gdHeroPlayback" type="button" aria-controls="gdHeroVideo gdHeroWind" hidden>映像を再生</button>
@@ -52,6 +52,8 @@
     <div><a href="https://ichiba.libecity.com/shops/577/reviews" target="_blank" rel="noopener">購入者レビューを読む ↗</a></div>
   </div>
 </section>
+
+{{ partial "rice/home-buy.html" . }}
 
 {{ partial "rice/home-offer.html" . }}
 
