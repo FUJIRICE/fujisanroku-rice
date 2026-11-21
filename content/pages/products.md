@@ -15,6 +15,7 @@ draft: false
 | 容量 | 食べ切り目安（白米） | 選び方 | BASEの商品リンク |
 |---|---:|---|---|
 | 1〜4kg | 少量・お試し向け | 一人暮らし、保管場所を抑えたい方 | [白米の容量一覧](/go/buy/base/site/reserve) |
+| 2kg | 1合/日：約13日、2合/日：約7日 | 少量で試したい方 | [白米の容量一覧](/go/buy/base/site/reserve) |
 | 5kg | 1合/日：約33日、2合/日：約17日 | まず試したい方、少人数のご家庭 | [白米5kg](/go/buy/base/site/reserve/hakumai5kg) |
 | 10kg | 1合/日：約67日、2合/日：約33日 | 毎日食べるご家庭 | [白米10kg](/go/buy/base/site/reserve/hakumai10kg) |
 | 20kg | まとめ買い向け | 保管場所があり、購入回数を減らしたい方 | [白米20kg](/go/buy/base/site/reserve/hakumai20kg) |
