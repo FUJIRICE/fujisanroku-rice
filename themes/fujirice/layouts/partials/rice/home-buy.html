@@ -1,11 +1,11 @@
 <section class="rice-home-buy rice-sales" id="rice-buy" aria-labelledby="rice-buy-title">
   <div class="rice-home-inner">
-    <p class="rice-eyebrow">令和8年産 新米 · 税込・送料無料</p>
-    <h2 id="rice-buy-title">はじめての方に、この3つ。</h2>
+    <p class="rice-eyebrow">BASE直売所 · 令和8年産 · 税込・送料込</p>
+    <h2 id="rice-buy-title">わが家に合うお米を選ぶ</h2>
     <div class="rice-buy-grid">
       {{- range slice
-        (dict "key" "hakumai5kg" "name" "白米 5kg" "note" "まずはひと袋。ご注文後に精米します。")
-        (dict "key" "hakumai10kg" "name" "白米 10kg" "note" "毎日のごはんに。ご家庭用の定番です。")
+        (dict "key" "hakumai5kg" "name" "白米 5kg" "note" "毎日1合なら約33日分。ご注文後に精米します。")
+        (dict "key" "hakumai10kg" "name" "白米 10kg" "note" "毎日2合なら約33日分。家族のお弁当にも。")
         (dict "key" "genmai5kg" "name" "玄米 5kg" "note" "玄米で食べたい方、ご家庭で精米する方に。")
       }}
       <a class="rice-buy-card" href="/go/buy/base/site/home/{{ .key }}" target="_blank" rel="noopener">
